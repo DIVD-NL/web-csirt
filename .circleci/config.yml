@@ -12,18 +12,18 @@ jobs:
           command: |
             cd www.divd.nl;
             jekyll build 2>&1|grep -v 'warning:';
-            cd .. 
+            cd ..
       - run:
           name: Build site csirt.divd.nl
           command: |
             cd csirt.divd.nl;
             jekyll build 2>&1|grep -v 'warning:';
-            cd .. 
+            cd ..
       - run:
           name: Test HTML
           command: |
             gem install html-proofer &&
-            htmlproofer --allow-hash-href  --url-ignore /www.linkedin.com/in/ www.divd.nl/_site/ &&
+            htmlproofer --allow-hash-href  --url-ignore "/www.linkedin.com/in/","/#menu.*/" www.divd.nl/_site/ &&
             htmlproofer --allow-hash-href csirt.divd.nl/_site/
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
