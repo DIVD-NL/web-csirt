@@ -1,0 +1,20 @@
+RewriteEngine On
+
+RewriteCond %{HTTP:X-HTTPS-SESSION} !^yes$
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+SetEnvIfNoCase X-HTTPS-Session Yes is_ssl=yes
+SetEnvIfNoCase X-HTTPS-Session Yes is_https=yes
+SetEnvIfNoCase X-HTTPS-Session Yes HTTPS=on
+
+RewriteCond %{HTTP_HOST} ^bit\.divd\.nl [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.divd\.nl [NC,OR]
+RewriteCond %{HTTP_HOST} ^divd\.nl [NC]
+RewriteCond %{REQUEST_URI} !^/divd-nl [NC]
+RewriteRule (.*) divd-nl/$1 [L]
+
+RewriteCond %{HTTP_HOST} ^bit\.securitymeldpunt\.nl [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.securitymeldpunt\.nl [NC,OR]
+RewriteCond %{HTTP_HOST} ^securitymeldpunt\.nl [NC]
+RewriteCond %{REQUEST_URI} !^/securitymeldpunt-nl [NC]
+RewriteRule (.*) securitymeldpunt-nl/$1 [L]
