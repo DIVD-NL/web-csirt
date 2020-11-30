@@ -10,13 +10,13 @@ jobs:
       - run:
           name: Build site www.divd.nl
           command: |
-            cd www.divid.nl;
+            cd www.divd.nl;
             jekyll build 2>&1|grep -v 'warning:';
             cd .. 
       - run:
           name: Build site csirt.divd.nl
           command: |
-            cd csirt.divid.nl;
+            cd csirt.divd.nl;
             jekyll build 2>&1|grep -v 'warning:';
             cd .. 
       - run:
