@@ -23,7 +23,7 @@ jobs:
           name: Test HTML
           command: |
             gem install html-proofer &&
-            htmlproofer --allow-hash-href --url-ignore https://www.linkedin.com/in/ www.divd.nl/_site/ &&
+            htmlproofer --allow-hash-href  --url-ignore /www.linkedin.com/in/ www.divd.nl/_site/ &&
             htmlproofer --allow-hash-href csirt.divd.nl/_site/
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
