@@ -1,0 +1,27 @@
+theme: jekyll-theme-minimal
+
+paginate: 10
+plugins: [jekyll-paginate]
+paginate_path: "news/:num/"
+
+language: nl-nl
+
+title: DIVD
+description: Het Nederlandse meldpunt voor kwetsbaarheden, infecties en andere (cyber)security gerelateerde zaken.
+
+timezone: Europe/Amsterdam
+future: true
+encoding: utf-8
+
+permalink: pretty
+markdown: kramdown
+show_downloads: false
+github:
+  is_project_page: false
+
+sass:
+  sass_dir: assets/sass
+  style: compressed
+
+plugins:
+  - jekyll-sitemap

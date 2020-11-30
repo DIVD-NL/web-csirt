@@ -1,0 +1,98 @@
+{% comment %}
+Example:
+// <nav class="nav">
+//   <ul class="menu">
+//     <li class="menu-item">
+//       <a href="/path/to/.../">...</a>
+//     </li>
+//     <li class="menu-item">
+//       <a href="/path/to/.../">...</a>
+//     </li>
+//     <li class="menu-item has-children">
+//       <a href="/path/to/.../">...
+//         <span class="dropdown-icon"></span>
+//       </a>
+//       <ul class="sub-menu">
+//         <li class="menu-item">
+//           <a href="/path/to/.../">...</a>
+//         </li>
+//         <li class="menu-item">
+//           <a href="/path/to/.../">...</a>
+//         </li>
+//       </ul>
+//     </li>
+//     <li class="menu-item">
+//       <a href="/path/to/.../">...</a>
+//     </li>
+//   </ul>
+// </nav>
+{% endcomment %}
+
+<nav class="nav nav--cen">
+	<a id="menuBtn" class="icon">
+		<i class="fa fa-bars"></i> Menu
+	  </a>
+	<ul class="menu" id="nav_menu">
+		{% for item in site.data.navigation %}
+			{% if item.link == "/cases/" %}
+		    	<li class="menu-item has-children">
+		    		<a href="/cases/" {% if page.url == item.link %}class="black_url"{% endif %}> 
+						Cases <span class="dropdown-icon"></span>
+					</a>
+   					<ul class="sub-menu">
+   						{% assign pages = site.pages |reverse %}
+				    	{% for p in pages %}
+		    				{% if p.url contains "/cases/" and p.url != "/cases/" and p.layout != "redirect" %}
+		    					<li class="menu-item">
+			    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
+			    						{{ p.divd }}<br>
+			    						{{ p.short }}
+			    					</a>
+			    				</li>
+			    			{% endif %}
+			    		{% endfor %}
+			    	</ul>
+		    	</li>
+			{% elsif item.link == "/blog/" %}
+		    	<li class="menu-item has-children">
+		    		<a href="/blog/" {% if page.url == item.link %}class="black_url"{% endif %}> 
+						Blog <span class="dropdown-icon"></span>
+					</a>
+   					<ul class="sub-menu">
+						{% for post in site.posts %}
+							{% if forloop.index <= 5 %}
+							    <li class="menu-item">
+							        <a href="{{ post.url | prepend: site.baseurl }}" {% if page.url == post.url %}class="black_url"{% endif %}> {{ post.date | date: "%Y-%m-%d" }} : {{ post.title | slice: 0, 30 }}...</a>
+							    </li>
+							{% endif %}
+						{% endfor %}
+			    	</ul>
+		    	</li>
+			{% elsif item.link == "/faq/" %}
+		    	<li class="menu-item has-children">
+		    		<a href="/faq/" {% if page.url == item.link %}class="black_url"{% endif %}> 
+						FAQ <span class="dropdown-icon"></span>
+					</a>
+   					<ul class="sub-menu">
+   						{% assign pages = site.pages %}
+				    	{% for p in pages %}
+		    				{% if p.url contains "/faq/" and p.url != "/faq/" %}
+		    					<li class="menu-item">
+			    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
+			    						{{ p.title | slice: 0, 40 }}...
+			    					</a>
+			    				</li>
+			    			{% endif %}
+			    		{% endfor %}
+			    	</ul>
+		    	</li>
+			{% else %}
+				<li class="menu-item">
+					<a href="{{ item.link }}" {% if page.url == item.link %}class="black_url"{% endif %}>
+						{{ item.name }}
+					</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</nav>

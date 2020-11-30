@@ -1,0 +1,30 @@
+<!-- Header -->
+<header id="header">
+{% if page.url != "/" %}
+    {% if page.url != "/blog/" and page.layout == "post" %}
+        <span class="logo"><a href="/">Home</a> / <a href="/blog/">Blog</a> / {{ page.title | capitalize }}</span>
+    {% elsif page.url contains "/cases/" and page.url != "/cases/" %}
+        <span class="logo"><a href="/">Home</a> / <a href="/cases/">Cases</a> / {{ page.title | capitalize }}</span>
+    {% elsif page.url contains "/faq/" and page.url != "/faq/" %}
+        <span class="logo"><a href="/">Home</a> / <a href="/faq/">FAQ</a> / {{ page.title | capitalize }}</span>
+    {% elsif page.url contains "/handlers/" and page.url != "/handlers/" %}
+        <span class="logo"><a href="/">Home</a> / <a href="/handlers/">Handlers</a> / {{ page.author }}</span>
+    {% else %}
+        <span class="logo"><a href="/">Home</a> / {{ page.title | capitalize }}</span>
+    {% endif %}
+{% endif %}
+    {% comment %}
+        <nav><a href="#menu">Menu</a></nav>
+    {% endcomment %}
+</header>
+
+{% comment %}
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+		{% for item in site.data.navigation %}
+		<li><a href="{{ item.link }}">{{ item.name }}</a></li>
+		{% endfor %}
+    </ul>
+</nav>
+{% endcomment %}

@@ -1,0 +1,16 @@
+---
+layout: page
+title: Handlers
+---
+<h1>Meldpunt handlers</h1>
+
+{% for p in site.pages %}
+  {% if p.url contains "/handlers/" and p.url != page.url %}
+	  <div class='caseitem'>
+		  <h2>
+		    <a href="{{ p.url }}">{{ p.author }}</a>
+		  </h2>
+		  <p>{{ p.excerpt }}</p>
+	  </div>
+  {% endif %}
+{% endfor %}

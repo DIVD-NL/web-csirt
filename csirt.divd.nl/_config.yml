@@ -1,0 +1,29 @@
+theme: jekyll-theme-cayman
+
+paginate: 10
+plugins: [jekyll-paginate]
+paginate_path: "blog/:num/"
+
+language: nl-nl
+
+title: Nederlands Security Meldpunt
+description: Het Nederlandse meldpunt voor kwetsbaarheden, infecties en andere (cyber)security gerelateerde zaken.
+
+timezone: Europe/Amsterdam
+future: true
+encoding: utf-8
+
+permalink: pretty
+markdown: kramdown
+show_downloads: false
+github:
+  is_project_page: false
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+# Custom headers
+webrick:
+  headers:
+    Content-Security-Policy: default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; script-src 'self' ; style-src 'self' https://fonts.googleapis.com/;

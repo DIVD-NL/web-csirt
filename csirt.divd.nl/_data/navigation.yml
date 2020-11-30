@@ -1,0 +1,18 @@
+- name: Home
+  link: /
+- name: Cases
+  link: /cases/
+- name: Blog
+  link: /blog/
+- name: Over ons
+  link: /over-ons/
+- name: Handlers
+  link: /handlers/
+- name: FAQ
+  link: /faq/
+- name: Helpen? 
+  link: /faq/15-helpen/
+- name: RSS
+  link: /feed.xml
+- name: Contact
+  link: /contact/

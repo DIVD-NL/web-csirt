@@ -1,0 +1,37 @@
+{% include header.html %}
+
+{% include navigation.html %}
+
+{% if page.url == "/" %}
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <h1 class="project-name">{{ site.title }}</h1>
+        <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p> 
+    </div>
+</section>
+
+{% include menu.html %}
+
+<section class="wrapper">
+    <div id="content" class="inner content">
+        {{ content }}
+    </div>
+</section>
+{% else %}
+<!-- Heading -->
+<div id="heading" >
+    <h1 class="project-name">{{ site.title }}</h1>
+    <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+</div>
+
+{% include menu.html %}
+
+<section id="main" class="wrapper">
+    <div id="content" class="inner content">
+        {{ content }}
+    </div>
+</section>
+{% endif %}
+
+{% include footer.html %}

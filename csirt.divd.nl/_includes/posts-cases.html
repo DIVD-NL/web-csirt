@@ -1,0 +1,28 @@
+<h1>Pages written</h1>
+
+<h3>Blog posts</h3>
+
+<ul>
+{% for p in site.posts %}
+  {% if p.author == page.author %}
+  <li>
+	<a href='{{ p.url }}'>{{ p.date | date_to_long_string }} - {{ p.title }}</a>
+  </li>
+  {%- endif -%}
+{% endfor %}
+</ul>
+
+<h3>Cases</h3>
+
+<ul>
+{%- assign ps = site.pages | reverse -%}
+{%- for p in ps -%}
+  {% if p.author == page.author or p.lead == page.author %}
+    {% if p.url contains "/cases/" %}
+	    <li>
+	      <a href='{{ p.url }}'>{{ p.title }}</a>
+	    </li>
+	{% endif %}
+  {%- endif -%}
+{%- endfor -%}
+</ul>

@@ -1,0 +1,29 @@
+<footer id="footer">
+    <div class="inner">
+        <div class="content">
+            <ul class="plain">
+                <li><a href="https://twitter.com/MeldpuntDIVD"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                <li><a href="https://www.facebook.com/meldpuntDIVD"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                <li><a href="https://www.linkedin.com/company/security-meldpunt"><i class="icon fa-linkedin">&nbsp;</i>LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+{% if site.google_analytics %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
+</body>
+</html>
