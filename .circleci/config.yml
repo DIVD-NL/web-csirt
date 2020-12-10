@@ -12,7 +12,7 @@ jobs:
           command: |
             for site in www.divd.nl csirt.divd.nl; do
               ( 
-                echo "*** Buildoing and checking $site ***"; 
+                echo "*** Building and checking $site ***"; 
                 cd $site;
                 jekyll build 2>&1|grep -v 'warning:';
                 ./proof_html.sh 
