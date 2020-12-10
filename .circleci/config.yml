@@ -23,7 +23,7 @@ jobs:
           name: Test HTML
           command: |
             for site in www.divd.nl csirt.divdi.nl; do
-              ( echo "Checking $site; cd $site ; ./proof_html.sh ) 
+              ( echo "*** Checking $site ***"; cd $site ; ./proof_html.sh ) 
             done
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
