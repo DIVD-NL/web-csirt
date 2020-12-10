@@ -22,8 +22,9 @@ jobs:
       - run:
           name: Test HTML
           command: |
-            ( cd www.divd.nl   ; ./proof_html.sh ) &&
-            ( cd csirt.divd.nl ; ./proof_html.sh )
+            for site in www.divd.nl csirt.divdi.nl; do
+              ( echo "Checking $site; cd $site ; ./proof_html.sh ) 
+            done
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
           paths:
