@@ -8,23 +8,16 @@ jobs:
       - run: (cd /root/;rm -rf project;mkdir project)
       - checkout
       - run:
-          name: Build site www.divd.nl
+          name: Build en check
           command: |
-            cd www.divd.nl;
-            jekyll build 2>&1|grep -v 'warning:';
-            cd ..
-      - run:
-          name: Build site csirt.divd.nl
-          command: |
-            cd csirt.divd.nl;
-            jekyll build 2>&1|grep -v 'warning:';
-            cd ..
-      - run:
-          name: Test HTML
-          command: |
-            gem install html-proofer &&
-            htmlproofer --allow-hash-href  --url-ignore "/www.linkedin.com/in/","/#menu.*/" www.divd.nl/_site/ &&
-            htmlproofer --allow-hash-href csirt.divd.nl/_site/
+            for site in www.divd.nl csirt.divd.nl; do
+              ( 
+                echo "*** Building and checking $site ***"; 
+                cd $site;
+                jekyll build 2>&1|grep -v 'warning:';
+                ./proof_html.sh 
+              ) 
+            done
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
           paths:

@@ -9,7 +9,7 @@ Citrix heeft [zojuist bekend gemaakt](https://www.citrix.com/blogs/2020/01/19/vu
 
 Het is belangrijk om voordat een systeem gepatched wordt, uit te sluiten dat deze al door aanvallers is overgenomen. Dit kan door het uitvoeren van forensisch onderzoek (zie [blog](/2020/01/15/How-to-check-your-Citrix-gateway/)), hiervoor is wel gedegen kennis nodig. Of door het systeem opnieuw schoon op te bouwen op basis van een schone [image van Citrix](https://www.citrix.com/downloads/citrix-adc/).
 
-We hebben de [case pagine](/cases/202001-Citrix-ADC/) bijgewerkt.
+We hebben de [case pagine](/DIVD-2020-00001/) bijgewerkt.
 
 <hr>
 
@@ -19,4 +19,4 @@ Citrix [just released](https://www.citrix.com/blogs/2020/01/19/vulnerability-upd
 
 It is important to make sure that a system is not compromised before it is patched. This can be done by either performing forensics analysis (see our [blog](/2020/01/15/How-to-check-your-Citrix-gateway/)), this requires in-depth knowledge. Or by reinstalling the system from scratch using a clean image [downloaded from the Citrix site](https://www.citrix.com/downloads/citrix-adc/).
 
-We have updated the [case page](/cases/202001-Citrix-ADC/).
+We have updated the [case page](/DIVD-2020-00001/).

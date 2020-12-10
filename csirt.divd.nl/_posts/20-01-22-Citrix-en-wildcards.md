@@ -9,7 +9,7 @@ Er zijn wildcardcertificaten aanwezig op meer dan 450 van de 700 systemen die we
 
 Het Security Meldpunt gaat beheerders waarvan de systemen op de lijst staan waarschuwen.
 
-Meer informatie en de laatste stand van zaken met betrekking tot deze case is te vinden op [onze case pagina](/cases/202002-Wildcard-Certificaten-Citrix-ADC/)
+Meer informatie en de laatste stand van zaken met betrekking tot deze case is te vinden op [onze case pagina](/DIVD-2020-00002/)
 
 <hr>
 
@@ -19,4 +19,4 @@ There are wildcard certificates present on more than 450 of the 700 systems that
 
 We are going to notify administrators of the systems on the list.
 
-More information and the current status of this case can be found on [our case page](/cases/202002-Wildcard-Certificaten-Citrix-ADC/)
+More information and the current status of this case can be found on [our case page](/DIVD-2020-00002/)
