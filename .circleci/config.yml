@@ -8,22 +8,15 @@ jobs:
       - run: (cd /root/;rm -rf project;mkdir project)
       - checkout
       - run:
-          name: Build site www.divd.nl
+          name: Build en check
           command: |
-            cd www.divd.nl;
-            jekyll build 2>&1|grep -v 'warning:';
-            cd ..
-      - run:
-          name: Build site csirt.divd.nl
-          command: |
-            cd csirt.divd.nl;
-            jekyll build 2>&1|grep -v 'warning:';
-            cd ..
-      - run:
-          name: Test HTML
-          command: |
-            for site in www.divd.nl csirt.divdi.nl; do
-              ( echo "*** Checking $site ***"; cd $site ; ./proof_html.sh ) 
+            for site in www.divd.nl csirt.divd.nl; do
+              ( 
+                echo "*** Buildoing and checking $site ***"; 
+                cd $site;
+                jekyll build 2>&1|grep -v 'warning:';
+                ./proof_html.sh 
+              ) 
             done
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
