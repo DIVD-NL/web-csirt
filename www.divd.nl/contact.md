@@ -12,7 +12,7 @@ We are a network of security researchers who mainly work online. If you want to 
 <hr>
 ### Address
 We have a flexible workplace at ECP:<br>
-Visiting: Overgoo 13, 2266 JZ Leidschendam<br>
-Mail: PO Box 262, 2260 AG Leidschendam<br>
+Maanweg 174<br>
+2516 AB Den Haag<br>
 Tel.: (+31) 70 41 90 309
 
