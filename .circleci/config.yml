@@ -22,9 +22,8 @@ jobs:
       - run:
           name: Test HTML
           command: |
-            gem install html-proofer &&
-            htmlproofer --allow-hash-href  --url-ignore "/www.linkedin.com/in/","/#menu.*/" www.divd.nl/_site/ &&
-            htmlproofer --allow-hash-href csirt.divd.nl/_site/
+            ( cd www.divd.nl   ; ./proof_html.sh ) &&
+            ( cd csirt.divd.nl ; ./proof_html.sh )
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
           paths:

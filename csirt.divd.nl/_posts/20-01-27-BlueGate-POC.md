@@ -7,7 +7,7 @@ excerpt: Het Security Meldpunt adviseerd dringend patches uit te rollen en gaat 
 
 ### Nederlands
 
-Op 14 januari bracht Microsoft twee zeer kritieke updates uit met een [CVSS score van .8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?calculator&version=3&vector=(CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C)) voor de Windows 2012, 2012R2, 2016 en 2019 Server platformen. 
+Op 14 januari bracht Microsoft twee zeer kritieke updates uit met een [CVSS score van .8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?calculator&version=3.0&vector=(CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C)) voor de Windows 2012, 2012R2, 2016 en 2019 Server platformen. 
 
 Deze patches verhelpen een kwetsbaarheid in Windows Remote Desktop Gateway (RD Gateway), een concurrent van Citrix. Misbruik van de kwetsbaarheid kan leiden tot onbeschikbaarheid (DoS, Denial of Service) en de mogelijkheid om willekeurige code op het systeem uit te voeren (RCE, Remote Command Execution).
 
@@ -33,7 +33,7 @@ Meer informatie en de laatste stand van zaken met betrekking tot deze case wordt
 
 ### English
 
-On January 14th Microsoft released patches for two critical vulnerabilities found in Windows Server 2012, 2012R2, 2016 and 2019 with a [CVSS score off 9.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?calculator&version=3&vector=(CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C))
+On January 14th Microsoft released patches for two critical vulnerabilities found in Windows Server 2012, 2012R2, 2016 and 2019 with a [CVSS score off 9.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?calculator&version=3.0&vector=(CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C))
 
 Impact is both DOS (Denial Of Service) and RCE (Remote Command Execution), a functional impact can be a complete takeover of the system and it's information. Patches of January 2020 are effective and highly recommended to deploy asap.
 
