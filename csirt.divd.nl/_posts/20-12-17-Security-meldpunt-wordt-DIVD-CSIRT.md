@@ -14,7 +14,7 @@ Vandaar dat wij in 2021 verder gaan met een nieuwe naam: DIVD CSIRT
 
 Een nieuwe naam, maar dezelfde missie: het (Nederlandse)internet veiliger maken door informatie over kwetsbare of onveilig geconfigureerde systemen naar die mensen te sturen die er daadwerkelijk wat aan kunnen doen. Daarnaast spelen wij een rol in slachtoffernotificatie.
 
-Op dit moment is de informatie op deze site beschikbaar op zowel [www.securitymeldpunt.nl](https://www.securitymeldpunt.nl) als [cisrt.divd.nl](https://cisrt.divd.nl). Binnenkort wordt nu automatisch doorgestuurd naar csirt.divd.nl.
+Op dit moment is de informatie op deze site beschikbaar op zowel [www.securitymeldpunt.nl](https://www.securitymeldpunt.nl) als [cisrt.divd.nl](https://csirt.divd.nl). Binnenkort wordt nu automatisch doorgestuurd naar csirt.divd.nl.
 
 
 ### English
@@ -25,5 +25,5 @@ In 2021 we will continue under a new name: DIVD CSIRT
 
 A new name, but the same mission: to make the (Dutch) internet safer by getting information about vulnerable or insecurely configured systems to thos that are in a position to remediate the problem. Besides that we will play a role in victim notificaiton.
 
-Currently this site is available at both [www.securitymeldpunt.nl](https://www.securitymeldpunt.nl) and [cisrt.divd.nl](https://cisrt.divd.nl). Soon you will be ridirected to csirt.divd.nl.
+Currently this site is available at both [www.securitymeldpunt.nl](https://www.securitymeldpunt.nl) and [cisrt.divd.nl](https://csirt.divd.nl). Soon you will be ridirected to csirt.divd.nl.
 
