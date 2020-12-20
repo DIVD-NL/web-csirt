@@ -1,5 +1,5 @@
 ---
-title: Cases
+title: DIVD CSIRT
 ---
 ## Het Nederlands Security Meldpunt...
 
