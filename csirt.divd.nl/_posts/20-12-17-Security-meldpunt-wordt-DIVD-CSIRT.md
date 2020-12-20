@@ -8,7 +8,7 @@ excerpt: Het Nederlands Security Meldpunt gaat in 2021 verder als DIVD CSIRT / T
 
 ### Nederlands
 
-Als sind het begin is het Nederlands Security Meldpunt onderdeel van DIVD, en inmiddels is het Security Meldpunt echt geintegreed in DIVD.
+Als sinds het begin is het Nederlands Security Meldpunt onderdeel van DIVD, en inmiddels is het Security Meldpunt echt geïntegreerd in DIVD.
 
 Vandaar dat wij in 2021 verder gaan met een nieuwe naam: DIVD CSIRT
 
@@ -19,7 +19,7 @@ Op dit moment is de informatie op deze site beschikbaar op zowel [www.securityme
 
 ### English
 
-Since the very beginning, the Dutch Security Hotline (Nederlands Security meldpount) has been part of DIVD. Now, we have truely intergrated the hotline into DIVD.
+Since the very beginning, the Dutch Security Hotline (Nederlands Security meldpount) has been part of DIVD. Now, we have truely integrated the hotline into DIVD.
 
 In 2021 we will continue under a new name: DIVD CSIRT
 
