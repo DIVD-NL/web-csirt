@@ -1,7 +1,7 @@
 www.divd.nl and csirt.divd.nl websites
 ====
 
-Thsi repo hold these websites:
+This repo holds these websites:
 * www.divd.nl
 * [csirt.divd.nl](https://csirt.divd.nl)
 
