@@ -7,7 +7,7 @@
 <section id="banner">
     <div class="inner">
         <h1 class="project-name">{{ site.title }}</h1>
-        <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p> 
+        <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
     </div>
 </section>
 
@@ -21,8 +21,10 @@
 {% else %}
 <!-- Heading -->
 <div id="heading" >
+  <div class="inner">
     <h1 class="project-name">{{ site.title }}</h1>
     <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+  </div>
 </div>
 
 {% include menu.html %}
