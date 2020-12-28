@@ -87,11 +87,26 @@ Example:
 			    	</ul>
 		    	</li>
 			{% else %}
+				{% if item.children %}
+			    	<li class="menu-item has-children">
+						<a href="{{ item.link }}" {% if page.url == item.link %}class="black_url"{% endif %}>
+							{{ item.name }} <span class="dropdown-icon"></span>
+						</a>
+	   					<ul class="sub-menu">
+					    	{% for c in item.children %}
+		    					<li class="menu-item">
+			    					<a href="{{ c.link }}">{{ c.name }}</a>
+			    				</li>
+				    		{% endfor %}
+				    	</ul>
+			    	</li>
+				{% else %}
 				<li class="menu-item">
 					<a href="{{ item.link }}" {% if page.url == item.link %}class="black_url"{% endif %}>
 						{{ item.name }}
 					</a>
 				</li>
+				{% endif %}
 			{% endif %}
 		{% endfor %}
 	</ul>
