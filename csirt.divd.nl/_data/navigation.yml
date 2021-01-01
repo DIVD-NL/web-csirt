@@ -1,5 +1,10 @@
 - name: Home
   link: /
+  children:
+  - name: DIVD
+    link: https://www.divd.nl
+  - name: CSIRT
+    link: /
 - name: Cases
   link: /cases/
 - name: Blog
