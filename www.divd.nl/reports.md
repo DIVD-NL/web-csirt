@@ -7,7 +7,7 @@ header: case reports
 	<h2>Reports</h2>
 </header>
 
-These case reports give you insight into the kinds of vulnerabilities we found, the numbers and how we helped to fix them. Mostely they are a summary of our blogposts on our Security Hotline. 
+These case reports give you insight into the kinds of vulnerabilities we found, the numbers and how we helped to fix them. If you want to be informed on our current research projects, check the CSIRT page. 
 
 {% assign pages = site.pages |reverse %}
 {% for p in pages %}
