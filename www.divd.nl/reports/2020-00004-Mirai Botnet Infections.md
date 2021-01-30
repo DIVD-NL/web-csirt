@@ -9,6 +9,7 @@ excerpt: On 20-01-2020, DIVD CSIRT received a list of IP addresses, usernames an
     <span>25 January by Jeroen van de Weerd</span>
 </header>
 Case Lead: Sander Spierenburg
+
 On 20-01-2020, DIVD CSIRT received a list of IP addresses, usernames and passwords belonging to systems that may have been part of the Mirai botnet. It appeared that the systems were included in the botnet between 16-10-2019 and 29-11-2019.
 
 Mirai is malware that is installed on IoT devices. All these infected devices together form the Mirai botnet. This botnet is often used for DDoS attacks. Despite the fact that the creators of Mirai have been caught, the botnet remains dangerous and has mutated into other dangerous botnets. For additional information visit [ZDnet](https://www.zdnet.com/article/hacker-leaks-passwords-for-more-than-500000-servers-routers-and-iot-devices/)
