@@ -6,8 +6,8 @@ paginate_path: "blog/:num/"
 
 language: nl-nl
 
-title: Nederlands Security Meldpunt
-description: "Binnenkort / soon : DIVD CSIRT (<a href='https://csirt.divd.nl'>https://csirt.divd.nl</a>)"
+title: DIVD CSIRT
+description: "Voorheen / Previously : Het Nederlandse Security Meldpunt / Dutch Security Hotline"
 #description: Het Nederlandse meldpunt voor kwetsbaarheden, infecties en andere (cyber)security gerelateerde zaken.
 repository: DIVD-NL/sites
 
