@@ -1,27 +1,27 @@
-# Redirect http to https
+RewriteEngine On
+
+# Redirect http -> https
 RewriteCond %{HTTP:X-HTTPS-SESSION} !^yes$
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Make sure the envionment knows we are using HTTPS
 SetEnvIfNoCase X-HTTPS-Session Yes is_ssl=yes
 SetEnvIfNoCase X-HTTPS-Session Yes is_https=yes
 SetEnvIfNoCase X-HTTPS-Session Yes HTTPS=on
 
-# Serve DIVD main site from directory /divd-nl
-RewriteCond %{HTTP_HOST} ^bit\.divd\.nl [NC,OR]
+# Redirect securitymeldpunt to csirt
+RewriteCond %{HTTP_HOST} ^bit\.securitymeldpunt\.nl [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.securitymeldpunt\.nl [NC,OR]
+RewriteCond %{HTTP_HOST} ^securitymeldpunt\.nl [NC]
+RewriteRule (.*) https://csirt.divd.nl/$1 [r=301,L]
+
+# Serve www from divd-nl
 RewriteCond %{HTTP_HOST} ^www\.divd\.nl [NC,OR]
 RewriteCond %{HTTP_HOST} ^divd\.nl [NC]
 RewriteCond %{REQUEST_URI} !^/divd-nl [NC]
 RewriteRule (.*) divd-nl/$1 [L]
 
-# Redirect securitymeldpunt.nl to csirt
-RewriteCond %{HTTP_HOST} ^bit\.securitymeldpunt\.nl [NC,OR]
-RewriteCond %{HTTP_HOST} ^www\.securitymeldpunt\.nl [NC,OR]
-RewriteCond %{HTTP_HOST} ^securitymeldpunt\.nl [NC]
-RewriteRule ^(.*) https://csirt.divd.nl/$1 [R=301,L]
-
-# Serve csirt site from csirt dir
+# Serve csirt from csirt-divd-nl
 RewriteCond %{HTTP_HOST} ^csirt\.divd\.nl [NC,OR]
 RewriteCond %{HTTP_HOST} ^www\.csirt\.divd\.nl [NC]
-RewriteCond %{REQUEST_URI} !^/csirt-divZZd-nl [NC]
+RewriteCond %{REQUEST_URI} !^/csirt-divd-nl [NC]
 RewriteRule (.*) csirt-divd-nl/$1 [L]
