@@ -46,7 +46,7 @@ jobs:
             cd /root/project/;
             sshpass -e rsync -av .htaccess www-divd@upload.bit.nl:htdocs;
             cd /root/project/csirt.divd.nl/_site;
-            sshpass -e rsync -av . www-divd@upload.bit.nl:htdocs/securitymeldpunt-nl;
+            sshpass -e rsync -av . www-divd@upload.bit.nl:htdocs/csirt-divd-nl;
             cd /root/project/www.divd.nl/_site;
             sshpass -e rsync -av . www-divd@upload.bit.nl:htdocs/divd-nl;
 
