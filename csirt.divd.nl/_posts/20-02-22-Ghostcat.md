@@ -7,7 +7,7 @@ excerpt: 773 Nederlandse IP adressen kwetsbaar voor Ghostcat - Apache Tomcat AJP
 
 ### Nederlands
 
-Deze kwetsbaarheid, GhostCat genaamd, werd ontdekt door onderzoekers van Chaitin Tech https://www.chaitin.cn/en/ghostcat en  op 3 januari aan Apache Software Foundation gemeld. Op 20 februari 2020 publiceerde de China National Vulnerability Database (CNVD) een beveiligingsadvies voor CNVD-2020-10487, een ernstige kwetsbaarheid in Apache Tomcat's Apache JServ Protocol (of AJP). De kwetsbaarheid heeft ook een CVE aanduiding gekregen, CVE-2020-1938.
+Deze kwetsbaarheid, GhostCat genaamd, werd ontdekt door onderzoekers van Chaitin Tech https://www.chaitin.cn/en/ghostcat en  op 3 januari aan Apache Software Foundation gemeld. Op 20 februari 2020 publiceerde de China National Vulnerability Database (CNVD) een beveiligingsadvies voor CNVD-2020-10487, een ernstige kwetsbaarheid in Apache Tomcat's Apache JServ Protocol (of AJP). De kwetsbaarheid heeft ook een CVE aanduiding gekregen, {% cve CVE-2020-1938 %}.
 Op dit moment heeft het [DIVD](https://www.divd.nl) 773 Nederlandse kwetsbare IP-adressen gevonden. Het Security Meldpunt gaat deze lijst verder onderzoeken en probeert de eigenaren op de hoogte te brengen.
 
 De kwetsbaarheid heeft de naam Ghostcat gekregen omdat de kwetsbaarheid in alle versies (Tomcat 9/8/7/6 en ouder) van de Apache Tomcat AJP connector zit, deze connector staat standaard aan. Deze kwetsbaarheid is in staat geweest meer dan 10 jaar onzichtbaar te blijven, vandaar Ghostcat.
@@ -36,7 +36,7 @@ Meer informatie en de laatste stand van zaken met betrekking tot deze case wordt
 
 ### English
 
-This vulnerability, dubbed Ghostcat, was discovered by researchers at [Chaitin Tech](https://www.chaitin.cn/en/ghostcat) and reported to Apache Software Foundation on January 3. On February 20, 2020, the China National Vulnerability Database (CNVD) published a security advisory for CNVD-2020-10487, a serious vulnerability in Apache Tomcat's Apache JServ Protocol (or AJP). The vulnerability has also been given a CVE designation, CVE-2020-1938.
+This vulnerability, dubbed Ghostcat, was discovered by researchers at [Chaitin Tech](https://www.chaitin.cn/en/ghostcat) and reported to Apache Software Foundation on January 3. On February 20, 2020, the China National Vulnerability Database (CNVD) published a security advisory for CNVD-2020-10487, a serious vulnerability in Apache Tomcat's Apache JServ Protocol (or AJP). The vulnerability has also been given a CVE designation, {% cve CVE-2020-1938 %}.
 At the moment, the [DIVD](https://www.divd.nl) has found 773 vulnerable Dutch IP addresses. Security Meldpunt will further investigate this list and try to inform the owners.
 
 It has been named Ghostcat because the vulnerability is present in all versions (Tomcat 9/8/7/6 and older) of the Apache Tomcat AJP connector and has been in it for more than 10 years without getting noticed, thats why it's called Ghostcat.

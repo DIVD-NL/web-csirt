@@ -21,8 +21,8 @@ Het Security Meldpunt gaat netwerk beheerders van de netwerken waar deze systeme
 De kwetsbaarheid van deze systemen is vastgesteld met behulp van de door [ollypwn op GitHub](https://github.com/ollypwn/BlueGate) gepubliceerde code.
 
 Achtergrond en update info:
-* [CVE-2020-0609](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0609) 
-* [CVE-2020-0610](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0610)
+* {% cve CVE-2020-0609 %} 
+* {% cve CVE-2020-0610 %}
 * [Vulnerability test en Denial of Service POC](https://github.com/ollypwn/BlueGate)
 
 Meer informatie en de laatste stand van zaken met betrekking tot deze case wordt aangelegd op [onze case pagina](/DIVD-2020-00003/)
@@ -46,8 +46,8 @@ We are going to notify administrators of the vulnerable systems.
 The vulnerability of the systems has been determined using [ollypwn's GitHub code](https://github.com/ollypwn/BlueGate)
 
 Background and patch info:
-* [CVE-2020-0609](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0609) 
-* [CVE-2020-0610](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0610)
+* {% cve CVE-2020-0609 %} 
+* {% cve CVE-2020-0610 %}
 * [Vulnerability test en Denial of Service POC](https://github.com/ollypwn/BlueGate)
 
 More information and the current status of this case can be found on [our case page](/DIVD-2020-00003/)
