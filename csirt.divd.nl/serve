@@ -8,7 +8,7 @@ while [ 1 ] ; do
 		echo "On WSL2 the docker container is reachable via this url: http://$IP:4000"
 		echo "*******************************************************************************************"
 	fi
-	docker run --volume="$PWD:/root/project:delegated" --entrypoint /bin/bash --publish 4000:4000 -ti mrseccubus/github-pages -c "cd /root/project;rm -rf _site/*;jekyll serve --incremental --host=0.0.0.0 --future 2>&1 |grep -Ev 'rb:[0-9]+: warning'"
+	docker run --volume="$PWD:/root/project:delegated" --entrypoint /bin/bash --publish 4000:4000 -ti mrseccubus/github-pages -c "cd /root/project;rm -rf _site/*;gem install jekyll-secinfo;jekyll serve --incremental --host=0.0.0.0 --future 2>&1 |grep -Ev 'rb:[0-9]+: warning'"
 	set -e
 	echo 'Press CTRL+C now to quit'
 	sleep 1
