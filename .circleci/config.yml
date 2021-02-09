@@ -8,12 +8,13 @@ jobs:
       - run: (cd /root/;rm -rf project;mkdir project)
       - checkout
       - run:
-          name: Build en check
+          name: Build and check
           command: |
             for site in www.divd.nl csirt.divd.nl; do
               ( 
                 echo "*** Building and checking $site ***"; 
                 cd $site;
+                gem install jekyll-secinfo
                 jekyll build 2>&1|grep -v 'warning:';
                 ./proof_html.sh 
               ) 

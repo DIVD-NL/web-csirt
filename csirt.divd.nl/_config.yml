@@ -24,6 +24,11 @@ github:
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-secinfo
+
+jekyll-secinfo:
+  divd:
+    url: /cases/DIVD-
 
 # Custom headers
 webrick:

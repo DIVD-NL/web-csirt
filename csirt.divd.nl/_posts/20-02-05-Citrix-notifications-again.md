@@ -16,7 +16,7 @@ L.S.,
 
 SecurityMeldpunt.nl (onderdeel van divd.nl) houdt op dit moment actief bij op welke 
 Citrix Application Delivery Controllers in Nederland, de door Citrix op 17 december 
-aangeraden mitigatie mbt CVE-2019-19781 nog niet is aangebracht.
+aangeraden mitigatie mbt {% cve CVE-2019-19781 %} nog niet is aangebracht.
 
 Hieronder vind u een lijst van Citrix servers die horen bij uw organisatie of 
 waarvan is vastgesteld dat ze staan opgesteld in een netwerk waarvoor u verantwoordelijk 
@@ -72,7 +72,7 @@ L.S.,
 
 SecurityMeldpunt.nl (part of divd.nl) is currently actively tracking Citrix Application 
 Delivery Controllers in The Netherlands for which the mitigations recommended by Citrix 
-against vulnerability CVE-2019-19781 have not been implemented yet.
+against vulnerability {% cve CVE-2019-19781 %} have not been implemented yet.
 
 Attached you will find a list of Citrix servers that either belong to your organisation 
 or are located in a network for which you are responsible. 
