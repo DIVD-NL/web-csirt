@@ -1,0 +1,76 @@
+{% assign found = false %}
+{% assign blog = false %}
+{% for p in site.posts %}
+  {% if p.author == include.name %}
+    {% assign found = true %}
+    {% assign blog = true %}
+  {% endif %}
+{% endfor %}
+
+{% for c in site.cases %}
+  {% if c.author == include.name or c.lead == include.name or c.reseachers contains include.name %}
+    {% assign found = true %}
+    {% assign cases = true %}
+  {% endif %}
+{% endfor %}
+
+{% for p in site.csirt_posts %}
+  {% if p.author == include.name %}
+    {% assign found = true %}
+    {% assign csirt_blog = true %}
+  {% endif %}
+{% endfor %}
+
+
+{% if found %}
+  <br>
+  <br>
+  <h1>Articles / cases</h1>
+
+  {% if blog %}
+    <h3>Blog posts</h3>
+
+    <ul>
+    {% for p in site.posts %}
+      {% if p.author == include.name %}
+      <li>
+    	<a href='{{ p.url }}'>{{ p.date | date_to_long_string }} - {{ p.title }}</a>
+      </li>
+      {%- endif -%}
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if cases %}
+    <h3>CSIRT Cases</h3>
+
+    <ul>
+      {% assign rev_cases = site.cases | reverse %}
+      {% for c in rev_cases %}
+        {% if c.author == include.name or c.lead == include.name or c.reseachers contains include.name %}
+          <li>
+            <a href='https://csirt.divd.nl/{{ c.divd }}'>{{ c.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if csirt_blog %}
+    <h3>CSIRT blog posts</h3>
+
+    <ul>
+      {% assign rev_posts = site.csirt_posts | reverse %}
+      {% for p in rev_posts %}
+        {% if p.author == include.name %}
+          <li>
+            <br>
+            <a href='https://csirt.divd.nl{{ p.url }}'>{{ p.date | date_to_long_string }} - {{ p.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+
+{% endif %}
