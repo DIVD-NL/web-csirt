@@ -15,6 +15,7 @@ jobs:
                 echo "*** Building and checking $site ***"; 
                 cd $site;
                 gem install jekyll-secinfo
+                ./update.sh
                 jekyll build 2>&1|grep -v 'warning:';
                 ./proof_html.sh 
               ) 
