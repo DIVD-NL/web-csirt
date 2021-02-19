@@ -34,3 +34,14 @@ jekyll-secinfo:
 webrick:
   headers:
     Content-Security-Policy: default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; script-src 'self' ; style-src 'self' https://fonts.googleapis.com/;
+
+# Collections
+collections:
+  team:
+    output: true
+
+exclude:
+  - README.md
+  - serve*
+  - "*.sh"
+  - .keep

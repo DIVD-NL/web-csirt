@@ -28,3 +28,4 @@ Laatste 10 artikelen...
 </ul>
 
 [Alle artikelen](/blog)
+

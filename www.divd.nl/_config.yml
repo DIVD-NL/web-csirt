@@ -26,3 +26,20 @@ sass:
 
 plugins:
   - jekyll-sitemap
+  - jekyll-secinfo
+
+collections:
+  team:
+    output: true
+  cases:
+    output: false
+  csirt_posts:
+    output: false
+    permalink: "/:year/:month/:day/:title/"
+
+
+
+exclude:
+  - README.md
+  - serve*
+  - "*.sh"

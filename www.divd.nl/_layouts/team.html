@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<h1>{{ page.name }}</h1>
+
+{{ page.english }}
+
+<br>
+{% if page.twitter %}
+<br>
+<a href="https://twitter.com/{{ page.twitter }}" class="icon fa-twitter"><span class="label">Icon</span> - {{ page.twitter }}</a>
+{% endif %}
+{% if page.linkedin %}
+<br>
+<a href="https://www.linkedin.com/in/{{ page.linkedin }}" class="icon fa-linkedin"><span class="label">Icon</span> - {{ page.name }}</a>
+{% endif %}
+{% if page.wikipedia %}
+<br>
+<a href="{{ page.wikipedia }}" class="icon fa-wikipedia-w"><span class="label">Icon</span> - {{ page.name }}</a>
+{% endif %}
+
+{% include 
+	posts-cases.html 
+	name = page.name
+%}

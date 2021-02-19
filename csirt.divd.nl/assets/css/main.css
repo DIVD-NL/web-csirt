@@ -2832,3 +2832,8 @@ body.is-menu-visible #menu {
   z-index: 2;
   position: relative;
 }
+
+
+td > ul {
+  margin-bottom: 0px;
+}

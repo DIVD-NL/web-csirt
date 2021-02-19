@@ -2838,3 +2838,8 @@ body.is-menu-visible #menu {
   text-align: right;
   float: right;
   text-transform: none; }
+
+/** Social media icons **/
+.social-icon {
+  height: 1.5em;
+}
