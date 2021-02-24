@@ -1,0 +1,37 @@
+---
+layout: default
+title: Please donate
+scripts:
+- supp.js
+---
+<p>
+	Deze tekst staat in een HTML en kan eventueel weg
+</p>
+<div id='actie'>
+        <h1 id='name'></h1>
+        <p id='description'></p>
+        <div id='progress'></div>
+        <h2>
+                &euro;<span id='amount'></span> of &euro;<span id='goal'></span> raised!
+        </h2>
+        <p>
+                <button value=10 class='donate_btn'>Donate &euro; 10</button>
+                <button value=25 class='donate_btn'>Donate &euro; 25</button>
+                <button value=50 class='donate_btn'>Donate &euro; 50</button>
+                <button value=100 class='donate_btn'>Donate &euro; 100</button>
+                <button value='' class='donate_btn'>Donate custom amount</button>
+        </p>
+        <h2>Donations:</h2>
+        <i>This table is updated hourly</i>
+        <table>
+                <thead>
+                        <tr>
+                                <td>Date</td>
+                                <td>Amount</td>
+                                <td>By</td>
+                                <td>Message</td>
+                        </tr>
+                </thead>
+                <tbody id='donations'></tbody>
+        </table>
+</div>

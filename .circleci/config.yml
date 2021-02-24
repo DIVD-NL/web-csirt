@@ -50,7 +50,7 @@ jobs:
             cd /root/project/csirt.divd.nl/_site;
             sshpass -e rsync -av . www-divd@upload.bit.nl:htdocs/csirt-divd-nl;
             cd /root/project/www.divd.nl/_site;
-            sshpass -e rsync -av . www-divd@upload.bit.nl:htdocs/divd-nl;
+            sshpass -e rsync -av "--exclude=data/*" . www-divd@upload.bit.nl:htdocs/divd-nl;
 
 workflows:
   version: 2
