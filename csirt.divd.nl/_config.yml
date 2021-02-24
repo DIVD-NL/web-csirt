@@ -33,7 +33,7 @@ jekyll-secinfo:
 # Custom headers
 webrick:
   headers:
-    Content-Security-Policy: default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; script-src 'self' ; style-src 'self' https://fonts.googleapis.com/;
+    Content-Security-Policy: default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' ; style-src 'self' https://fonts.googleapis.com/; connect-src 'self';
 
 # Collections
 collections:
