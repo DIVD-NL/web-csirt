@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Actief misbruik Exchange Zero-day / Active abuse Exchagne Zero-day
+title: Actief misbruik Exchange Zero-day / Active abuse Exchange Zero-day
 author: Frank Breedijk
 excerpt: Actief misbruik van voorheen ongepatchede kwetsbaarheden in Microsoft Exchange / Active abuse of previously unpatched vulnerabilities n Microsoft Exchange.
 
