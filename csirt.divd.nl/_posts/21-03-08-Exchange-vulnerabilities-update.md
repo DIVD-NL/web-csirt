@@ -23,15 +23,15 @@ Voor meer informatie zie: [case DIVD-2021-00001](/DIVD-2021-00001/)
 
 ### English
 
-DIVD has sent about 46 thousand notifications of vulnerable systemen, responses are positive and fixes are implemented. Rescans are on request available.
+DIVD has sent about 46 thousand notifications of vulnerable systems, responses are positive, and fixes are implemented. Rescans are on request available.
 
-Microsoft has published multiple scripts for detection of compromised Exchange servers.
+Microsoft has published multiple scripts for the detection of compromised Exchange servers.
 [Script for detection of webshells](https://github.com/cert-lv/exchange_webshell_detection)
 [CSS-Exchange Github page](https://github.com/microsoft/CSS-Exchange/tree/main/Security) has the Test-ProxyLogon.ps1 script that automates the commands found in the earlier [Hafnium blog post](https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/).
 The [Microsoft Safety Scanner](https://docs.microsoft.com/en-us/windows/security/threat-protection/intelligence/safety-scanner-download) and Microsoft Defender received an [update](https://msrc-blog.microsoft.com/2021/03/05/microsoft-exchange-server-vulnerabilities-mitigations-march-2021/) to detect and remove the malware that has been distributed using these vulnerabilities.
 
 The Dutch Nationaal Cyber Security Centrum released the news that, according to their own research, 40% of the Dutch Microsoft Exchange Servers remain vulnerable. See [the news item](https://www.ncsc.nl/actueel/nieuws/2021/maart/8/40-nl-microsoft-exchange-servers-nog-steeds-kwetsbaar) for more information.
 
-[Volexity](https://www.volexity.com/blog/2021/03/02/active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities/) and [FireEye](https://www.fireeye.com/blog/threat-research/2021/03/detection-response-to-exploitation-of-microsoft-exchange-zero-day-vulnerabilities.html) report that theese vulnerabilities have been abused since early January. With this in mind we want to stress the importance for organisations to, after patching, perform an investigation to determine if these vulnerabilities have been exploited on their systems.
+[Volexity](https://www.volexity.com/blog/2021/03/02/active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities/) and [FireEye](https://www.fireeye.com/blog/threat-research/2021/03/detection-response-to-exploitation-of-microsoft-exchange-zero-day-vulnerabilities.html) report that these vulnerabilities have been abused since early January. With this in mind, we want to stress the importance for organisations to, after patching, perform an investigation to determine if these vulnerabilities have been exploited on their systems.
 
 For more information: [case DIVD-2021-00001](/DIVD-2021-00001/)
