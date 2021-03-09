@@ -8,7 +8,7 @@ excerpt: Microsoft brengt detectie scripts uit voor IoC's, 40% van de exchange s
 
 ### Nederlands
 
-DIVD heeft rond de 42 duizend notificaties wereldwijd uitgestuurd van kwetsbare systemen, in het algemeen wordt er positief gereageerd en acties direct uitgezet. Herscans zijn op verzoek beschikbaar.
+DIVD heeft rond de 46 duizend notificaties wereldwijd uitgestuurd van kwetsbare systemen, in het algemeen wordt er positief gereageerd en acties direct uitgezet. Herscans zijn op verzoek beschikbaar.
 
 Microsoft heeft meerdere scripts gepubliceerd voor het detecteren van gecompromiteerde Exchange servers.
 [Script voor het detecteren van webshells](https://github.com/cert-lv/exchange_webshell_detection)
@@ -23,7 +23,7 @@ Voor meer informatie zie: [case DIVD-2021-00001](/DIVD-2021-00001/)
 
 ### English
 
-DIVD has sent about 42 thousand notifications of vulnerable systemen, responses are positive and fixes are implemented. Rescans are on request available.
+DIVD has sent about 46 thousand notifications of vulnerable systemen, responses are positive and fixes are implemented. Rescans are on request available.
 
 Microsoft has published multiple scripts for detection of compromised Exchange servers.
 [Script for detection of webshells](https://github.com/cert-lv/exchange_webshell_detection)
