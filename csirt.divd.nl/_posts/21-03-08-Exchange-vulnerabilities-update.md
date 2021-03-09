@@ -8,7 +8,7 @@ excerpt: Microsoft brengt detectie scripts uit voor IoC's, 40% van de exchange s
 
 ### Nederlands
 
-Het DIVD heeft inmiddels duizenden Nederlandse organisaties met kwetsbare Microsoft Exchange servers gewaarschuwd, internationaal ligt het aantal meldingen nog hoger.
+DIVD heeft rond de 42 duizend notificaties wereldwijd uitgestuurd van kwetsbare systemen, in het algemeen wordt er positief gereageerd en acties direct uitgezet. Herscans zijn op verzoek beschikbaar.
 
 Microsoft heeft meerdere scripts gepubliceerd voor het detecteren van gecompromiteerde Exchange servers.
 [Script voor het detecteren van webshells](https://github.com/cert-lv/exchange_webshell_detection)
@@ -23,7 +23,7 @@ Voor meer informatie zie: [case DIVD-2021-00001](/DIVD-2021-00001/)
 
 ### English
 
-The DIVD has send out thousands of notifications to Dutch organisations with vulnerable Microsoft Exchange servers, internationally even more notifications have been sent.
+DIVD has sent about 42 thousand notifications of vulnerable systemen, responses are positive and fixes are implemented. Rescans are on request available.
 
 Microsoft has published multiple scripts for detection of compromised Exchange servers.
 [Script for detection of webshells](https://github.com/cert-lv/exchange_webshell_detection)
