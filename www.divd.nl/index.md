@@ -42,7 +42,7 @@ description: DIVD
                 <a href="/reports" class="icon fa-files-o"><span class="label">Icon</span></a>
                 <h3>REPORTS</h3>
             </header>
-            <p>Timeline with vulnerability reports of our researchers. </p>
+            <p>Reports on finished research. </p>
         </div>
     </section>
     <section>
@@ -51,7 +51,7 @@ description: DIVD
                 <a href="https://www.securitymeldpunt.nl" class="icon fa-bell-o"><span class="label">Icon</span></a>
                 <h3>CSIRT</h3>
             </header>
-            <p>Our Computer Security Incident Response Team "Security Meldpunt" reports vulnerabilities with the Dutch IP range.</p>
+            <p>Blog of current research by our Computer Security Incident Response Team.</p>
         </div>
     </section>
     <section>
