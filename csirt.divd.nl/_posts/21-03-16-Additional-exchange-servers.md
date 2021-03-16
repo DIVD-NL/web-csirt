@@ -8,11 +8,11 @@ excerpt: We have rescanned all servers with a new script and found more vulnerab
 
 ### Nederlands
 
-Vandaag hebben onderzoekers vna het DIVD opnieuw alle eerder gescande ssystemen gescan. Dit maal is naar het bestaande script wat werkt op bais van het versienummer van OWA ook gescan met een script van Microsoft wat daadwerkelijk vaststeld of {% cve CVE-2021-26855 %} kan owrden misbruikt. 
+Vandaag hebben onderzoekers van het DIVD opnieuw alle eerder gescande ssystemen gescanned. Ditmaal is naast het bestaande script wat werkt op basis van het versienummer van OWA ook gescanned met een script van Microsoft wat daadwerkelijk vaststeld of {% cve CVE-2021-26855 %} kan worden misbruikt. 
 
 Op basis van het gecombineerde resultaat van deze twee scripts zijn duizenden extra kwetsbare systemen gevonden. De beheerders van deze kwetsbare systemen worden door ons op de hoogte gesteld.
 
-Beheerders die nu nog niet hebben gepatched moeten er vanuit gaan dat hun systeem reeds is overgenomen, dat er meegelezen wordt met de interne en externe communicatie en dat het systeem mogelijk binnenkort wordt voorzien van ransomware.
+Beheerders die nu nog niet hebben gepatched moeten er vanuit gaan dat hun systeem reeds is overgenomen, dat er meegelezen wordt met de interne en externe communicatie en dat het systeem mogelijk binnenkort wordt geinfecteerd door ransomware.
 
 Voor meer informatie zie: [case DIVD-2021-00001](/DIVD-2021-00001/)
 
@@ -21,7 +21,7 @@ Voor meer informatie zie: [case DIVD-2021-00001](/DIVD-2021-00001/)
 
 ### English
 
-Today researcher of DIVD rescanned all previously scanned systems. This time they also used a new script that tests if {% cve CVE-2021-26855 %} can actually be exploited in addition to the script that does this based on the version number of OWA. 
+Today researchers of the DIVD rescanned all previously scanned systems. This time also utilizing a new script that tests if {% cve CVE-2021-26855 %} can actually be exploited in addition to the script that reports based on the version number of OWA. 
 
 Based on the combined result of these two scripts we have found thousands of new vulnerable servers.
 
