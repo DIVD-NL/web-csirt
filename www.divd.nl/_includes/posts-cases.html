@@ -64,7 +64,6 @@
       {% for p in rev_posts %}
         {% if p.author == include.name %}
           <li>
-            <br>
             <a href='https://csirt.divd.nl{{ p.url }}'>{{ p.date | date_to_long_string }} - {{ p.title }}</a>
           </li>
         {% endif %}
