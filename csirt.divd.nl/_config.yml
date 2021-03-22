@@ -45,3 +45,6 @@ exclude:
   - serve*
   - "*.sh"
   - .keep
+  - Gemfile
+  - Gemfile.lock
+  - "*.conf"
