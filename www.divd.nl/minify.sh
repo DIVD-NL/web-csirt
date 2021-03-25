@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-apt-get install npm -y
+apt-get update && apt-get install npm -y
 npm install html-minifier uglify-js uglifycss -g
 find _site -regex ".*\.\(html\|xml\)" -type f \
  	-printf "echo \"%p\";cat \"%p\" | html-minifier -c html-minifier.conf > /tmp/minifier ; mv /tmp/minifier \"%p\"\n" |
