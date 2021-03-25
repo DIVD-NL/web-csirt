@@ -46,3 +46,5 @@ exclude:
   - README.md
   - serve*
   - "*.sh"
+  - "Gemfile*"
+  - "*.conf"
