@@ -72,6 +72,15 @@ description: DIVD
             <p>We are a network of security researchers who mainly work online.</p>
         </div>
     </section>
+    <section>
+        <div class="content">
+            <header>
+                <a href="/donate" class="icon fa-eur"><span class="label">Icon</span></a>
+                <h3>DONATE</h3>
+            </header>
+            <p>We need your support for our mission.</p>
+        </div>
+    </section>
 </div>
 <header class="special">
  
