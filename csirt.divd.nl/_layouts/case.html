@@ -13,7 +13,7 @@ layout: default
 		</tr><tr>
 			<td> Case lead </td><td> 
 				{% if team contains lead -%}
-					<a href='https://www.divd.nl/team/{{ lead }}.md'>{{ lead }}</a>
+					<a href='https://www.divd.nl/team/{{ lead }}/'>{{ lead }}</a>
 				{% else -%}
 					{{ lead }} 
 				{% endif -%}
@@ -24,7 +24,7 @@ layout: default
 				<td> Author </td>
 				<td>
 					{% if team contains page.author %}
-						<a href='https://www.divd.nl/{{ page.author }}.md'>{{ page.author }}</a>
+						<a href='https://www.divd.nl/team/{{ page.author }}/'>{{ page.author }}</a>
 					{% else %}
 						{{ page.author }}
 					{% endif %}
@@ -39,7 +39,7 @@ layout: default
 						{% for r in page.reseachers -%}
 							<li>
 								{% if team contains r %}
-									<a href='https://www.divd.nl/team/{{ r }}md'>{{ r }}</a>
+									<a href='https://www.divd.nl/team/{{ r }}/'>{{ r }}</a>
 								{% else %}
 									{{ r }}
 								{% endif %}

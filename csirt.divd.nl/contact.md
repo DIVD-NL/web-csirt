@@ -1,3 +1,4 @@
+---
 # Contact
 
 Het Nederlands Security Meldpunt is momenteel in oprichting. Voor vragen, neem contact op via [email](mailto:meldpunt@divd.nl).

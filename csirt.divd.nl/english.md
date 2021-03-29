@@ -1,5 +1,4 @@
-# This page is waiting for a translation 
-
+---
 ## About us…
 The Dutch Security Hotline is a group of volunteers, part of the Dutch Institute for Vulnerability Disclosure, which has set the task of informing owners of Dutch network blocks and websites about (cyber) security issues that are reported to the Dutch Security Hotline.
 

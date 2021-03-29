@@ -42,7 +42,7 @@ description: DIVD
                 <a href="/reports" class="icon fa-files-o"><span class="label">Icon</span></a>
                 <h3>REPORTS</h3>
             </header>
-            <p>Reports on finished research. </p>
+            <p>Reports on closed research</p>
         </div>
     </section>
     <section>
@@ -51,7 +51,7 @@ description: DIVD
                 <a href="https://www.securitymeldpunt.nl" class="icon fa-bell-o"><span class="label">Icon</span></a>
                 <h3>CSIRT</h3>
             </header>
-            <p>Blog of current research by our Computer Security Incident Response Team.</p>
+            <p>Blog on current research by our Computer Security Incident Response Team</p>
         </div>
     </section>
     <section>

@@ -7,7 +7,7 @@ layout: page
 <p>
 	{{ page.date | date_to_string }} - 
 	{% if team contains page_author %}
-		<a href='https://www.divd.nl/team/{{ page_author }}.md'>{{ page_author }}</a> 
+		<a href='https://www.divd.nl/team/{{ page_author }}/'>{{ page_author }}</a> 
 	{% else %}
 		{{ page_author }}
 	{% endif %}
