@@ -9,7 +9,11 @@ function update_display(data) {
 	url = data.absoluteUrl;
 	$(".donate_btn").attr("url",url);
 	$('#amount').text(data.raised);
-	$('#goal').text(data.goal);
+	if (data.goal > 0) {
+		$('#goal').text("of €" + data.goal);
+	} else { 
+		$('#goal').text("");
+	}
 	data.donations.forEach(function(d) {
 		txt = "<tr>"
 		txt += "<td>"+$("<div>").text(d.created_at.split(" ")[0]).html()+"</td>"
