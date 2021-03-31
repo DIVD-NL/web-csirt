@@ -3,7 +3,6 @@
  */
 
 function update_display(data) {
-	console.log(data);
 	$('#name').text(data.name);
 	$('#description').text(data.description);
 	url = data.absoluteUrl;
@@ -16,7 +15,7 @@ function update_display(data) {
 	}
 	data.donations.forEach(function(d) {
 		txt = "<tr>"
-		txt += "<td>"+$("<div>").text(d.created_at.split(" ")[0]).html()+"</td>"
+		txt += "<td>"+$("<div>").text(d.created_at.split(" ")[0].split("-").reverse().join("-")).html()+"</td>"
 		txt += "<td class='right-align'>&euro; "+$("<div>").text(d.amount).html()+"</td>"
 		if( d.anonymous ) {
 			txt += "<td>Anonymous</td>"
@@ -50,7 +49,7 @@ function load_donations() {
 	    },
 	    error : function(request,error)
 	    {
-	    	console.error("C")
+	    	console.error("Error: "+ error)
 	        console.log("Request: "+JSON.stringify(request));
 	    }
 	});
