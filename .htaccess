@@ -1,5 +1,5 @@
 RewriteEngine On
-
+Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains;"
 # Redirect http -> https
 RewriteCond %{HTTP:X-HTTPS-SESSION} !^yes$
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
