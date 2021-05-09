@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<h1>{{ page.cve }} - {{ page.title }}</h1>
+
+{% assign team = site.team | map: "name" -%}
+
+<table>
+	<tbody>
+	    <tr>
+			<td> CVE </td><td> {{ page.cve | cve }} </td>
+		</tr>
+		<tr>
+			<td> Discovered by </td>
+			<td>
+				<ul>
+					{% for r in page.discovered_by -%}
+						<li>
+							{% if team contains r %}
+								<a href='https://www.divd.nl/team/{{ r }}/'>{{ r }}</a>
+							{% else %}
+								{{ r }}
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+			</td>
+		</tr>
+		{% if page.reseachers %}
+			<tr>
+				<td> Additional researcher(s) </td>
+				<td>
+					<ul>
+						{% for r in page.reseachers -%}
+							<li>
+								{% if team contains r %}
+									<a href='https://www.divd.nl/team/{{ r }}/'>{{ r }}</a>
+								{% else %}
+									{{ r }}
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		{% endif %}
+		<tr>
+			<td> Product </td>
+			<td> {{ page.product }} </td>
+		</tr><tr>
+			<td>  Versions </td>
+			<td> {{ page.versions }} </td>
+		</tr>
+		{% if page.owner != page.author -%}
+			<tr>
+				<td> Page author </td>
+				<td>
+					{% if team contains page.author %}
+						<a href='https://www.divd.nl/team/{{ page.author }}/'>{{ page.author }}</a>
+					{% else %}
+						{{ page.author }}
+					{% endif %}
+				</td>
+			</tr>
+		{% endif %}
+		<tr>
+			<td> CVSS Base Score </td>
+			<td> <a href='{{ page.cvss.url }}'>{{ page.cvss.score }}</a></td>
+		</tr>
+	</tbody>
+</table>
+
+{{ content }} 		
+
+<br>
+
+{% include disclaimer.html %}

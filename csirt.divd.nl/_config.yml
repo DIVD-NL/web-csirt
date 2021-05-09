@@ -38,6 +38,8 @@ webrick:
 # Collections
 collections:
   team:
+    output: false
+  cves:
     output: true
 
 exclude:
