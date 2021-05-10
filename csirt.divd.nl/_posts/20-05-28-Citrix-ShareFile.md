@@ -21,7 +21,7 @@ Voor meer en actuele informatie en advies zie onze [case pagina](/DIVD-2020-0000
 
 On May 5th Citrix has informed customers that use the Citrix ShareFile solution of three vulnerabilities in this product and has made patches and mitigation tools [available](https://support.citrix.com/article/CTX269341) to adress them. 
 
-Citrix has not disclosed technical details about these vulnerabilities, but reseacher [Dimitri van de Giessen](https://twitter.com/DimitriNL) has published that at least one of the vulnerabilities is the result of the use of an outdated Ajax component with a vulnerability that allow an attacker to access confidential files.
+Citrix has not disclosed technical details about these vulnerabilities, but researcher [Dimitri van de Giessen](https://twitter.com/DimitriNL) has published that at least one of the vulnerabilities is the result of the use of an outdated Ajax component with a vulnerability that allow an attacker to access confidential files.
 
 Please take note that applying the patches only resolves this vulnerabilty for "storage zones" that are newly created after the patch has been applied. To resolve the vulnerability for pre-existing "storage zones", a mitigation tool must be applied to all storage servers in the cluster.
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 CASECOUNT_HERE=$( ls _cases|wc -l )
 CASECOUNT_THERE=$( ls ../csirt.divd.nl/cases|wc -l )
 if [[ CASECOUNT_HERE -le 0 || CASECOUNT_HERE -ne CASECOUNT_THERE ]]; then
@@ -16,6 +17,6 @@ htmlproofer \
 	--allow-hash-href  \
 	--url-ignore="/#menu/" _site
 echo "*** External link check ***"
-htmlproofer \
+(set +e ; htmlproofer \
 	--allow-hash-href \
-	--url-ignore="/www.linkedin.com/","/twitter.com/","/#menu/" _site || exit 0
+	--url-ignore="/www.linkedin.com/","/twitter.com/","/#menu/" _site || exit 0 )
