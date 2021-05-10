@@ -63,24 +63,24 @@ layout: default
 		</tr>
 		<tr>
 			<td> Product </td>
-			<td> {{ page.product }} </td>
+			<td> {{ page.product | escape }} </td>
 		</tr><tr>
 			<td>  Versions </td>
-			<td> {{ page.versions }} </td>
+			<td> {{ page.versions | escape }} </td>
 		</tr><tr>
 			<td> Recommendation </td>
-			<td> {{ page.recommendation }} </td>
+			<td> {{ page.recommendation | escape }} </td>
 		</tr>
 		{% if page.patch_status %}
 			<tr>
 				<td> Patch status </td>
-				<td> {{ page.patch_status }} </td>
+				<td> {{ page.patch_status | escape }} </td>
 			</tr>
 		{% endif %}
 		{% if page.workaround %}
 			<tr>
 				<td> Workaround </td>
-				<td> {{ page.workaround }} </td>
+				<td> {{ page.workaround | escape }} </td>
 			</tr>
 		{% endif %}
 		<tr>
