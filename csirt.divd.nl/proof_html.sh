@@ -1,9 +1,10 @@
 #!/bin/bash
-#TEAMCOUNT_HERE=$( ls _team|wc -l )
-#TEAMCOUNT_THERE=$( ls ../www.divd.nl/_team|wc -l )
-#if [[ TEAMCOUNT_HERE -le 0 || TEAMCOUNT_HERE -ne TEAMCOUNT_THERE ]]; then
-#	echo "_team directory is not updated, run ./update.sh"
-#fi
+set -e # Need to fail on error
+TEAMCOUNT_HERE=$( ls _team|wc -l )
+TEAMCOUNT_THERE=$( ls ../www.divd.nl/_team|wc -l )
+if [[ TEAMCOUNT_HERE -le 0 || TEAMCOUNT_HERE -ne TEAMCOUNT_THERE ]]; then
+	echo "_team directory is not updated, run ./update.sh"
+fi
 gem install html-proofer
 echo "*** Internal link check ***"
 htmlproofer \
