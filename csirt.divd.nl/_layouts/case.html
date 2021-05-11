@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
+<h1>{{ page.title | escape }}</h1>
 
 {% assign team = site.team | map: "name" -%}
 {% assign lead = page.lead | default: page.author -%}
@@ -61,13 +61,40 @@ layout: default
 				</ul>
 			</td>
 		</tr>
+		{% if page.product[0] %}
+			<tr>
+				<td> Products </td>
+				<td> 
+					<ul>
+					{% for p in page.product %}
+						<li>{{ p | escape }}</li>
+					{% endfor %} 
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td> Product </td>
+				<td> {{ page.product | escape }} </td>
+			</tr>
+		{% endif %}
+		{% if page.versions[0] %}
+			<tr>
+				<td>  Versions </td>
+				<td> 
+					<ul>
+						{% for v in page.versions %}
+							<li>{{ v | escape }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td>  Versions </td>
+				<td> {{ page.versions | escape }} </td>
+			</tr>
+		{% endif %}
 		<tr>
-			<td> Product </td>
-			<td> {{ page.product | escape }} </td>
-		</tr><tr>
-			<td>  Versions </td>
-			<td> {{ page.versions | escape }} </td>
-		</tr><tr>
 			<td> Recommendation </td>
 			<td> {{ page.recommendation | escape }} </td>
 		</tr>
