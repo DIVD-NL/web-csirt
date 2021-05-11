@@ -21,11 +21,24 @@
   {% endif %}
 {% endfor %}
 
+{% for c in site.cves %}
+  {% if c.author == include.name or c.discovered_by contains include.name or c.reseachers contains include.name %}
+    {% assign found = true %}
+    {% assign cve = true %}
+    {% if c.discovered_by contains include.name %}
+      {% assign cve_discovered = true %}
+    {% else %}
+      {% assign cve_contributed = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+
 
 {% if found %}
   <br>
   <br>
-  <h1>Articles / cases</h1>
+  <h1>Articles / cases / cves </h1>
 
   {% if blog %}
     <h3>Blog posts</h3>
@@ -56,6 +69,37 @@
     </ul>
   {% endif %}
 
+  {% if cve_discovered %}
+    <h3>CVEs discovered</h3>
+
+    <ul>
+      {% for c in site.cves %}
+        {% if c.discovered_by contains include.name %}
+          <li>
+            <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% if cve_contributed %}
+    <h3>CVEs contributed to</h3>
+
+    <ul>
+      {% for c in site.cves %}
+        {% if c.discovered_by contains include.name %}
+        {% else %}
+          {% if c.author == include.name or c.reseachers contains include.name %}
+            <li>
+              <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
   {% if csirt_blog %}
     <h3>CSIRT blog posts</h3>
 
@@ -70,6 +114,7 @@
       {% endfor %}
     </ul>
   {% endif %}
+
 
 
 {% endif %}
