@@ -6,8 +6,10 @@ header: partners
 <header>
 	<h2>Partners</h2>
 </header>
-DIVD is a non-profit organisation run by volunteers and a network of likeminded organisations who we share knowledge with or support us financially. In order of apperence:
+DIVD is a non-profit organisation run by volunteers and a network of likeminded organisations who we share knowledge with or support us financially. In order of appearence:
 <hr>
+### Connect2Trust
+[Connect2Trust](https://www.connect2trust.nl) is a cooperation of Dutch (international) companies. Chairman of the Board Raymond Bierens has been with DIVD from the start on to help out and share knowledge.
 ### SIDN Fund
 [SIDN Fund](https://www.sidnfonds.nl/excerpt) provided financial support in 2020 to kick start DIVD. <br>
 ### ProSec
