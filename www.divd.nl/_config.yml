@@ -33,6 +33,8 @@ collections:
     output: true
   cases:
     output: false
+  cves:
+    output: false
   csirt_posts:
     output: false
     permalink: "/:year/:month/:day/:title/"

@@ -12,6 +12,12 @@ if [[ POSTCOUNT_HERE -le 0 || POSTCOUNT_HERE -ne POSTCOUNT_THERE ]]; then
 	echo "_csirt_posts directory is not updated, run ./update.sh"
 	exit 1
 fi
+CVECOUNT_HERE=$( ls _cves|wc -l )
+CVECOUNT_THERE=$( ls ../csirt.divd.nl/_cves|wc -l )
+if [[ CVECOUNT_HERE -le 0 || CVECOUNT_HERE -ne CVECOUNT_THERE ]]; then
+	echo "_cves directory is not updated, run ./update.sh"
+	exit 1
+fi
 gem install html-proofer
 echo "*** Internal link check ***"
 htmlproofer \

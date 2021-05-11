@@ -20,7 +20,7 @@ docker run \
 	-ti mrseccubus/github-pages \
 	-c "
 		gem install jekyll-secinfo;
-		cd /root/project/csirt.divd.nl;
+		cd /root/project/www.divd.nl;
 		while [ 1 ] ; do
 			./update.sh
 			rm -rf _site/*;

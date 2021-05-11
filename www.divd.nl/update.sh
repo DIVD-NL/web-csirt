@@ -12,3 +12,9 @@ echo "Updating csirt posts"
 	rm -f *.md
 	cp ../../csirt.divd.nl/_posts/*.md .
 )
+echo "Updating cves"
+(
+	cd _cves
+	rm -f *.md
+	cp ../../csirt.divd.nl/_cves/*.md .
+)

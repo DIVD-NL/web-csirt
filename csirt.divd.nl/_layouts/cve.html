@@ -26,12 +26,12 @@ layout: default
 				</ul>
 			</td>
 		</tr>
-		{% if page.reseachers %}
+		{% if page.researchers %}
 			<tr>
 				<td> (Additional) researcher(s) </td>
 				<td>
 					<ul>
-						{% for r in page.reseachers -%}
+						{% for r in page.researchers -%}
 							<li>
 								{% if team contains r %}
 									<a href='https://www.divd.nl/team/{{ r }}/'>{{ r }}</a>
