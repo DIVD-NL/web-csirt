@@ -16,6 +16,8 @@ Boonstra vond vier kwetsbaarheden. Drie daarvan zijn remote code execution (RCE)
 
 Boonstra meldde de lekken bij Vembu, maar kreeg aanvankelijk geen respons. Via andere kanalen lukte het de DIVD half februari wel contact te krijgen met Vembu. Vembu antwoordde dat de kwetsbaarheden al bekend waren en opgelost in de laatste versies van de software. Klanten kregen echter alleen een update als ze er actief om vroegen. Na enig aandringen van de DIVD is de gepatchte versie in april toch online gekomen. 
 
+Nader onderzoek leert dat de kwetsbaarheden mogelijk ook in andere door Vembu gemaakte, producten voorkomt en dat de Server Side Request Forgery kwetsbaarheid zelfs in veel van deze producten voorkomt.
+
 
 Zie ook: [case DIVD-2020-00011](/DIVD-2020-00011/)
 
@@ -29,6 +31,8 @@ During a pentest in January, Boonstra found four leaks. Via commands in the web 
 Boonstra found four vulnerabilities. Three of these are remote code execution (RCE) vulnerabilities, which are often considered the most serious vulnerabilities. The fourth vulnerability is a Server-side request forgery (SSRF), which makes it possible to bypass access control to a system.
 
 Boonstra reported the leaks at Vembu, but initially received no response. The DIVD did manage to get in touch with Vembu through other channels in mid-February. Vembu replied that the vulnerabilities were already known and fixed in the latest versions of the software. However, customers only got an update when they actively asked for it. After some urging from the DIVD, the patched version came online in April.
+
+Further research has showed that these vulnerabilities are also present in other products created by Vembu. The Server Side Request FOrgery is even present in a lot of their products.
 
 
 For more information: [case DIVD-2020-00011](/DIVD-2020-00011/)
