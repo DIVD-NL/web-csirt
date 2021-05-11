@@ -61,13 +61,40 @@ layout: default
 				</ul>
 			</td>
 		</tr>
+		{% if page.product[0] %}
+			<tr>
+				<td> Products </td>
+				<td> 
+					<ul>
+					{% for p in page.product %}
+						<li>{{ p }}</li>
+					{% endfor %} 
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td> Product </td>
+				<td> {{ page.product }} </td>
+			</tr>
+		{% endif %}
+		{% if page.versions[0] %}
+			<tr>
+				<td>  Versions </td>
+				<td> 
+					<ul>
+						{% for v in page.versions %}
+							<li>{{ v }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td>  Versions </td>
+				<td> {{ page.versions }} </td>
+			</tr>
+		{% endif %}
 		<tr>
-			<td> Product </td>
-			<td> {{ page.product }} </td>
-		</tr><tr>
-			<td>  Versions </td>
-			<td> {{ page.versions }} </td>
-		</tr><tr>
 			<td> Recommendation </td>
 			<td> {{ page.recommendation }} </td>
 		</tr>
