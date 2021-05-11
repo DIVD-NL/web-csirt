@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
+<h1>{{ page.title | escape }}</h1>
 
 {% assign team = site.team | map: "name" -%}
 {% assign lead = page.lead | default: page.author -%}
@@ -67,14 +67,14 @@ layout: default
 				<td> 
 					<ul>
 					{% for p in page.product %}
-						<li>{{ p }}</li>
+						<li>{{ p | escape }}</li>
 					{% endfor %} 
 				</td>
 			</tr>
 		{% else %}
 			<tr>
 				<td> Product </td>
-				<td> {{ page.product }} </td>
+				<td> {{ page.product | escape }} </td>
 			</tr>
 		{% endif %}
 		{% if page.versions[0] %}
@@ -83,7 +83,7 @@ layout: default
 				<td> 
 					<ul>
 						{% for v in page.versions %}
-							<li>{{ v }}</li>
+							<li>{{ v | escape }}</li>
 						{% endfor %}
 					</ul>
 				</td>
@@ -91,7 +91,7 @@ layout: default
 		{% else %}
 			<tr>
 				<td>  Versions </td>
-				<td> {{ page.versions }} </td>
+				<td> {{ page.versions | escape }} </td>
 			</tr>
 		{% endif %}
 		<tr>

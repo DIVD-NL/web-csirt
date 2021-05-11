@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h1>{{ page.cve }} - {{ page.title }}</h1>
+<h1>{{ page.cve | escape }} - {{ page.title | escape }}</h1>
 
 {% assign team = site.team | map: "name" -%}
 
@@ -50,14 +50,14 @@ layout: default
 				<td> 
 					<ul>
 					{% for p in page.products %}
-						<li>{{ p }}</li>
+						<li>{{ p | escape }}</li>
 					{% endfor %} 
 				</td>
 			</tr>
 		{% else %}
 			<tr>
 				<td> Product </td>
-				<td> {{ page.products }} </td>
+				<td> {{ page.products | escape }} </td>
 			</tr>
 		{% endif %}
 		{% if page.versions[0] %}
@@ -66,7 +66,7 @@ layout: default
 				<td> 
 					<ul>
 						{% for v in page.versions %}
-							<li>{{ v }}</li>
+							<li>{{ v | escape }}</li>
 						{% endfor %}
 					</ul>
 				</td>
@@ -74,7 +74,7 @@ layout: default
 		{% else %}
 			<tr>
 				<td>  Versions </td>
-				<td> {{ page.versions }} </td>
+				<td> {{ page.versions | escape }} </td>
 			</tr>
 		{% endif %}
 		{% if page.owner != page.author -%}
