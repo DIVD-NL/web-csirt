@@ -22,7 +22,9 @@ We represent a team of highly skilled security researchers who seek and report v
 ### Board
 {% assign board = site.team | where_exp: "x", "x.board == true" | sort: "appearance" %}
 {%- for member in board -%}
-- [{{ member.name }}]({{ member.url }}): {{ member.english }}
+	{% if member.active == true %}
+- [{{ member.name }}]({{ member.url }}): {{ member.content }}
+	{%- endif -%}
 {% endfor %}
 
 <hr>
@@ -31,5 +33,6 @@ Hacker initiatives like these, tend to have their own dynamics: sparks lead to f
 
 {% assign supers = site.team | where_exp: "x", "x.supervision == true" | sort: "appearance" %}
 {%- for member in supers -%}
-- [{{ member.name }}]({{ member.url }}) {% if member.super_role %}({{member.super_role }}){% endif %}
+- [{{ member.name }}]({{ member.url }}): {{ member.content }}
 {% endfor %}
+
