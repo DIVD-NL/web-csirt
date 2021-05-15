@@ -4,9 +4,9 @@ role: Unique Intelligence
 layout: team
 appearance: 50
 board: false
-english: Unique Intelligence, member of guild of grumpy old hackers.
-dutch: Unieke informatieposities, lid van the guild of grumpy old hackers.
+active: true
 twitter: yafsec
 linkedin: yafsec
 -wikipedia:
 ---
+Unique Intelligence, member of guild of grumpy old hackers.

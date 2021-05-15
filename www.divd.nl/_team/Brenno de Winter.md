@@ -4,9 +4,9 @@ role: Privacy Officer
 layout: team
 appearance: 150
 board: false
-english: Privacy Officer
-dutch: Privacy Officer
+active: true
 twitter: brenno
 linkedin: brenno
 -wikipedia: 
 ---
+Privacy Officer

@@ -5,13 +5,29 @@ title: Cases
 {% assign team = site.team | map: "name" %}
 {% for p in pages %}
 	{% if p.url contains "/cases/" and p.url != page.url %}
-		{% assign case_author = p.author | default: "anonymous" %}
 <div class="caseitem">
 <h3><a href="{{ p.url }}">{{ p.title }}</a><em>
-		{% if team contains case_author %}
+    	{% if p.author[0] %}
+    		{% assign first = true %}
+    		{% for case_author in p.author %}
+    			{% if first %}
+    				{% assign first = false %}
+    			{% else %}
+    				,
+    			{% endif %}
+				{% if team contains case_author %}
 <a href='https://www.divd.nl/team/{{ case_author }}.md'>{{ case_author }}</a>
-		{% else %}
+				{% else %}
 {{ case_author }}
+				{% endif %}
+			{% endfor %}
+    	{% else %}
+			{% assign case_author = p.author | default: "anonymous" %}
+			{% if team contains case_author %}
+<a href='https://www.divd.nl/team/{{ case_author }}.md'>{{ case_author }}</a>
+			{% else %}
+{{ case_author }}
+			{% endif %}
 		{% endif %}
 </em>
 </h3>

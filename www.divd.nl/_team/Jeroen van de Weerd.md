@@ -4,9 +4,9 @@ role: Web Editor and Reporter
 layout: team
 appearance: 140
 board: false
-english: Web Editor and Reporter
-dutch: Web Editor and Reporter
+active: true
 -twitter: 
 linkedin: jvandeweerd
 -wikipedia: 
 ---
+Web Editor and Reporter
