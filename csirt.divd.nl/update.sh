@@ -3,6 +3,6 @@
 echo "Updating team"
 (
 	cd _team
-	rm -f *.md
-	cp ../../www.divd.nl/_team/*.md .
+	rm -f *.html
+	cp ../../www.divd.nl/_team/*.html .
 )
