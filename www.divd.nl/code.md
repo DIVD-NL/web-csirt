@@ -7,8 +7,6 @@ header: code
 	<h2>Code of Conduct</h2>
 </header>  
 
-## Code of Conduct
-
 **We aim to make the digital world safer by scanning the internet for vulnerabilities**.
 These vulnerabilities are most likely CVE (Commons vulnerabilities and Exposures) or CWE (Common Weakness Enumeration), which should already be known by the people responsible for the vulnerable systems and might be actively exploited. We do not hack websites. We only scan IP ranges, using, for example, Masscan, Zmap, or Nmap to identify hosts with the aim to notify the owners.
 
