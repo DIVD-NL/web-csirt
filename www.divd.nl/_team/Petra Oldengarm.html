@@ -6,9 +6,9 @@ appearance: 1030
 board: false
 supervision: true
 super_role: 
-english: Member of supervisory board
-dutch: Member of supervisory board
+active: true
 -twitter: 
 linkedin: petraoldengarm
 -wikipedia: 
 ---
+Member of supervisory board and directory at Cyberveilig Nederland

@@ -4,9 +4,9 @@ role: Researcher
 layout: team
 appearance: 40
 board: false
-english: Researcher and member of the guild of grumpy old hackers.
-dutch: Onderzoeker, lid van the guild of grumpy old hackers.
+active: true
 twitter: alcyonsecurity
 linkedin: mattijsvanommeren
 -wikipedia:
 ---
+Researcher and member of the guild of grumpy old hackers.

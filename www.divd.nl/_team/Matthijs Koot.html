@@ -4,9 +4,9 @@ role: Researcher
 layout: team
 appearance: 80
 board: false
-english: Researcher
-dutch: Onderzoeker
+active: true
 twitter: MrKoot
 linkedin: MrKoot
 -wikipedia: 
 ---
+Researcher

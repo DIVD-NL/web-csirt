@@ -4,9 +4,9 @@ role: Advisor
 layout: team
 appearance: 60
 board: false
-english: Advisor
-dutch: Adviseur
+active: true
 -twitter: 
 linkedin: raymond-bierens-7a1508
 -wikipedia: 
 ---
+Advisor

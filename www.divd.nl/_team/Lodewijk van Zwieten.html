@@ -5,11 +5,9 @@ layout: team
 appearance: 1000
 board: false
 supervision: true
-super_role: Chairman
-english: Chairman of supervisory board
-dutch: Chairman of supervisory board
+active: true
 -twitter: 
 linkedin: cybercrime
 -wikipedia: 
 ---
-- [](https://www.linkedin.com/in/cybercrime/) (Chairman)
+Chairman of supervisory board and public prosecutor specialized in cybercrime.

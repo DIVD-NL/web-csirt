@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Phishing slachtoffer notificatie / Victim notification phishing
-author: Lennaert Oudshoorn / Célistine Oosting
+author: 
+  - Lennaert Oudshoorn
+  - Célistine Oosting
 excerpt: DIVD CSIRT heeft van een lijst ontvangen mt door phishing buitegemaakte email adressen en wachtwoorden / DIVD CSIRT received a list of email addresses and passwords obtained through phishing.
 
 ---

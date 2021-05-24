@@ -7,18 +7,34 @@ nav_position: 1
 {% assign team = site.team | map: "name" %}
 
 {% for post in paginator.posts %}
-	{% assign post_author =  post.author | default: "anonymous" %}
 	<hr>
 	<div class="newsitem">
 	  <h3>
 	    <a href="{{ post.url }}">{{ post.title }}</a>
 	    <em>{{ post.date | date_to_long_string }}, by 
-	    {% if team contains post_author %}
-	    	<a href='https://www.divd.nl/team/{{ post_author.md }}.md'>{{ post_author }}</a>
-	    {% else %}
-			{{ post_author }}
-		{% endif %}
-		</em>
+	    	{% if post.author[0] %}
+	    		{% assign first = true %}
+	    		{% for post_author in post.author %}
+	    			{% if first %}
+	    				{% assign first = fase %}
+	    			{% else %}
+	    				,
+	    			{% endif %}
+				    {% if team contains post_author %}
+				    	<a href='https://www.divd.nl/team/{{ post_author.md }}.md'>{{ post_author }}</a>
+				    {% else %}
+						{{ post_author }}
+					{% endif %}
+				{% endfor %}
+	    	{% else %}
+				{% assign post_author =  post.author | default: "anonymous" %}
+			    {% if team contains post_author %}
+			    	<a href='https://www.divd.nl/team/{{ post_author.md }}.md'>{{ post_author }}</a>
+			    {% else %}
+					{{ post_author }}
+				{% endif %}
+			{% endif %}
+			</em>
 	  </h3>
 	  <p>{{ post.excerpt | escape }}</p>
 	  <a href="{{ post.url }}">Read more</a>

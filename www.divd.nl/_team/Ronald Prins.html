@@ -6,9 +6,9 @@ appearance: 1010
 board: false
 supervision: true
 super_role: 
-english: Member of supervisory board
-dutch: Member of supervisory board
+active: true
 twitter: cryptoron
 linkedin: ronaldprins
 -wikipedia: 
 ---
+Member of supervisory board and co-founder at Hunt & Hackett
