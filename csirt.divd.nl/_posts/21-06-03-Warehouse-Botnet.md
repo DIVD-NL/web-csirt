@@ -40,7 +40,7 @@ Hij nam de volgende ochtend contact op met Team High Tech Crime van de politie, 
 24 mei stuurt hij een bericht naar Leaseweb, de service provider op wiens netwerk de database zich bevond. 26 mei ging de site offline, daarna deelde hij de data met Rickey Gevers van Scattered Secrets. Uiteindelijk lukte het via via om 27 mei contact te krijgen met Team High Tech Crime. 27 mei is een kopie van de database gedeeld met THTC. Een medewerker beloofde er ‘naar te gaan kijken.’
 
  
-Maar nog steeds was er niemand gewaarschuwd. Wolters besloot dit via de DIVD te doen. Op 2 en 3 juli gingen er duizenden mailtjes naar de getroffen mailadressen. Als ik dit schrijf staat de teller op 77.000. De meeste komen uit de Verenigde Staten, Brazilië, India, Duitsland, Engeland en Turkije.
+Maar nog steeds was er niemand gewaarschuwd. Wolters besloot dit via de DIVD te doen. Op 2 en 3 juni gingen er duizenden mailtjes naar de getroffen mailadressen. Als ik dit schrijf staat de teller op 77.000. De meeste komen uit de Verenigde Staten, Brazilië, India, Duitsland, Engeland en Turkije.
 
 
 Opmerkelijk is dat onderzoeker Bob Diachenko van het bedrijf Cyber Threat Intelligence een maand eerder op het zelfde ip-adres ook een grote database met gestolen wachtwoorden vond. Wekenlang probeerde Diachenko de site offline te krijgen. 5 mei verdween de website ‘mysteriously’, zoals Catalin Cimpanu schrijft op The Record.
@@ -52,7 +52,7 @@ https://therecord.media/malware-group-leaks-millions-of-stolen-authentication-co
 In dat artikel schrijft Cimpanu verder dat de database sporen bevat van Raccoon, malware die vanaf 2019 opduikt en wachtwoorden, autofill-informatie en cookies uit alle populaire browsers haalt. Authenticatiecookies zorgen voor toegang tot een account zonder gebruikersnamen en wachtwoorden. Deze cookies zijn daarom veel waard in het criminele circuit.
 
 
-Na in april verdwenen te zijn dook de database dus in mei dus weer op. En de inhoud lijkt anders te zijn. Wolters vond dit keer geen sporen van Raccoon. Ook bevatte de database niet 9 maar 2 miljoen wachtwoorden.
+Na in april verdwenen te zijn dook de database dus in mei dus weer op. En de inhoud lijkt anders te zijn. De database bevatte nu niet 9 maar 2 miljoen wachtwoorden. Het leek erop dat er opnieuw gevoelige gegevens naar de database werden gupload naar deze database.
  
 
 Zie ook: [case DIVD-2021-00012](/DIVD-2021-00012/)
@@ -80,7 +80,7 @@ He contacted the Police High Tech Crime Team the next morning but received no re
 May 24, he sends a message to Leaseweb, the service provider on whose network the database was located. The site went offline on May 26, after which he shared the data with Rickey Gevers of Scattered Secrets. Finally, on May 27, it was possible to contact Team High Tech Crime. On May 27, a copy of the database was shared with THTC. An employee promised to "go and look at it."
 
  
-But still, no one had been warned. Wolters decided to do this through the DIVD. On July 2 and 3, thousands of emails were sent to the affected email addresses. As I write this, the counter is at 77,000. Most come from the United States, Brazil, India, Germany, England, and Turkey.
+But still, no one had been warned. Wolters decided to do this through the DIVD. On June 2 and 3, thousands of emails were sent to the affected email addresses. As I write this, the counter is at 77,000. Most come from the United States, Brazil, India, Germany, England, and Turkey.
 
  
 Remarkably, a month earlier researcher Bob Diachenko of the company Cyber ​​Threat Intelligence also found a large database of stolen passwords at the same IP address. For weeks, Diachenko tried to take the site offline. On May 5, the website "mysteriously" disappeared, as Catalin Cimpanu writes on The Record.
@@ -92,7 +92,7 @@ https://therecord.media/malware-group-leaks-millions-of-stolen-authentication-co
 In that article, Cimpanu further writes that the database contains traces of Raccoon, malware that appears from 2019 and takes passwords, autofill information, and cookies from all popular browsers. Authentication cookies allow access to an account without usernames and passwords. These cookies are therefore of great value in the criminal circuit.
 
 
-After disappearing in April, the database reappeared in May. And the content seems to be different. Wolters found no traces of Raccoon this time. The database also contained not 9 but 2 million passwords.
+After disappearing in April, the database reappeared in May. And the content seems to be different. The database contained not 9 but 2 million passwords. It appeared that sensitive data was uploaded to this database again. 
 
 
 For more information: [case DIVD-2021-00011](/DIVD-2021-00012/)
