@@ -30,3 +30,7 @@ DIVD is responsible for reminding researchers of these rules, while it's the res
 
 **So, in short**
 We perceive vulnerability disclosure as a societal need. To prove you are vulnerable, we use minimal invasive tools (subsidiarity principle) and collect a minimal amount of data (proportionality principle). We don't go naming and shaming, don't report you to Data Protection Authorities or law enforcement, don't serve any company's interests, and don't make any money from this. We are just a group of volunteers who help out victims of online vulnerabilities.
+
+ <h2>More info:</h2>
+ <p>Is het legit to exchange lists of IP addresses together with vulnerabilities? The short answer is: Yes, according to Dutch law we can. The more elaborate answer you will find in this Liability Impact Assessment, prepared by Privacy Management Partners (in Dutch).</p>
+ [Click here to download (Dutch)](assets/downloads/LIA_abuse_informatie_v1.1.pdf) (Dutch)
