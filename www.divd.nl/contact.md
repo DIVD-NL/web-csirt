@@ -2,8 +2,6 @@
 layout: default
 title: contact
 header: contact
-redirect_from:
-  - /contact/
 ---
 <header>
 	<h2>Not a regular office</h2>
