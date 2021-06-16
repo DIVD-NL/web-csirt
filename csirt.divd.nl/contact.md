@@ -1,9 +1,7 @@
 ---
-redirect_from:
-  - /contact/
 ---
 # Contact
 
-Het Nederlands Security Meldpunt is momenteel in oprichting. Voor vragen, neem contact op via [email](mailto:csirt@divd.nl).
+For questions with regards to the CSIRT contact us via [email](mailto:csirt@divd.nl).
 
-The Dutch Security Hotline is in the process of getting established. If you have any questions, contact us via [email](mailto:csirt@divd.nl).
+For general questison regarding the Dutch Institute for Vulnerability Disclosure see the [DIVD contact page](https://www.divd.nl/contact)
