@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kaseya VSA Advisory
+title: Kaseya Case Update
 author: Lennaert Oudshoorn
 excerpt: "Yesterday an attack on Kaseya VSA led to a large ransomware spree, because DIVD was already investigating this kind of product and we were able to react quickly."
 ---
