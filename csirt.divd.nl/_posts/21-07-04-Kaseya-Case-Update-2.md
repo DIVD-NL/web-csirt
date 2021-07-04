@@ -2,7 +2,7 @@
 layout: post
 title: Kaseya Case Update 2
 author: Victor Gevers
-excerpt: ""
+excerpt: "During the last 48 hours, the number of Kaseya VSA instances that are reachable from the internet has dropped from over 2.200 to less than 140 in our last scan today. And, by working closely with our trusted partners and national CERTs, the number of servers in The Netherlands has dropped to zero. A good demonstration of how a cooperative network of security-minded organizations can be very effective during a nasty crisis."
 ---
 
 During the last 48 hours, the number of Kaseya VSA instances that are reachable from the internet has dropped from over 2.200 to less than 140 in our last scan today. And, by working closely with our trusted partners and national CERTs, the number of servers in The Netherlands has dropped to zero. A good demonstration of how a cooperative network of security-minded organizations can be very effective during a nasty crisis.
