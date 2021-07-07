@@ -48,7 +48,7 @@ We notified Kaseya of the following vulnerabilities:
 |:-------------:|-----|
 | 01 Apr 2021 | Research start |
 | 02 Apr 2021 | DIVD starts scanning internet-facing implementations. |
-| 04 Apr 2020 | Start of the identification of possible victims (with internet-facing systems). |
+| 04 Apr 2021 | Start of the identification of possible victims (with internet-facing systems). |
 | 06 Apr 2021 | Kaseya informed. |
 | 10 Apr 2021 | Vendor starts issuing  [patches v9.5.5](https://helpdesk.kaseya.com/hc/en-gb/articles/360019054377-9-5-5-Feature-Release-10-April-2021). Resolving CVE-2021-30118. |
 | 8 May 2021 | Vendor issues another [patch v9.5.6](https://helpdesk.kaseya.com/hc/en-gb/articles/360019966738-9-5-6-Feature-Release-8-May-2021). Resolving CVE-2021-30117, CVE-2021-30121, CVE-2021-30201. |
