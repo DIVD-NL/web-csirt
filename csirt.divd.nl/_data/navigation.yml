@@ -7,6 +7,8 @@
     link: /
 - name: Cases
   link: /cases/
+- name: CVEs
+  link: /cves/
 - name: Blog
   link: /blog/
 - name: Over ons

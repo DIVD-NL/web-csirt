@@ -93,6 +93,20 @@ layout: default
 			<td> CVSS Base Score </td>
 			<td> <a href='{{ page.cvss.url }}'>{{ page.cvss.score }}</a></td>
 		</tr>
+		{% if page.patches %}
+			<tr>
+				<td> Link to patch(es) </td>
+				<td>
+					<ul>
+						{% for l in page.patches -%}
+							<li>
+								<a href='{{ l }}/'>{{ l }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		{% endif %}
 	</tbody>
 </table>
 
