@@ -43,6 +43,7 @@ We notified Kaseya of the following vulnerabilities:
 * [CVE-2021-30201](https://csirt.divd.nl/cves/CVE-2021-30201) - A XML External Entity vulnerability, resolved in May 8th patch.
 
 ## Timeline
+
 | Date | Description |
 |:-------------:|-----|
 | 01 Apr 2021 | Research start |
