@@ -27,20 +27,20 @@ Unfortunately, the worst-case scenario came true on Friday the 2nd of July. Kase
 We later learned that one of the two vulnerabilities used in the attack was one we previously disclosed to Kasya VSA.
 
 ## What can we tell?
-In this blogpost and DIVD case [DIVD-2021-00002](https://csirt.divd.nl/DIVD-2021-00002/) we publish the timeline and limited details of the vulnerabilities we notified Kaseya of.
+In this blogpost and DIVD case [DIVD-2021-00011](https://csirt.divd.nl/DIVD-2021-00011/) we publish the timeline and limited details of the vulnerabilities we notified Kaseya of.
 
 ## Full disclosure?
 Given the serious nature of these vulnerabilities and the obvious consequences of abuse of Kaseya VSA we will not disclose the full details of the vulnerabilities until such time that Kaseya has released a patch and this patch has been installed on a sufficient number of systems, something for which we have the monitoring scripts. In the past few days we have been working with Kaseya to make sure customers turn off their systems, by tipping them off about customers that still have systems online, and hope to be able to continue to work together to ensure that their patch is installed everywhere. We have no indication that Kaseya is hesitant to release a patch. Instead they are still working hard to make sure that after their patch the system is as secure as possible, to avoid a repeat of this scenario. Therefore we do not feel the need to lay down any kind of deadline for full disclosure at this point in time. A properly patched and secure Kaseya VSA is in the best interest of security of Kaseya customers and the internet at large.
 
 ## The vulnerabilities
 We notified Kaseya of the following vulnerabilities:
-* [CVE-2021-30116](https://csirt.divd.nl/CVE-2021-30116) - A credentials leak and business logic flaw, to be included in 9.5.7
-* [CVE-2021-30117](https://csirt.divd.nl/CVE-2021-30117) - An SQL injection vulnerability, resolved in May 8th patch.
-* [CVE-2021-30118](https://csirt.divd.nl/CVE-2021-30118) - A Remote Code Execution vulnerability, resolved in April 10th patch. (v9.5.6)
-* [CVE-2021-30119](https://csirt.divd.nl/CVE-2021-30119) -  A Cross Site Scripting vulnerability, to be included in 9.5.7
-* [CVE-2021-30120](https://csirt.divd.nl/CVE-2021-30120) - 2FA bypass, to be resolved in v9.5.7
-* [CVE-2021-30121](https://csirt.divd.nl/CVE-2021-30121) - A Local File Inclusion vulnerability, resolved in May 8th patch.
-* [CVE-2021-30201](https://csirt.divd.nl/CVE-2021-30201) - A XML External Entity vulnerability, resolved in May 8th patch.
+* [CVE-2021-30116](https://csirt.divd.nl/cves/CVE-2021-30116) - A credentials leak and business logic flaw, to be included in 9.5.7
+* [CVE-2021-30117](https://csirt.divd.nl/cves/CVE-2021-30117) - An SQL injection vulnerability, resolved in May 8th patch.
+* [CVE-2021-30118](https://csirt.divd.nl/cves/CVE-2021-30118) - A Remote Code Execution vulnerability, resolved in April 10th patch. (v9.5.6)
+* [CVE-2021-30119](https://csirt.divd.nl/cves/CVE-2021-30119) -  A Cross Site Scripting vulnerability, to be included in 9.5.7
+* [CVE-2021-30120](https://csirt.divd.nl/cves/CVE-2021-30120) - 2FA bypass, to be resolved in v9.5.7
+* [CVE-2021-30121](https://csirt.divd.nl/cves/CVE-2021-30121) - A Local File Inclusion vulnerability, resolved in May 8th patch.
+* [CVE-2021-30201](https://csirt.divd.nl/cves/CVE-2021-30201) - A XML External Entity vulnerability, resolved in May 8th patch.
 
 ## Timeline
 | Date | Description |
@@ -52,6 +52,6 @@ We notified Kaseya of the following vulnerabilities:
 | 10 Apr 2021 | Vendor starts issuing  [patches v9.5.5](https://helpdesk.kaseya.com/hc/en-gb/articles/360019054377-9-5-5-Feature-Release-10-April-2021). Resolving CVE-2021-30118. |
 | 8 May 2021 | Vendor issues another [patch v9.5.6](https://helpdesk.kaseya.com/hc/en-gb/articles/360019966738-9-5-6-Feature-Release-8-May-2021). Resolving CVE-2021-30117, CVE-2021-30121, CVE-2021-30201. |
 | 04 Jun 2021 | DIVD CSIRT hands over a list of identified Kaseya VSA hosts to Kaseya. |
-| 26 Jun 2021 |  [9.5.7 on SaaS] (https://helpdesk.kaseya.com/hc/en-gb/articles/4403021283217-9-5-7-Feature-Release-26-June-2021-) 30116 and 30119 |
+| 26 Jun 2021 |  [9.5.7 on SaaS] (https://helpdesk.kaseya.com/hc/en-gb/articles/4403021283217-9-5-7-Feature-Release-26-June-2021-) Resolving CVE-2021-30116 and CVE-2021-30119. |
 | 02 Jul 2021 | DIVD responds to the ransomware, by scanning for Kaseya VSA instances reachable via the Internet and sends out notifications to network owners |
 | 06 Jul 2021 | Limited publication (after 3 months). |
