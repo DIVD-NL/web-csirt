@@ -34,11 +34,11 @@ Given the serious nature of these vulnerabilities and the obvious consequences o
 
 ## The vulnerabilities
 We notified Kaseya of the following vulnerabilities:
-* [CVE-2021-30116](https://csirt.divd.nl/cves/CVE-2021-30116) - A credentials leak and business logic flaw, to be included in 9.5.7
+* [CVE-2021-30116](https://csirt.divd.nl/cves/CVE-2021-30116) - A credentials leak and business logic flaw, resolution in progress.
 * [CVE-2021-30117](https://csirt.divd.nl/cves/CVE-2021-30117) - An SQL injection vulnerability, resolved in May 8th patch.
 * [CVE-2021-30118](https://csirt.divd.nl/cves/CVE-2021-30118) - A Remote Code Execution vulnerability, resolved in April 10th patch. (v9.5.6)
-* [CVE-2021-30119](https://csirt.divd.nl/cves/CVE-2021-30119) -  A Cross Site Scripting vulnerability, to be included in 9.5.7
-* [CVE-2021-30120](https://csirt.divd.nl/cves/CVE-2021-30120) - 2FA bypass, to be resolved in v9.5.7
+* [CVE-2021-30119](https://csirt.divd.nl/cves/CVE-2021-30119) - A Cross Site Scripting vulnerability, resolution in progress.
+* [CVE-2021-30120](https://csirt.divd.nl/cves/CVE-2021-30120) - 2FA bypass, resolution in progress.
 * [CVE-2021-30121](https://csirt.divd.nl/cves/CVE-2021-30121) - A Local File Inclusion vulnerability, resolved in May 8th patch.
 * [CVE-2021-30201](https://csirt.divd.nl/cves/CVE-2021-30201) - A XML External Entity vulnerability, resolved in May 8th patch.
 
