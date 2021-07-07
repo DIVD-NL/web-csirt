@@ -53,6 +53,6 @@ We notified Kaseya of the following vulnerabilities:
 | 10 Apr 2021 | Vendor starts issuing  [patches v9.5.5](https://helpdesk.kaseya.com/hc/en-gb/articles/360019054377-9-5-5-Feature-Release-10-April-2021). Resolving CVE-2021-30118. |
 | 8 May 2021 | Vendor issues another [patch v9.5.6](https://helpdesk.kaseya.com/hc/en-gb/articles/360019966738-9-5-6-Feature-Release-8-May-2021). Resolving CVE-2021-30117, CVE-2021-30121, CVE-2021-30201. |
 | 04 Jun 2021 | DIVD CSIRT hands over a list of identified Kaseya VSA hosts to Kaseya. |
-| 26 Jun 2021 |  [9.5.7 on SaaS] (https://helpdesk.kaseya.com/hc/en-gb/articles/4403021283217-9-5-7-Feature-Release-26-June-2021-) Resolving CVE-2021-30116 and CVE-2021-30119. |
+| 26 Jun 2021 |  [9.5.7 on SaaS](https://helpdesk.kaseya.com/hc/en-gb/articles/4403021283217-9-5-7-Feature-Release-26-June-2021-) Resolving CVE-2021-30116 and CVE-2021-30119. |
 | 02 Jul 2021 | DIVD responds to the ransomware, by scanning for Kaseya VSA instances reachable via the Internet and sends out notifications to network owners |
 | 06 Jul 2021 | Limited publication (after 3 months). |
