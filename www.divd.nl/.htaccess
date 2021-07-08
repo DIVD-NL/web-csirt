@@ -2,6 +2,6 @@ Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains
 Header always append X-Frame-Options DENY
 Header set X-Content-Type-Options nosniff
 Header set X-XSS-Protection "1; mode=block"
-Header set Content-Security-Policy "default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.paypal.com https://www.paypalobjects.com; script-src 'self' ; style-src 'self' https://fonts.googleapis.com/; connect-src 'self';"
+Header set Content-Security-Policy "default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.paypalobjects.com; script-src 'self' ; style-src 'self' https://fonts.googleapis.com/; connect-src 'self';"
 
 Header always set Referrer-Policy "same-origin"
