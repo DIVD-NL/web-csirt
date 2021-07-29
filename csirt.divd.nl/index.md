@@ -1,31 +1,39 @@
 ---
 title: DIVD CSIRT
 ---
-## Het Nederlands Security Meldpunt...
+## The DIVD CSIRT...
 
-... is een groep vrijwilligers, onderdeel van het [Dutch Institute for Vulnerability Disclosure](https://divd.nl), die het zich tot taak heeft gesteld eigenaren van Nederlandse netwerkblokken en websites te informeren over (cyber) security zaken die bij het meldpunt gemeld worden.
+... supports the [Dutch Institute for Vulnerability Disclosure](https://divd.nl), in its mission "...to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaborative and for free."
 
-### Wat kun je melden?
+The CSIRT handles the scanning for and disclosure of vulnerabilities, eithr discovered by DIVD researchers or third parties, as well as warnign people for leaked credentials.
 
-Wij richten ons specifiek op kwetsbaarheden die een groot aantal gebruikers treft zoals die in onze [Citrix ADC case](/DIVD-2020-00001/). In deze gevallen willen wij gericht de netwerk beheerders van netwerken met kwetsbare systemen op de hoogte brengen van het bestaan van deze systemen zodat zij de kwetsbaarheid kunnen (laten) verhelpen.
 
-### Hoe kan ik melden?
+## Our blog
 
-Lees voor je gaat melden eerst onze [spelregels](/spelregels) en lees eventueel onze [veel gestelde vragen](/faq).
-
-## Blog
-
-Laatste 10 artikelen...
+Last 10 posts ...
 
 <ul>
 {% for post in site.posts %}
 	{% if forloop.index <= 10 %}
 	    <li>
-	        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date_to_long_string }}  - {{ post.title }}</a>
 	    </li>
 	{% endif %}
 {% endfor %}
 </ul>
 
-[Alle artikelen](/blog)
+[More posts](/blog/2)
 
+## Open cases
+
+<ul>
+{% assign pages = site.pages |reverse %}
+{% assign team = site.team | map: "name" %}
+{% for p in pages %}
+	{% if p.url contains "/cases/" and p.url != page.url and p.status == "Open" %}
+		<li>
+			<a href='{{ p.url }}'>{{ p.title }}</a>
+		</li>
+	{% endif %}
+{% endfor %}
+</ul>

@@ -46,7 +46,7 @@ Example:
 		    					<li class="menu-item">
 			    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
 			    						{{ p.divd }}<br>
-			    						{{ p.short }}
+			    						{{ p.short | slice: 0, 75 }}...
 			    					</a>
 			    				</li>
 			    			{% endif %}
@@ -60,12 +60,15 @@ Example:
 					</a>
    					<ul class="sub-menu">
 						{% for post in site.posts %}
-							{% if forloop.index <= 5 %}
+							{% if forloop.index <= 10 %}
 							    <li class="menu-item">
-							        <a href="{{ post.url | prepend: site.baseurl }}" {% if page.url == post.url %}class="black_url"{% endif %}> {{ post.date | date: "%Y-%m-%d" }} : {{ post.title | slice: 0, 30 }}...</a>
+							        <a href="{{ post.url | prepend: site.baseurl }}" {% if page.url == post.url %}class="black_url"{% endif %}> {{ post.date | date: "%Y-%m-%d" }} : {{ post.title | slice: 0, 75 }}...</a>
 							    </li>
 							{% endif %}
 						{% endfor %}
+					    <li class="menu-item">
+					        <a href="/blog"> More...</a>
+					    </li>
 			    	</ul>
 		    	</li>
 			{% elsif item.link == "/cves/" %}
@@ -78,7 +81,7 @@ Example:
 						{% for page in cvepages %}
 							{% if forloop.index <= 10 %}
 							    <li class="menu-item">
-							        <a href="{{ page.url | prepend: site.baseurl }}" {% if page.url == post.url %}class="black_url"{% endif %}> {{ page.cve }} - {{ page.title | slice: 0, 30 }}...</a>
+							        <a href="{{ page.url | prepend: site.baseurl }}" {% if page.url == post.url %}class="black_url"{% endif %}> {{ page.cve }} - {{ page.title | slice: 0, 60 }}...</a>
 							    </li>
 							{% endif %}
 						{% endfor %}
