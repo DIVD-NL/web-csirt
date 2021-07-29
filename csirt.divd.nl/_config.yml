@@ -7,8 +7,7 @@ paginate_path: "blog/:num/"
 language: nl-nl
 
 title: DIVD CSIRT
-description: "Voorheen / Previously : Het Nederlandse Security Meldpunt / Dutch Security Hotline"
-#description: Het Nederlandse meldpunt voor kwetsbaarheden, infecties en andere (cyber)security gerelateerde zaken.
+description: "Making the internet safer through Coordinated VUlnerability Disclosure"
 repository: DIVD-NL/sites
 
 timezone: Europe/Amsterdam
