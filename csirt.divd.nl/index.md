@@ -3,9 +3,9 @@ title: DIVD CSIRT
 ---
 ## The DIVD CSIRT...
 
-... supports the [Dutch Institute for Vulnerability Disclosure](https://divd.nl), in its mission "...to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaborative and for free."
+... supports the [Dutch Institute for Vulnerability Disclosure](https://divd.nl), in its mission “…to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaborative, and for free.”
 
-The CSIRT handles the scanning for and disclosure of vulnerabilities, eithr discovered by DIVD researchers or third parties, as well as warnign people for leaked credentials.
+The CSIRT handles the scanning for and disclosing vulnerabilities, either discovered by DIVD researchers or third parties and warning people for leaked credentials.
 
 
 ## Our blog
