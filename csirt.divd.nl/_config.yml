@@ -7,7 +7,7 @@ paginate_path: "blog/:num/"
 language: nl-nl
 
 title: DIVD CSIRT
-description: "Making the internet safer through Coordinated VUlnerability Disclosure"
+description: "Making the internet safer through Coordinated Vulnerability Disclosure"
 repository: DIVD-NL/sites
 
 timezone: Europe/Amsterdam
