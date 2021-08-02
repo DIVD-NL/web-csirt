@@ -2,7 +2,7 @@
 title: Report DIVD-2020-00007 Citrix ShareFile
 date: 31st June 2021
 author: Jeroen van de Weerd
-excerpt:On May 5, 2020, Citrix released a security advisory for the Citrix ShareFile product. The vulnerabilities allow an attacker to potentially compromise the storage zone controller and gain access to sensitive ShareFile documents and folders.
+excerpt: On May 5, 2020, Citrix released a security advisory for the Citrix ShareFile product. The vulnerabilities allow an attacker to potentially compromise the storage zone controller and gain access to sensitive ShareFile documents and folders.
 ---
 <header>
     <h2>Report DIVD-2020-00007 - Citrix ShareFile</h2>
