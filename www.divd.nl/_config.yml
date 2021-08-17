@@ -50,3 +50,4 @@ exclude:
   - "*.sh"
   - "Gemfile*"
   - "*.conf"
+  - "*:Zone.Identifier"

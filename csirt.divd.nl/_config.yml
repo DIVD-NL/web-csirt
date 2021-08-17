@@ -49,3 +49,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "*.conf"
+  - "*:Zone.Identifier"
