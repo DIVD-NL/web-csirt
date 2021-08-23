@@ -7,7 +7,7 @@ paginate_path: "news/:num/"
 language: nl-nl
 
 title: DIVD
-description: Het Nederlandse meldpunt voor kwetsbaarheden, infecties en andere (cyber)security gerelateerde zaken.
+description: "Dutch Institute for Vulnerability Disclosure, we aim to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaboratie and for free."
 repository: DIVD-NL/sites
 
 timezone: Europe/Amsterdam
