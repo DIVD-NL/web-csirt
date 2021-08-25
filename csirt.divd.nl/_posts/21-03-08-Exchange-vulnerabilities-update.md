@@ -5,6 +5,9 @@ author: Lennaert Oudshoorn
 excerpt: Microsoft brengt detectie scripts uit voor IoC's, 40% van de exchange servers in NL nog kwetsbaar, kwetsbaarheden misbruikt sinds januari. / Microsoft releases IoC detection script, 40% of the exchange servers in NL remain vulnerable, vulnerability abused as early as January.
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

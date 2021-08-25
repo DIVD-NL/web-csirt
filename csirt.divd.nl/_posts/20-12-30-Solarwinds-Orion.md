@@ -5,6 +5,9 @@ author: Lennaert Oudshoorn
 excerpt: Een authenticatie bypass kan aanvallers de mogelijkeheid geven om API commando's uit te voeren, hierdoor kan het systeem gecompromiteerd worden. / An authentication bypass could allow attackers to execute API commands which may result in a compromise of the system.
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

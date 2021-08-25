@@ -4,6 +4,9 @@ title: Eerste Citrix patches beschikbaar, andere patches sneller / First Citrix 
 author: Frank Breedijk
 excerpt: Citrix heeft patches beschikbaar gemaakt voor version 11.1 en 12.0 en verwacht de andere patches op 24-1 / Citrix has released patches for version 11.1 and 12.0 and expects to release the other patches on 24-1.
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 Citrix heeft [zojuist bekend gemaakt](https://www.citrix.com/blogs/2020/01/19/vulnerability-update-first-permanent-fixes-available-timeline-accelerated/) dat de patches voor versie 11.1 en 12.0 zijn vrijgegeven en verwacht de patches voor versie 10.0, 12.1 en 13 op 24-1 vrij te geven. 
 

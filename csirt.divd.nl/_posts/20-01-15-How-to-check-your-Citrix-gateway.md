@@ -4,6 +4,9 @@ title: Controles voor de Citrix ADC compromittatie / Checks to see if your Citri
 author: Frank Breedijk
 excerpt: Links naar controles om vast te stellen of een Citrix ADC is gecompromitteerd / Links to articles on how to check if your Citrix ADC is compromised
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 In mij [vorige blogpost](/2020/01/13/Citrix/) schreef ik dat het zeer goed mogelijk is dat Citrix ADC systemen waarna 11 januari de mitigate op is toegepast reeds overgenomen zijn. Inmiddels komen hierover de [eerste berichten](https://twitter.com/sans_isc/status/1216375320846176261) binnen. Het [Sans Internet Storm Center](https://isc.sans.edu) meld dan ook dat systemen [massaal misbruikt worden](https://isc.sans.edu/forums/diary/Citrix+ADC+Exploits+are+Public+and+Heavily+Used+Attempts+to+Install+Backdoor/25700/)
 

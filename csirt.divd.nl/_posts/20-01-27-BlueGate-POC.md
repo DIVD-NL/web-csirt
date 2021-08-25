@@ -4,6 +4,9 @@ title: POC Exploit Microsoft Remote Dekstop Gateway RCE vulnerability
 author: Barry van Kampen
 excerpt: Het Security Meldpunt adviseerd dringend patches uit te rollen en gaat actief beheerders benaderen / The Security Hotline is advising urgently to patch systems and notify owners of vulnerable systems
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 
