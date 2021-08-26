@@ -6,6 +6,9 @@ excerpt:  Een datadump met gevoelige informatie over meer dan 900 vermoedelijk g
 redirect_from:
   - /2020/08/05/PulsVPN-dataset-leaked/
 ---
+<p>
+  <small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

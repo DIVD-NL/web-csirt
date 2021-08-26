@@ -4,6 +4,9 @@ title: We gaan weer door met scannen en melden ! / We have resumed scanning and 
 author: Frank Breedijk
 excerpt: Ondanks de onzekerheid over de effectiviteit van de Citrix mitigatie gaan wij door met scannen en melden, lees hier waaarom. / Even tought the effectiveness of the mitigation is unknown we are continuing our Citrix scanning and notification efforts. Read why.
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 Gisteren [meldde ik](/2020/01/16/Terug-bij-af/) dat wij zouden stoppen met het scannen en melden van kwetsbare Citrix ADC's naar aanleiding van [dit bericht](https://www.ncsc.nl/actueel/nieuws/2020/januari/16/door-citrix-geadviseerde-mitigerende-maatregelen-niet-altijd-effectief) van het NCSC. Inmiddels hebben we, na overleg met mijn collega's van het meldpunt en het [DIVD](https://www.divd.nl) besloten toch door te gaan.
 

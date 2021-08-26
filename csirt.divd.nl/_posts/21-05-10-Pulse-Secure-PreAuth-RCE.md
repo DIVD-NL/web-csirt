@@ -8,6 +8,9 @@ excerpt: "
 "
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

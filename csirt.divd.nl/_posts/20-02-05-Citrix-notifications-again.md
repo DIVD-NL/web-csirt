@@ -4,6 +4,9 @@ title: Wederom Citrix meldingen / Citrix notifications again
 author: Frank Breedijk
 excerpt: Op nog 70 systemen ontbreekt elke vorm van mitigatie, we gaan weer waarschuwen / We have identified 70 systems that still don't have any mitigation in place, we are notifying again
 ---
+<p>
+  <small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

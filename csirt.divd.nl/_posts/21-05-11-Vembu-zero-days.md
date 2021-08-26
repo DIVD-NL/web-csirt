@@ -7,6 +7,9 @@ excerpt: "
 	DIVD reseacher Wietse Boonstra has found four zero day vulnerabilities in Vembu BDR and related software
 "
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 
 ### Nederlands

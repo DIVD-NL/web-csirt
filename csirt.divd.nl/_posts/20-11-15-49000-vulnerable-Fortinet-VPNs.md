@@ -5,6 +5,9 @@ author: Lennaert Oudshoorn
 excerpt: Er is een lijst online aangetroffen met 49 577 kwetsbare Fortinet VPN devices waarvan login credentials gestolen kunnen worden / A list was found online, with 49 577 vulnerable Fortinet VPN devices, potentially login credentials could be exposed
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

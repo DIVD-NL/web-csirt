@@ -5,6 +5,9 @@ author: Frank Breedijk
 excerpt: We have rescanned all servers with a new script and found more vulnerable servers / We hebben opnieuw gescand met een additioneel script en nieuwe kwetsbare servers gevonden
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

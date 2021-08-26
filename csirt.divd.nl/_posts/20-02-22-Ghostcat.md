@@ -4,6 +4,9 @@ title: GhostCat een kwetsbaarheid in Apache Tomcat AJP  / GhostCat an Apache Tom
 author: Jeroen van de Weerd
 excerpt: 773 Nederlandse IP adressen kwetsbaar voor Ghostcat - Apache Tomcat AJP File Read/Inclusion Vulnerability / 773 Dutch IP addresses vulnerable to Ghostcat - Apache Tomcat AJP File Read / Inclusion Vulnerability
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

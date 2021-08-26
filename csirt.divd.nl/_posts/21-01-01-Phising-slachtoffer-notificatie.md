@@ -5,6 +5,9 @@ author: Frank Breedijk
 excerpt: DIVD CSIRT heeft van een lijst ontvangen mt door phishing buitegemaakte email adressen en wachtwoorden / DIVD CSIRT received a list of email addresses and passwords obtained through phishing.
 
 ---
+<p>
+    <small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

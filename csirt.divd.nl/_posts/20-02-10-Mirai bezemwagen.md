@@ -4,6 +4,9 @@ title: Slachtoffers van het Mirai botnet op de hoogte brengen / Notifying Mirai 
 author: Sander Spierenburg
 excerpt: Een lijst met ruim 500k+ botnet slachtoffers is gepubliceerd / A list of Mirai botnet victims has been published exposing a total of 500K+ systems
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 Het Mirai botnet is een oude bekende. Eind vorig jaar is een aantal keer een grote lijst met systemen gepubliceert die onderdeel waren van het botnet. Wij willen de Nederlandse slachtoffers van dit botnet uit deze lijsten gaan informeren om ze op te kunnen ruimen. Zie ook dit artikel: [https://www.zdnet.com/article/hacker-leaks-passwords-for-more-than-500000-servers-routers-and-iot-devices/](https://www.zdnet.com/article/hacker-leaks-passwords-for-more-than-500000-servers-routers-and-iot-devices/). 
 
