@@ -45,7 +45,7 @@ Example:
 		    				{% if p.url contains "/cases/" and p.url != "/cases/" and p.layout != "redirect" %}
 		    					<li class="menu-item">
 			    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
-			    						{{ p.divd }}<br>
+			    						{{ p.title | slice: 0, 75 }}<br>
 			    						{{ p.short | slice: 0, 75 }}...
 			    					</a>
 			    				</li>
