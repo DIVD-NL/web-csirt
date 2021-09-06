@@ -5,6 +5,9 @@ author: Lennaert Oudshoorn
 excerpt: Het Nederlands Security Meldpunt gaat in 2021 verder als DIVD CSIRT / The Dutch Security Hotline will become DIVD CISRT in 2021
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

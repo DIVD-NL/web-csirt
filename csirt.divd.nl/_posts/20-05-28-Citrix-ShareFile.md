@@ -4,6 +4,9 @@ title: Ernstige lek in Citrix ShareFile storage server / Critical vulnerability 
 author: Frank Breedijk
 excerpt:  Citrix ShareFile servers bevatten een ernstig lek waarmee een aanvaller gevoelige informatie kan achterhalen / Citrix ShareFile servers contain a vulnerability that allows an attacker to obtain sensitive information.
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

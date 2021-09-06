@@ -5,6 +5,9 @@ author: Frank Breedijk
 excerpt: Actief misbruik van voorheen ongepatchede kwetsbaarheden in Microsoft Exchange / Active abuse of previously unpatched vulnerabilities n Microsoft Exchange.
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

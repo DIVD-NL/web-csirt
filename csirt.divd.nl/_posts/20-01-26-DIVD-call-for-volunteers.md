@@ -4,6 +4,9 @@ title: DIVD Call For Volunteers
 author: Frank Breedijk
 excerpt: Wil je een bijdrage leveren aan het DIVD, zo meld je je aan. / Want to volunteer for DIVD, this is where you go.
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 

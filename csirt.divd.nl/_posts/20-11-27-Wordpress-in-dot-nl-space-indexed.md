@@ -5,6 +5,9 @@ author: Lennaert Oudshoorn
 excerpt: Onderzoekers van het DIVD hebben ruim 300 000 Worpdress sites gescanned en analyseren de resultaten.  / Researchers of the DIVD have scanned over 300 000 Wordpress websites, and aare analysing the results.
 
 ---
+<p>
+	<small><a href='{{ page.url }}#english'>English below</a></small>
+</p>
 
 ### Nederlands
 
