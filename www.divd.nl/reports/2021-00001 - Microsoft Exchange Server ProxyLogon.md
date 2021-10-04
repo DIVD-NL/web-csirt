@@ -9,6 +9,7 @@ excerpt: In the beginning of 2021 various groups have been breaking into Microso
     <span>August 26, 2021 by Gerard Janssen</span>
 </header>
 Case lead Frank Breedijk
+
 Researchers: Matthijs Koot, Victor Gevers, Lennaert Oudshoorn
 
 In the beginning of 2021 thousands of organizations have been affected by vulnerabilities in Windows Exchange Server. Various groups have been breaking into Microsoft Exchange servers using various zero-days, unknown security holes.
