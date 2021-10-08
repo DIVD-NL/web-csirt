@@ -12,8 +12,8 @@ DIVD is a non-profit organisation run by volunteers and a network of likeminded 
 [Connect2Trust](https://www.connect2trust.nl) is a cooperation of Dutch (international) companies. Chairman of the Board Raymond Bierens has been with DIVD from the start on to help out and share knowledge.
 ### SIDN Fund
 [SIDN Fund](https://www.sidnfonds.nl/excerpt) provided financial support in 2020 to kick start DIVD. <br>
-### ProSec
-We have our office at Pro-Sec, which also help us out with administrative tasks and acquiring funding for our DIVD Academy.<br>
+### LunaVia
+We have our office at LunaVia, which also help us out with administrative tasks and acquiring funding for our DIVD Academy.<br>
 ### DTACT
 Remco Verhoef, Chief Hacking Officer at [DTACT](https://dtact.com/) let's us use their Raven Data Processing Platform to process our scan data. We don't pay in licencefees, but in feedback.<br>
 ### A2B Internet
