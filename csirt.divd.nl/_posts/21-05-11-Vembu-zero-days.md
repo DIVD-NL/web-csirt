@@ -4,7 +4,7 @@ title: Vembu Zero Days
 author: Gerard Janssen
 excerpt: "
 	DIVD-researcher Wietse Boonstra vond vier zerodays in de Vembu BDR en gerelateeerde software / 
-	DIVD reseacher Wietse Boonstra has found four zero day vulnerabilities in Vembu BDR and related software
+	DIVD researcher Wietse Boonstra has found four zero day vulnerabilities in Vembu BDR and related software
 "
 ---
 <p>
