@@ -25,5 +25,5 @@ In my [previous blogpost](/2020/01/13/Citrix/) I wrote that it is very likely th
 Below I've listed two good articles about actions that can be taken to check if and how a system is compromised:
 
 * [TrustedSec - Netscaler Remote code execution forensics](https://www.trustedsec.com/blog/netscaler-remote-code-execution-forensics/)
-* [x1sec - Citrix ADC (NetScaler) CVE-2019-19781 DFIR Notes](https://x1sec.com/CVE-2019-19781-DFIR)
+* [x1sec - Citrix ADC (NetScaler) CVE-2019-19781 DFIR Notes](https://github.com/x1sec/CVE-2019-19781/blob/master/CVE-2019-19781-DFIR.md)
 * [NerdScaler - Citrix ADC CVE-2019-19781 exploited! What now?](https://nerdscaler.com/2020/01/13/citrix-adc-cve-2019-19781-exploited-what-now/)
