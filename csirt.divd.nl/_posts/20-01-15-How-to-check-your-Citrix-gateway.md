@@ -14,7 +14,7 @@ Hieronder staan twee goede artikelen met gedetailleerde instructies die je kunt 
 
 * [TrustedSec - Netscaler Remote code execution forensics](https://www.trustedsec.com/blog/netscaler-remote-code-execution-forensics/)
 * [x1sec - Citrix ADC (NetScaler) CVE-2019-19781 DFIR Notes](https://github.com/x1sec/CVE-2019-19781/blob/master/CVE-2019-19781-DFIR.md)
-* [NerdScaler - Citrix ADC CVE-2019-19781 exploited! What now?] - (https://nerdscaler.com/2020/01/13/citrix-adc-cve-2019-19781-exploited-what-now/)
+* [NerdScaler - Citrix ADC CVE-2019-19781 exploited! What now?](https://nerdscaler.com/2020/01/13/citrix-adc-cve-2019-19781-exploited-what-now/)
 
 <hr>
 
