@@ -2,7 +2,8 @@
 layout: post
 title: Exchange ProxyShell and ProxyOracle
 author: Frank Breedijk
-excerpt: "Still a lot of Exchange servers unpatched to these vulnerabilities"
+excerpt: "Still a lot opf Exchange servers unpatched to these vulnerabilities"
+
 #jekyll-secinfo:
 #  cve:
 #    url: /cves/CVE-
