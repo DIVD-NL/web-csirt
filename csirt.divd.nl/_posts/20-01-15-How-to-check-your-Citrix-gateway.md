@@ -26,4 +26,4 @@ Below I've listed two good articles about actions that can be taken to check if 
 
 * [TrustedSec - Netscaler Remote code execution forensics](https://www.trustedsec.com/blog/netscaler-remote-code-execution-forensics/)
 * [x1sec - Citrix ADC (NetScaler) CVE-2019-19781 DFIR Notes](https://x1sec.com/CVE-2019-19781-DFIR)
-* [NerdScaler - Citrix ADC CVE-2019-19781 exploited! What now?] - (https://nerdscaler.com/2020/01/13/citrix-adc-cve-2019-19781-exploited-what-now/)
+* [NerdScaler - Citrix ADC CVE-2019-19781 exploited! What now?](https://nerdscaler.com/2020/01/13/citrix-adc-cve-2019-19781-exploited-what-now/)
