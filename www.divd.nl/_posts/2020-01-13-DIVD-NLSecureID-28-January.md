@@ -9,4 +9,3 @@ excerpt: Astrid Oosenbrug will give an overview of our work, Matthijs Koot will 
 
 Astrid Oosenbrug will give an overview of our work, Matthijs Koot will dive into the VPN vulnerability case. Session will be moderated by Chris van 't Hof.
 
-[Click here to register](https://www.kpn.com/zakelijk/thedigitaldutch/evenement/nlsecureid-het-securityevent-van-2020.htm) (Dutch)
