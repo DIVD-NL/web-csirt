@@ -75,6 +75,15 @@ description: DIVD
     <section>
         <div class="content">
             <header>
+                <a href="/join" class="icon fa-handshake-o"><span class="label">Icon</span></a>
+                <h3>JOIN</h3>
+            </header>
+            <p>Join DIVD</p>
+        </div>
+    </section>
+    <section>
+        <div class="content">
+            <header>
                 <a href="/donate" class="icon fa-eur"><span class="label">Icon</span></a>
                 <h3>DONATE</h3>
             </header>
