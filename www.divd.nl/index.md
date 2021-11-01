@@ -57,10 +57,10 @@ description: DIVD
     <section>
         <div class="content">
             <header>
-                <a href="/partners" class="icon fa-address-book-o"><span class="label">Icon</span></a>
-                <h3>PARTNERS</h3>
+                <a href="/security" class="icon fa-shield"><span class="label">Icon</span></a>
+                <h3>SECURITY</h3>
             </header>
-            <p>Who we collaborate with, our sponsors and references</p>
+            <p>Public documents and reports about (our) security</p>
         </div>
     </section>
     <section>
