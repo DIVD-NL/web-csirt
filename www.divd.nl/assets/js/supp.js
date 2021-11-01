@@ -20,7 +20,7 @@ function update_display(data) {
 		if( d.anonymous ) {
 			txt += "<td>Anonymous</td>"
 		} else { 
-			txt += "<td>"+$("<div>").text(d.name).html()+"</td>"
+			txt += "<td>"+$("<div>").text(d.first_name).html()+" "+$("<div>").text(d.last_name_prefix).html()+" "+$("<div>").text(d.last_name).html()+"</td>"
 		}
 		txt += "<td>"+$("<div>").text(d.message).html()+"</td>"
 		txt += "</tr>"
