@@ -1,7 +1,7 @@
 ---
 title: Report DIVD-2021-00012-Warehouse botnet
 date: 2 November, 2021
-author: Chris vant Hof
+author: Chris van 't Hof
 excerpt: researcher Tom Wolters found a database with leaked credentials and together with DIVD he informed victims 
 ---
 <header>
