@@ -20,7 +20,17 @@ function update_display(data) {
 		if( d.anonymous ) {
 			txt += "<td>Anonymous</td>"
 		} else { 
-			txt += "<td>"+$("<div>").text(d.first_name).html()+" "+$("<div>").text(d.last_name_prefix).html()+" "+$("<div>").text(d.last_name).html()+"</td>"
+			var name = ""
+			if(d.first_name != null) {
+				name = d.first_name
+			}
+			if(d.last_name_prefix != null) {
+				name = name + " " + d.last_name_prefix
+			}
+			if(d.last_name != null) {
+				name = name + " " + d.last_name
+			}
+			txt += "<td>"+$("<div>").text(name).html()+"</td>"
 		}
 		txt += "<td>"+$("<div>").text(d.message).html()+"</td>"
 		txt += "</tr>"
