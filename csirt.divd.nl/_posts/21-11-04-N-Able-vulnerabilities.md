@@ -8,7 +8,7 @@ excerpt: "DIVD scanning for vulnerable N-able servers"
 #  cve:
 #    url: /cves/CVE-
 ---
-We just opened case {% divd DIVD-2021-00017 %} which dealt with two vulnerabilities in N-able N-central software prior to 2021.HF6.
+Earlier this year, DIVD case {% divd DIVD-2021-00017 %} was opened. This case dealt with two vulnerabilities in N-able N-central software prior to 2021.HF6.
 
 These vulnerabilities enable authenticated users the following:
 
