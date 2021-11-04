@@ -15,4 +15,4 @@ These vulnerabilities enable authenticated users the following:
 * Agent takeover in a multi-tenant environment (NCCF-16663)
 * Downloading and installing agents in a multi-tenant environment (NCCF-16662)
 
-In the coming days we will be scanning worldwide to identify unpatched and thus vulnerable N-able/N-central software and send notifications to our information sharing partners and individual network administrators.
+In the coming days we will be scanning worldwide to identify unpatched and thus vulnerable N-able N-central software and send notifications to our information sharing partners and individual network administrators.
