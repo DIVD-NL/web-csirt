@@ -91,6 +91,6 @@ description: DIVD
         </div>
     </section>
 </div>
-<header class="special">
- 
-</header>
+
+{% include open-cases.html %}
+{% include last-10-posts.html %}
