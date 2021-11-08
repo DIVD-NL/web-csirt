@@ -22,7 +22,19 @@ RewriteCond %{HTTP_HOST} ^www\.divd\.nl [NC]
 RewriteCond %{REQUEST_URI} !^/divd-nl [NC]
 RewriteRule (.*) divd-nl/$1 [L]
 
+# Redirect when I summon a directory without a trailing slash
+RewriteCond %{HTTP_HOST} ^www\.divd\.nl [NC]
+RewriteCond %{REQUEST_URI} ^/divd-nl.*[^/]$ [NC]
+RewriteCond %{REQUEST_FILENAME} -d [NC]
+RewriteRule ^divd-nl/(.*) /$1/ [L,r=301]
+
 # Serve csirt from csirt-divd-nl
 RewriteCond %{HTTP_HOST} ^csirt\.divd\.nl [NC]
 RewriteCond %{REQUEST_URI} !^/csirt-divd-nl [NC]
 RewriteRule (.*) csirt-divd-nl/$1 [L]
+
+# Redirect when I summon a directory without a trailing slash
+RewriteCond %{HTTP_HOST} ^csirt\.divd\.nl [NC]
+RewriteCond %{REQUEST_URI} ^/csirt-divd-nl.*[^/]$ [NC]
+RewriteCond %{REQUEST_FILENAME} -d [NC]
+RewriteRule ^csirt-divd-nl/(.*) /$1/ [L,r=301]
