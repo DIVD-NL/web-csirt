@@ -16,7 +16,7 @@ title: Cases
     				,
     			{% endif %}
 				{% if team contains case_author %}
-<a href='https://www.divd.nl/team/{{ case_author }}'>{{ case_author }}</a>
+<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
 				{% else %}
 {{ case_author }}
 				{% endif %}
@@ -24,7 +24,7 @@ title: Cases
     	{% else %}
 			{% assign case_author = p.author | default: "anonymous" %}
 			{% if team contains case_author %}
-<a href='https://www.divd.nl/team/{{ case_author }}'>{{ case_author }}</a>
+<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
 			{% else %}
 {{ case_author }}
 			{% endif %}
