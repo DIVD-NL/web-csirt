@@ -66,9 +66,10 @@ layout: default
 				<td> Products </td>
 				<td> 
 					<ul>
-					{% for p in page.product %}
-						<li>{{ p | escape }}</li>
-					{% endfor %} 
+						{% for p in page.product %}
+							<li>{{ p | escape }}</li>
+						{% endfor %} 
+				</ul>
 				</td>
 			</tr>
 		{% else %}

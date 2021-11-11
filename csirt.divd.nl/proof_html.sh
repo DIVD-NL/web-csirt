@@ -2,7 +2,7 @@
 set -e # Need to fail on error
 TIDY_OUT=/tmp/tidy_out.$$
 apt update -y
-apt install python3-pip default-jdk -y
+apt install python3-pip default-jdk-headless -y
 pip3 install html5validator 
 
 TEAMCOUNT_HERE=$( ls _team|wc -l )
@@ -25,18 +25,14 @@ echo "*** External link check ***"
 (
 	html5validator _site/*.html _site/*/*.html _site/*/*/*.html _site/*/*/*/*.html _site/*/*/*/*.html 
 ) | tee $TIDY_OUT
-WARNS=$( grep 'warn:' $TIDY_OUT | wc -l )
-if [[ $WARNS -gt 0 ]] ; then
-	echo "------------------------------------------------------------------------------------"
-	echo "There are $WARNS warnings in html files" #, not good enough!"
-fi
 ERRORS=$( grep 'error:' $TIDY_OUT | wc -l )
 if [[ $ERRORS -gt 0 ]] ; then
 	echo "------------------------------------------------------------------------------------"
 	echo "There are $ERRORS errors in html files, not good enough!"
 	grep 'Error:' $TIDY_OUT
 	exit 1
+else
+	echo "------------------------------------------------------------------------------------"
+	echo " HTML checked and found flawles, \0/ \0/ \0/ \0/ \0/ \0/ "
+	echo "------------------------------------------------------------------------------------"
 fi
-#if [[ $WARNS -gt 0 ]] ; then
-#	exit 1
-#fi
