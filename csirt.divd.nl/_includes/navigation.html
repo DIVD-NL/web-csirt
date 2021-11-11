@@ -8,7 +8,7 @@
         {% elsif page.url contains "/cves/" and page.url != "/cves/" %}
             <span class="logo"><a href="/">Home</a> / <a href="/cves/">CVEs</a> / {{ page.cve | capitalize }}</span>
         {% elsif page.url == "/cves/" %}
-            <span class="logo"><a href="/">Home</a> / CVEs 
+            <span class="logo"><a href="/">Home</a> / CVEs </span>
         {% elsif page.url contains "/faq/" and page.url != "/faq/" %}
             <span class="logo"><a href="/">Home</a> / <a href="/faq/">FAQ</a> / {{ page.title | capitalize }}</span>
         {% else %}

@@ -9,7 +9,7 @@ excerpt: an external researcher not tied to the DIVD informed us about leaked ph
     <span>01 July 2021 by Joris van de Vis</span>
 </header>
 Case lead Frank Breedijk
-Researchers: Bauke Gehem <external>
+Researchers: Bauke Gehem (external)
 
 
 At the end of November 2020, criminals engaged in a phishing campaign mimicking Zoom message invites and a message on mail quarantine. This campaign was reported on Twitter by TheAnalyst.
@@ -23,9 +23,10 @@ On 1-1-2021 email notifications were sent to the victims of the phishing campaig
 As there was no new information and the victims were informed, the case was closed after the emails were sent. Involved researchers deleted their local data, with only report writing waiting to be done. This was done in June 2021.
 
 ## Timeline
-Date            				Description
-29-11-2020 			        Phishing campaign reported on Twitter
-08-12-2020		        	Dutch list received by DIVD CSIRT
-08-12-2020 - 20-12-2020	Internal discussion about how to best handle cases like this
-1-1-2021			          Emails sent
-22-06-2021			        This report was written
+| Date | Description |
+|:-----:|-------------|
+|29-11-2020 			 |  Phishing campaign reported on Twitter |
+|08-12-2020		         |	Dutch list received by DIVD CSIRT |
+|08-12-2020 - 20-12-2020 |	Internal discussion about how to best handle cases like this |
+|1-1-2021			     |  Emails sent |
+|22-06-2021			     |  This report was written |

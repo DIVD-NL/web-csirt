@@ -17,7 +17,7 @@ layout: default
 					{% for r in page.discovered_by -%}
 						<li>
 							{% if team contains r %}
-								<a href='https://www.divd.nl/team/{{ r }}/'>{{ r }}</a>
+								<a href='https://www.divd.nl/team/{{ r | uri_escape }}/'>{{ r }}</a>
 							{% else %}
 								{{ r }}
 							{% endif %}
@@ -34,7 +34,7 @@ layout: default
 						{% for r in page.researchers -%}
 							<li>
 								{% if team contains r %}
-									<a href='https://www.divd.nl/team/{{ r }}/'>{{ r }}</a>
+									<a href='https://www.divd.nl/team/{{ r | uri_escape }}/'>{{ r }}</a>
 								{% else %}
 									{{ r }}
 								{% endif %}
@@ -49,9 +49,10 @@ layout: default
 				<td> Products </td>
 				<td> 
 					<ul>
-					{% for p in page.products %}
-						<li>{{ p | escape }}</li>
-					{% endfor %} 
+						{% for p in page.products %}
+							<li>{{ p | escape }}</li>
+						{% endfor %}
+					</ul>
 				</td>
 			</tr>
 		{% else %}
@@ -82,7 +83,7 @@ layout: default
 				<td> Page author </td>
 				<td>
 					{% if team contains page.author %}
-						<a href='https://www.divd.nl/team/{{ page.author }}/'>{{ page.author }}</a>
+						<a href='https://www.divd.nl/team/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
 					{% else %}
 						{{ page.author }}
 					{% endif %}
