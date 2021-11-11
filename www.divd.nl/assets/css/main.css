@@ -2851,3 +2851,7 @@ body.is-menu-visible #menu {
 .unbrakable {
   white-space: nowrap;
 }
+
+.right-align {
+  text-align: right;
+}
