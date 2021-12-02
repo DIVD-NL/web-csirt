@@ -2,7 +2,7 @@
 title: Report DIVD-2021-00030 - GitLab Unauthenticated RCE Flaw
 date: November 19, 2021
 author: Jeroen van de Weerd
-excerpt: We have received a list of GitLab servers running a vulnerable version of GitLab from security researchers at Censys.io. An issue has been discovered in GitLab CE/EE.
+excerpt: We have received multiple lists of GitLab servers running a vulnerable version of GitLab from security researchers at Censys.io. An issue has been discovered in GitLab CE/EE. we have notified their administrators.
 ---
 <header>
     <h2>Report DIVD-2021-00030 - GitLab Unauthenticated RCE Flaw</h2>
