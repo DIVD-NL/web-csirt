@@ -38,4 +38,6 @@ Last 10 posts ...
 {% endfor %}
 </ul>
 
+## Some statistics
+
 {% include stats.html %}
