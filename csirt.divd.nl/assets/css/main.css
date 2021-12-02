@@ -2837,3 +2837,7 @@ body.is-menu-visible #menu {
 td > ul {
   margin-bottom: 0px;
 }
+
+.right-align {
+  text-align: right;
+}

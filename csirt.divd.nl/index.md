@@ -27,13 +27,15 @@ Last 10 posts ...
 ## Open cases
 
 <ul>
-{% assign pages = site.pages |reverse %}
+{% assign cases = site.cases |reverse %}
 {% assign team = site.team | map: "name" %}
-{% for p in pages %}
-	{% if p.url contains "/cases/" and p.url != page.url and p.status == "Open" %}
+{% for p in cases %}
+	{% if p.status == "Open" %}
 		<li>
 			<a href='{{ p.url }}'>{{ p.title }}</a>
 		</li>
 	{% endif %}
 {% endfor %}
 </ul>
+
+{% include stats.html %}

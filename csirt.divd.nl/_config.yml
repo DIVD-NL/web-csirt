@@ -40,6 +40,8 @@ collections:
     output: false
   cves:
     output: true
+  cases:
+    output: true
 
 exclude:
   - README.md

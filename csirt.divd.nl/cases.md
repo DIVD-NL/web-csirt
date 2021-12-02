@@ -1,10 +1,9 @@
 ---
 title: Cases
 ---
-{% assign pages = site.pages |reverse %}
+{% assign cases = site.cases |reverse %}
 {% assign team = site.team | map: "name" %}
-{% for p in pages %}
-	{% if p.url contains "/cases/" and p.url != page.url %}
+{% for p in cases %}
 <div class="caseitem">
 <h3><a href="{{ p.url }}">{{ p.title }}</a><em>
     	{% if p.author[0] %}
@@ -38,5 +37,4 @@ title: Cases
 <a href="{{ p.url }}">Lees meer</a>
 </div>
 <hr>
-	{% endif %}
 {% endfor %}
