@@ -50,7 +50,7 @@ description: DIVD
     <section>
         <div class="content">
             <header>
-                <a href="https://www.securitymeldpunt.nl" class="icon fa-bell-o"><span class="label">Icon</span></a>
+                <a href="https://csirt.divd.nl" class="icon fa-bell-o"><span class="label">Icon</span></a>
                 <h3>CSIRT</h3>
             </header>
             <p>Blog on current research by our Computer Security Incident Response Team</p>
