@@ -7,7 +7,7 @@ apt install python3-pip default-jdk-headless -y
 pip3 install html5validator 
 
 CASECOUNT_HERE=$( ls _cases|wc -l )
-CASECOUNT_THERE=$( ls ../csirt.divd.nl/cases|wc -l )
+CASECOUNT_THERE=$( ls ../csirt.divd.nl/_cases|wc -l )
 if [[ $CASECOUNT_HERE -le 0 || $CASECOUNT_HERE -ne $CASECOUNT_THERE ]]; then
 	echo "_cases directory is not updated, run ./update.sh"
 	exit 1

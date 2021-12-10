@@ -40,16 +40,14 @@ Example:
 						Cases <span class="dropdown-icon"></span>
 					</a>
    					<ul class="sub-menu">
-   						{% assign pages = site.pages |reverse %}
-				    	{% for p in pages %}
-		    				{% if p.url contains "/cases/" and p.url != "/cases/" and p.layout != "redirect" %}
-		    					<li class="menu-item">
-			    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
-			    						{{ p.title | slice: 0, 75 | escape }}<br>
-			    						{{ p.short | slice: 0, 75 | escape }}...
-			    					</a>
-			    				</li>
-			    			{% endif %}
+   						{% assign cases = site.cases |reverse %}
+				    	{% for p in cases %}
+	    					<li class="menu-item">
+		    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
+		    						{{ p.title | slice: 0, 75 | escape }}<br>
+		    						{{ p.short | slice: 0, 75 | escape }}...
+		    					</a>
+		    				</li>
 			    		{% endfor %}
 			    	</ul>
 		    	</li>

@@ -7,6 +7,8 @@ description: DIVD
 <header class="special">
     <h2>our mission</h2>
     <p>We aim to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaborative and for free.</p>
+    <h2>Our statistics</h2>
+    {% include stats.html %}
 </header>
 <div class="highlights">
     <section>

@@ -16,7 +16,7 @@ Last 10 posts ...
 {% for post in site.posts %}
 	{% if forloop.index <= 10 %}
 	    <li>
-	        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date_to_long_string }}  - {{ post.title }}</a>
+	        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%d-%m-%Y" }}  - {{ post.title }}</a>.
 	    </li>
 	{% endif %}
 {% endfor %}
@@ -27,13 +27,17 @@ Last 10 posts ...
 ## Open cases
 
 <ul>
-{% assign pages = site.pages |reverse %}
+{% assign cases = site.cases |reverse %}
 {% assign team = site.team | map: "name" %}
-{% for p in pages %}
-	{% if p.url contains "/cases/" and p.url != page.url and p.status == "Open" %}
+{% for p in cases %}
+	{% if p.status == "Open" %}
 		<li>
 			<a href='{{ p.url }}'>{{ p.title }}</a>
 		</li>
 	{% endif %}
 {% endfor %}
 </ul>
+
+## Some statistics
+
+{% include stats.html %}
