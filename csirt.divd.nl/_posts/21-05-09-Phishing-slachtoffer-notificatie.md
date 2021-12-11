@@ -4,7 +4,7 @@ title: Phishing slachtoffer notificatie / Victim notification phishing
 author: 
   - Lennaert Oudshoorn
   - Célistine Oosting
-excerpt: DIVD CSIRT heeft van een lijst ontvangen mt door phishing buitegemaakte email adressen en wachtwoorden / DIVD CSIRT received a list of email addresses and passwords obtained through phishing.
+excerpt: DIVD CSIRT heeft van een lijst ontvangen met door phishing buitgemaakte email adressen en wachtwoorden / DIVD CSIRT received a list of email addresses and passwords obtained through phishing.
 
 ---
 <p>
@@ -19,7 +19,7 @@ Tijdens onderzoek naar deze campagne is een zelfstandige onderzoeker er achter g
 
 Het DIVD CSIRT heeft van de onderzoeker de gegevens van de getroffenen gekregen
 
-Wij gaan, in de komende dagen,  aan alle gebruikers van de e-mailadressen op de lijst een mailtje sturen zodat de slachtoffers op de hoogte zijn van deze campagne en de gelekte gegevens.
+Wij gaan, in de komende dagen, aan alle gebruikers van de e-mailadressen op de lijst een mailtje sturen zodat de slachtoffers op de hoogte zijn van deze campagne en de gelekte gegevens.
 
 Voor meer informatie zie: [case DIVD-2021-00004](/DIVD-2021-00004/)
 
@@ -28,7 +28,7 @@ Voor meer informatie zie: [case DIVD-2021-00004](/DIVD-2021-00004/)
 At the end of March, criminals were engaged in a phishing campaign largely targeting US organizations and users of Active Directory Federation Services (ADFS).
 
 
-While researching this phishing campaign, a independent security researcher discovered that the phishing infrastructure leaked the captured usernames and passwords because it improperly secured certained directories.
+While researching this phishing campaign, an independent security researcher discovered that the phishing infrastructure leaked the captured usernames and passwords because it improperly secured certain directories.
 
 The DIVD CSIRT has been given the harvested credentials to inform potential victims.
 
