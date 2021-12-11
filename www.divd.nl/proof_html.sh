@@ -57,5 +57,5 @@ if [[ $WEESJES -gt 0 ]]; then
 	echo " or blog post, but don't have a team page"
 	cat _site/weesjes/index.html
 	echo "------------------------------------------------------------------------------------"
-	exit 1
+	#exit 1
 fi
