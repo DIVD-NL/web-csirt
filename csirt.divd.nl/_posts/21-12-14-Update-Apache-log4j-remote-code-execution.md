@@ -33,7 +33,7 @@ Due to the high probability of widespread damage resulting from exploits, the NC
 
 The NCSC maintains a [list](https://github.com/NCSC-NL/log4shell/tree/main/software) of applications and devices that may be vulnerable. On this page (repository), you can also find software to scan your IT environment. There is also a list of different vulnerability scanners that can recognize and possibly stop the exploitation of the vulnerability. This list is very subject to change, so check it regularly.
 
-The DIVD has built a scanner together with DTACT, which is open-source and can quickly scan an internal network. This project gets improved daily, and new features are added. https://github.com/dtact/divd-2021-00038--log4j-scanner
+The DIVD has built a [scanner](https://github.com/dtact/divd-2021-00038--log4j-scanner) together with [DTACT](https://dtact.com/), which is open-source and can quickly scan an internal network. This project gets improved daily, and new features are added. 
 
 The DIVD uses a self-build scanner for scanning the internet, which will be made open-source shortly. We are creating a portal where we can share our tools with the infosec community. 
 
