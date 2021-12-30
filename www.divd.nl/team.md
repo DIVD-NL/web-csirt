@@ -23,7 +23,19 @@ We represent a team of highly skilled security researchers who seek and report v
 #### Academy
 {% assign sorted = site.team | where: "dept", "Academy" | sort: "appearance" %}
 {%- for member in sorted -%}
-- [{{ member.name }}]({{ member.url }}): {{ member.role }}
+[{{ member.name }}]({{ member.url }})
+{% endfor %}
+
+#### CSIRT
+{% assign sorted = site.team | where: "dept", "CSIRT" | sort: "appearance" %}
+{%- for member in sorted -%}
+[{{ member.name }}]({{ member.url }})
+{% endfor %}
+
+#### Institute
+{% assign sorted = site.team | where: "dept", "Institute" | sort: "appearance" %}
+{%- for member in sorted -%}
+[{{ member.name }}]({{ member.url }})
 {% endfor %}
 
 <hr>
