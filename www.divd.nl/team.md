@@ -19,6 +19,15 @@ We represent a team of highly skilled security researchers who seek and report v
 
 <hr>
 
+### Department
+#### Academy
+{% assign sorted = site.team | where: "dept", "Academy" | sort: "appearance" %}
+{%- for member in sorted -%}
+- [{{ member.name }}]({{ member.url }}): {{ member.role }}
+{% endfor %}
+
+<hr>
+
 ### Board
 {% assign board = site.team | where_exp: "x", "x.board == true" | sort: "appearance" %}
 {%- for member in board -%}
