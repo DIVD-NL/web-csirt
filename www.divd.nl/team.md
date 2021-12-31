@@ -7,7 +7,7 @@ header: our team
     <h2>Researchers</h2>
 </header>
 
-We represent a team of highly skilled security researchers who seek and report vulnerabilities as a voluntary service next to their jobs. DIVD sees to it they follow our [Code of Conduct](https://divd.nl/divd-nl/code/) while we provide them a fire wall for journalists, lawyers and recruiters. Meanwhile, their research also serves as an empirical base to discover trends in security, stimulate security awareness and develop new methodologies in vulnerability research and disclosure. So, although you will probably never meet our researchers, you may hope they are checking your systems right now, before the bad guys do...
+We represent a team of highly skilled security researchers who seek and report vulnerabilities as a voluntary service next to their jobs. DIVD sees to it they follow our [Code of Conduct](https://divd.nl/divd-nl/code/) while we provide them a firewall for journalists, lawyers and recruiters. Meanwhile, their research also serves as an empirical base to discover trends in security, stimulate security awareness and develop new methodologies in vulnerability research and disclosure. So, although you will probably never meet our researchers, you may hope they are checking your systems right now, before the bad guys do...
 
 <hr>
 
