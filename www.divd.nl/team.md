@@ -26,6 +26,12 @@ We represent a team of highly skilled security researchers who seek and report v
 [{{ member.name }}]({{ member.url }}) ({{ member.role }}){% if forloop.last == false %}, {% endif %}
 {% endfor %}
 
+### Operations
+{% assign sorted = site.team | where: "dept", "Operations" | sort: "appearance" %}
+{%- for member in sorted -%}
+[{{ member.name }}]({{ member.url }}) ({{ member.role }}){% if forloop.last == false %}, {% endif %}
+{% endfor %}
+
 ### Institute
 {% assign sorted = site.team | where: "dept", "Institute" | sort: "appearance" %}
 {%- for member in sorted -%}
