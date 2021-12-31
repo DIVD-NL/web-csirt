@@ -2514,8 +2514,8 @@ body {
   background-size: cover;
   border-top: 0;
   display: -ms-flexbox;
-  height: 15rem !important;
-  min-height: 15rem;
+  height: 7rem !important;
+  min-height: 7rem;
   overflow: hidden;
   position: relative;
   text-align: center;
