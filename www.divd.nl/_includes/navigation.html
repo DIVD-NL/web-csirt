@@ -2,6 +2,8 @@
 <header id="header">
     {% if page.url contains "/reports/" and page.title != "reports" %}
     <span class="logo"><a href="/">DIVD</a> / <a href="/reports/">Reports</a> / {{ page.title | capitalize }}</span>
+    {% elsif page.layout == "team" %}
+    <span class="logo"><a href="/">DIVD</a> / <a href="/team/">Team</a> / {{ page.name | camelize }}</span>
     {% elsif page.layout == "news" %}
     <span class="logo"><a href="/">DIVD</a> / <a href="/news/">News</a> / {{ page.title | capitalize }}</span>
     {% else %}
