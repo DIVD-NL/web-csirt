@@ -13,9 +13,9 @@ When you landed on this page, it is probably because you whitnessed one of our s
 
 You have been scanned by non-profit Dutch Institute for Vulnerability Disclosure (DIVD; Twitter: @DIVDnl). We scan the internet to detect systems that potentially contain vulnerabilities so we can inform system owners. All to support our mission:
 
-<center>
+<div class="center">
 We aim to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaborative and for free.
-</center>
+</div>
 
 <br>
 We only test systems if our tests pass the criteria of proportionality and subsidiarity, means that our tests are non-intrusive and as light-weight as possible and that there are no other ways to reacht he same effect.
