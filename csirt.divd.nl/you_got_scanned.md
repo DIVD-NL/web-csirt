@@ -11,10 +11,10 @@ When you landed on this page, it is probably because you whitnessed one of our s
 
 **Don't Panic**
 
-You have been scanned by non-profit Dutch Institute for Vulnerability Disclosure (DIVD; Twitter: @DIVDnl). We scan the internet to detect systems that potentially contain vulnerabilities so we can inform system owners. All to support our mission:
+You have been scanned by the non-profit Dutch Institute for Vulnerability Disclosure ([DIVD](https://www.divd.nl); Twitter: [@divdnl](https://twitter.com/divdnl)). We scan the internet to detect systems that potentially contain vulnerabilities to inform system owners. All to support our mission:
 
 <div class="center">
-We aim to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaborative and for free.
+We aim to make the digital world safer by reporting vulnerabilities we find in digital systems to the people who can fix them. We have a global reach, but do it Dutch style: open, honest, collaborative, and for free.
 </div>
 
 <br>
