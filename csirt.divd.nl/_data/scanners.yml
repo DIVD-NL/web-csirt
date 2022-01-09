@@ -1,4 +1,6 @@
 - name: AS50559
-  description: "IPv4: 194.5.73.0/24 aka 194.5.73.0-194.5.73.255"
+  description: "IPv4: 194.5.73.0/24 aka 194.5.73.0-194.5.73.255 - Our own local infrastructure"
 - name: Cyberwar.nl
-  description: "IPv4: 149.210.129.7"
+  description: "IPv4: 149.210.129.7 - Operated by Matthijs Koot"
+- name: log4jdns.x00.it
+  description: "IPv4: 5.2.67.229 - We use this domain and DNS server to track log4j vulnerabilities"
