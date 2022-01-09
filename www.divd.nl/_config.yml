@@ -42,7 +42,7 @@ collections:
 # Custom headers
 webrick:
   headers:
-    Content-Security-Policy: "default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.paypalobjects.com; script-src 'self' ; style-src 'self' https://fonts.googleapis.com/; connect-src 'self';"
+    Content-Security-Policy: "default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; style-src 'self'; connect-src 'self';"
 
 exclude:
   - README.md

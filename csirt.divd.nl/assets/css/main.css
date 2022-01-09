@@ -1,5 +1,17 @@
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
+/* raleway-regular - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/raleway-v22-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/raleway-v22-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/raleway-v22-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/raleway-v22-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/raleway-v22-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/raleway-v22-latin-regular.svg#Raleway') format('svg'); /* Legacy iOS */
+}
 /*
 	Industrious by TEMPLATED
 	templated.co @templatedco
