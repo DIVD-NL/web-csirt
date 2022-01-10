@@ -1,0 +1,28 @@
+<h2>Timeline</h2>
+<table>
+	<thead>
+		<tr>
+			<th>
+				Date
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%- for line in page.timeline %}
+			<tr>
+				<td>
+					{{ line.start | date_to_string }}
+					{% if line.end %} 
+						- <br> {{ line.end | date_to_string }}
+					{% endif %}
+				</td>
+				<td>
+					{{ line.event | markdownify | remove: '<p>' | remove: '</p>' }}
+				</td>
+			</tr>
+		{%- endfor %}
+	</tbody>
+</table>

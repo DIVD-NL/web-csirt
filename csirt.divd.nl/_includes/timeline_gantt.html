@@ -1,0 +1,22 @@
+{% assign caseend = "now" | date: "%s" | plus: 604800 | date: "%Y-%m-%d" %}
+{% if page.end %}{% assign caseend = page.end %}{% endif %}
+<div class="mermaid">
+	gantt
+	    title {{ page.title }}
+	    dateFormat  YYYY-MM-DD
+	    axisFormat  %e %b %Y
+	    section Case
+	    {% if page.end %}
+	    	{{ page.title }}            :{{ page.start }}, {{ caseend }}
+	    {% else %}
+	    	{{ page.title }} (still open)           :{{ page.start }}, {{ caseend }}
+	    {% endif %}
+	    section Events
+		{%- for line in page.timeline %}
+			{% if line.end -%}
+				{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} : {{ line.start }}, {{ line.end }}
+			{%- else -%}
+				{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} :  milestone, {{ line.start }}, 0d
+			{% endif -%}
+		{%- endfor %}
+</div>
