@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Upload
           command: |
-            mkdir ~/.ssh;
+            mkdir -p ~/.ssh;
             echo  "upload.bit.nl,213.136.12.217 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIVx+0N0LECcGHPywPCk9uz4/l3kNUVNe5QQRleIkMCTarkYauvRrPNPl49x3LIjF6cZsmQZX7jwgsJqEzfcF98=" > ~/.ssh/known_hosts;
             cd /root/project/;
             rsync -av .htaccess www-divd@upload.bit.nl:htdocs;
