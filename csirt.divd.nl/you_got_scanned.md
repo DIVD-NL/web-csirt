@@ -4,7 +4,7 @@ title: Why did you scan me?
 {{ page.title }}
 ===========
 
-When you landed on this page, it is probably because you whitnessed one of our scanners in you logs. We operate the following scanners:
+When you landed on this page, it is probably because you witnessed one of our scanners in you logs. We operate the following scanners:
 {% for s in site.data.scanners -%}
 * {{ s.name }} - {{ s.description }}
 {% endfor %}
