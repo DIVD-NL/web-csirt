@@ -1,0 +1,119 @@
+.mermaid .active0,
+.mermaid .active1,
+.mermaid .active2,
+.mermaid .active3{fill:#bfc7ff;stroke:#534fbc;}
+.mermaid .activeCrit0,
+.mermaid .activeCrit1,
+.mermaid .activeCrit2,
+.mermaid .activeCrit3{stroke:#ff8888;fill:#bfc7ff;stroke-width:2;}
+.mermaid .activeCritText0,
+.mermaid .activeCritText1,
+.mermaid .activeCritText2,
+.mermaid .activeCritText3{fill:black!important;}
+.mermaid .activeText0,
+.mermaid .activeText1,
+.mermaid .activeText2,
+.mermaid .activeText3{fill:black!important;}
+.mermaid .arrowheadPath{fill:#333333;}
+.mermaid .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}
+.mermaid .cluster span{color:#333;}
+.mermaid .cluster text{fill:#333;}
+.mermaid .cluster-label span{color:#333;}
+.mermaid .cluster-label text{fill:#333;}
+.mermaid .crit0,
+.mermaid .crit1,
+.mermaid .crit2,
+.mermaid .crit3{stroke:#ff8888;fill:red;stroke-width:2;}
+.mermaid .done0,
+.mermaid .done1,
+.mermaid .done2,
+.mermaid .done3{stroke:grey;fill:lightgrey;stroke-width:2;}
+.mermaid .doneCrit0,
+.mermaid .doneCrit1,
+.mermaid .doneCrit2,
+.mermaid .doneCrit3{stroke:#ff8888;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges;}
+.mermaid .doneCritText0,
+.mermaid .doneCritText1,
+.mermaid .doneCritText2,
+.mermaid .doneCritText3{fill:black!important;}
+.mermaid .doneText0,
+.mermaid .doneText1,
+.mermaid .doneText2,
+.mermaid .doneText3{fill:black!important;}
+.mermaid .edge-pattern-dashed{stroke-dasharray:3;}
+.mermaid .edge-pattern-dashed{stroke-dasharray:3;}
+.mermaid .edge-pattern-dotted{stroke-dasharray:2;}
+.mermaid .edge-pattern-dotted{stroke-dasharray:2;}
+.mermaid .edge-pattern-solid{stroke-dasharray:0;}
+.mermaid .edge-pattern-solid{stroke-dasharray:0;}
+.mermaid .edge-thickness-normal{stroke-width:2px;}
+.mermaid .edge-thickness-normal{stroke-width:2px;}
+.mermaid .edge-thickness-thick{stroke-width:3.5px;}
+.mermaid .edge-thickness-thick{stroke-width:3.5px;}
+.mermaid .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}
+.mermaid .edgeLabel{background-color:#e8e8e8;text-align:center;}
+.mermaid .edgePath .path{stroke:#333333;stroke-width:2.0px;fill: none}
+.mermaid .error-icon{fill:#552222;}
+.mermaid .error-icon{fill:#552222;}
+.mermaid .error-text{fill:#552222;stroke:#552222;}
+.mermaid .error-text{fill:#552222;stroke:#552222;}
+.mermaid .exclude-range{fill:#eeeeee;}
+.mermaid .flowchart-link{stroke:#333333;fill:none;}
+.mermaid .grid .tick text{font-family:"trebuchet ms",verdana,arial,sans-serif;fill:#333;}
+.mermaid .grid .tick{stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}
+.mermaid .grid path{stroke-width:0;}
+.mermaid .label text,
+.mermaid .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}
+.mermaid .marker.cross{stroke:#333333;}
+.mermaid .marker.cross{stroke:#333333;}
+.mermaid .marker{fill:#333333;stroke:#333333;}
+.mermaid .marker{fill:#333333;stroke:#333333;}
+.mermaid .mermaid-main-font{font-family:"trebuchet ms",verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}
+.mermaid .milestoneText{font-style:italic;}
+.mermaid .milestone{transform:rotate(45deg) scale(0.8,0.8);}
+.mermaid .node .label{text-align:center;}
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}
+.mermaid .node polygon,
+.mermaid .node rect,
+.mermaid .node.clickable{cursor:pointer;}
+.mermaid .section0{fill:rgba(102, 102, 255, 0.49);}
+.mermaid .section1,
+.mermaid .section2{fill:white;}
+.mermaid .section3{fill:grey;opacity:0.2;}
+.mermaid .sectionTitle0{fill:#333;}
+.mermaid .sectionTitle1{fill:#333;}
+.mermaid .sectionTitle2{fill:#333;}
+.mermaid .sectionTitle3{fill:#333;}
+.mermaid .sectionTitle{text-anchor:start;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}
+.mermaid .section{stroke:none;opacity:0.2;}
+.mermaid .task.clickable{cursor:pointer;}
+.mermaid .task0,
+.mermaid .task1,
+.mermaid .task2,
+.mermaid .task3{fill:#8a90dd;stroke:#534fbc;}
+.mermaid .taskText.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}
+.mermaid .taskText0,
+.mermaid .taskText1,
+.mermaid .taskText2,
+.mermaid .taskText3{fill:white;}
+.mermaid .taskTextOutside0,
+.mermaid .taskTextOutside1,
+.mermaid .taskTextOutside2{fill:black;}
+.mermaid .taskTextOutside3{fill:black;}
+.mermaid .taskTextOutsideLeft.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}
+.mermaid .taskTextOutsideLeft{fill:black;text-anchor:end;}
+.mermaid .taskTextOutsideRight.clickable{cursor:pointer;fill:#003163!important;font-weight:bold;}
+.mermaid .taskTextOutsideRight{fill:black;text-anchor:start;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}
+.mermaid .taskText{text-anchor:middle;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}
+.mermaid .task{stroke-width:2;}
+.mermaid .titleText{text-anchor:middle;font-size:18px;fill:#333;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}
+.mermaid .today{fill:none;stroke:red;stroke-width:2px;}
+.mermaid :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}
+.mermaid div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}
+.mermaid span{fill:#333;color:#333;}
+.mermaid svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}
+.mermaid svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}
+.mermaid {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}
+.mermiad .node {fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}
