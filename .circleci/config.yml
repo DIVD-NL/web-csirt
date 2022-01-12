@@ -5,33 +5,27 @@ jobs:
     docker:
       - image: mrseccubus/github-pages:latest
     steps:
-      - run: (pwd;cd /root/;rm -rf project;mkdir project)
+      - run: (cd /root/;rm -rf project;mkdir project)
       - checkout
       - run:
           name: Build and check
           command: |
-            pwd
-            for site in www.divd.nl csirt.divd.nl; do
+            for site in csirt.divd.nl www.divd.nl; do
               ( 
                 echo "*** Building and checking $site ***"; 
-                cd $site
+                cd $site;
+                gem install jekyll-secinfo
                 ./update.sh
-                rm -rf /srv/jekyll/*
-                cp -r * /srv/jekyll
-                cd /srv/jekyll;
-                echo "Running bundle install (be patient)"
-                bundle install
-                bundle exec jekyll build 2>&1
-                (cd _site;../proof_html.sh) 
-                mkdir -p /www
-                mv _site /www/$site
+                jekyll build 2>&1|grep -v 'warning:';
+                ./proof_html.sh 
               ) 
             done
-            cp .htaccess /www
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - "/www"
+            - "/root/project/www.divd.nl/_site"
+            - "/root/project/csirt.divd.nl/_site"
+            - "/root/project/.htaccess"
 
 
   upload:
@@ -43,7 +37,7 @@ jobs:
           command: |
             apk update;
             apk add rsync openssh;
-            #echo "set ftp:passive-mode true" > ~/.lftprc
+            echo "set ftp:passive-mode true" > ~/.lftprc
       - restore_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
       - add_ssh_keys:
@@ -54,11 +48,11 @@ jobs:
           command: |
             mkdir -p ~/.ssh;
             echo  "upload.bit.nl,213.136.12.217 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIVx+0N0LECcGHPywPCk9uz4/l3kNUVNe5QQRleIkMCTarkYauvRrPNPl49x3LIjF6cZsmQZX7jwgsJqEzfcF98=" > ~/.ssh/known_hosts;
-            cd /www;
+            cd /root/project/;
             rsync -av .htaccess www-divd@upload.bit.nl:htdocs;
-            cd /www/csirt.divd.nl/_site;
+            cd /root/project/csirt.divd.nl/_site;
             rsync -av --delete . www-divd@upload.bit.nl:htdocs/csirt-divd-nl;
-            cd /www/www.divd.nl/_site;
+            cd /root/project/www.divd.nl/_site;
             rsync -av "--exclude=data/*" --delete . www-divd@upload.bit.nl:htdocs/divd-nl;
 
 workflows:

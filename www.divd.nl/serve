@@ -12,24 +12,25 @@ if [[ $(uname -a|grep -i microsoft|wc -l) -gt 0 ]]; then
 	echo "*******************************************************************************************"
 	echo "On WSL2 the docker container is reachable via this url: http://$IP:$PORT"
 	echo "*******************************************************************************************"
-	export URL="http://$IP:$PORT"
 fi
-./update.sh
 docker run \
-	--volume="$PWD:/srv/jekyll:delegated" \
+	--volume="$PWD/../:/root/project:delegated" \
 	--entrypoint /bin/bash \
 	--publish $PORT:4000 \
-	--env URL="$URL" \
 	-ti mrseccubus/github-pages \
 	-c "
-		echo 'Running bundle install (be patient...)';
-		bundle install --jobs=2;
+		gem install jekyll-secinfo jekyll-paginate;
+		cd /root/project/csirt.divd.nl;
+		if [[ -e Gemfile ]]; then
+			echo \"*** Installing Gems in Gemfile ***\"
+			bundle install 
+			EXEC=\"bundle exec\"
+		fi
+
 		while [ 1 ] ; do
+			./update.sh
 			rm -rf _site/*;
-			if [[ \"$URL\" != \"\"  ]]; then
-				echo \"*** Site URL: $URL\"
-			fi
-			bundle exec jekyll serve --incremental --host=0.0.0.0 --future 2>&1
+			$EXEC jekyll serve --incremental --host=0.0.0.0 --future 2>&1 
 			set -e
 			echo 'Press CTRL+C now to quit'
 			sleep 1
