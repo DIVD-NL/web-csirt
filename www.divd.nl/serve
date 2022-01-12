@@ -19,7 +19,7 @@ docker run \
 	--publish $PORT:4000 \
 	-ti mrseccubus/github-pages \
 	-c "
-		gem install jekyll-secinfo;
+		gem install jekyll-secinfo jekyll-paginate;
 		cd /root/project/www.divd.nl;
 		while [ 1 ] ; do
 			./update.sh
