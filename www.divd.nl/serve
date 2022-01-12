@@ -12,19 +12,24 @@ if [[ $(uname -a|grep -i microsoft|wc -l) -gt 0 ]]; then
 	echo "*******************************************************************************************"
 	echo "On WSL2 the docker container is reachable via this url: http://$IP:$PORT"
 	echo "*******************************************************************************************"
+	export URL="http://$IP:$PORT"
 fi
+./update.sh
 docker run \
-	--volume="$PWD/../:/root/project:delegated" \
+	--volume="$PWD:/srv/jekyll:delegated" \
 	--entrypoint /bin/bash \
 	--publish $PORT:4000 \
+	--env URL="$URL" \
 	-ti mrseccubus/github-pages \
 	-c "
-		gem install jekyll-secinfo;
-		cd /root/project/www.divd.nl;
+		echo 'Running bundle install (be patient...)';
+		bundle install --jobs=2;
 		while [ 1 ] ; do
-			./update.sh
 			rm -rf _site/*;
-			jekyll serve --incremental --host=0.0.0.0 --future 2>&1 |grep -Ev 'rb:[0-9]+: warning'
+			if [[ ! -z $URL ]]; then
+				echo \"*** Site URL: $URL\"
+			fi
+			bundle exec jekyll serve --incremental --host=0.0.0.0 --future 2>&1
 			set -e
 			echo 'Press CTRL+C now to quit'
 			sleep 1
