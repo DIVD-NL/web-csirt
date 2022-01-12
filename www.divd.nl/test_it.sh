@@ -1,13 +1,11 @@
 #!/bin/bash
 
-./update.sh
 docker pull mrseccubus/github-pages:latest
-docker run --volume="$PWD:/srv/jekyll:delegated" --entrypoint /bin/bash -ti mrseccubus/github-pages \
+docker run --volume="$PWD/..:/root/project:delegated" --entrypoint /bin/bash -ti mrseccubus/github-pages \
 -c "
-	echo \"Running bundle install (be patient)\"
-	bundle install
+	cd /root/project/www.divd.nl;
 	rm -rf _site/*;
-	bundle exec jekyll build  --future 2>&1;
-	cd _site
-	../proof_html.sh
+	jekyll build  --future 2>&1 |grep -Ev 'rb:[0-9]+: warning';
+	./update.sh
+	./proof_html.sh
 "
