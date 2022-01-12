@@ -30,7 +30,8 @@ htmlproofer \
 	--disable_external \
 	--check-html \
 	--allow-hash-href  \
-	--url-ignore="/#menu/" _site
+	--url-ignore="/#menu/" \
+	_site
 echo "*** External link check ***"
 (set +e ; htmlproofer \
 	--allow-hash-href \

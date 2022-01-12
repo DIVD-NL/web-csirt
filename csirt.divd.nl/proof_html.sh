@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e # Need to fail on error
 TIDY_OUT=/tmp/tidy_out.$$
-apt update -y
-apt install python3-pip libcurl4 -y
+apt-get update -y
+apt-get install python3-pip libcurl4 -y
 pip3 install html5validator 
 
 TEAMCOUNT_HERE=$( ls _team|wc -l )
@@ -13,11 +13,13 @@ if [[ $TEAMCOUNT_HERE -le 0 || $TEAMCOUNT_HERE -ne $TEAMCOUNT_THERE ]]; then
 fi
 gem install html-proofer
 echo "*** Internal link check ***"
+export LANG=en_US.UTF-8
 htmlproofer \
 	--check-html \
 	--disable_external \
 	--allow-hash-href  \
-	--url-ignore="/#english/" _site
+	--url-ignore="/#english/" \
+	_site
 echo "*** External link check ***"
 (set +e ; htmlproofer \
 	--allow-hash-href \
