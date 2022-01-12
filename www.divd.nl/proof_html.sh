@@ -3,7 +3,7 @@ set -e
 #set -x
 TIDY_OUT=/tmp/tidy_out.$$
 apt update -y
-apt install python3-pip libcurl3 -y
+apt install python3-pip libcurl4 -y
 pip3 install html5validator 
 
 CASECOUNT_HERE=$( ls _cases|wc -l )

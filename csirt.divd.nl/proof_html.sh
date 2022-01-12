@@ -2,7 +2,7 @@
 set -e # Need to fail on error
 TIDY_OUT=/tmp/tidy_out.$$
 apt update -y
-apt install python3-pip libcurl3 -y
+apt install python3-pip libcurl4 -y
 pip3 install html5validator 
 
 TEAMCOUNT_HERE=$( ls _team|wc -l )
