@@ -17,7 +17,7 @@ jobs:
                 ./update.sh
                 cp -r * /srv/jekyll
                 cd /srv/jekyll;
-                echo "Running bundle install (be patient)"scanning
+                echo "Running bundle install (be patient)"
                 bundle install
                 bundle exec jekyll build 2>&1
                 ./proof_html.sh 
