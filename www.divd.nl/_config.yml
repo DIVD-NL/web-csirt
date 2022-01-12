@@ -27,6 +27,7 @@ sass:
 plugins:
   - jekyll-sitemap
   - jekyll-secinfo
+  - jekyll-paginate
 
 collections:
   team:

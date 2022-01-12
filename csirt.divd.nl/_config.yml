@@ -24,6 +24,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-secinfo
+  - jekyll-paginate
 
 jekyll-secinfo:
   divd:
