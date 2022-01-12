@@ -16,6 +16,7 @@ jobs:
                 echo "*** Building and checking $site ***"; 
                 cd $site
                 ./update.sh
+                rm -rf /srv/jekyll/*
                 cp -r * /srv/jekyll
                 cd /srv/jekyll;
                 echo "Running bundle install (be patient)"
@@ -30,9 +31,7 @@ jobs:
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - "/root/project/www.divd.nl/_site"
-            - "/root/project/csirt.divd.nl/_site"
-            - "/root/project/.htaccess"
+            - "/www"
 
 
   upload:
@@ -44,7 +43,7 @@ jobs:
           command: |
             apk update;
             apk add rsync openssh;
-            echo "set ftp:passive-mode true" > ~/.lftprc
+            #echo "set ftp:passive-mode true" > ~/.lftprc
       - restore_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
       - add_ssh_keys:
