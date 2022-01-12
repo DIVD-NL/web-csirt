@@ -5,11 +5,12 @@ jobs:
     docker:
       - image: mrseccubus/github-pages:latest
     steps:
-      - run: (cd /root/;rm -rf project;mkdir project)
+      - run: (pwd;cd /root/;rm -rf project;mkdir project)
       - checkout
       - run:
           name: Build and check
           command: |
+            pwd
             for site in www.divd.nl csirt.divd.nl; do
               ( 
                 echo "*** Building and checking $site ***"; 
