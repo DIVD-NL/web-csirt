@@ -27,6 +27,7 @@ sass:
 plugins:
   - jekyll-sitemap
   - jekyll-secinfo
+  - jekyll-paginate
 
 collections:
   team:
@@ -43,6 +44,13 @@ collections:
 webrick:
   headers:
     Content-Security-Policy: "default-src 'none'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; style-src 'self'; connect-src 'self';"
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"    
 
 exclude:
   - README.md
