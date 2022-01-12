@@ -20,7 +20,7 @@ jobs:
                 echo "Running bundle install (be patient)"
                 bundle install
                 bundle exec jekyll build 2>&1
-                ./proof_html.sh 
+                (cd _site;../proof_html.sh) 
                 mkdir -p /www
                 mv _site /www/$site
               ) 
