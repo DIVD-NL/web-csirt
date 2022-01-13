@@ -38,3 +38,5 @@ title: Cases
 </div>
 <hr>
 {% endfor %}
+
+{% include timeline_cases.html %}
