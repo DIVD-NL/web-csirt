@@ -20,7 +20,7 @@ docker run \
 	-ti mrseccubus/github-pages \
 	-c "
 		gem install jekyll-secinfo jekyll-paginate;
-		cd /root/project/csirt.divd.nl;
+		cd /root/project/www.divd.nl;
 		if [[ -e Gemfile ]]; then
 			echo \"*** Installing Gems in Gemfile ***\"
 			bundle install 
