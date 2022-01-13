@@ -3,7 +3,12 @@ layout: default
 ---
 <h1>{{ page.name }}</h1>
 
+<b>Role</b>: {{ page.role }}
+<br>
+<b>Department</b>: {{ page.dept }}
+<p>
 {{ content | markdownify }}
+</p>
 <br>
 {% if page.twitter or page.linkedin or page.wikipedia %}
 <h2>Social media</h2>
