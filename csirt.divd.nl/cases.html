@@ -32,7 +32,12 @@ title: Cases
 </h3>
 <p>
 	Status: {{ p.status | default: "open" }}<br>
-	{{ p.excerpt }}
+	{% assign checkExcerpt = p.excerpt | strip_html | split: "SUMMARY" %}
+	{% if checkExceprt[0] %}
+		{{ p.excerpt | strip_html }}
+	{% else %}
+		{{ p.short | strip_html }}
+	{% endif %}
 </p>
 <a href="{{ p.url }}">Lees meer</a>
 </div>
