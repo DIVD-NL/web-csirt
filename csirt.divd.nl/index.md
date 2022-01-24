@@ -25,6 +25,8 @@ Last 10 posts ...
 
 [More posts](/blog/2)
 
+{% include timeline_cases_open.html %}
+
 ## Open cases
 
 <ul>
