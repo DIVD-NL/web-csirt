@@ -12,9 +12,14 @@
                       <li><a href="/anbi"><i class="icon fa-book">&nbsp;</i>ANBI</a></li>
                     </ul>
                   </td>
+
                   <td class="right-align">
                     <b>Scanning from</b><br />
-                    <a href="https://apps.db.ripe.net/db-web-ui/query?bflag=false&dflag=false&rflag=true&searchtext=AS50559&source=RIPE">AS50559</a> (194.5.73.0/24)
+                    <ul>
+                    {% for s in site.data.scanners -%}
+                    {{ s.name }}<br>
+                    <span class='small'>{{ s.description }}</span><br>
+                    {% endfor %}
                   </td>
                 </tr>
               </table>

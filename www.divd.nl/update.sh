@@ -18,3 +18,9 @@ echo "Updating cves"
 	rm -f *.md
 	cp ../../csirt.divd.nl/_cves/*.md .
 )
+echo "Updating data"
+(
+	cd _data
+	rm -f scanners.yml
+	cp ../../csirt.divd.nl/_data/scanners.yml .
+)
