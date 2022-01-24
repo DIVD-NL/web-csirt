@@ -28,6 +28,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-secinfo
   - jekyll-paginate
+  - jekyll-last-modified-at
 
 collections:
   team:

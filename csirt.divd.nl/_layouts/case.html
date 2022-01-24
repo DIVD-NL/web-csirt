@@ -114,6 +114,14 @@ layout: default
 		<tr>
 			<td> Status </td><td> {{ page.status }} </td>
 		</tr>
+		<tr>
+			<td>
+				Last modified
+			</td>
+			<td>
+				{{ page.last_modified_at | date: "%d %b %Y %H:%M"}}
+			</td>
+		</tr>
 	</tbody>
 </table>
 

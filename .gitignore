@@ -1,6 +1,6 @@
 .bundle
 .bundle-cache
-.jekyll-metadata/
+*/.jekyll-metadata
 .jekyll-cache/
 .sass-cache/
 .DS_Store
