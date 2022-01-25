@@ -1,5 +1,6 @@
 ---
 title: DIVD CSIRT
+layout : page
 ---
 ## The DIVD CSIRT...
 

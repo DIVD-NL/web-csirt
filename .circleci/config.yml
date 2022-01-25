@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Build and check
           command: |
-            for site in www.divd.nl csirt.divd.nl; do
+            for site in csirt.divd.nl www.divd.nl; do
               ( 
                 echo "*** Building and checking $site ***"; 
                 cd $site;

@@ -3,7 +3,7 @@ set -e
 #set -x
 TIDY_OUT=/tmp/tidy_out.$$
 apt update -y
-apt install python3-pip default-jdk-headless -y
+apt install python3-pip libcurl4 -y
 pip3 install html5validator 
 
 CASECOUNT_HERE=$( ls _cases|wc -l )
@@ -30,7 +30,8 @@ htmlproofer \
 	--disable_external \
 	--check-html \
 	--allow-hash-href  \
-	--url-ignore="/#menu/" _site
+	--url-ignore="/#menu/" \
+	_site
 echo "*** External link check ***"
 (set +e ; htmlproofer \
 	--allow-hash-href \

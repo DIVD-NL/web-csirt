@@ -9,4 +9,3 @@ docker run --volume="$PWD/..:/root/project:delegated" --entrypoint /bin/bash -ti
 	./update.sh
 	./proof_html.sh
 "
-

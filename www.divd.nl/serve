@@ -19,12 +19,18 @@ docker run \
 	--publish $PORT:4000 \
 	-ti mrseccubus/github-pages \
 	-c "
-		gem install jekyll-secinfo;
+		gem install jekyll-secinfo jekyll-paginate;
 		cd /root/project/www.divd.nl;
+		if [[ -e Gemfile ]]; then
+			echo \"*** Installing Gems in Gemfile ***\"
+			bundle install 
+			EXEC=\"bundle exec\"
+		fi
+
 		while [ 1 ] ; do
 			./update.sh
 			rm -rf _site/*;
-			jekyll serve --incremental --host=0.0.0.0 --future 2>&1 |grep -Ev 'rb:[0-9]+: warning'
+			$EXEC jekyll serve --incremental --host=0.0.0.0 --future 2>&1 
 			set -e
 			echo 'Press CTRL+C now to quit'
 			sleep 1
