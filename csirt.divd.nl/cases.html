@@ -33,7 +33,7 @@ title: Cases
 <p>
 	Status: {{ p.status | default: "open" }}<br>
 	{% assign checkExcerpt = p.excerpt | strip_html | split: "SUMMARY" %}
-	{% if checkExceprt[0] %}
+	{% if checkExcerpt[0] %}
 		{{ p.excerpt | strip_html }}
 	{% else %}
 		{{ p.short | strip_html }}
