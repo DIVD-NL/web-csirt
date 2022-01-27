@@ -34,9 +34,9 @@ title: Cases
 	Status: {{ p.status | default: "open" }}<br>
 	{% assign checkExcerpt = p.excerpt | strip_html | split: "SUMMARY" %}
 	{% if checkExcerpt[0] %}
-		{{ p.excerpt | strip_html }}
+		{{ p.excerpt | strip_html | escape }}
 	{% else %}
-		{{ p.short | strip_html }}
+		{{ p.short | strip_html | escape }}
 	{% endif %}
 </p>
 <a href="{{ p.url }}">Lees meer</a>
