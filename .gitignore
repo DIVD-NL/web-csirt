@@ -1,7 +1,7 @@
 .bundle
 .bundle-cache
-.jekyll-metadata
-.jekyll-cache
+*/.jekyll-metadata
+.jekyll-cache/
 .sass-cache/
 .DS_Store
 Gemfile.lock

@@ -108,6 +108,14 @@ layout: default
 				</td>
 			</tr>
 		{% endif %}
+		<tr>
+			<td>
+				Last modified
+			</td>
+			<td>
+				{{ page.last_modified_at | date: "%d %b %Y %H:%M"}}
+			</td>
+		</tr>
 	</tbody>
 </table>
 

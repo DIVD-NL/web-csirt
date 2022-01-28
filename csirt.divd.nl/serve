@@ -19,7 +19,7 @@ docker run \
 	--publish $PORT:4000 \
 	-ti mrseccubus/github-pages \
 	-c "
-		gem install jekyll-secinfo jekyll-paginate;
+		gem install -N jekyll-secinfo jekyll-paginate jekyll-last-modified-at;
 		cd /root/project/csirt.divd.nl;
 		if [[ -e Gemfile ]]; then
 			echo \"*** Installing Gems in Gemfile ***\"
