@@ -1,4 +1,13 @@
 ---
 layout: default
 ---
+<h3>{{ page.title }}</h3>
+<div class="right-align">
+	{{ page.date | date_to_long_string }}, by {{ page.author | default: "anonymous" }}
+</div>
+<br>
+<div>
 {{ content }}
+</div>
+<hr>
+Last modified: {{ page.last_modified_at | date: "%d %b %Y %H:%M"}}

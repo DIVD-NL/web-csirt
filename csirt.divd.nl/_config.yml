@@ -26,6 +26,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-secinfo
   - jekyll-paginate
+  - jekyll-last-modified-at
 
 jekyll-secinfo:
   divd:
