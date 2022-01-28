@@ -2868,3 +2868,7 @@ body.is-menu-visible #menu {
 .right-align {
   text-align: right;
 }
+
+.small {
+  font-size: x-small;
+}
