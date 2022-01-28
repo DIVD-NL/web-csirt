@@ -3,7 +3,12 @@ layout: default
 ---
 <h1>{{ page.name }}</h1>
 
+<b>Role</b>: {{ page.role }}
+<br>
+<b>Department</b>: {{ page.dept }}
+
 {{ content | markdownify }}
+
 <br>
 {% if page.twitter or page.linkedin or page.wikipedia %}
 <h2>Social media</h2>
@@ -21,8 +26,8 @@ layout: default
 <br>
 {% endif %}
 
-{% include 
-	posts-cases.html 
+{% include
+	posts-cases.html
 	name = page.name
 %}
 

@@ -11,6 +11,7 @@
     {% assign stats = stats | push: stat %}
     {% assign current_year = year %}
     {% assign cases = 0 %}
+    {% assign ips = 0 %}
   {% endif %}
   {% assign cases = cases | plus: 1 %}
   {% assign ips = ips | plus: c.ips %}
