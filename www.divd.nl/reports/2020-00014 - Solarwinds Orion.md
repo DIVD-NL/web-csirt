@@ -18,7 +18,7 @@ A few days later, it turned out that not only FireEye had been hit by the attack
 
 The attackers took advantage of a backdoor in Orion, a software package from the company Solarwinds. SolarWinds’ Orion system provides centralized monitoring across an organization’s entire IT stack. 
 
-According to a statement by SolarWinds, the hackers already gained access to SolarWinds’ software development system in October 2019. They inserted a vulnerability in Orion software updates, dubbed SUNBURST, which was installed by customers in the spring of 2020. Solwarwind said it notified 33,000 customers, among them US government agencies, major private corporations, and Fortune 500 businesses. 
+According to a statement by SolarWinds, the hackers already gained access to SolarWinds’ software development system in October 2019. They inserted a vulnerability in Orion software updates, dubbed SUNBURST, which was installed by customers in the spring of 2020. SolarWind said it notified 33,000 customers, among them US government agencies, major private corporations, and Fortune 500 businesses. 
 
 By analyzing the attack, security researchers from Symantec, Palo Alto Networks and Guidepoint found another backdoor, likely coming from a different threat actor (CVE-2020-10148), this vulnerability was also used by attackers to deliver malware, and was called Supernova.
 
