@@ -33,7 +33,7 @@ module CveJson
                   end
                 end
               end
-              CveJson.log.warn "Title: #{title}"        
+              CveJson.log.info "Title: #{title}"        
               # Set additional attributes
               doc.data["cve"] = cve
               doc.data["title"] = title
@@ -41,7 +41,7 @@ module CveJson
               # Create JSON page too
               site.pages << CveJson40Page.new(site, doc.data["json"])
             elsif doc.data["layout"] == "cve" then
-              CveJson.log.warn doc.basename_without_ext
+              CveJson.log.info doc.basename_without_ext
               cve = doc.basename_without_ext
               unless doc.data.key?("cve") then
                 doc.data["cve"] = cve
@@ -61,7 +61,7 @@ module CveJson
   class CveJson40Page < Jekyll::Page
     def initialize(site, data)
       # Generate a new document with layout cve-json-40-json in /cves based on the original one.
-      CveJson.log.warn "Creating a JSON file for #{ data["CVE_data_meta"]["ID"]}"
+      CveJson.log.info "Creating a JSON file for #{ data["CVE_data_meta"]["ID"]}"
       @site = site             # the current site instance.
       @base = site.source      # path to the source directory.
       @dir  = "cves"           # the directory the page will reside in.
