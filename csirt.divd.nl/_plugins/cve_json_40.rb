@@ -40,6 +40,15 @@ module CveJson
               doc.data["redirect_from"] = [ "/#{cve}/" ]
               # Create JSON page too
               site.pages << CveJson40Page.new(site, doc.data["json"])
+            elsif doc.data["layout"] == "cve" then
+              CveJson.log.warn doc.basename_without_ext
+              cve = doc.basename_without_ext
+              unless doc.data.key?("cve") then
+                doc.data["cve"] = cve
+              end
+              unless doc.data.key?("redirect_from")  then
+                doc.data["redirect_from"] = [ "/#{cve}/" ]
+              end
             end
           end
         end
