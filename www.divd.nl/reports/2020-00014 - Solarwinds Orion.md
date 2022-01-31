@@ -38,6 +38,6 @@ The DIVD scanned for Supernova and found around 700 vulnerable Solarwinds Orion 
 ## Links
 
 - [Solarwinds: Security Advisory](https://www.solarwinds.com/sa-overview/securityadvisory)
-- [Fireye blog](https://www.fireeye.com/blog/products-and-services/2020/12/fireeye-shares-details-of-recent-cyber-attack-actions-to-protect-community.html)
+- [FireEye blog](https://www.fireeye.com/blog/products-and-services/2020/12/fireeye-shares-details-of-recent-cyber-attack-actions-to-protect-community.html)
 - [Symantec blog](https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/sunburst-supply-chain-attack-solarwinds)
 
