@@ -7,6 +7,7 @@
   {% endif %}
 {% endfor %}
 
+
 {% for c in site.cases %}
   {% if c.author contains include.name or c.lead == include.name or c.researchers contains include.name %}
     {% assign found = true %}
@@ -21,14 +22,17 @@
   {% endif %}
 {% endfor %}
 
+{% assign cve_discovered =  '' | split: '' %}
+{% assign cve_contributed = '' | split: '' %}
 {% for c in site.cves %}
-  {% if c.author == include.name or c.discovered_by contains include.name or c.researchers contains include.name %}
+  {% assign credited = c.json.credit | where: "value", include.name %}
+  {% if c.author == include.name or c.discovered_by contains include.name or c.researchers contains include.name or credited.size > 0 %}
     {% assign found = true %}
     {% assign cve = true %}
     {% if c.discovered_by contains include.name %}
-      {% assign cve_discovered = true %}
+      {% assign cve_discovered =  cve_discovered  | push: c %}
     {% else %}
-      {% assign cve_contributed = true %}
+      {% assign cve_contributed = cve_contributed | push: c %}
     {% endif %}
   {% endif %}
 {% endfor %}
@@ -69,33 +73,39 @@
     </ul>
   {% endif %}
 
-  {% if cve_discovered %}
+  {% if cve_discovered.size > 0 %}
     <h3>CVEs discovered</h3>
 
     <ul>
-      {% for c in site.cves %}
-        {% if c.discovered_by contains include.name %}
-          <li>
+      {% for c in cve_discovered %}
+        <li>
+          {% if c.json %}
+            {% assign cve_title = c.json.description.description_data | where: "lang", "eng" %}
+            {% capture cve_title %}{{ cve_title[0].value }}{% endcapture %}
+            <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.json.CVE_data_meta.ID | escape }} - {{ cve_title | escape }}</a>
+          {% else %}
             <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
-          </li>
-        {% endif %}
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
   {% endif %}
 
-{% if cve_contributed %}
+
+  {% if cve_contributed.size > 0 %}
     <h3>CVEs contributed to</h3>
 
     <ul>
-      {% for c in site.cves %}
-        {% if c.discovered_by contains include.name %}
-        {% else %}
-          {% if c.author == include.name or c.researchers contains include.name %}
-            <li>
-              <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
-            </li>
+      {% for c in cve_contributed %}
+        <li>
+          {% if c.json %}
+            {% assign cve_title = c.json.description.description_data | where: "lang", "eng" %}
+            {% capture cve_title %}{{ cve_title[0].value }}{% endcapture %}
+            <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.json.CVE_data_meta.ID | escape }} - {{ cve_title | escape }}</a>
+          {% else %}
+            <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
           {% endif %}
-        {% endif %}
+        </li>
       {% endfor %}
     </ul>
   {% endif %}

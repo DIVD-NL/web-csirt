@@ -16,6 +16,8 @@ jobs:
                 cd $site;
                 gem install -N jekyll-secinfo jekyll-last-modified-at
                 ./update.sh
+                # Removing some stubs
+                rm -f _cves/CVE-2022-21907.md
                 jekyll build 2>&1|grep -v 'warning:';
                 ./proof_html.sh 
               ) 
