@@ -7,7 +7,6 @@
   {% endif %}
 {% endfor %}
 
-
 {% for c in site.cases %}
   {% if c.author contains include.name or c.lead == include.name or c.researchers contains include.name %}
     {% assign found = true %}
@@ -79,13 +78,7 @@
     <ul>
       {% for c in cve_discovered %}
         <li>
-          {% if c.json %}
-            {% assign cve_title = c.json.description.description_data | where: "lang", "eng" %}
-            {% capture cve_title %}{{ cve_title[0].value }}{% endcapture %}
-            <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.json.CVE_data_meta.ID | escape }} - {{ cve_title | escape }}</a>
-          {% else %}
             <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
-          {% endif %}
         </li>
       {% endfor %}
     </ul>
@@ -98,13 +91,7 @@
     <ul>
       {% for c in cve_contributed %}
         <li>
-          {% if c.json %}
-            {% assign cve_title = c.json.description.description_data | where: "lang", "eng" %}
-            {% capture cve_title %}{{ cve_title[0].value }}{% endcapture %}
-            <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.json.CVE_data_meta.ID | escape }} - {{ cve_title | escape }}</a>
-          {% else %}
             <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
-          {% endif %}
         </li>
       {% endfor %}
     </ul>

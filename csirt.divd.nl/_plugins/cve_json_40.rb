@@ -21,6 +21,24 @@ module CveJson
         if n == "cves" then
           collection.docs.each do | doc |
             if doc.data["layout"] == "cve-json-40"
+              # Get data
+              cve = doc.data["json"]["CVE_data_meta"]["ID"]
+              if doc.data["json"]["CVE_data_meta"].key?("TITLE") then
+                title = doc.data["json"]["CVE_data_meta"]["TITLE"]
+              else
+                doc.data["json"]["description"]["description_data"].each do | d |
+                  if d["lang"] == "eng" then
+                    title = d["value"]
+                    break
+                  end
+                end
+              end
+              CveJson.log.warn "Title: #{title}"        
+              # Set additional attributes
+              doc.data["cve"] = cve
+              doc.data["title"] = title
+              doc.data["redirect_from"] = [ "/#{cve}/" ]
+              # Create JSON page too
               site.pages << CveJson40Page.new(site, doc.data["json"])
             end
           end
