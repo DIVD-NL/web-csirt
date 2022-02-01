@@ -122,12 +122,12 @@ module CasesPlugin
             if status == "Closed" then
               if not case_end then
                 CasesPlugin.log.error "Case #{divd}, is 'Closed' but end date is not set"
+              elsif case_end < case_start then
+                CasesPlugin.log.error "Case #{divd}, ends before it starts, #{case_start} -> #{case_end}"
               end
+              
               if not ( doc.data.key?("ips") && ( doc.data["ips"] == "n/a" || doc.data["ips"] > 0 ) ) then
                 CasesPlugin.log.warn "Case #{divd}, is 'Closed' but 0 ips affected. That's not good for stats (is the ips front matter key set?)"
-              end
-              if case_end < case_start then
-                CasesPlugin.log.error "Case #{divd}, ends before it starts, #{case_start} -> #{case_end}"
               end
             end
 
