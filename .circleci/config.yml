@@ -16,6 +16,8 @@ jobs:
                 cd $site;
                 gem install -N jekyll-secinfo jekyll-last-modified-at
                 ./update.sh
+                # Remove some stubs
+                rm -rf _cases/DIVD-3000-0000*
                 jekyll build 2>&1|grep -v 'warning:';
                 ./proof_html.sh 
               ) 

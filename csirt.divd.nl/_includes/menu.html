@@ -45,7 +45,7 @@ Example:
 	    					<li class="menu-item">
 		    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
 		    						{{ p.title | slice: 0, 75 | escape }}<br>
-		    						{{ p.short | slice: 0, 75 | escape }}...
+		    						{{ p.excerpt | slice: 0, 75 | escape }}...
 		    					</a>
 		    				</li>
 			    		{% endfor %}
