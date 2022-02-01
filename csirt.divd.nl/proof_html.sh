@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 set -e # Need to fail on error
 TIDY_OUT=/tmp/tidy_out.$$
 apt-get update -y
