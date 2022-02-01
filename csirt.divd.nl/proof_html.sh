@@ -41,7 +41,6 @@ else
 fi
 if [[ -e jekyll-build.log ]]; then
 	ERRORS=$( grep ERROR jekyll-build.log | grep -v DIVD-3000-0000 | wc -l )
-	ERRORS=$( grep ERROR jekyll-build.log | wc -l )
 	WARNS=$( grep WARN jekyll-build.log | wc -l )
 	if [[ $WARNS -gt 0 ]] ; then
 		echo "There are $WARNS warnings in the Jekyll build log"
