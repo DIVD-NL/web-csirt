@@ -18,7 +18,7 @@ jobs:
                 ./update.sh
                 # Remove some stubs
                 rm -rf _cases/DIVD-3000-0000*
-                jekyll build 2>&1|grep -v 'warning:';
+                jekyll build 2>&1|grep -v 'warning:' 2>&1 tee jekyll-build.log;
                 ./proof_html.sh 
               ) 
             done
