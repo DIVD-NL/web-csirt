@@ -21,14 +21,17 @@
   {% endif %}
 {% endfor %}
 
+{% assign cve_discovered =  '' | split: '' %}
+{% assign cve_contributed = '' | split: '' %}
 {% for c in site.cves %}
-  {% if c.author == include.name or c.discovered_by contains include.name or c.researchers contains include.name %}
+  {% assign credited = c.json.credit | where: "value", include.name %}
+  {% if c.author == include.name or c.discovered_by contains include.name or c.researchers contains include.name or credited.size > 0 %}
     {% assign found = true %}
     {% assign cve = true %}
     {% if c.discovered_by contains include.name %}
-      {% assign cve_discovered = true %}
+      {% assign cve_discovered =  cve_discovered  | push: c %}
     {% else %}
-      {% assign cve_contributed = true %}
+      {% assign cve_contributed = cve_contributed | push: c %}
     {% endif %}
   {% endif %}
 {% endfor %}
@@ -69,33 +72,27 @@
     </ul>
   {% endif %}
 
-  {% if cve_discovered %}
+  {% if cve_discovered.size > 0 %}
     <h3>CVEs discovered</h3>
 
     <ul>
-      {% for c in site.cves %}
-        {% if c.discovered_by contains include.name %}
-          <li>
+      {% for c in cve_discovered %}
+        <li>
             <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
-          </li>
-        {% endif %}
+        </li>
       {% endfor %}
     </ul>
   {% endif %}
 
-{% if cve_contributed %}
+
+  {% if cve_contributed.size > 0 %}
     <h3>CVEs contributed to</h3>
 
     <ul>
-      {% for c in site.cves %}
-        {% if c.discovered_by contains include.name %}
-        {% else %}
-          {% if c.author == include.name or c.researchers contains include.name %}
-            <li>
-              <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
-            </li>
-          {% endif %}
-        {% endif %}
+      {% for c in cve_contributed %}
+        <li>
+            <a href='https://csirt.divd.nl{{ c.url }}'>{{ c.cve | escape }} - {{ c.title | escape }}</a>
+        </li>
       {% endfor %}
     </ul>
   {% endif %}
