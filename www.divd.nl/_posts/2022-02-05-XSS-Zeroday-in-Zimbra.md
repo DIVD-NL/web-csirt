@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: Blogs
 title: XSS Zeroday in Zimbra
 author: Boaz Braaksma
 excerpt: a Zero-day XSS Vulnerability in Zimbra was published on the internet on the third of February 2022.
