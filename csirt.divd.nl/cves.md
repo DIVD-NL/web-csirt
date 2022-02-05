@@ -1,5 +1,5 @@
 ---
-title: CVE's
+title: CVEs
 ---
 {% assign cvepages = site.cves |reverse %}
 {% assign team = site.team | map: "name" %}
