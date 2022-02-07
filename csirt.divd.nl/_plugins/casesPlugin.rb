@@ -34,7 +34,11 @@ module CasesPlugin
             end
 
             # Lint the title
-            title = doc.data["title"]
+            if doc.data.key?("title") then
+              title = doc.data["title"]
+            else
+              title = ""
+            end
             CasesPlugin.log.debug doc.data["title"]
             if title.length > 80 then
               CasesPlugin.log.error "Case #{divd}, has an overly long title: #{title}"
@@ -82,7 +86,7 @@ module CasesPlugin
 
             # Excerpt
             excerpt = doc.data["excerpt"]
-            if excerpt.start_with?("<h2") or excerpt.start_with?("Please set this to") then
+            if (not excerpt) or excerpt.start_with?("<h2") or excerpt.start_with?("Please set this to") then
               CasesPlugin.log.error "Case #{divd} does not have an excerpt or the default excerpt"
             end
 
@@ -91,32 +95,34 @@ module CasesPlugin
             case_start = doc.data["start"]
             case_end   = doc.data["end"] 
 
-            if not status.match?(/^(Open|Closed)$/) then
+            if not ( status and status.match?(/^(Open|Closed)$/)) then
               CasesPlugin.log.error "Case #{divd}, has invalid status '#{status}, should be 'Open' or 'Closed'"
             end
 
             # Timeline
-            doc.data["timeline"].each do | event |
-              valid = true
-              if event["end"].kind_of?(String) and event["end"] != "open" then
-                valid = false
-                CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid end `#{event["end"]}`"
-              end
-              if not event["start"].kind_of?(Date) then
-                valid = false
-                CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid start `#{event["start"]}`"
-              end
-              if valid then
-                if event["end"] == "open" and status == "Closed" then
-                  CasesPlugin.log.error "Case #{divd} is closed, but there are open items on the timeline"
+            if doc.data.key?("timeline") then
+              doc.data["timeline"].each do | event |
+                valid = true
+                if event["end"].kind_of?(String) and event["end"] != "open" then
+                  valid = false
+                  CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid end `#{event["end"]}`"
                 end
-                if event["end"] and event["end"] != "open" then
-                  if event["end"] < event["start"] then
-                    CasesPlugin.log.error "Case #{divd}, has an event on the timeline that ends before it starts #{event["start"]} -> #{event["end"]} : #{event["event"]}"
+                if not event["start"].kind_of?(Date) then
+                  valid = false
+                  CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid start `#{event["start"]}`"
+                end
+                if valid then
+                  if event["end"] == "open" and status == "Closed" then
+                    CasesPlugin.log.error "Case #{divd} is closed, but there are open items on the timeline"
+                  end
+                  if event["end"] and event["end"] != "open" then
+                    if event["end"] < event["start"] then
+                      CasesPlugin.log.error "Case #{divd}, has an event on the timeline that ends before it starts #{event["start"]} -> #{event["end"]} : #{event["event"]}"
+                    end
                   end
                 end
               end
-            end
+            end 
 
             # Closed case tests
             if status == "Closed" then
