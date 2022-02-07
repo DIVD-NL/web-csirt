@@ -43,7 +43,7 @@ if [[ -e jekyll-build.log ]]; then
 	WARNS=$( grep WARN jekyll-build.log | wc -l )
 	if [[ $WARNS -gt 0 ]] ; then
 		echo "There are $WARNS warnings in the Jekyll build log"
-		grep 'WARN' jekyll-build.log
+		grep -i 'WARN' jekyll-build.log
 	fi
 	if [[ $ERRORS -gt 0 ]] ; then
 		echo "------------------------------------------------------------------------------------"
