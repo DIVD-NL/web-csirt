@@ -49,6 +49,8 @@ RewriteCond %{REQUEST_URI} ^/divd-club.*[^/]$ [NC]
 RewriteCond %{REQUEST_FILENAME} -d [NC]
 RewriteRule ^divd-club/(.*) /$1/ [L,r=301]
 
+# cyber-wear.nl 
+
 # recirect cyber-wear.nl to www
 RewriteCond %{HTTP_HOST} ^cyber-wear\.nl [NC]
 RewriteRule (.*) https://www.cyber-wear.nl/$1 [r=301,L]
@@ -63,3 +65,20 @@ RewriteCond %{HTTP_HOST} ^www\.cyber-wear\.nl [NC]
 RewriteCond %{REQUEST_URI} ^/cyber-wear-nl.*[^/]$ [NC]
 RewriteCond %{REQUEST_FILENAME} -d [NC]
 RewriteRule ^cyber-wear-nl/(.*) /$1/ [L,r=301]
+
+# divd.fund
+
+# recirect divd.fund to www
+RewriteCond %{HTTP_HOST} ^divd\.fund [NC]
+RewriteRule (.*) https://www.divd.fund/$1 [r=301,L]
+
+# Serve divd.fund from divd.fund
+RewriteCond %{HTTP_HOST} ^www\.divd\.fund [NC]
+RewriteCond %{REQUEST_URI} !^/divd.fund [NC]
+RewriteRule (.*) divd.fund/$1 [L]
+
+# Redirect when I summon a directory without a trailing slash
+RewriteCond %{HTTP_HOST} ^www\.divd\.fund [NC]
+RewriteCond %{REQUEST_URI} ^/divd\.fund.*[^/]$ [NC]
+RewriteCond %{REQUEST_FILENAME} -d [NC]
+RewriteRule ^divd.fund/(.*) /$1/ [L,r=301]
