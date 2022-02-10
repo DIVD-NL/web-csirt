@@ -25,7 +25,7 @@ Remco Verhoef, Chief Hacking Officer at [DTACT](https://dtact.com/) let's us use
 Erik Bais, owner of [A2B-Internet](https://www.a2b-internet.com) was so kind to help us out getting our own Autonomous System. Since then, we have our own IP addresses to scan from.
 
 ### ESET
-Dave Maasland, CEO of [ESET](https://www.eset.com/nl/) sponsored DIVD in 2021 by paying most of the costs of our AS. In 2022 ESET supports us with a serious donation and free licenses
+Dave Maasland, CEO of [ESET](https://www.eset.com/nl/) sponsored DIVD in 2021 by paying most of the costs of our AS. In 2022 ESET supports us with a [serious donation](/donate/#donations-banktransfer) and free licenses
 
 ### Cyver
 [Cyver](https://cyver.io) provides us with their cloud platform, Cyver Core, which enables us to deliver security research reports with tickets handling.
