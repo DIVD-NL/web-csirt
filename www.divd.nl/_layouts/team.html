@@ -25,6 +25,10 @@ layout: default
 <a href="{{ page.wikipedia }}" class="icon fa-wikipedia-w"><span class="label">Icon</span> - {{ page.name }}</a>
 <br>
 {% endif %}
+{% if page.github %}
+<a href="https://github.com/{{ page.github }}" class="icon fa-github"><span class="label">Icon</span> - {{ page.github }}</a>
+<br>
+{% endif %}
 
 {% include
 	posts-cases.html
