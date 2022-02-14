@@ -12,3 +12,7 @@ Chris van 't Hof, the director of DIVD, is very glad the clearinghouse has been 
 The clearinghouse uses the Clean networks platform of NBIP and the ThreatMatcher intelligence platform of Connect2Trust to share information. The Dutch Institute for Vulnerability Discoslure supports the clearinghouse with our know-how. On behalf of the Nederlands Security Meldpunt, we will also perform triage on notifications sent to the clearinghouse by new unvetted notifiers. And Frank Breedijk, our manager CSIRT, is also a board member of the clearinghouse. 
 
 "Right from the start, the clearinghouse has a nationwide coverage," says Frank. "When we process information about systems that are vulnerable, we will not only supply information to those organizations represented by our members, but also to those that have not registered yet. But we know that the unregistered route tends to be less effective", he says, "I, therefore, urge all organizations to register as soon as possible." Because all founders of the clearinghouse are not-for-profit organizations, this registration is often free.
+
+![Logo Nederlands Security meldpunt](/images/news/meldpunt_logo.svg)
+
+More information can be found at [securitymeldpunt.nl](https://www.securitymeldpunt.nl)
