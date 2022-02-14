@@ -3,7 +3,7 @@ title: Dutch Security Information Clearinghouse started
 layout: news
 author: Frank Breedijk
 ---
-*As of the 14th of February all Dutch organizations can use the new cyber security warning system of the Dutch security clearing house ([Het Nederlands Security Meldpunt](https://www.securitymeld)) This clearinghouse, which has been started by Dutch private organizations, will help Dutch cyber resilience by cyber threat information in an automated fashion.*
+*As of the 14th of February all Dutch organizations can use the new cyber security warning system of the Dutch security clearing house ([Het Nederlands Security Meldpunt](https://www.securitymeldpunt.nl)) This clearinghouse, which has been started by Dutch private organizations, will help Dutch cyber resilience by cyber threat information in an automated fashion.*
 
 On the 28th of September 2021 the six founders, [DIVD](https://divd.nl), [Connect2Trust](https://connect2trust.nl), [NBIP](https://nbip.nl), [SURFcert](https://surf.nl/surfcert-247-ondersteuning-bij-beveiligingsincidenten), [Ams-IX](https://ams-ix.net) and [AbuseIO](https://abuse.io) announced a new warning system that would share information about potential abuse and cyber threats for Dutch organisations. And, it delivered on its promise early this year by sharing IP addresses of vulnerable systems during the log4sheel crisis. Based on these experiences the clearinghouse has officially opened its doors on the 14th of February 2022 and all organizations in The Netherlands can now profit from its existence.
 
