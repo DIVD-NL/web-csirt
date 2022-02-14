@@ -29,9 +29,9 @@ Example:
 {% endcomment %}
 
 <nav class="nav nav--cen">
-	<a id="menuBtn" class="icon">
+	<div id="menuBtn" class="icon">
 		<i class="fa fa-bars"></i> Menu
-	  </a>
+	</div>
 	<ul class="menu" id="nav_menu">
 		{% for item in site.data.navigation %}
 			{% if item.link == "/cases/" %}
