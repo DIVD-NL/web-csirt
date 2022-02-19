@@ -30,11 +30,13 @@ DIVD has used the following indicators to conclude if a system is vulnerable:<br
 |:-----:|-------------|
 | 25-05-2021 | VMWare publishes an advisory. |
 | 31-05-2021 | DIVD starts a daily scan and  finds 1691 (exploitable) systems and another 1046 which are (likely) vulnerable. |
-| 01-06-2021 | 1684 exploitable (and another 1091 likely vulnerable).  |
-| 02-06-2021 | 1666 exploitable (and 1084 likely vulnerable). |
-| 03-06-2021 | 1451 exploitable (and 1186 likely vulnerable). |
-| 27-07-2021 | 639 exploitable (and 1079 likely vulnerable). |
+| 01-06-2021 | 1684 exploitable (and another 1091 likely vulnerable) systems.  |
+| 02-06-2021 | 1666 exploitable (and 1084 likely vulnerable) systems. |
+| 03-06-2021 | 1451 exploitable (and 1186 likely vulnerable) systems. |
+| 27-07-2021 | 639 exploitable (and 1079 likely vulnerable) systems. |
 | 23-11-2021 | 156 vulnerable/exploitable and 888 likely vulnerable systems. |
 | 30-11-2021 | Case closed. |
 
-https://www.vmware.com/security/advisories/VMSA-2021-0010.html
+## Links
+
+[VMware Advisory](https://www.vmware.com/security/advisories/VMSA-2021-0010.html)
