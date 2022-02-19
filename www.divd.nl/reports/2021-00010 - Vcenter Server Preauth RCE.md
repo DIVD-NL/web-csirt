@@ -1,6 +1,6 @@
 ---
 title: Report DIVD-2021-00010-vCenter Server Preauth RCE
-date: February 19, 2022\
+date: February 19, 2022
 author: Gerard Janssen
 excerpt: On 25 May 2021, VMware published an advisory – a recommendation – to install updates for the vSphere Web Client. 
 
