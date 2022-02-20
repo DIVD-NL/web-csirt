@@ -1,13 +1,16 @@
 {% assign current_year = 0 %}
 {% assign years = '' | split: "," %}
+{% assign openEnd = site.time | date: "%s" | plus: 2592000 | date: "%s" %}
 {% for c in site.cases %}
   {% assign case_arr = c.divd | split: "-" %}
   {% capture year %}{{ case_arr[1] }}{% endcapture %}
   {% assign year = year | to_integer %}
-  {% if year > current_year %}
-    {% assign years = years | push: year %}
-    {% assign current_year = year %}
-  {% endif %}
+  {% if year != 3000 %}
+	  {% if year > current_year %}
+	    {% assign years = years | push: year %}
+	    {% assign current_year = year %}
+	  {% endif %}
+	{% endif %}
 {% endfor %}
 {% assign years = years | reverse %}
 
@@ -32,36 +35,33 @@
 				{% assign diffSeconds = caseEnd | minus: caseStart %}
 
 				{% comment %} difference in days {% endcomment %}
-				{% assign caseDuration = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+				{% assign caseDuration = diffSeconds | divided_by: 3600 | divided_by: 24 | plus: 1 %}
 				{% capture caseDuration %}{{ caseDuration }} days{% endcapture %}
 			{% else %}
 				{% assign caseDuration = "open" %}
-				{% assign caseEnd = yearEnd %}
+				{% assign caseEnd = openEnd %}
 			{% endif %}
 
-			{% if caseStart < yearEnd and caseEnd >= yearStart }
-				{% assign pre = "" %}
-				{% assign post = "" %}
-				{% assign barStart = c.start | date: '%s' %}
-				{% if c.end %}
-					{% assign barEnd = caseEnd %}
-				{% else %}
-					{% assign barEnd = yearEnd %}
-				{% endif %}
+			{% if caseStart < yearEnd and caseEnd >= yearStart %}
 				{% if caseStart < yearStart %}
-					{% assign pre=c.start|date: "%e %b %Y - " %}
 					{% assign barStart = yearStart %}
+				{% else %}
+					{% assign barStart = caseStart %}
 				{% endif %}
-				{% if barEnd >= yearEnd %}
-					{% if c.end %}
-						{% assign post=c.end|date: "%e %b %Y - " %}
-					{% else %}
-						{% assign post = "" %}
-					{% endif %}
+
+				{% if caseEnd > yearEnd %}
 					{% assign barEnd = yearEnd %}
+				{% else %}
+					{% assign barEnd = caseEnd %}
 				{% endif %}
-		    	{{ pre }}{{ c.title | remove: ':' }} ({{caseDuration}}){{ post }}            :{{ barStart | date: "%Y-%m-%d" }}, {{ barEnd | date: "%Y-%m-%d" }}
-		    {% endif %}
+				{% if c.end %}
+				  {% assign post = c.end|date: "- %e %b %Y" %}
+				{% else %}
+					{% assign post = "-> ?" %}
+				{% endif %}
+				{{ c.title | remove: ':' }}, {{ c.start|date: "%e %b %Y" }} {{ post }} ({{caseDuration}}) :{{ barStart | date: "%Y-%m-%d" }}, {{ barEnd | date: "%Y-%m-%d" }}
+				
+	    {% endif %}
 		{% endfor %}
 </div>
 
