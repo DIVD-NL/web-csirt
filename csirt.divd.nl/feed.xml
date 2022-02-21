@@ -1,6 +1,8 @@
 ---
 layout: none
 ---
+{%- assign lastPost = 'now' | date: "%s" %}
+{%- assign cases = site.cases | reverse -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
@@ -8,14 +10,59 @@ layout: none
         <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>      
         <link>{{ site.url }}</link>
         <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-        {% for post in site.posts limit:10 %}
+        {%- for post in site.posts limit:10 %}
+            {%- assign postDate = post.date | date: "%s" %}
+            {%- for c in cases %}
+                {%- assign caseStart = c.start | date: "%s" %}
+                {%- assign caseEnd   = c.end | date: "%s" %}
+                {%- assign lastEvent   = c.timeline | last %}
+                {%- assign caseLast = lastEvent.start | date: "%s" %}
+                {%- if caseEnd >= postDate and caseEnd < lastPost %}
+                    <item>
+                        <title>Case closed: {{ c.title | xml_escape }}</title>
+                        <description>
+                            Closed case: {{ c.title | xml_escape }}
+
+                            {{ c.excerpt | markdownify | xml_escape }}
+                        </description>
+                        <pubDate>{{ caseEnd | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+                        <link>{{ site.url }}{{ c.url }}</link>
+                        <guid isPermaLink="true">{{ site.url }}{{ c.url }}</guid>
+                    </item>
+                {%- endif %}
+                {%- if caseLast >= postDate and caseLast < lastPost %}
+                    <item>
+                        <title>Case update: {{ c.title | xml_escape }}</title>
+                        <description>
+                            Case update: {{ c.title | xml_escape }}
+
+                            {{ caseLast | date: "%d %b %Y" }} - {{ lastEvent.event | xml_escape }}
+                        </description>
+                        <pubDate>{{ caseLast | date: "%d %b %Y %H:%M:%S %z" }}</pubDate>
+                        <link>{{ site.url }}{{ c.url }}</link>
+                        <guid isPermaLink="true">{{ site.url }}{{ c.url }}</guid>
+                    </item>
+                {%- endif %}
+                {%- if caseStart >= postDate and caseStart < lastPost %}
+                    <item>
+                        <title>Case opened: {{ c.title | xml_escape }}</title>
+                        <description>
+                            {{ c.excerpt | markdownify | xml_escape }}
+                        </description>
+                        <pubDate>{{ caseStart | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+                        <link>{{ site.url }}{{ c.url }}</link>
+                        <guid isPermaLink="true">{{ site.url }}{{ c.url }}</guid>
+                    </item>
+                {%- endif %}
+            {%- endfor %}
             <item>
                 <title>{{ post.title | xml_escape }}</title>
-                <description>{{ post.content | xml_escape }}</description>
+                <description>{{ post.content | markdownify | xml_escape }}</description>
                 <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
                 <link>{{ site.url }}{{ post.url }}</link>
                 <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
             </item>
-        {% endfor %}
+            {%- assign lastPost = postDate | date: "%s" %}
+        {%- endfor %}
     </channel>
 </rss>
