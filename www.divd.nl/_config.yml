@@ -60,3 +60,4 @@ exclude:
   - "Gemfile*"
   - "*.conf"
   - "*:Zone.Identifier"
+  - "_config_livereload.yml"
