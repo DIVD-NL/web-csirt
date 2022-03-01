@@ -1,8 +1,10 @@
 ---
-title: Jaaroverzicht 2021: DIVD is here to stay
+title: Jaaroverzicht 2021
 layout: news
 author: Lucinda Sterk
 ---
+
+*DIVD is here to stay.*
 
 Met 19 afgeronde onderzoeken, waaronder het spraakmakende Kaseya VSA, 76 vrijwilligers, tientallen media-optredens en 9 zero-day cases, heeft DIVD in 2021 een vaste plek veroverd in het Nederlandse security landschap. Het Dutch Institute for Vulnerability Disclosure scant het hele internet op kwetsbaarheden en meldt die bij degenen die het kunnen fixen: gratis en ongevraagd. Wij zijn het Rode Kruis van het internet. 
 
