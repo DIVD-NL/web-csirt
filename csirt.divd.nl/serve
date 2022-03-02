@@ -18,7 +18,7 @@ fi
 echo "webrick:
   headers:" > _config_livereload.yml
 grep Content-Security-Policy _config.yml | \
-	sed "s#script-src #script-src 'sha256-ehJx3nUTxQSjcKzJh47dVVjmxNcjTJlcgIuP/LP035Y=' http://$IP:35729 #" |\
+	sed "s#script-src #script-src 'sha256-ehJx3nUTxQSjcKzJh47dVVjmxNcjTJlcgIuP/LP035Y=' http://$IP:35729 http://localhost:35729 #" |\
 	sed "s#connect-src #connect-src * #" \
 		>> _config_livereload.yml
 docker run \
