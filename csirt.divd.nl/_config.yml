@@ -63,3 +63,4 @@ exclude:
   - Gemfile.lock
   - "*.conf"
   - "*:Zone.Identifier"
+  - "_config_livereload.yml"
