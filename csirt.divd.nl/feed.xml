@@ -21,8 +21,6 @@ layout: none
                     <item>
                         <title>Case closed: {{ c.title | xml_escape }}</title>
                         <description>
-                            Closed case: {{ c.title | xml_escape }}
-
                             {{ c.excerpt | markdownify | xml_escape }}
                         </description>
                         <pubDate>{{ caseEnd | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
@@ -34,9 +32,7 @@ layout: none
                     <item>
                         <title>Case update: {{ c.title | xml_escape }}</title>
                         <description>
-                            Case update: {{ c.title | xml_escape }}
-
-                            {{ caseLast | date: "%d %b %Y" }} - {{ lastEvent.event | xml_escape }}
+                            Last event: {{ caseLast | date: "%d %b %Y" }} - {{ lastEvent.event | xml_escape }}
                         </description>
                         <pubDate>{{ caseLast | date: "%d %b %Y %H:%M:%S %z" }}</pubDate>
                         <link>{{ site.url }}{{ c.url }}</link>
