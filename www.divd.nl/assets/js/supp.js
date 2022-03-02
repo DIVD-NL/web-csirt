@@ -36,7 +36,6 @@ function renderDonations(data) {
                     <td>${condom(donation.message)}</td>
         </tr>`;
     });
-}
     
     $("#donations").html(rows.join(''));
 
