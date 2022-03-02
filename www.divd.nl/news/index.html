@@ -12,7 +12,7 @@ nav_position: 1
     <a href="{{ post.url }}">{{ post.title }}</a>
     <em>{{ post.date | date_to_long_string }}, by {{ post.author | default: "anonymous" }}</em>
   </h3>
-  <p>{{ post.excerpt }}</p>
+  <p>{{ post.excerpt | strip_html }}</p>
   <a href="{{ post.url }}">Read more</a>
 </div>
 {% endfor %}
