@@ -20,6 +20,12 @@ function condom(unsafe) {
  */
 function renderDonations(data) {  
     
+    $('#name').text(data.name);
+    $('#description').text(data.description);
+    $(".donate_btn").attr("url",data.absoluteUrl);
+    $('#amount').text(data.raised);
+    $('#goal').text(data.goal > 0 ? "of €" + data.goal : "");
+    
     let rows = data.donations.reverse().map(function(donation) {
         let created = donation.created_at.split(" ")[0].split("-").reverse().join("&#8209;");
         let name = donation.anonymous ? "Anonymous" :  `${donation.first_name ?? ''} ${donation.last_name_prefix ?? ''} ${donation.last_name ?? ''}`;
@@ -30,6 +36,7 @@ function renderDonations(data) {
                     <td>${condom(donation.message)}</td>
         </tr>`;
     });
+}
     
     $("#donations").html(rows.join(''));
 
