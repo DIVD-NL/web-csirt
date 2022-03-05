@@ -30,7 +30,10 @@ jobs:
             - "/root/project/www.divd.nl/_site"
             - "/root/project/csirt.divd.nl/_site"
             - "/root/project/.htaccess"
-
+      - store_artifacts:
+            - "/root/project/www.divd.nl/_site"
+            - "/root/project/csirt.divd.nl/_site"
+            - "/root/project/.htaccess"
 
   upload:
     docker:
