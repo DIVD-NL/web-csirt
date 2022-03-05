@@ -21,6 +21,7 @@ jobs:
                 rm -rf _cases/DIVD-3000-0000*
                 jekyll build 2>&1| tee jekyll-build.log;
                 ./proof_html.sh 
+                JEKYLL_ENV=production jekyll build
               ) 
             done
       - save_cache:
