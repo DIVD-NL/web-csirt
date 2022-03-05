@@ -36,14 +36,14 @@ Example:
 		{%- for item in site.data.navigation -%}
 			{%- if item.link == "/cases/" -%}
 		    	<li class="menu-item has-children">
-		    		<a href="/cases/" {%- if page.url == item.link -%}class="black_url"{%- endif -%}> 
+		    		<a href="/cases/" {%- if page.url == item.link %} class="black_url"{%- endif -%}> 
 						Cases <span class="dropdown-icon"></span>
 					</a>
    					<ul class="sub-menu">
    						{%- assign cases = site.cases |reverse -%}
 				    	{%- for p in cases -%}
 	    					<li class="menu-item">
-		    					<a href="{{ p.url }}" {%- if page.url == p.url -%}class="black_url"{%- endif -%}>
+		    					<a href="{{ p.url }}" {%- if page.url == p.url %} class="black_url"{%- endif -%}>
 		    						{{ p.title | slice: 0, 75 | escape }}<br>
 		    						{{ p.excerpt | slice: 0, 75 | escape }}...
 		    					</a>
@@ -53,14 +53,14 @@ Example:
 		    	</li>
 			{%- elsif item.link == "/blog/" -%}
 		    	<li class="menu-item has-children">
-		    		<a href="/blog/" {%- if page.url == item.link -%}class="black_url"{%- endif -%}> 
+		    		<a href="/blog/" {%- if page.url == item.link %} class="black_url"{%- endif -%}> 
 						Blog <span class="dropdown-icon"></span>
 					</a>
    					<ul class="sub-menu">
 						{%- for post in site.posts -%}
 							{%- if forloop.index <= 10 -%}
 							    <li class="menu-item">
-							        <a href="{{ post.url | prepend: site.baseurl | uri_encode }}" {%- if page.url == post.url -%}class="black_url"{%- endif -%}> {{ post.date | date: "%Y-%m-%d" }} : {{ post.title | slice: 0, 75 | escape }}...</a>
+							        <a href="{{ post.url | prepend: site.baseurl | uri_encode }}" {%- if page.url == post.url %} class="black_url"{%- endif -%}> {{ post.date | date: "%Y-%m-%d" }} : {{ post.title | slice: 0, 75 | escape }}...</a>
 							    </li>
 							{%- endif -%}
 						{%- endfor -%}
@@ -72,14 +72,14 @@ Example:
 			{%- elsif item.link == "/cves/" -%}
 				{%- assign cvepages = site.cves |reverse -%}
 		    	<li class="menu-item has-children">
-		    		<a href="/cves/" {%- if page.url == item.link -%}class="black_url"{%- endif -%}> 
+		    		<a href="/cves/" {%- if page.url == item.link %} class="black_url"{%- endif -%}> 
 						CVEs <span class="dropdown-icon"></span>
 					</a>
    					<ul class="sub-menu">
 						{%- for page in cvepages -%}
 							{%- if forloop.index <= 10 -%}
 							    <li class="menu-item">
-							        	<a href="{{ page.url | prepend: site.baseurl | uri_encode }}" {%- if page.url == post.url -%}class="black_url"{%- endif -%}> {{ page.cve }} - {{ page.title | slice: 0, 60 | escape }}...</a>
+							        	<a href="{{ page.url | prepend: site.baseurl | uri_encode }}" {%- if page.url == post.url %} class="black_url"{%- endif -%}> {{ page.cve }} - {{ page.title | slice: 0, 60 | escape }}...</a>
 							    </li>
 							{%- endif -%}
 						{%- endfor -%}
@@ -87,7 +87,7 @@ Example:
 		    	</li>
 			{%- elsif item.link == "/faq/" -%}
 		    	<li class="menu-item has-children">
-		    		<a href="/faq/" {%- if page.url == item.link -%}class="black_url"{%- endif -%}> 
+		    		<a href="/faq/" {%- if page.url == item.link %} class="black_url"{%- endif -%}> 
 						FAQ <span class="dropdown-icon"></span>
 					</a>
    					<ul class="sub-menu">
@@ -95,7 +95,7 @@ Example:
 				    	{%- for p in pages -%}
 		    				{%- if p.url contains "/faq/" and p.url != "/faq/" -%}
 		    					<li class="menu-item">
-			    					<a href="{{ p.url }}" {%- if page.url == p.url -%}class="black_url"{%- endif -%}>
+			    					<a href="{{ p.url }}" {%- if page.url == p.url %} class="black_url"{%- endif -%}>
 			    						{{ p.title | slice: 0, 40 | escape }}...
 			    					</a>
 			    				</li>
@@ -106,7 +106,7 @@ Example:
 			{%- else -%}
 				{%- if item.children -%}
 			    	<li class="menu-item has-children">
-						<a href="{{ item.link }}" {%- if page.url == item.link -%}class="black_url"{%- endif -%}>
+						<a href="{{ item.link }}" {%- if page.url == item.link %} class="black_url"{%- endif -%}>
 							{{ item.name }} <span class="dropdown-icon"></span>
 						</a>
 	   					<ul class="sub-menu">
@@ -119,7 +119,7 @@ Example:
 			    	</li>
 				{%- else -%}
 				<li class="menu-item">
-					<a href="{{ item.link }}" {%- if page.url == item.link -%}class="black_url"{%- endif -%}>
+					<a href="{{ item.link }}" {%- if page.url == item.link %} class="black_url"{%- endif -%}>
 						{{ item.name }}
 					</a>
 				</li>

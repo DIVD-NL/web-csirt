@@ -43,4 +43,4 @@ Last 10 posts ...
 
 ## Some statistics
 
-{%- include stats.html -%}
+{% include stats.html -%}
