@@ -31,9 +31,11 @@ jobs:
             - "/root/project/csirt.divd.nl/_site"
             - "/root/project/.htaccess"
       - store_artifacts:
-            - "/root/project/www.divd.nl/_site"
-            - "/root/project/csirt.divd.nl/_site"
-            - "/root/project/.htaccess"
+          path: "/root/project/www.divd.nl/_site"
+      - store_artifacts:
+          path: "/root/project/csirt.divd.nl/_site"
+      - store_artifacts:
+          path: "/root/project/.htaccess"
 
   upload:
     docker:
