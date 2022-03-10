@@ -59,10 +59,10 @@ description: DIVD
     <section>
         <div class="content">
             <header>
-                <a href="/security" class="icon fa-shield"><span class="label">Icon</span></a>
-                <h3>SECURITY</h3>
+                <a href="/partners" class="icon fa-address-book-o"><span class="label">Icon</span></a>
+                <h3>PARTNERS</h3>
             </header>
-            <p>Public documents and reports about (our) security</p>
+            <p>Who we collaborate with, our sponsors and references</p>
         </div>
     </section>
     <section>

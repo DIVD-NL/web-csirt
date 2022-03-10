@@ -13,3 +13,5 @@ www.divd.nl/_csirt_posts/
 www.divd.nl/_cves/
 www.divd.nl/_data/scanners.yml
 *.bak
+*.log
+*/_config_livereload.yml

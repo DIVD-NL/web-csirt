@@ -21,7 +21,34 @@ module CveJson
         if n == "cves" then
           collection.docs.each do | doc |
             if doc.data["layout"] == "cve-json-40"
+              # Get data
+              cve = doc.data["json"]["CVE_data_meta"]["ID"]
+              if doc.data["json"]["CVE_data_meta"].key?("TITLE") then
+                title = doc.data["json"]["CVE_data_meta"]["TITLE"]
+              else
+                doc.data["json"]["description"]["description_data"].each do | d |
+                  if d["lang"] == "eng" then
+                    title = d["value"]
+                    break
+                  end
+                end
+              end
+              CveJson.log.info "Title: #{title}"        
+              # Set additional attributes
+              doc.data["cve"] = cve
+              doc.data["title"] = title
+              doc.data["redirect_from"] = [ "/#{cve}/" ]
+              # Create JSON page too
               site.pages << CveJson40Page.new(site, doc.data["json"])
+            elsif doc.data["layout"] == "cve" then
+              CveJson.log.info doc.basename_without_ext
+              cve = doc.basename_without_ext
+              unless doc.data.key?("cve") then
+                doc.data["cve"] = cve
+              end
+              unless doc.data.key?("redirect_from")  then
+                doc.data["redirect_from"] = [ "/#{cve}/" ]
+              end
             end
           end
         end
@@ -34,7 +61,7 @@ module CveJson
   class CveJson40Page < Jekyll::Page
     def initialize(site, data)
       # Generate a new document with layout cve-json-40-json in /cves based on the original one.
-      CveJson.log.warn "Creating a JSON file for #{ data["CVE_data_meta"]["ID"]}"
+      CveJson.log.info "Creating a JSON file for #{ data["CVE_data_meta"]["ID"]}"
       @site = site             # the current site instance.
       @base = site.source      # path to the source directory.
       @dir  = "cves"           # the directory the page will reside in.

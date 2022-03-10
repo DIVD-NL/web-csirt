@@ -38,3 +38,17 @@ else
 	echo " HTML checked and found flawles, \0/ \0/ \0/ \0/ \0/ \0/ "
 	echo "------------------------------------------------------------------------------------"
 fi
+if [[ -e jekyll-build.log ]]; then
+	ERRORS=$( grep ERROR jekyll-build.log | grep -v DIVD-3000-0000 | wc -l )
+	WARNS=$( grep WARN jekyll-build.log | wc -l )
+	if [[ $WARNS -gt 0 ]] ; then
+		echo "There are $WARNS warnings in the Jekyll build log"
+		grep -i 'WARN' jekyll-build.log
+	fi
+	if [[ $ERRORS -gt 0 ]] ; then
+		echo "------------------------------------------------------------------------------------"
+		echo "There are $ERRORS errors in the Jekyll build log, not good enough!"
+		grep 'ERROR' jekyll-build.log
+		exit 1
+	fi
+fi

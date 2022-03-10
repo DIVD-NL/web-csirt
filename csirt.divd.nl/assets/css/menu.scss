@@ -459,7 +459,7 @@ $menu-link-padding: 1em;
 Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 736px) {
   .menu {display: none;}
-  .nav a.icon {
+  .nav .icon {
     right: 0;
     top: 0;
     display: block;
@@ -469,9 +469,4 @@ Show the link that contains should open and close the topnav (.icon) */
 /* The "responsive" class is added to the menu with JavaScript when the user clicks on the icon. */
 @media screen and (max-width: 736px) {
   .menu.responsive {display: block;}
-  .menu.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
 }

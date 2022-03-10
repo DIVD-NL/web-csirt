@@ -29,9 +29,9 @@ Example:
 {% endcomment %}
 
 <nav class="nav nav--cen">
-	<a id="menuBtn" class="icon">
+	<div id="menuBtn" class="icon">
 		<i class="fa fa-bars"></i> Menu
-	  </a>
+	</div>
 	<ul class="menu" id="nav_menu">
 		{% for item in site.data.navigation %}
 			{% if item.link == "/cases/" %}
@@ -45,7 +45,7 @@ Example:
 	    					<li class="menu-item">
 		    					<a href="{{ p.url }}" {% if page.url == p.url %}class="black_url"{% endif %}>
 		    						{{ p.title | slice: 0, 75 | escape }}<br>
-		    						{{ p.short | slice: 0, 75 | escape }}...
+		    						{{ p.excerpt | slice: 0, 75 | escape }}...
 		    					</a>
 		    				</li>
 			    		{% endfor %}
@@ -79,13 +79,7 @@ Example:
 						{% for page in cvepages %}
 							{% if forloop.index <= 10 %}
 							    <li class="menu-item">
-									{% if page.json %}
-										{% assign cve_title = page.json.description.description_data | where: "lang", "eng" %}
-										{% capture cve_title %}{{ cve_title[0].value }}{% endcapture %}
-							        	<a href="{{ page.url | prepend: site.baseurl | uri_encode }}" {% if page.url == post.url %}class="black_url"{% endif %}> {{ page.json.CVE_data_meta.ID }} - {{ cve_title | slice: 0, 60 | escape }}...</a>
-									{% else %}
 							        	<a href="{{ page.url | prepend: site.baseurl | uri_encode }}" {% if page.url == post.url %}class="black_url"{% endif %}> {{ page.cve }} - {{ page.title | slice: 0, 60 | escape }}...</a>
-							        {% endif %}
 							    </li>
 							{% endif %}
 						{% endfor %}
