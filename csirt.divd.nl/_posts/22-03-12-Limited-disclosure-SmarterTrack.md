@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SmarterTrack
+title: SmarterTrack limited disclosure
 author: Finn van der Knaap
 excerpt: "Limited disclosure of vulnerabilities we discovered in SmarterTrack"
 ---
