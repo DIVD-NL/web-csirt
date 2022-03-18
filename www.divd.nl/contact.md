@@ -32,7 +32,7 @@ That is one of the reasons why DIVD has appointed two confidential advisors. A c
 
 The confidential advisors at DIVD are:
 * [Jan Los](/team/Jan%20Los/)
-* [Nicola Diete](/team/Nikola%20Diete/)
+* [Nikola Diete](/team/Nikola%20Diete/)
 
 Both can be reached via [vertrouwenspersoon@divd.nl](mailto:vertrouwenspersoon@divd.nl)
 
