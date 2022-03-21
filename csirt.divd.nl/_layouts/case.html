@@ -49,18 +49,20 @@ layout: default
 				</td>
 			</tr>
 		{% endif %}
-		<tr>
-			<td> CVE(s) </td>
-			<td>
-				<ul>
-					{% for cve in page.cves %}
-						<li>
-							{{ cve | cve }}
-						</li>
-					{% endfor %}
-				</ul>
-			</td>
-		</tr>
+		{% if page.cves %}
+			<tr>
+				<td> CVE(s) </td>
+				<td>
+					<ul>
+						{% for cve in page.cves %}
+							<li>
+								{{ cve | cve }}
+							</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		{% endif %}
 		{% if page.product[0] %}
 			<tr>
 				<td> Products </td>
@@ -72,7 +74,7 @@ layout: default
 				</ul>
 				</td>
 			</tr>
-		{% else %}
+		{% elsif page.product %}
 			<tr>
 				<td> Product </td>
 				<td> {{ page.product | escape }} </td>
@@ -89,7 +91,7 @@ layout: default
 					</ul>
 				</td>
 			</tr>
-		{% else %}
+		{% elsif page.versions %}
 			<tr>
 				<td>  Versions </td>
 				<td> {{ page.versions | escape }} </td>

@@ -1,21 +1,77 @@
 ---
 layout: none
 ---
+{%- assign lastPost = 'now' | date: "%s" -%}
+{%- assign cases = site.cases | reverse -%}
+{%- assign guids = "" | split: "" -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>{{ site.title | xml_escape }}</title>
         <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>      
-        <link>{{ site.url }}</link>
-        <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-        {% for post in site.posts limit:10 %}
+        <link>https://csirt.divd.nl</link>
+        <atom:link href="https://csirt.divd.nl/feed.xml" rel="self" type="application/rss+xml" />
+        {%- for post in site.posts limit:10 %}
+            {%- assign postDate = post.date | date: "%s" %}
+            {%- for c in cases %}
+                {%- assign caseStart = c.start | date: "%s" %}
+                {%- assign caseEnd   = c.end | date: "%s" %}
+                {%- assign lastEvent   = c.timeline | last %}
+                {%- assign caseLast = lastEvent.start | date: "%s" %}
+                {%- if caseEnd >= postDate and caseEnd < lastPost %}
+                    {%- if guids contains c.url -%}
+                    {%- else -%}
+                        <item>
+                            <title>Case closed: {{ c.title | xml_escape }}</title>
+                            <description>
+                                {{ c.excerpt | markdownify | xml_escape }}
+                            </description>
+                            <pubDate>{{ caseEnd | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+                            <link>https://csirt.divd.nl{{ c.url }}</link>
+                            <guid isPermaLink="true">https://csirt.divd.nl{{ c.url }}</guid>
+                        </item>
+                        {%- assign guids = guids | push: c.url -%}
+                    {%- endif -%}
+                {%- endif %}
+                {%- if caseLast >= postDate and caseLast < lastPost %}
+                    {%- if guids contains c.url -%}
+                    {%- else -%}
+                        <item>
+                            <title>Case update: {{ c.title | xml_escape }}</title>
+                            <description>
+                                Last event: {{ caseLast | date: "%d %b %Y" }} - {{ lastEvent.event | xml_escape }}
+                            </description>
+                            <pubDate>{{ caseLast | date: "%d %b %Y %H:%M:%S %z" }}</pubDate>
+                            <link>https://csirt.divd.nl{{ c.url }}</link>
+                            <guid isPermaLink="true">https://csirt.divd.nl{{ c.url }}</guid>
+                        </item>
+                        {%- assign guids = guids | push: c.url -%}
+                    {%- endif -%}
+                {%- endif %}
+                {%- if caseStart >= postDate and caseStart < lastPost %}
+                    {%- if guids contains c.url -%}
+                    {%- else -%}
+                        <item>
+                            <title>Case opened: {{ c.title | xml_escape }}</title>
+                            <description>
+                                {{ c.excerpt | markdownify | xml_escape }}
+                            </description>
+                            <pubDate>{{ caseStart | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+                            <link>https://csirt.divd.nl{{ c.url }}</link>
+                            <guid isPermaLink="true">https://csirt.divd.nl{{ c.url }}</guid>
+                        </item>
+                        {%- assign guids = guids | push: c.url -%}
+                    {%- endif -%}
+                {%- endif %}
+            {%- endfor %}
             <item>
                 <title>{{ post.title | xml_escape }}</title>
-                <description>{{ post.content | xml_escape }}</description>
+                <description>{{ post.content | markdownify | xml_escape }}</description>
                 <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-                <link>{{ site.url }}{{ post.url }}</link>
-                <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+                <link>https://csirt.divd.nl{{ post.url }}</link>
+                <guid isPermaLink="true">https://csirt.divd.nl{{ post.url }}</guid>
             </item>
-        {% endfor %}
+            {%- assign lastPost = postDate | date: "%s" %}
+        {%- endfor %}
     </channel>
 </rss>
