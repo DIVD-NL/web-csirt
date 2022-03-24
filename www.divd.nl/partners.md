@@ -18,6 +18,9 @@ Erik Bais, owner of [A2B-Internet](https://www.a2b-internet.com) was so kind to 
 ### Connect2Trust
 [Connect2Trust](https://www.connect2trust.nl) is a cooperation of Dutch (international) companies. Chairman of the Board Raymond Bierens has been with DIVD from the start on to help out and share knowledge.
 
+### Cryptshare
+[Cryptshare](https://www.cryptshare.com) supplies us with licenses for their tooling so we can securely share files.
+
 ### Cyver
 [Cyver](https://cyver.io) provides us with their cloud platform, Cyver Core, which enables us to deliver security research reports with tickets handling.
 
@@ -29,6 +32,10 @@ Dave Maasland, CEO of [ESET](https://www.eset.com/nl/) sponsored DIVD in 2021 by
 
 ### LunaVia
 We have our office at LunaVia, which also help us out with administrative tasks and acquiring funding for our DIVD Academy.
+
+### Protect4S
+
+[Protect4S](https://www.protect4s.com/) has supported DIVD with expertise on the security of SAP systems and resources to scan the internet for vulnerabilities related to SAP systems
 
 ### SIDN Fund
 [SIDN Fund](https://www.sidnfonds.nl/excerpt) provided financial support in 2020 to kick start DIVD.
