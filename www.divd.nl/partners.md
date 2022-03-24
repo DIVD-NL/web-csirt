@@ -18,6 +18,9 @@ Erik Bais, owner of [A2B-Internet](https://www.a2b-internet.com) was so kind to 
 ### Connect2Trust
 [Connect2Trust](https://www.connect2trust.nl) is a cooperation of Dutch (international) companies. Chairman of the Board Raymond Bierens has been with DIVD from the start on to help out and share knowledge.
 
+### Cryptshare
+[Cryptshare](https://www.cryptshare.com) supplies us with licenses for their tooling so we can securely share files.
+
 ### Cyver
 [Cyver](https://cyver.io) provides us with their cloud platform, Cyver Core, which enables us to deliver security research reports with tickets handling.
 
