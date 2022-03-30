@@ -60,7 +60,7 @@
 .mermaid .exclude-range{fill:#eeeeee;}
 .mermaid .flowchart-link{stroke:#333333;fill:none;}
 .mermaid .grid .tick text{font-family:"trebuchet ms",verdana,arial,sans-serif;fill:#333;}
-.mermaid .grid .tick{stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}
+.mermaid .grid .tick{color:lightgrey;stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}
 .mermaid .grid path{stroke-width:0;}
 .mermaid .label text,
 .mermaid .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}

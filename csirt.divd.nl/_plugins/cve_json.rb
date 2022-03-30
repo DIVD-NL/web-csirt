@@ -39,7 +39,18 @@ module CveJson
               doc.data["title"] = title
               doc.data["redirect_from"] = [ "/#{cve}/" ]
               # Create JSON page too
-              #site.pages << CveJson40Page.new(site, doc.data["json"])
+              site.pages << CveJson40Page.new(site, doc.data["json"])
+            elsif doc.data["layout"] == "cve-json-50"
+              # Get data
+              cve = doc.data["json"]["cveMetadata"]["cveId"]
+              title = doc.data["json"]["containers"]["cna"]["title"]
+              CveJson.log.info "Title: #{title}"        
+              # Set additional attributes
+              doc.data["cve"] = cve
+              doc.data["title"] = title
+              doc.data["redirect_from"] = [ "/#{cve}/" ]
+              # Create JSON page too
+              site.pages << CveJson50Page.new(site, doc.data["json"])
             elsif doc.data["layout"] == "cve" then
               CveJson.log.info doc.basename_without_ext
               cve = doc.basename_without_ext
@@ -74,7 +85,44 @@ module CveJson
       # Initialize data hash with the new layout and the origina json data
       @data = {
         'json' => data,
-        'layout' => 'cve-json-40-json'
+        'layout' => 'cve-json'
+      }
+
+
+      ## Look up front matter defaults 
+      data.default_proc = proc do |_, key|
+        site.frontmatter_defaults #.find(relative_path, :categories, key)
+      end
+    end
+
+    # Placeholders that are used in constructing page URL.
+    def url_placeholders
+      {
+        :path       => @dir,
+        :basename   => basename,
+        :output_ext => output_ext,
+      }
+    end
+  end
+
+  # Subclass of `Jekyll::Page` with custom method definitions.
+  class CveJson50Page < Jekyll::Page
+    def initialize(site, data)
+      # Generate a new document with layout cve-json-40-json in /cves based on the original one.
+      CveJson.log.info "Creating a JSON file for #{ data['cveMetadata']['cveId'] }"
+      @site = site             # the current site instance.
+      @base = site.source      # path to the source directory.
+      @dir  = "cves"           # the directory the page will reside in.
+      
+      # All pages have the same filename, so define attributes straight away.
+      @basename = data["cveMetadata"]["cveId"]      # filename without the extension.
+      @ext      = '.json'      # the extension.
+      @name     = "#{@basename}#{ext}" # basically @basename + @ext.
+
+      # Initialize data hash with the new layout and the origina json data
+      @data = {
+        'json' => data,
+        'layout' => 'cve-json'
       }
 
 
