@@ -2862,3 +2862,31 @@ td > ul {
 .nowrap {
   white-space: nowrap
 }
+
+table.affected {
+  border-style: solid;
+  border-width: thin;
+}
+table.affected tr {
+  background: none;
+  border-style: solid;
+  border-width: thin;
+}
+table.affected tr:nth-child(2n + 1) {
+  background: none;
+  border-style: solid;
+  border-width: thin;
+}
+table.affected td {
+  background: none;
+  border-style: solid;
+  border-width: thin;
+  padding:  0 0.75rem 0 0.75rem;;
+}
+table.affected th {
+  background: none;
+  border-style: solid;
+  border-width: thin;
+  padding:  0 0.75rem 0 0.75rem;;
+}
+
