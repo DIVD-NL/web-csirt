@@ -14,7 +14,7 @@ Researchers: Wietse Boonstra, Victor Gevers, Joost Hendricksen, and Lennaert Oud
 
 In April 2021 Dutch hackers found a number of vulnerabilities in software used by Kaseya, a business that makes tools for system managers working remotely. An enormous number of companies could be attacked through this vulnerability, from banks to transport companies and shop chains. The problem was nearly solved when Russian hackers also received wind of it. The result was a race between Dutch hackers and Russian criminals.
 
-This is a translation of a chapter from [the book Hackers](https://www.thomasrap.nl/boek/hackers/) by [Gerard Janssen](/team/Gerard%20Janssen). This chapter starts after the story of Dutch hacker [Victor Gevers](/tam/Victor%20Gevers) discovered that two-factor authentication of Donald Trump's Twitter account was disabled and guessed his Twitter password, in November 2020.
+This is a translation of a chapter from [the book Hackers](https://www.thomasrap.nl/boek/hackers/) by [Gerard Janssen](/team/Gerard%20Janssen). This chapter starts after the story of Dutch hacker [Victor Gevers](/team/Victor%20Gevers) discovered that two-factor authentication of Donald Trump's Twitter account was disabled and guessed his Twitter password, in November 2020.
 
 You can read about that in the Dutch magazine [Vrij](https://www.vn.nl/hackers-twitter-trump-english/) [Nederland](https://www.vn.nl/trump-twitter-hacked-again/).
 
