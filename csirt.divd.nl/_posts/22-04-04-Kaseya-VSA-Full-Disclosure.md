@@ -16,3 +16,7 @@ The details can be found in our CVE entries:
 * [CVE-2021-30201](/CVE-2021-30201/) - Unauthenticated XML Entity Attack (XXE)
 
 In addition, we have published a [translation of the chapter on Kaseya VSA](https://www.divd.nl/reports/2021-00002-Kaseya%20VSA%20behind%20the%20scenes/) from Gerard Jansssen's book [Hackers](https://www.thomasrap.nl/boek/hackers/) which gives a behind the scenes look at what happened at the time.
+
+We are also releasing two github repositories:
+* [Kaseya-scanning](https://github.com/DIVD-NL/Kaseya-scanning) - This repository contains the scripts we used to find exposed Kaseya VSA instances
+* [Kaseya-2021-00002](https://github.com/DIVD-NL/Kaseya-2021-00002) - This repository contains proof of concept code and NSE scripts related to the vulnerabilities
