@@ -5,7 +5,6 @@ author: Lucinda Sterk
 ---
 Say Kaseya VSA and any IT specialist will know what you’re talking about. It was one of the most high-profile incidents of 2021. Almost a year later, the researchers of the Dutch Institute for Vulnerability Disclosure (DIVD) provide full disclosure in [release the full technical details of the bugs they found](https://csirt.divd.nl/2022/04/04/Kaseya-VSA-Full-Disclosure/)
 
-The details make it clear that Kaseya's security was much worse than originally thought.
 It is now safe to fully explain what exactly was vulnerable and how it could be abused, says [Frank Breedijk](/team/Frank%20Breedijk), Manager CSIRT at DIVD. “If you haven't patched by now, you're a pancake.”
 
 In the podcast [episode #6 of The Ransomware Files podcast](https://www.bankinfosecurity.com/interviews/ransomware-files-episode-6-kaseya-revil-i-5045) he and DIVD leader [Victor Gevers](/team/Victor%20Gevers) talk extensively about this case.
