@@ -8,7 +8,7 @@ Say Kasya VSA and any IT specialist will know what you’re talking about. It wa
 The details make it clear that Kaseya's security was much worse than originally thought.
 It is now safe to fully explain what exactly was vulnerable and how it could be abused, says [Frank Breedijk](/team/Frank%20Breedijk), Manager CSIRT at DIVD. “If you haven't patched by now, you're a pancake.”
 
-In the podcast [episode #5 of The Ransomware Files podcast](https://www.bankinfosecurity.com/interviews/ransomware-files-episode-6-kaseya-revil-i-5045) he and DIVD leader [Victor Gevers](/team/Victor%20Gevers) talk extensively about this case.
+In the podcast [episode #6 of The Ransomware Files podcast](https://www.bankinfosecurity.com/interviews/ransomware-files-episode-6-kaseya-revil-i-5045) he and DIVD leader [Victor Gevers](/team/Victor%20Gevers) talk extensively about this case.
 
 How it started
 ---

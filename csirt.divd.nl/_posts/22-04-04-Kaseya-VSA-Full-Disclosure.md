@@ -4,7 +4,7 @@ title: Kaseya Full Disclosure
 author: Fank Breedijk
 excerpt: We are disclosing the full details of the vulnerabilities we found in Kaseya VSA in June of 2021
 ---
-In honor of our appearance on the [Ransomware Files podcast episode #5](https://www.bankinfosecurity.com/interviews/ransomware-files-episode-6-kaseya-revil-i-5045) we are releasing the full details of the vulnerabilities we found during our research into Kaseya VSA of which some were used by REvil to attack Kaseya's customers.
+In honor of our appearance on the [Ransomware Files podcast episode #6](https://www.bankinfosecurity.com/interviews/ransomware-files-episode-6-kaseya-revil-i-5045) we are releasing the full details of the vulnerabilities we found during our research into Kaseya VSA of which some were used by REvil to attack Kaseya's customers.
 
 The details can be found in our CVE entries:
 * [CVE-2021-30116](/CVE-2021-30116/) - Unauthenticated credentials leak via client download page
