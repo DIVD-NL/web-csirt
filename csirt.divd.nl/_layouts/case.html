@@ -3,8 +3,8 @@ layout: default
 ---
 <h1>{{ page.title | escape }}</h1>
 
-{% assign team = site.team | map: "name" -%}
-{% assign lead = page.lead | default: page.author -%}
+{%- assign team = site.team | map: "name" -%}
+{%- assign lead = page.lead | default: page.author -%}
 
 <table>
 	<tbody>
@@ -12,105 +12,107 @@ layout: default
 			<td> Our reference </td><td> {{ page.divd | divd }} </td>
 		</tr><tr>
 			<td> Case lead </td><td>
-				{% if team contains lead -%}
+				{%- if team contains lead -%}
 					<a href='https://www.divd.nl/team/{{ lead | uri_escape }}/'>{{ lead }}</a>
-				{% else -%}
+				{%- else -%}
 					{{ lead }}
-				{% endif -%}
+				{%- endif -%}
 			</td>
 		</tr>
-		{% if lead != page.author -%}
+		{%- if lead != page.author -%}
 			<tr>
 				<td> Author </td>
 				<td>
-					{% if team contains page.author %}
+					{%- if team contains page.author -%}
 						<a href='https://www.divd.nl/team/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
-					{% else %}
+					{%- else -%}
 						{{ page.author }}
-					{% endif %}
+					{%- endif -%}
 				</td>
 			</tr>
-		{% endif %}
-		{% if page.researchers %}
+		{%- endif -%}
+		{%- if page.researchers -%}
 			<tr>
 				<td> Researcher(s) </td>
 				<td>
 					<ul>
-						{% for r in page.researchers -%}
+						{%- for r in page.researchers -%}
 							<li>
-								{% if team contains r %}
+								{%- if team contains r -%}
 									<a href='https://www.divd.nl/team/{{ r | uri_escape }}/'>{{ r }}</a>
-								{% else %}
+								{%- else -%}
 									{{ r }}
-								{% endif %}
+								{%- endif -%}
 							</li>
-						{% endfor %}
+						{%- endfor -%}
 					</ul>
 				</td>
 			</tr>
-		{% endif %}
-		<tr>
-			<td> CVE(s) </td>
-			<td>
-				<ul>
-					{% for cve in page.cves %}
-						<li>
-							{{ cve | cve }}
-						</li>
-					{% endfor %}
-				</ul>
-			</td>
-		</tr>
-		{% if page.product[0] %}
+		{%- endif -%}
+		{%- if page.cves -%}
+			<tr>
+				<td> CVE(s) </td>
+				<td>
+					<ul>
+						{%- for cve in page.cves -%}
+							<li>
+								{{ cve | cve }}
+							</li>
+						{%- endfor -%}
+					</ul>
+				</td>
+			</tr>
+		{%- endif -%}
+		{%- if page.product[0] -%}
 			<tr>
 				<td> Products </td>
 				<td> 
 					<ul>
-						{% for p in page.product %}
+						{%- for p in page.product -%}
 							<li>{{ p | escape }}</li>
-						{% endfor %} 
+						{%- endfor -%} 
 				</ul>
 				</td>
 			</tr>
-		{% else %}
+		{%- elsif page.product -%}
 			<tr>
 				<td> Product </td>
 				<td> {{ page.product | escape }} </td>
 			</tr>
-		{% endif %}
-		{% if page.versions[0] %}
+		{%- endif -%}
+		{%- if page.versions[0] -%}
 			<tr>
 				<td>  Versions </td>
 				<td> 
 					<ul>
-						{% for v in page.versions %}
+						{%- for v in page.versions -%}
 							<li>{{ v | escape }}</li>
-						{% endfor %}
+						{%- endfor -%}
 					</ul>
 				</td>
 			</tr>
-		{% else %}
+		{%- elsif page.versions -%}
 			<tr>
 				<td>  Versions </td>
 				<td> {{ page.versions | escape }} </td>
 			</tr>
-		{% endif %}
+		{%- endif -%}
 		<tr>
 			<td> Recommendation </td>
 			<td> {{ page.recommendation | escape }} </td>
 		</tr>
-		{% if page.patch_status %}
+		{%- if page.patch_status -%}
 			<tr>
 				<td> Patch status </td>
 				<td> {{ page.patch_status | escape }} </td>
 			</tr>
-		{% endif %}
-		{% if page.workaround %}
+		{%- endif -%}
+		{%- if page.workaround -%}
 			<tr>
 				<td> Workaround </td>
 				<td> {{ page.workaround | escape }} </td>
 			</tr>
-		{% endif %}
+		{%- endif -%}
 		<tr>
 			<td> Status </td><td> {{ page.status }} </td>
 		</tr>
@@ -130,4 +132,4 @@ layout: default
 
 <br>
 
-{% include disclaimer.html %}
+{%- include disclaimer.html -%}

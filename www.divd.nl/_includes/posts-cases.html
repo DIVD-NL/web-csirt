@@ -25,17 +25,27 @@
 {% assign cve_contributed = '' | split: '' %}
 {% for c in site.cves %}
   {% assign credited = false %}
+  {% assign discovered = false %}
+  {% capture name1 %} {{ include.name }}{% endcapture %}
+  {% capture name2 %}{{ include.name }} {% endcapture %}
   {% for cr in  c.json.credit %}
-    {% capture name1 %} {{ include.name }}{% endcapture %}
-    {% capture name2 %}{{ include.name }} {% endcapture %}
     {% if cr.value == include.name or cr.value contains name1 or cr.value contains name2 %}
       {% assign credited = true %}
     {% endif %}
   {% endfor %}
+  {% for cr in c.json.containers.cna.credits %}
+    {% if cr.value == include.name or cr.value contains name1 or cr.value contains name2 %}
+      {% assign credited = true %}
+      {% if cr.type == "finder" %}
+        {% assign discovered = true %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
   {% if c.author == include.name or c.discovered_by contains include.name or c.researchers contains include.name or credited %}
     {% assign found = true %}
     {% assign cve = true %}
-    {% if c.discovered_by contains include.name %}
+    {% if discovered or c.discovered_by contains include.name %}
       {% assign cve_discovered =  cve_discovered  | push: c %}
     {% else %}
       {% assign cve_contributed = cve_contributed | push: c %}

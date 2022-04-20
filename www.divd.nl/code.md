@@ -26,8 +26,8 @@ header: Code of Conduct
 11. During our research, we inform the broader security community and the media about our findings only on a statistical basis: just numbers, no names, or other identifiable information. We close all research projects with a report, which can be downloaded from divd.nl and is under Creative Commons Licence.
 12. We only report vulnerable systems. Patching or other mitigation is solely  the responsibility of the owner.
 13. DIVD is responsible for making researchers aware of these rules, while it is the responsibility of each researcher to stick to them. If they don’t, the board will take appropriate measures, for instance by revoking their DIVD account.
-14. This Code of Conduct will also be used as an ethical guidance for our DIVD Academy, shared with the broader security community and updated regularly. Suggestions and feedback are welcome. Contact our Secretary Chris van ‘t Hof. 
+14. This Code of Conduct will also be used as an ethical guidance for our DIVD Academy, shared with the broader security community and updated regularly. Suggestions and feedback are welcome. Contact our Secretary [Fleur van Leusden](/team/Fleur%20van%20Leusden).
 
  <h2>More info:</h2>
  <p>Is it legit to exchange lists of IP addresses together with vulnerabilities? The short answer is: Yes, according to Dutch law we can. The more elaborate answer you will find in this Liability Impact Assessment, prepared by Privacy Management Partners (in Dutch).</p>
- [Click here to download (Dutch)](assets/downloads/LIA_abuse_informatie_v1.1.pdf) (Dutch)
+ [Click here to download](assets/downloads/LIA_abuse_informatie_v1.1.pdf) (Dutch)

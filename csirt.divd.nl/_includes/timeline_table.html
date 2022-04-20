@@ -11,22 +11,22 @@
 		</tr>
 	</thead>
 	<tbody>
-		{%- for line in page.timeline %}
+		{%- for line in page.timeline -%}
 			<tr>
 				<td>
 					<span class="nowrap">{{ line.start | date_to_string }}</span>
-					{% if line.end %} 
-						{% if line.end == "open" %}
+					{%- if line.end -%} 
+						{%- if line.end == "open" -%}
 							<br> ?
-						{% else %}
+						{%- else -%}
 							- <br><span class="nowrap">{{ line.end | date_to_string }}</span>
-						{% endif %}
-					{% endif %}
+						{%- endif -%}
+					{%- endif -%}
 				</td>
 				<td>
 					{{ line.event | markdownify | remove: '<p>' | remove: '</p>' }}
 				</td>
 			</tr>
-		{%- endfor %}
+		{%- endfor -%}
 	</tbody>
 </table>
