@@ -10,7 +10,8 @@ docker pull mrseccubus/github-pages:latest
 if [[ $(uname -a|grep -i microsoft|wc -l) -gt 0 ]]; then
 	IP=$(ip addr show eth0 |grep "inet "|awk '{ print $2 }'|sed 's/\/.*$//')
 	echo "*******************************************************************************************"
-	echo "On WSL2 the docker container is reachable via this url: http://$IP:$PORT"
+	echo "On WSL2 the docker container is reachable via these urls: "
+	echo "http://$IP:$PORT or http://localhost:$PORT"
 	echo "*******************************************************************************************"
 else
 	IP=0.0.0.0
