@@ -23,10 +23,24 @@ layout: default
 			<tr>
 				<td> Author </td>
 				<td>
-					{%- if team contains page.author -%}
-						<a href='https://www.divd.nl/team/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
+					{%- if page.product[0] -%}
+						<ul>
+							{%- for author in page.author -%}
+								<li>
+									{%- if team contains author -%}
+										<a href='https://www.divd.nl/team/{{ author | uri_escape }}/'>{{ author }}</a>
+									{%- else -%}
+										{{ author }}
+									{%- endif -%}
+								</li>
+							{%- endfor -%}
+						</ul>
 					{%- else -%}
-						{{ page.author }}
+						{%- if team contains page.author -%}
+							<a href='https://www.divd.nl/team/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
+						{%- else -%}
+							{{ page.author }}
+						{%- endif -%}
 					{%- endif -%}
 				</td>
 			</tr>
