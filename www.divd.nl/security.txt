@@ -1,0 +1,8 @@
+VULNERABILITY DISCLOSURE POLICY
+If you have found a weak spot in one of our systems, please let us know so that we can take measures as quickly as possible. 
+We want to work with you to protect systems better. Please use our Vulnerability Disclosure Program:
+
+English: https://app.zerocopter.com/en/rd/f9afbf32-ce59-48ed-96f2-ac4410595aa4
+Dutch: https://app.zerocopter.com/nl/rd/f9afbf32-ce59-48ed-96f2-ac4410595aa4
+German: https://app.zerocopter.com/de/rd/f9afbf32-ce59-48ed-96f2-ac4410595aa4
+French: https://app.zerocopter.com/fr/rd/f9afbf32-ce59-48ed-96f2-ac4410595aa4
