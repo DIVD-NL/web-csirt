@@ -26,4 +26,4 @@ Kortom: DIVD heeft in 2021 laten zien dat we ertoe doen. We zijn ook geen CERT o
 
 ### Jaarverslag
 
-Ons jaarverslag is te [downloaden via deze link](uploads/DIVD jaarverslag 2021.pdf)
+Ons jaarverslag is te [downloaden via deze link](/uploads/DIVD jaarverslag 2021.pdf)
