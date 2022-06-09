@@ -15,3 +15,4 @@ www.divd.nl/_data/scanners.yml
 *.bak
 *.log
 */_config_livereload.yml
+*:Zone.Identifier
