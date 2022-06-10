@@ -5,7 +5,9 @@ author: Lucinda Sterk
 ---
 It is again a race against time. Cyber criminals have been massively exploiting the critical vulnerability in Atlassian's Confluence for several days now. The voluntary researchers of the Dutch Institute for Vulnerability Disclosure (DIVD) are working diligently to alert as many Confluence users as possible to this vulnerability and the patch that is now in available. They’ve sent 15,000 mails and counting. In the Netherlands alone, there were at least 460 vulnerable systems.
 
-On June 2, researchers at the American security company Volexity announced that they had discovered that an unknown (0-day) vulnerability in Confluence had been used against one of their customers' systems. At the time of discovery, this exploit was only used in a very targeted way. Later, at about the same time the patches were released, details of how to exploit the vulnerability came out, resulting in a massive spread of malware.
+On the 2nd of June, researchers at the American security company Volexity announced that they had discovered that an unknown (0-day) vulnerability in Confluence had been used against one of their customers' systems. At the time of discovery, this exploit was only used in a very targeted way. Later, at about the same time the patches were released, details of how to exploit the vulnerability came out, resulting in a massive spread of malware.
+
+A few days later over 18,000 mails were sent and we kept updating the Digital Trust Center with our findings regarding the Netherlands. 
 
 Confluence is used worldwide by governments, banks and critical infrastructure, among others. Confluence is a collaboration software for capturing (internal) documentation and supports direct integration with many other systems such as Google Drive, Draw.io. and more.
 
@@ -37,11 +39,13 @@ Check the log files {installation directory}/logs/conf_access_log{date}.log for 
 If a malicious person was able to place a web shell, it is possible that the log file has been manipulated / cleaned afterwards. It is recommended to thoroughly investigate the server for any type of backdoors and to see if there has been any unusual activity from the server in question.
 
 Observations
+---
+
 Our first global scan shows that Germany and the US were very late with patching the vulnerable systems. The US is in second place, but this is because cloud services such as Amazon are widely used.
 
-[![Caption to the table: Frequency of how often a country appears in the total set (from our first scan / mail round (03-05-22 to 04-05-22))](/images/news/confluence_graph.png)](/images/news/confluence_graph.png)
-
-<small>Caption to the table: Frequency of how often a country appears in the total set (from our first scan / mail round (03-05-22 to 04-05-22))</small>
+| [![Caption to the table: Frequency of how often a country appears in the total set (from our first scan / mail round (03-05-22 to 04-05-22))](/images/news/confluence_graph.png)](/images/news/confluence_graph.png) |
+|:--:|
+| <small>Frequency of how often a country appears in the total set (from our first scan / mail round (03-05-22 to 04-05-22))</small> |
 
 
 
@@ -52,5 +56,5 @@ Where can I find more technical information?
 * [Volexity blog post](https://www.volexity.com/blog/2022/06/02/zero-day-exploitation-of-atlassian-confluence/)
 * [Rapid 7 blog post](https://www.rapid7.com/blog/post/2022/06/02/active-exploitation-of-confluence-cve-2022-26134/)
 * [Atlassian advisory](https://confluence.atlassian.com/doc/confluence-security-advisory-2022-06-02-1130377146.html)
-* [ Definition of WAF (from Wikipeadia)](https://en.wikipedia.org/wiki/Web_application_firewall)
+* [Definition of WAF (from Wikipedia)](https://en.wikipedia.org/wiki/Web_application_firewall)
 
