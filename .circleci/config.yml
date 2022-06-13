@@ -55,8 +55,10 @@ jobs:
             rsync -av .htaccess www-divd@upload.bit.nl:htdocs;
             cd /root/project/csirt.divd.nl/_site;
             rsync -av --delete . www-divd@upload.bit.nl:htdocs/csirt-divd-nl;
+            rsync -av --delete .well-known www-divd@upload.bit.nl:htdocs/csirt-divd-nl/.well-known;
             cd /root/project/www.divd.nl/_site;
             rsync -av "--exclude=data/*" --delete . www-divd@upload.bit.nl:htdocs/divd-nl;
+            rsync -av "--exclude=data/*" --delete .well-known www-divd@upload.bit.nl:htdocs/divd-nl/.well-knonw;
 
 workflows:
   version: 2
