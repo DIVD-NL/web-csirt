@@ -7,9 +7,9 @@ header: contact
 	<h2>Not a regular office</h2>
 </header>
 
-We are a network of security researchers who mainly work online. If you want to contact us, you can send us an e mail to "question" at divd nl or use our <a href="javascript:void( window.open( 'https://form.jotform.com/221683503984058', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) ">contact form.</a>
+We are a network of security researchers who mainly work online. If you want to contact us, you can send us an e mail to "question" at divd nl or use our [contact form](https://form.jotform.com/221683503984058).
 
-You can also meet us at cyber security conferences and hacker events or just follow us on[ Twitter](https://twitter.com/DIVDnl).
+You can also meet us at cyber security conferences and hacker events or just follow us on [Twitter](https://twitter.com/DIVDnl).
 
 For questions related to our CSIRT you can email "csirt" at divd nl.
 
