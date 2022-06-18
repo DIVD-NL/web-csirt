@@ -26,7 +26,7 @@ We are a network of security researchers who mainly work online. If you want to 
         DIVD: Contact form
       </a>
 
-You can also meet us at cyber security conferences and hacker events or just follow us on Twitter.
+You can also meet us at cyber security conferences and hacker events or just follow us on[ Twitter](https://twitter.com/DIVDnl).
 
 For questions related to our CSIRT you can email "csirt" at divd nl.
 
