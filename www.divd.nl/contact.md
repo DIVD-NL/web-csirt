@@ -7,24 +7,7 @@ header: contact
 	<h2>Not a regular office</h2>
 </header>
 
-We are a network of security researchers who mainly work online. If you want to contact us, you can send us an e mail to "question" at divd nl or use our contact form.
-
-<script src ="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script><script type="text/javascript">
-        var JFL_221683503984058 = new JotformFeedback({
-          formId: '221683503984058',
-          base: 'https://form.jotform.com/',
-          windowTitle: 'DIVD: Contact',
-          background: '#FFA500',
-          fontColor: '#FFFFFF',
-          type: 'false',
-          height: 500,
-          width: 700,
-          openOnLoad: false
-        });
-    </script>
-      <a class="btn lightbox-221683503984058" style="margin-top: 16px">
-        DIVD: Contact form
-      </a>
+We are a network of security researchers who mainly work online. If you want to contact us, you can send us an e mail to "question" at divd nl or use our <a href="javascript:void( window.open( 'https://form.jotform.com/221683503984058', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) ">contact form.</a>
 
 You can also meet us at cyber security conferences and hacker events or just follow us on[ Twitter](https://twitter.com/DIVDnl).
 
