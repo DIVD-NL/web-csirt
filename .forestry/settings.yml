@@ -11,21 +11,6 @@ sections:
   label: Posts
   create: all
 - type: directory
-  path: _csirt_posts
-  label: Csirt posts
-  create: all
-  match: "**/*"
-- type: directory
-  path: _cves
-  label: Cves
-  create: all
-  match: "**/*"
-- type: directory
-  path: _cases
-  label: Cases
-  create: all
-  match: "**/*"
-- type: directory
   path: _team
   label: Team
   create: all
