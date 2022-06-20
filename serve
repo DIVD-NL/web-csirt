@@ -23,14 +23,14 @@ grep Content-Security-Policy _config.yml | \
 	sed "s#connect-src #connect-src * #" \
 		>> _config_livereload.yml
 docker run \
-	--volume="$PWD/../:/root/project:delegated" \
+	--volume="$PWD:/root/project:delegated" \
 	--entrypoint /bin/bash \
 	--publish $PORT:4000 \
 	--publish 35729:35729 \
 	-ti mrseccubus/github-pages \
 	-c "
 		gem install -N jekyll-secinfo jekyll-paginate jekyll-last-modified-at;
-		cd /root/project/csirt.divd.nl;
+		cd /root/project/;
 		if [[ -e Gemfile ]]; then
 			echo \"*** Installing Gems in Gemfile ***\"
 			bundle install 
@@ -38,6 +38,7 @@ docker run \
 		fi
 
 		while [ 1 ] ; do
+			git config --global --add safe.directory /root/project/www.divd.nl
 			./update.sh
 			rm -rf _site/*;
 			$EXEC jekyll serve --incremental --livereload --host=0.0.0.0 --future --config=_config.yml,_config_livereload.yml 2>&1 
