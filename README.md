@@ -1,13 +1,17 @@
+# web-csirt
+This repo has the files for csirt.divd.nl
+
 ## Adding new news items
 1. Create a new file in the `_posts` folder with filename `<year>-<month>-<day>-<title>.md`
 2. Start the file with the following template configuration:
 ```markdown
 ---
-layout: news
+layout: post
 title: <-- title-- >
 author: <-- your name -->
 excerpt: <-- one line summary in Dutch / And English will show on blog page -->
 ---
+Lorum Ipsum
 ```
 
 ## Development
