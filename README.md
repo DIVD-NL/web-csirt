@@ -22,14 +22,11 @@ excerpt: <-- one or two line summary -->
 ```markdown
 ---
 title: <-- title -->
-date: <-- date (e.g. 1 January, 2020) -->
+Layout: news
 author: <-- author -->
 excerpt: <-- one or two line summary -->
 ---
-<header>
-    <h2><-- title --></h2>
-    <span><-- date (e.g. 1 January, 2020) -->, by <-- author --></span>
-</header>
+Lorum ipsum...
 ```
 
 ## Development
