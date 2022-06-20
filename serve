@@ -1,0 +1,51 @@
+#!/bin/bash
+
+if [[ ! -z $1 ]]; then
+	PORT=$1
+else
+	PORT=4000
+fi
+
+docker pull mrseccubus/github-pages:latest
+if [[ $(uname -a|grep -i microsoft|wc -l) -gt 0 ]]; then
+	IP=$(ip addr show eth0 |grep "inet "|awk '{ print $2 }'|sed 's/\/.*$//')
+	echo "*******************************************************************************************"
+	echo "On WSL2 the docker container is reachable via these urls: "
+	echo "http://$IP:$PORT or http://localhost:$PORT"
+	echo "*******************************************************************************************"
+else
+	IP=0.0.0.0
+fi
+echo "webrick:
+  headers:" > _config_livereload.yml
+grep Content-Security-Policy _config.yml | \
+	sed "s#script-src #script-src 'sha256-ehJx3nUTxQSjcKzJh47dVVjmxNcjTJlcgIuP/LP035Y=' http://$IP:35729 http://localhost:35729 #" |\
+	sed "s#connect-src #connect-src * #" \
+		>> _config_livereload.yml
+docker run \
+	--volume="$PWD:/root/project:delegated" \
+	--entrypoint /bin/bash \
+	--publish $PORT:4000 \
+	--publish 35729:35729 \
+	-ti mrseccubus/github-pages \
+	-c "
+		gem install -N jekyll-secinfo jekyll-paginate jekyll-last-modified-at;
+		cd /root/project/;
+		if [[ -e Gemfile ]]; then
+			echo \"*** Installing Gems in Gemfile ***\"
+			bundle install 
+			EXEC=\"bundle exec\"
+		fi
+
+		while [ 1 ] ; do
+			git config --global --add safe.directory /root/project/www.divd.nl
+			./update.sh
+			rm -rf _site/*;
+			$EXEC jekyll serve --incremental --livereload --host=0.0.0.0 --future --config=_config.yml,_config_livereload.yml 2>&1 
+			set -e
+			echo 'Press CTRL+C now to quit'
+			sleep 1
+			set +e
+			echo 'Restarting...'
+		done
+	"
