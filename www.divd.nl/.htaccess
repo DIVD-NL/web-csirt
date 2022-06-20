@@ -1,9 +1,0 @@
-Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains;"
-Header always append X-Frame-Options DENY
-Header set X-Content-Type-Options nosniff
-Header set X-XSS-Protection "1; mode=block"
-Header set Content-Security-Policy "default-src 'none'; font-src 'self'; img-src 'self' data:; script-src 'self' ; style-src 'self'; connect-src 'self';"
-
-Header always set Referrer-Policy "same-origin"
-
-ErrorDocument 404 /404.html
