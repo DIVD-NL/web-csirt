@@ -1,0 +1,36 @@
+---
+label: Report
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+  default: report
+- type: text
+  name: title
+  label: title
+  description: Format:<br>REPORT - DIVD-20xx-xxxxx - Title
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- type: text
+  name: author
+  label: author
+- type: text
+  name: lead
+  label: lead
+- type: list
+  name: csirt
+  label: csirt
+- type: list
+  name: researchers
+  label: researchers
+- type: text
+  name: excerpt
+  label: excerpt

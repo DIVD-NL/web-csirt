@@ -1,0 +1,18 @@
+---
+label: Post
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+  default: post
+  hidden: true
+- type: text
+  name: title
+  label: title
+- type: text
+  name: author
+  label: author
+- type: textarea
+  name: excerpt
+  label: excerpt

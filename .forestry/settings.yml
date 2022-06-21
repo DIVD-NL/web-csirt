@@ -1,7 +1,7 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: ''
 webhook_url: 
 sections:
 - type: directory
@@ -9,17 +9,23 @@ sections:
   label: Reports
   create: documents
   match: "*.md"
+  templates:
+  - report
 - type: jekyll-pages
   label: Pages
   create: all
 - type: jekyll-posts
   label: Posts
   create: all
+  templates:
+  - post
 - type: directory
   path: _team
   label: Team
   create: all
   match: "**/*"
+  templates:
+  - team-member
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
