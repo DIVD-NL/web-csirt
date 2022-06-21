@@ -20,6 +20,8 @@ sections:
   label: Team
   create: all
   match: "**/*"
+  templates:
+  - team-member
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
