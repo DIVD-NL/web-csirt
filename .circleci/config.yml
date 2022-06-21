@@ -15,6 +15,7 @@ jobs:
           command: |
             echo "*** Building and checking ***"; 
             gem install -N jekyll-secinfo jekyll-last-modified-at
+            apt install curl
             ./update.sh
             # Removing some stubs
             rm -f _cves/CVE-3000-* csirt.divd.nl/_cves/CVE-3000-*
