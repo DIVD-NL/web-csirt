@@ -8,7 +8,7 @@ sections:
   path: reports
   label: Reports
   create: documents
-  match: "**/*.md"
+  match: "*.md"
 - type: jekyll-pages
   label: Pages
   create: all
