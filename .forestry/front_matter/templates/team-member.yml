@@ -8,12 +8,28 @@ fields:
 - type: text
   name: role
   label: role
-- type: text
-  name: dept
-  label: dept
+  config:
+    required: true
+    min: 5
+- name: dept
+  type: select
+  default: ''
+  config:
+    required: false
+    options: []
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Department
 - type: text
   name: layout
   label: layout
+  default: team
+  config:
+    required: true
+  hidden: true
 - type: number
   name: appearance
   label: appearance
