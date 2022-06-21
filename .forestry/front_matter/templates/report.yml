@@ -5,12 +5,20 @@ fields:
 - type: text
   name: layout
   label: layout
+  default: report
 - type: text
   name: title
   label: title
-- type: text
-  name: date
-  label: date
+  description: Format:<br>REPORT - DIVD-20xx-xxxxx - Title
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
 - type: text
   name: author
   label: author
