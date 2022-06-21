@@ -16,7 +16,12 @@ fields:
   default: ''
   config:
     required: false
-    options: []
+    options: 
+      - Academy
+      - CSIRT
+      - Institute
+      - IT services
+      - Research
     source:
       type: simple
       section: 
