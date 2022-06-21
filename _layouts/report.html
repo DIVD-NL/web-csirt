@@ -6,28 +6,28 @@ layout: default
     <span>{{ page.date }} by <a href='/team/{{ page.author | uri_escape }}'>{{ page.author }}</a></span>
 </header>
 
-Case lead: <a href='/team/{{ page.lead | uri_escape }}/'>{{ page.lead }}</a><br>
-CSIRT:
-{% assign first = true %} 
-{% for c in page.csirt %}
-	{% if first %}
-		{% assign first = false %}
-	{% else %}
-		,
-	{% endif %}
-	<a href='/team/{{ c | uri_escape }}/'>{{ c }}</a>
-{% endfor %}<br>
-Researchers: 
-{% assign first = true %} 
-{% for c in page.researchers %}
-	{% if first %}
-		{% assign first = false %}
-	{% else %}
-		,
-	{% endif %}
-	<a href='/team/{{ c | uri_escape }}/'>{{ c }}</a>
-{% endfor %}
-
 <p>
-{{ content }}
+	Case lead: <a href='/team/{{ page.lead | uri_escape }}/'>{{ page.lead }}</a><br>
+	CSIRT:
+	{% assign first = true %} 
+	{% for c in page.csirt %}
+		{% if first %}
+			{% assign first = false %}
+		{% else %}
+			,
+		{% endif %}
+		<a href='/team/{{ c | uri_escape }}/'>{{ c }}</a>
+	{% endfor %}<br>
+	Researchers: 
+	{% assign first = true %} 
+	{% for c in page.researchers %}
+		{% if first %}
+			{% assign first = false %}
+		{% else %}
+			,
+		{% endif %}
+		<a href='/team/{{ c | uri_escape }}/'>{{ c }}</a>
+	{% endfor %}
 </p>
+
+{{ content }}
