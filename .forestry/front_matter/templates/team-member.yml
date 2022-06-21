@@ -1,0 +1,34 @@
+---
+label: Team member
+hide_body: true
+fields:
+- type: text
+  name: name
+  label: name
+- type: text
+  name: role
+  label: role
+- type: text
+  name: dept
+  label: dept
+- type: text
+  name: layout
+  label: layout
+- type: number
+  name: appearance
+  label: appearance
+- type: boolean
+  name: board
+  label: board
+- type: boolean
+  name: active
+  label: active
+- type: text
+  name: "-twitter"
+  label: "-twitter"
+- type: text
+  name: linkedin
+  label: linkedin
+- type: text
+  name: "-wikipedia"
+  label: "-wikipedia"
