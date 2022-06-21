@@ -3,7 +3,7 @@ layout: default
 ---
 <header>
     <h2>{{ page.title }}</h2>
-    <span>{{ page.date }} by <a href='/team/{{ page.author }}'>{{ page.author }}</a></span>
+    <span>{{ page.date }} by <a href='/team/{{ page.author | uri_escape }}'>{{ page.author }}</a></span>
 </header>
 
 Case lead: <a href='/team/{{ page.lead | uri_escape }}/'>{{ page.lead }}</a><br>

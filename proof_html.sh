@@ -33,9 +33,9 @@ htmlproofer \
 	--url-ignore="/#menu/" \
 	_site
 echo "*** External link check ***"
-(set +e ; htmlproofer \
-	--allow-hash-href \
-	--url-ignore="/www.linkedin.com/","/twitter.com/","/#menu/" _site || exit 0 )
+#(set +e ; htmlproofer \
+#	--allow-hash-href \
+#	--url-ignore="/www.linkedin.com/","/twitter.com/","/#menu/" _site || exit 0 )
 apt update -y
 (
 	html5validator _site/*.html _site/*/*.html _site/*/*/*.html _site/*/*/*/*.html _site/*/*/*/*.html | grep -v '/weesjes/index.html'
