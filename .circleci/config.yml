@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Trigger www build
           command: |
-            apk install curl ;
+            apk add curl ;
             curl --location --request POST 'https://circleci.com/api/v2/project/github/DIVD-NL/web-www/pipeline' \
             --header 'Content-Type: application/json' \
             -u "${CIRCLE_CI_TOKEN}"
