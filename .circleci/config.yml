@@ -1,12 +1,6 @@
 version: 2.1
-orbs:
-  slack: circleci/slack@4.1
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: slack-secrets
 jobs:
+
   build:
     docker:
       - image: mrseccubus/github-pages:latest
@@ -17,35 +11,17 @@ jobs:
           name: Build and check
           command: |
             echo "*** Building and checking ***"; 
-            #gem install -N jekyll-secinfo jekyll-last-modified-at
-            bundle install
+            gem install -N jekyll-secinfo jekyll-last-modified-at
             ./update.sh
             # Removing some stubs
             rm -f _cves/CVE-3000-* csirt.divd.nl/_cves/CVE-3000-*
             rm -rf _cases/DIVD-3000-0000* csirt.divd.nl/_cases/DIVD-3000-0000*
-            bundle exec jekyll build 2>&1| tee jekyll-build.log;
+            jekyll build 2>&1| tee jekyll-build.log;
             ./proof_html.sh 
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - "/root/project/_site"
-      - slack/notify:
-          event: fail
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*CircelCI buid job has failed for web-www*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
 
   upload:
     docker:
@@ -75,8 +51,7 @@ workflows:
   version: 2
   build_and_upload:
     jobs:
-      - build:
-          context: Slack        
+      - build
       - upload:
           requires:
             - build
