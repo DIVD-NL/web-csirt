@@ -9,6 +9,8 @@ sections:
   label: Reports
   create: documents
   match: "*.md"
+  templates:
+  - report
 - type: jekyll-pages
   label: Pages
   create: all
