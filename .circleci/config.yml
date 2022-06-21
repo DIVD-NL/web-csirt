@@ -25,6 +25,24 @@ jobs:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - "/root/project/_site"
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+
 
   upload:
     docker:
@@ -54,7 +72,8 @@ workflows:
   version: 2
   build_and_upload:
     jobs:
-      - build
+      - build:
+        context: Slack
       - upload:
           requires:
             - build
