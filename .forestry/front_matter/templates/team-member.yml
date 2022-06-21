@@ -16,12 +16,12 @@ fields:
   default: ''
   config:
     required: false
-    options: 
-      - Academy
-      - CSIRT
-      - Institute
-      - IT services
-      - Research
+    options:
+    - Academy
+    - CSIRT
+    - Institute
+    - IT services
+    - Research
     source:
       type: simple
       section: 
@@ -37,19 +37,30 @@ fields:
   hidden: true
 - type: number
   name: appearance
-  label: appearance
+  label: Order of appearance
+  config:
+    required: true
 - type: boolean
   name: board
-  label: board
+  label: board member?
+  description: Is this member a board member?
+- name: supervision
+  type: boolean
+  label: Supervisory board?
+  description: Is this a member of the supervisory board?
 - type: boolean
   name: active
-  label: active
+  label: Is active
+  default: true
 - type: text
-  name: "-twitter"
-  label: "-twitter"
+  name: twitter
+  label: Twitter handle
+  description: Only the handle is needed e.g.<br>https://twitter.com/seccubus → seccubus
 - type: text
   name: linkedin
-  label: linkedin
+  label: LinkedIn profile name
+  description: E.g. https://www.linkedin.com/in/seccubus/ → seccubus
 - type: text
-  name: "-wikipedia"
-  label: "-wikipedia"
+  name: wikipedia
+  label: Wikipedia url
+  description: Full wikipedia url
