@@ -59,7 +59,7 @@ workflows:
   build_and_upload:
     jobs:
       - build:
-        context: Slack
+          context: Slack
       - upload:
           requires:
             - build
