@@ -41,7 +41,7 @@ docker run \
 		while [ 1 ] ; do
 			./update.sh
 			rm -rf _site/*;
-			$EXEC jekyll serve --incremental --livereload --host=0.0.0.0 --future --config=_config.yml,_config_livereload.yml 2>&1 
+			\$EXEC jekyll serve --incremental --livereload --host=0.0.0.0 --future --config=_config.yml,_config_livereload.yml 2>&1 
 			set -e
 			echo 'Press CTRL+C now to quit'
 			sleep 1
