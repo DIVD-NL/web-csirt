@@ -20,7 +20,7 @@ jobs:
             # Removing some stubs
             rm -f _cves/CVE-3000-* csirt.divd.nl/_cves/CVE-3000-*
             rm -rf _cases/DIVD-3000-0000* csirt.divd.nl/_cases/DIVD-3000-0000*
-            jekyll build 2>&1| tee jekyll-build.log;
+            bundle exec jekyll build 2>&1| tee jekyll-build.log;
             ./proof_html.sh 
       - save_cache:
           key: jekyll-{{ .Environment.CIRCLE_SHA1 }}
