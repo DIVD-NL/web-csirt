@@ -1,0 +1,28 @@
+---
+label: Report
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: text
+  name: date
+  label: date
+- type: text
+  name: author
+  label: author
+- type: text
+  name: lead
+  label: lead
+- type: list
+  name: csirt
+  label: csirt
+- type: list
+  name: researchers
+  label: researchers
+- type: text
+  name: excerpt
+  label: excerpt
