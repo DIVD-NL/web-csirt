@@ -27,7 +27,7 @@ jobs:
           paths:
             - "/root/project/_site"
       - slack/notify:
-          channel: ABCXYZ
+          #channel: ABCXYZ
           event: fail
           template: basic_fail_1
 
