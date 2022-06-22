@@ -8,12 +8,16 @@ On 27 October 2021 [Wietse Boonstra](https://www.divd.nl/Wietse%20Boonstra) foun
 
 Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosing the details of the four CVEs.
 
+
+
+
+r
 CVE: CVE-2022-24384
 Case: DIVD-2021-00029
 Discoverd by: Wietse Boonstra
 Credits: Discovered by Wietse Boonstra of DIVD
 Products: SmarterTools - SmarterTrack V100.0.8019.14010
-CVSS: X
+CVSS: 8.8
 Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24384/
 Solution: Upgrade to latest version
 
@@ -35,8 +39,8 @@ Case: DIVD-2021-00029
 Discoverd by: Wietse Boonstra
 Credits: Discovered by Wietse Boonstra of DIVD
 Products: SmarterTools - SmarterTrack V100.0.8019.14010
-CVSS: X
-Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24384/
+CVSS: 6.5
+Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24385/
 Solution: Upgrade to latest version
 
 Description: A Direct Object Access vulnerability in SmarterTools SmarterTrack leads to information disclosure
@@ -58,7 +62,7 @@ Discoverd by: Wietse Boonstra
 Credits: Discovered by Wietse Boonstra of DIVD
 Products: SmarterTools - SmarterTrack V100.0.8019.14010
 CVSS: 8.8
-Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24384/
+Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24386/
 Solution: Upgrade to latest version
 
 Description: Stored XSS in SmarterTools SmarterTrack. In smartertrack you can start a live chat to talk to a certain department. The problem with this is that you can change the value’s and execute an XSS when the operator opens the live chat.
@@ -84,3 +88,27 @@ Impact: This vulnerability is worse than the first XSS. This is because this is 
 *Input image 3*
 *Input image 4*
 *Input image 5*
+
+
+
+
+
+CVE: CVE-2022-24387
+Case: DIVD-2021-00029
+Discoverd by: Wietse Boonstra
+Credits: Discovered by Wietse Boonstra of DIVD
+Products: SmarterTools - SmarterTrack V100.0.8019.14010
+CVSS: 9.1
+Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24387/
+Solution: Upgrade to latest version
+
+Description: When authenticated as administrator or other operator, it is possible to upload files in the app data folder and perform a path traversal to overwrite the systemsetting.xml file located in the app_data/Config folder. Any other file within the app data folder is also possible to overwrite.
+
+POC: Open the management interface and start a new ticket. Then add an attachment to the ticket and open BurpSuite (or any other man in the middle proxy). Go to the proxy and then http history, here you can find the POST /FileStorageUpload.ashx. Send this to the repeater and go to line 20 where you can see the name of the file you uploaded. From here you can change the name and below that the content that is in the file. When you send it, it will appear in the App_data folder.
+
+In other words, the POST parameter “name” is vulnerable to a path traversal attack. Because the SmarterTrack folder has no write privileges for the user, it is not possible to write outside the App_data folder. It is possible to write in c:\windows\temp\ confirming a path traversal.
+
+Impact: This could have a big impact on the files within the smartertrack application, since they could be overwritten and an attacker could change the content inside files. What could give an effect on how smartertrack is running on the server.
+
+*Input image 6*
+*Input image 7*
