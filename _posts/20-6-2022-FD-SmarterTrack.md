@@ -11,7 +11,7 @@ Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosi
 
 
 
-r
+
 CVE: CVE-2022-24384
 Case: DIVD-2021-00029
 Discoverd by: Wietse Boonstra
@@ -21,7 +21,7 @@ CVSS: 8.8
 Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24384/
 Solution: Upgrade to latest version
 
-Description: Cross-site Scripting (XSS) vulnerability in SmarterTools SmarterTrack 
+Description: Cross-site Scripting (XSS) vulnerability in SmarterTools SmarterTrack.
 
 POC: open the URL to the portal and simply add any type of script behind a URL with, for example, an error message. This is a working example script:
 {SMARTERTRACK_URL}/Main/Default.aspx?viewSurveyError=Unknown+survey"><img%20src=x%20onerror=alert(1)>
@@ -43,7 +43,7 @@ CVSS: 6.5
 Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24385/
 Solution: Upgrade to latest version
 
-Description: A Direct Object Access vulnerability in SmarterTools SmarterTrack leads to information disclosure
+Description: A Direct Object Access vulnerability in SmarterTools SmarterTrack leads to information disclosure.
 
 POC: Start a Private Browsing session to clear the sessions. Go to the following URL: {SMARTERTRACK_URL}/Management/Tickets/frmAttachment.aspx?ticketID=1
 Now enumerate the ticketID and increment the 1. If the ticket has attachments, a zip file can be downloaded containing all the files.
@@ -67,9 +67,7 @@ Solution: Upgrade to latest version
 
 Description: Stored XSS in SmarterTools SmarterTrack. In smartertrack you can start a live chat to talk to a certain department. The problem with this is that you can change the value’s and execute an XSS when the operator opens the live chat.
 
-
-PoC
-Below the PoC curl request, starting a new chat containing the XSS;
+PoC: Below the PoC curl request, starting a new chat containing the XSS;
 The following POST parameters are vulnerable to the XSS:
 CustomFields[0][DefaultValue]
 CustomFields[1][DefaultValue]
