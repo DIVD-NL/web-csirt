@@ -1,6 +1,6 @@
 # web-csirt
 This repo has the files for csirt.divd.nl
-
+ 
 ## Adding new news items
 1. Create a new file in the `_posts` folder with filename `<year>-<month>-<day>-<title>.md`
 2. Start the file with the following template configuration:
