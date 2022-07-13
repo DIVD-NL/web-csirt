@@ -15,7 +15,6 @@ gem install html-proofer
 echo "*** Internal link check ***"
 export LANG=en_US.UTF-8
 htmlproofer \
-	--check-html \
 	--disable_external \
 	--allow-hash-href  \
 	--url-ignore="/#english/" \
