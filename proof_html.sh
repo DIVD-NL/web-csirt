@@ -17,7 +17,6 @@ export LANG=en_US.UTF-8
 htmlproofer \
 	--disable_external \
 	--allow-hash-href  \
-	--url-ignore="/#english/" \
 	_site
 #echo "*** External link check ***"
 #(set +e ; htmlproofer \
