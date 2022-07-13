@@ -20,7 +20,7 @@ We gaan weer aan de slag!
 
 <hr>
 
-### <a name="english"></a>English
+### <a href="#" name="english"></a>English
 
 Yesterday [I reported](/2020/01/16/Terug-bij-af/) that we would stop scanning for vulnerable Citrix ADC's. [This article](https://www.ncsc.nl/actueel/nieuws/2020/januari/16/door-citrix-geadviseerde-mitigerende-maatregelen-niet-altijd-effectief) by the Dutch NCSC was at the basis of this discussion ([translation by google](https://translate.google.com/translate?hl=&sl=auto&tl=en&u=https%3A%2F%2Fwww.ncsc.nl%2Factueel%2Fnieuws%2F2020%2Fjanuari%2F16%2Fdoor-citrix-geadviseerde-mitigerende-maatregelen-niet-altijd-effectief)). 
 

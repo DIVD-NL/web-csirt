@@ -17,6 +17,7 @@ export LANG=en_US.UTF-8
 htmlproofer \
 	--disable_external \
 	--allow-hash-href  \
+	--ignore-urls="/#english/,/www.bacnet.org/" \
 	_site
 #echo "*** External link check ***"
 #(set +e ; htmlproofer \

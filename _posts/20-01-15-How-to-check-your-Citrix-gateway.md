@@ -18,7 +18,7 @@ Hieronder staan twee goede artikelen met gedetailleerde instructies die je kunt 
 
 <hr>
 
-### <a name="english"></a>English
+### <a href="#" name="english"></a>English
 
 In my [previous blogpost](/2020/01/13/Citrix/) I wrote that it is very likely that any Citrix ADC that did not have the mitigations applied after the 11th of Janary is compromised. By now we are receiving the [first reports](https://twitter.com/sans_isc/status/1216375320846176261) on this. The [Sans Internet Storm Center](https://isc.sans.edu) is also reporting that [systems are being mass compromised](https://isc.sans.edu/forums/diary/Citrix+ADC+Exploits+are+Public+and+Heavily+Used+Attempts+to+Install+Backdoor/25700/).
 

@@ -18,7 +18,7 @@ We zijn terug bij af 😢
 
 <hr>
 
-### <a name="english"></a>English
+### <a href="#" name="english"></a>English
 
 Earlier this evening the Dutch NCSC released [this news article](https://www.ncsc.nl/actueel/nieuws/2020/januari/16/door-citrix-geadviseerde-mitigerende-maatregelen-niet-altijd-effectief) ([translation by google](https://translate.google.com/translate?hl=&sl=auto&tl=en&u=https%3A%2F%2Fwww.ncsc.nl%2Factueel%2Fnieuws%2F2020%2Fjanuari%2F16%2Fdoor-citrix-geadviseerde-mitigerende-maatregelen-niet-altijd-effectief). 
 
