@@ -81,7 +81,7 @@ Impact: This vulnerability is worse than the first XSS. This is because this is 
 *Input image 4*
 *Input image 5*
 
-# Description: When authenticated as administrator or other operator, it is possible to upload files in the app data folder and perform a path traversal to overwrite the systemsetting.xml file located in the app_data/Config folder. Any other file within the app data folder is also possible to overwrite.
+# Description: When authenticated as administrator or other operator, it is possible to upload files in the app data folder and perform a path traversal to overwrite the systemsetting.xml file located in the app_data/Config folder. Any other file within the app data folder is also possible to overwrite, this is possible due to a DOS vulnerability.
 
 - CVE: CVE-2022-24387
 - Case: DIVD-2021-00029
