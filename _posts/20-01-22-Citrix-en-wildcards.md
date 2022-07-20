@@ -16,7 +16,7 @@ Meer informatie en de laatste stand van zaken met betrekking tot deze case is te
 
 <hr>
 
-### <a name="english"></a>English
+### <a href="#" name="english"></a>English
 
 There are wildcard certificates present on more than 450 of the 700 systems that we identified as vulnerable in the night of 9 to 10 January. Theft of these certificates and their keys is not just a risk for the Citrix environment, but it allows an attacker to intercept TLS secured connections to any subdomain of the organisation without the user being notified. 
 
