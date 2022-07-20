@@ -79,7 +79,6 @@ Impact: This vulnerability is worse than the first XSS. This is because this is 
 
 *Input image 3*
 *Input image 4*
-*Input image 5*
 
 # Description: When authenticated as administrator or other operator, it is possible to upload files in the app data folder and perform a path traversal to overwrite the systemsetting.xml file located in the app_data/Config folder. Any other file within the app data folder is also possible to overwrite, resulting in a denial of service (DoS).
 
@@ -98,5 +97,5 @@ In other words, the POST parameter “name” is vulnerable to a path traversal 
 
 Impact: This could have a big impact on the files within the smartertrack application, since they could be overwritten and an attacker could change the content inside files. What could give an effect on how smartertrack is running on the server.
 
+*Input image 5*
 *Input image 6*
-*Input image 7*
