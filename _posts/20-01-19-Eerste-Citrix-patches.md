@@ -16,7 +16,7 @@ We hebben de [case pagine](/DIVD-2020-00001/) bijgewerkt.
 
 <hr>
 
-### <a name="english"></a>English
+### <a href="#" name="english"></a>English
 
 Citrix [just released](https://www.citrix.com/blogs/2020/01/19/vulnerability-update-first-permanent-fixes-available-timeline-accelerated/) patches for version 11.1 and 12.0 and expects to release patches for version 10.0, 12.1 and 13 on 24-1.
 

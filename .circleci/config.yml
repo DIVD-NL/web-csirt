@@ -45,6 +45,13 @@ jobs:
             echo  "upload.bit.nl,213.136.12.217 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIVx+0N0LECcGHPywPCk9uz4/l3kNUVNe5QQRleIkMCTarkYauvRrPNPl49x3LIjF6cZsmQZX7jwgsJqEzfcF98=" > ~/.ssh/known_hosts;
             cd /root/project/_site;
             rsync -av --delete . www-divd@upload.bit.nl:htdocs/csirt-divd-nl;
+      - run:
+          name: Trigger www build
+          command: |
+            apk add curl ;
+            curl --location --request POST 'https://circleci.com/api/v2/project/github/DIVD-NL/web-www/pipeline' \
+            --header 'Content-Type: application/json' \
+            -u "${CIRCLE_CI_TOKEN}"
 
 workflows:
   version: 2
