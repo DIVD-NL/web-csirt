@@ -2,9 +2,10 @@
 layout: post
 title: SmarterTrack Full disclosure
 author: Finn van der Knaap
+researchers: [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/)
 excerpt: "Full disclosure of vulnerabilities we discovered in SmarterTrack"
 ---
-On 27 October 2021 [Wietse Boonstra](https://www.divd.nl/Wietse%20Boonstra) found several vulnerabilities in the latest version of SmarterTrack. There were [two](/CVE-2022-24384) [XSS](/CVE-2022-24386), an [unauthenticated download](/CVE-2022-24385) and an [upload / overwrite vulnerability](/CVE-2022-24387).
+On 27 October 2021 [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) found several vulnerabilities in the latest version of SmarterTrack. There were [two](/CVE-2022-24384) [XSS](/CVE-2022-24386), an [unauthenticated download](/CVE-2022-24385) and an [upload / overwrite vulnerability](/CVE-2022-24387). The researcher [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/), examinated the vulnerability and made the poc.
 
 Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosing the details of the four CVEs.
 
@@ -14,7 +15,7 @@ Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosi
 - CVE: CVE-2022-24384
 - Case: DIVD-2021-00029
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by Wietse Boonstra of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 8.8
 - Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24384/
@@ -33,7 +34,7 @@ Impact: When this attack is performed, the attacker can do any action that the u
 - CVE: CVE-2022-24385
 - Case: DIVD-2021-00029
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by Wietse Boonstra of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 6.5
 - Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24385/
@@ -53,7 +54,7 @@ Impact: When someone downloads the attachment without authorisation, sensitive d
 - CVE: CVE-2022-24386
 - Case: DIVD-2021-00029
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by Wietse Boonstra of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 8.8
 - Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24386/
@@ -85,7 +86,7 @@ Impact: This vulnerability is worse than the first XSS. This is because this is 
 - CVE: CVE-2022-24387
 - Case: DIVD-2021-00029
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by Wietse Boonstra of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 9.1
 - Reference: https://csirt.divd.nl/cases/DIVD-2021-00029/, https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24384, https://csirt.divd.nl/cves/CVE-2022-24387/
