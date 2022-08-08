@@ -27,7 +27,7 @@ Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosi
 
 Impact: When this attack is performed, the attacker can do any action that the user also can do. Fortunately, the attacker can't access any password from this attack since the credentials are protected. But the attacker can still see sensitive data and modify this.
 
-*Input image 1*
+https://user-images.githubusercontent.com/57531297/183418329-8e520927-8d22-4af9-8eab-496481f13ad9.png
 
 # Description: A Direct Object Access vulnerability in SmarterTools SmarterTrack leads to information disclosure.
 
@@ -46,7 +46,7 @@ Now enumerate the ticketID and increment the 1. If the ticket has attachments, a
 Impact: When someone downloads the attachment without authorisation, sensitive data can be exposed that was added to the ticket.
 ```
 
-*Input image 2*
+https://user-images.githubusercontent.com/57531297/183418471-d8bcce10-fd50-4bca-8683-0b071b9e321d.png
 
 
 # Description: Stored XSS in SmarterTools SmarterTrack. In smartertrack you can start a live chat to talk to a certain department. The problem with this is that you can change the value’s and execute an XSS when the operator opens the live chat.
@@ -78,8 +78,8 @@ When a chat operator opens the live chat, the XSS will execute.
 
 Impact: This vulnerability is worse than the first XSS. This is because this is stored into the ticket itself. Everyone that opens the ticket will be affected by it, unlike the reflected XSS.
 
-*Input image 3*
-*Input image 4*
+https://user-images.githubusercontent.com/57531297/183418502-08aa80da-4920-421f-8e5a-3b2725943047.png
+https://user-images.githubusercontent.com/57531297/183418533-e2c90141-9f4e-4328-9106-a66b13ef6870.png
 
 # Description: When authenticated as administrator or other operator, it is possible to upload files in the app data folder and perform a path traversal to overwrite the systemsetting.xml file located in the app_data/Config folder. Any other file within the app data folder is also possible to overwrite, resulting in a denial of service (DoS).
 
@@ -98,6 +98,5 @@ In other words, the POST parameter “name” is vulnerable to a path traversal 
 
 Impact: This could have a big impact on the files within the smartertrack application, since they could be overwritten and an attacker could change the content inside files. What could give an effect on how smartertrack is running on the server.
 
-*Input image 5*
-*Input image 6*
- 
+https://user-images.githubusercontent.com/57531297/183418613-e8dbcfd4-c228-4b9f-97a1-81dc8bbee2fc.png
+https://user-images.githubusercontent.com/57531297/183418606-8c295812-7acc-49ea-923e-2ef55c494782.png
