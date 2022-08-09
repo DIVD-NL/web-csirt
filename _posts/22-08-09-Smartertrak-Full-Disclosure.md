@@ -12,7 +12,7 @@ On 27 October 2021 [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/
 Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosing the details of the four CVEs.
 
 
-## Cross-site Scripting (XSS) vulnerability in SmarterTools SmarterTrack.
+## Reflective Cross-site Scripting (XSS)
 
 - CVE: {% cve CVE-2022-24384 %}
 - Case: {% divd DIVD-2021-00029 %}
@@ -30,7 +30,7 @@ Impact: When this attack is performed, the attacker can do any action that the u
 
 ![Screenshoot of reflective XSS in /Main/Default.aspx](/img/DIVD-2021-00029/poc1.png)
 
-## Direct Object Access vulnerability in SmarterTools SmarterTrack leads to information disclosure.
+## Unauthenticated downloading of attachment
 
 - CVE: {% cve CVE-2022-24385 %}
 - Case: {% divd DIVD-2021-00029 %}
@@ -41,6 +41,8 @@ Impact: When this attack is performed, the attacker can do any action that the u
 - Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
 - Solution: Upgrade to the latest version
 
+Description: Direct Object Access vulnerability in SmarterTools SmarterTrack leads to information disclosure.
+
 POC: Start a Private Browsing session to clear the sessions. Go to the following URL: `{SMARTERTRACK_URL}/Management/Tickets/frmAttachment.aspx?ticketID=1`
 Now enumerate the ticketID and increment the 1. If the ticket has attachments, a zip file can be downloaded containing all the files.
 
@@ -50,7 +52,7 @@ Impact: When someone downloads the attachment without authorization, sensitive d
 ![Screenshot of Director Object Access](/img/DIVD-2021-00029/poc2.png)
 
 
-## Stored XSS in SmarterTools SmarterTrack. In SmarterTrack you can start a live chat to talk to a certain department. The problem with this is that you can change the values and execute an XSS when the operator opens the live chat.
+## Stored Cross-site Scripting (XSS)
 
 - CVE: {% cve CVE-2022-24386 %}
 - Case: {% divd DIVD-2021-00029 %}
@@ -60,6 +62,8 @@ Impact: When someone downloads the attachment without authorization, sensitive d
 - CVSS: 8.8
 - Reference: case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
 - Solution: Upgrade to the latest version
+
+Description: Stored XSS in SmarterTools SmarterTrack. In SmarterTrack you can start a live chat to talk to a certain department. The problem with this is that you can change the values and execute an XSS when the operator opens the live chat.
 
 PoC: Below is the PoC curl request, that starts a new chat containing the XSS;
 The following POST parameters are vulnerable to the XSS:
@@ -83,7 +87,7 @@ Impact: This vulnerability is worse than the first XSS. This is because this is 
 ![Screenshot of stored XSS](/img/DIVD-2021-00029/poc3a.png)
 ![Screenshot of stored XSS](/img/DIVD-2021-00029/poc3b.png)
 
-## When authenticated as administrator or another operator, it is possible to upload files in the app data folder and perform a path traversal to overwrite the systemsetting.xml file located in the app_data/Config folder. Any other file within the app data folder is also possible to overwrite, resulting in a denial of service (DoS).
+## Path traversal - Uploading files
 
 - CVE: {% cve CVE-2022-24387 %}
 - Case: {% divd DIVD-2021-00029 %}
@@ -93,6 +97,8 @@ Impact: This vulnerability is worse than the first XSS. This is because this is 
 - CVSS: 9.1
 - Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
 - Solution: Upgrade to the latest version
+
+Description: When authenticated as administrator or another operator, it is possible to upload files in the app data folder and perform a path traversal to overwrite the systemsetting.xml file located in the app_data/Config folder. Any other file within the app data folder is also possible to overwrite, resulting in a denial of service (DoS).
 
 POC: Open the management interface and start a new ticket. Then add an attachment to the ticket and open BurpSuite (or any other man in the middle proxy). Go to the proxy and then HTTP history, here you can find the `POST /FileStorageUpload.ashx`. Send this to the repeater and go to line 20 where you can see the name of the file you uploaded. From here you can change the name and below that the content that is in the file. When you send it, it will appear in the App_data folder.
 
