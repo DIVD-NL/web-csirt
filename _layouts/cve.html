@@ -92,7 +92,7 @@ layout: default
 		{% endif %}
 		<tr>
 			<td> CVSS Base Score </td>
-			<td> <a href='{{ page.cvss.url }}'>{{ page.cvss.score }}</a></td>
+			<td> {% if page.cvss.url %}<a href='{{ page.cvss.url }}'>{% endif %}{{ page.cvss.score }}{% if page.cvss.url %}</a>{% endif %}</td>
 		</tr>
 		{% if page.patches %}
 			<tr>
