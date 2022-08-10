@@ -17,9 +17,9 @@ ITarian is a Remote Monitoring and Management (RMM) software suite. It allows ad
 Making initial contact with ITarian proved to be difficult. The vulnerabilities were discovered in December 2021. However, contact and subsequent fixes only started rolling out in May 2022.
 
 DIVD has recently become an CVE Numbering Authority (CNA) and has used these rights to create the following CVE’s assigned to the vulnerabilities included in the write-up below:
-- CVE-2022-25151
-- CVE-2022-25152
-- CVE-2022-25153
+- {% cve CVE-2022-25151 %}
+- {% cve CVE-2022-25152 %}
+- {% cve CVE-2022-25153 %}
 
 The rest of this post contains the full technical write-up of the vulnerabilities. These vulnerabilities have been patched and no longer work on the latest version of ITarian software.
 
@@ -29,7 +29,7 @@ The rest of this post contains the full technical write-up of the vulnerabilitie
 - Discoverd by: Wietse Boonstra and Hidde Smit
 - Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/team/Hidde%20Smit/)
 - Products: ITarian SaaS platform
-- Reference: [Case DIVD-2021-00037](https://csirt.divd.nl/cases/DIVD-2021-00037/)
+- Reference: Case {% divd DIVD-2021-00037 %}
 
 In order to exploit this Cross-Site Scripting (XSS) vulnerability, the victim needs to enable the Service Desk module, which is not enabled by default. The vulnerability can be exploited by visiting the victim's Support Ticket System page as shown in the screenshot below.
 
