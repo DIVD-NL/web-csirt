@@ -20,7 +20,7 @@ Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosi
 - Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 8.8
-- Reference: case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
+- Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
 - Solution: Upgrade to the latest version
 
 POC: open the URL to the portal and simply add any type of script behind a URL with, for example, an error message. This is a working example script:
@@ -60,7 +60,7 @@ Impact: When someone downloads the attachment without authorization, sensitive d
 - Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 8.8
-- Reference: case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
+- Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
 - Solution: Upgrade to the latest version
 
 Description: Stored XSS in SmarterTools SmarterTrack. In SmarterTrack you can start a live chat to talk to a certain department. The problem with this is that you can change the values and execute an XSS when the operator opens the live chat.
