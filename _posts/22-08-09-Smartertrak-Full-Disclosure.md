@@ -28,7 +28,7 @@ POC: open the URL to the portal and simply add any type of script behind a URL w
 
 Impact: When this attack is performed, the attacker can do any action that the user also can do. Fortunately, the attacker can't access any password from this attack since the credentials are protected. But the attacker can still see sensitive data and modify this.
 
-![Screenshoot of reflective XSS in /Main/Default.aspx](/img/DIVD-2021-00029/poc1.png)
+![Screenshot of reflective XSS in /Main/Default.aspx](/img/DIVD-2021-00029/poc1.png)
 
 ## Unauthenticated downloading of attachment
 
