@@ -53,7 +53,7 @@ module CasesPlugin
             end
 
             # Permalink
-            doc.data["permalink"] = "/case/#{divd}"
+            doc.data["permalink"] = "/cases/#{divd}"
 
             # Redirection
             if doc.data.key?("redirect_from") then
