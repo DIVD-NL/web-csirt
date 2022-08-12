@@ -12,6 +12,7 @@
        url('../fonts/raleway-v22-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/raleway-v22-latin-regular.svg#Raleway') format('svg'); /* Legacy iOS */
 }
+
 /*
 	Industrious by TEMPLATED
 	templated.co @templatedco
@@ -2888,5 +2889,15 @@ table.affected th {
   border-style: solid;
   border-width: thin;
   padding:  0 0.75rem 0 0.75rem;;
+}
+
+/* Hide certain elements when printing */
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
 }
 
