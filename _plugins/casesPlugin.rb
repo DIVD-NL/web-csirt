@@ -52,6 +52,9 @@ module CasesPlugin
               CasesPlugin.log.debug "New title: #{doc.data["title"]}"
             end
 
+            # Permalink
+            doc.data["permalink"] = "/cases/#{divd}"
+
             # Redirection
             if doc.data.key?("redirect_from") then
               if doc.data["redirect_from"][0] != "/#{divd}/" then
