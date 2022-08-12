@@ -6,6 +6,8 @@ researchers:
     - Wietse Boonstra
     - Finn van der Knaap
 excerpt: "Full disclosure of vulnerabilities we discovered in SmarterTrack"
+redirect_from:
+ - /2022/08/09/Smartertrak-Full-Disclosure/
 ---
 On 27 October 2021 [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) found several vulnerabilities in the latest version of SmarterTrack. There were [two](/CVE-2022-24384) [XSS](/CVE-2022-24386), an [unauthenticated download](/CVE-2022-24385) and an [upload / overwrite vulnerability](/CVE-2022-24387). The researcher [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/), examined the vulnerability and made the proof of concept.
 
