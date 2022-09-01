@@ -25,3 +25,4 @@ The site is easiest deployed locally with [Docker](https://docker.com).
 ## Markdown
 
 See: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+.
