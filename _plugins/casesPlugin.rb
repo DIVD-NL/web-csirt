@@ -106,24 +106,31 @@ module CasesPlugin
             if doc.data.key?("timeline") then
               doc.data["timeline"].each do | event |
                 valid = true
-                if event["end"].kind_of?(String) and event["end"] != "open" then
-                  valid = false
-                  CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid end `#{event["end"]}`"
-                end
-                if not event["start"].kind_of?(Date) then
-                  valid = false
-                  CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid start `#{event["start"]}`"
-                end
-                if valid then
-                  if event["end"] == "open" and status == "Closed" then
-                    CasesPlugin.log.error "Case #{divd} is closed, but there are open items on the timeline"
+                if event["include"] then
+                  if event["end"] or event["start"] or event["event"] then
+                    valid = false
+                    CasesPlugin.log.error "Case #{divd}, has an include event with a start, end of event field"
                   end
-                  if event["end"] and event["end"] != "open" then
-                    if event["end"] < event["start"] then
-                      CasesPlugin.log.error "Case #{divd}, has an event on the timeline that ends before it starts #{event["start"]} -> #{event["end"]} : #{event["event"]}"
+                else
+                  if event["end"].kind_of?(String) and event["end"] != "open" then
+                    valid = false
+                    CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid end `#{event["end"]}`"
+                  end
+                  if not event["start"].kind_of?(Date) then
+                    valid = false
+                    CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid start `#{event["start"]}`"
+                  end
+                  if valid then
+                    if event["end"] == "open" and status == "Closed" then
+                      CasesPlugin.log.error "Case #{divd} is closed, but there are open items on the timeline"
+                    end
+                    if event["end"] and event["end"] != "open" then
+                      if event["end"] < event["start"] then
+                        CasesPlugin.log.error "Case #{divd}, has an event on the timeline that ends before it starts #{event["start"]} -> #{event["end"]} : #{event["event"]}"
+                      end
                     end
                   end
-                end
+                end #include
               end
             end 
 
