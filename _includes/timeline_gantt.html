@@ -47,11 +47,11 @@
 				{% endif -%}
 			{%- else -%}
 				{%- if line.end -%}
+					{%- assign lineStart = line.start | date: '%s' -%}
 					{%- if line.end == "open" -%}
 						{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} (?d): {{ line.start }}, {{ caseend }}
 					{% else -%}
 						{%- comment %} convert our dates to Number of seconds since 1970-01-01 00:00:00 UTC {% endcomment -%}
-						{%- assign lineStart = line.start | date: '%s' -%}
 						{%- assign lineEnd   = line.end   | date: '%s' -%}
 
 						{%- comment %} difference in seconds {% endcomment -%}
