@@ -18,6 +18,7 @@ jobs:
         uses: jerryjvl/jekyll-build-action@v1
       - run: sudo apt-get update -y && sudo apt-get install libcurl4 -y
       - run: pip3 install html5validator 
+      - run: gem install --no-document html-proofer
       - run: ./proof_html.sh
 
 

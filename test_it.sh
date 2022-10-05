@@ -16,6 +16,6 @@ docker run --volume="$PWD:/root/project:delegated" --entrypoint /bin/bash -ti mr
 	apt-get update -y
 	apt-get install python3-pip libcurl4 -y
 	pip3 install html5validator 
-	bundle install html-proofer
+	gem install --no-document html-proofer
 	./proof_html.sh
 "

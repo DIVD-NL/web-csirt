@@ -5,6 +5,7 @@ set -e # Need to fail on error
 # apt-get update -y
 # apt-get install python3-pip libcurl4 -y
 # pip3 install html5validator 
+# gem install --no-document html-proofer
 
 TIDY_OUT=/tmp/tidy_out.$$
 
