@@ -6,5 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: apt update && apt install -y ruby 
+      - run: sudo apt-get update && apt-get install -y ruby 
       - run: bundle install
