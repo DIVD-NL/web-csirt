@@ -1,8 +1,8 @@
 name: build_website
-run-name: Build, test and deply website native
+run-name: Build, test and deploy (on main)
 on: [push]
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,6 +25,16 @@ jobs:
         with:
           name: html
           path: _site/**
-          retention-days: 1    
+          retention-days: 1
+  deploy:
+    needs: build_and_test
+    runs_on: ubuntu-latest
+    steps:
+      - name: Download html
+        uses: actions/download-artifact@v3
+        with:
+          name: html
+      - run: ls
+
 
 
