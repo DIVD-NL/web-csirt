@@ -16,7 +16,6 @@ jobs:
       - run: rm -rf _cases/3000 _cves/CVE-3000-*
       - name: Build
         uses: jerryjvl/jekyll-build-action@v1
-      - run: sudo apt-get update -y && sudo apt-get install libcurl4 -y
       - run: pip3 install html5validator 
       - run: gem install --no-document html-proofer
       - run: ./proof_html.sh
@@ -29,6 +28,7 @@ jobs:
   deploy:
     needs: build_and_test
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/github_actions' or github.ref == 'refs/heads/main'
     steps:
       - name: Download html
         uses: actions/download-artifact@v3
