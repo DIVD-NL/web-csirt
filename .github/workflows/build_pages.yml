@@ -7,4 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-ruby@v1
-      - run: pwd && ls && bundle install
+      - run: ./update.sh
+      - run:  jekyll build  --future 2>&1 | tee jekyll-build.log
+
