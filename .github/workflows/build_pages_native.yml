@@ -35,24 +35,12 @@ jobs:
         with:
           name: html
       - run: ls
-      - name: Deploy with rsync
-        uses: BuildPC/rsync-with-ssh-github-actions@master
-        env:
-          HELLO: cool
-          MESSAGE: hello world
+      - name: rsync deploy
+        uses: burnett01/rsync-deployments@5.2.1
         with:
-          key: ${{ secrets.DEPLOY_KEY_CSIRT }}
-          host: ${{ secrets.DEPLOY_HOST }}
-          port: 22
-          user: ${{ secrets.DEPLOY_USER }}
-          destination: htdocs/csirt-divd-nl2
-          # runs this on remove server
-          ssh_before: |
-            echo $HELLO
-            echo $MESSAGE
-            ls -lath
-          # then run these commands
-          ssh_after: |
-            echo $HELLO
-            echo $MESSAGE
-            ls -lath
+          switches: -avzr --delete
+          path: .
+          remote_path: htdocs/csirt-divd-nl2
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY_CSIRT }}
