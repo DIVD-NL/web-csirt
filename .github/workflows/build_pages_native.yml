@@ -28,7 +28,7 @@ jobs:
   deploy:
     needs: build_and_test
     runs-on: ubuntu-latest
-    if: "github.ref == 'refs/heads/github_action' || github.ref == 'refs/heads/main'"
+    if: "github.ref == 'refs/heads/main'"
     steps:
       - name: Download html
         uses: actions/download-artifact@v3
