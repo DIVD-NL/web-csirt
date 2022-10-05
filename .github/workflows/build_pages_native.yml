@@ -28,7 +28,7 @@ jobs:
           retention-days: 1
   deploy:
     needs: build_and_test
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download html
         uses: actions/download-artifact@v3
