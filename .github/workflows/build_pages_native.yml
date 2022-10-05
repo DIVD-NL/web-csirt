@@ -19,7 +19,6 @@ jobs:
       - run: bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
       - run: sudo apt-get update -y && sudo apt-get install libcurl4 -y
       - run: pip3 install html5validator 
-      - run: gem install html-proofer
       - run: ./proof_html.sh
 
 
