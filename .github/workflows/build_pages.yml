@@ -1,0 +1,10 @@
+name: build_website
+run-name: Build, test and deply website
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: apt update && apt install -y ruby 
+      - run: bundle install
