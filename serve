@@ -16,6 +16,9 @@ if [[ $(uname -a|grep -i microsoft|wc -l) -gt 0 ]]; then
 else
 	IP=0.0.0.0
 fi
+if [[ "$(uname)" == "Darwin" ]]; then
+	POLL="--force-polling"
+fi
 echo "webrick:
   headers:" > _config_livereload.yml
 grep Content-Security-Policy _config.yml | \
