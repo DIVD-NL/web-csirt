@@ -21,7 +21,7 @@ jobs:
         run: rm -rf _cases/3000 _cves/CVE-3000-*
       - name: Build
         #uses: jerryjvl/jekyll-build-action@v1
-        run: cat /proc/cpuinfo && bundle install && bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
+        run: time bundle install && bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
       - name: install prerequisites
         run: pip3 install html5validator && gem install --no-document html-proofer
       - name: Test HTML code
