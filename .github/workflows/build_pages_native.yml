@@ -1,5 +1,5 @@
-name: build_website
-run-name: Build, test and deploy (on main)
+name: build_test_deploy
+run-name: Build, test and deploy website (if needed)
 on: [push]
 jobs:
   build_and_test:
