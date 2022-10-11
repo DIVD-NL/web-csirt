@@ -1,6 +1,6 @@
 name: build_test_deploy
 run-name: Build, test and deploy website (if needed)
-on: [push]
+on: [push, pull_request]
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
