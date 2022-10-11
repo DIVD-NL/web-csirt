@@ -10,7 +10,7 @@ jobs:
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6' 
+          ruby-version: '3.0' 
       - name: Install python
         uses: actions/setup-python@v4
         with:
