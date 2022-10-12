@@ -14,6 +14,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-        
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -28,6 +34,7 @@ jobs:
         run:  rm -rf _cases/3000 _cves/CVE-3000-*
       - name: Build
         run:  MAKE="make -j4" bundle install --jobs=4 && bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
+      - run: ls -alr vendor
       - name: install prerequisites
         run:  pip3 install html5validator && gem install --no-document html-proofer
       - name: Test HTML code
