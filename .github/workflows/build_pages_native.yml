@@ -1,6 +1,6 @@
 name: build_test_deploy
 run-name: Build, test and deploy website (if needed)
-on: [push]
+on: [push, pull_request]
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -10,7 +10,7 @@ jobs:
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6' 
+          ruby-version: '3.0' 
       - name: Install python
         uses: actions/setup-python@v4
         with:
@@ -27,6 +27,7 @@ jobs:
         run:  ./proof_html.sh
       - name: 'Upload Artifacts'
         uses: actions/upload-artifact@v3
+        if:   ${{ github.ref == 'refs/heads/main' }}
         with:
           name: html
           path: _site/**

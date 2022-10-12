@@ -1,0 +1,7 @@
+---
+layout: none
+---
+id,state,opened,closed,last_update
+{% for c in site.cases -%}
+{{ c.divd }},{{ c.status }},{{ c.start}},{{ c.end }},{{ c.last_action }}
+{% endfor -%}
