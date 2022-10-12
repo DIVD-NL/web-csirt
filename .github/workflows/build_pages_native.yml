@@ -20,7 +20,7 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
             ${{ runner.os }}-gems-        
-      - run: las -al ; ls -al ~
+      - run: ls -al ; ls -al ~
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
