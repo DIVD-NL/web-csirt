@@ -5,7 +5,7 @@
 	    title       Cases currently open or recently closed
 	    dateFormat  YYYY-MM-DD
 	    axisFormat  %e %b %Y
-		{%- for c in site.cases -%}
+		{% for c in site.cases -%}
 			{%- comment %} convert our dates to Number of seconds since 1970-01-01 00:00:00 UTC {% endcomment -%}
 			{%- assign caseStart = c.start | date: '%s' -%}
 			{%- assign caseEnd   = c.end   | date: '%s' -%}
