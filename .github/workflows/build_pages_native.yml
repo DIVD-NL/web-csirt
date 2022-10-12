@@ -1,6 +1,13 @@
 name: build_test_deploy
 run-name: Build, test and deploy website (if needed)
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -25,28 +32,12 @@ jobs:
         run:  pip3 install html5validator && gem install --no-document html-proofer
       - name: Test HTML code
         run:  ./proof_html.sh
-      - name: 'Upload Artifacts'
-        uses: actions/upload-artifact@v3
-        if:   ${{ github.ref == 'refs/heads/main' }}
-        with:
-          name: html
-          path: _site/**
-          retention-days: 1
-  deploy:
-    needs: build_and_test
-    runs-on: ubuntu-latest
-    if: "github.ref == 'refs/heads/main'"
-    steps:
-      - name: Download html
-        uses: actions/download-artifact@v3
-        with:
-          name: html
-      - run: ls
       - name: rsync deploy
         uses: burnett01/rsync-deployments@5.2.1
+        if:   ${{ github.ref == 'refs/heads/main' }}
         with:
           switches: -avzr --delete
-          path: .
+          path: _site/
           remote_path: htdocs/csirt-divd-nl
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_user: ${{ secrets.DEPLOY_USER }}
