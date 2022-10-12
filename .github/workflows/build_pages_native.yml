@@ -14,7 +14,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - run: ls -al ; ls -al ~
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
