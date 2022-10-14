@@ -8,6 +8,7 @@ Gemfile.lock
 _site/
 .env
 _team/
+_reports/
 www.divd.nl/
 *.bak
 *.log

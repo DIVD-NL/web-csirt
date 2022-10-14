@@ -41,10 +41,13 @@ webrick:
 collections:
   team:
     output: false
+  reports:
+    output: false
   cves:
     output: true
   cases:
     output: true
+
 
 defaults:
   -

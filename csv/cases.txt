@@ -1,0 +1,8 @@
+---
+layout: none
+---
+id,state,opened,closed,last_update
+{% for c in site.cases -%}
+{%- assign reports = site.reports | where: "case", c.divd | map: "url" -%}
+{{ c.divd }},{{ c.status }},{{ c.start}},{{ c.end }},{{ c.last_action }},"{% if reports.size > 0 %}https://www.divd.nl{% endif %}{{ reports | join: " / https://www.divd.nl" }}"
+{% endfor -%}
