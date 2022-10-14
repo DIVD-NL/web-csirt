@@ -18,3 +18,10 @@ echo "Updating team"
 	rm -f *.html
 	cp ../www.divd.nl/_team/*.html .
 )
+
+echo "Updating reports"
+(
+	cd _reports
+	rm -f *.md
+	cp ../www.divd.nl/_reports/*.md .
+)

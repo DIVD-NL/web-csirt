@@ -20,7 +20,7 @@ export LANG=en_US.UTF-8
 htmlproofer \
 	--disable_external \
 	--allow-hash-href  \
-	--ignore-urls="/#english/,/www.bacnet.org/" \
+	--ignore-urls="/#english/,/www.bacnet.org/,/fish2.com/" \
 	_site
 (
 	html5validator _site/*.html _site/*/*.html _site/*/*/*.html _site/*/*/*/*.html _site/*/*/*/*.html 
