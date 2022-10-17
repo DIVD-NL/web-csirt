@@ -18,6 +18,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0' 
+          bundler-cache: true
       - name: Install python
         uses: actions/setup-python@v4
         with:
@@ -27,7 +28,7 @@ jobs:
       - name: Clean up stubs
         run:  rm -rf _cases/3000 _cves/CVE-3000-*
       - name: Build
-        run:  MAKE="make -j4" bundle install --jobs=4 && bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
+        run:  bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
       - name: "Fix security.txt"
         run: mkdir _site/.well-known && (cd _site/.well-known && ln -s ../security.txt) && ls -al _site/.well-known
       - name: install prerequisites
