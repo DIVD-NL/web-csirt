@@ -14,17 +14,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-        
       - run: ls -al ; ls -al ~
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0' 
+          bundler-cache: true
       - name: Install python
         uses: actions/setup-python@v4
         with:
