@@ -41,10 +41,13 @@ webrick:
 collections:
   team:
     output: false
+  reports:
+    output: false
   cves:
     output: true
   cases:
     output: true
+
 
 defaults:
   -
@@ -65,3 +68,4 @@ exclude:
   - "*:Zone.Identifier"
   - "_config_livereload.yml"
   - "www.divd.nl"
+  - vendor

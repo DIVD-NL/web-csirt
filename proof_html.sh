@@ -1,9 +1,13 @@
 #!/bin/bash
 set -e # Need to fail on error
+#
+# Prerequisites
+# apt-get update -y
+# apt-get install python3-pip libcurl4 -y
+# pip3 install html5validator 
+# gem install --no-document html-proofer
+
 TIDY_OUT=/tmp/tidy_out.$$
-apt-get update -y
-apt-get install python3-pip libcurl4 -y
-pip3 install html5validator 
 
 TEAMCOUNT_HERE=$( ls _team|wc -l )
 TEAMCOUNT_THERE=$( ls www.divd.nl/_team|wc -l )
@@ -11,18 +15,13 @@ if [[ $TEAMCOUNT_HERE -le 0 || $TEAMCOUNT_HERE -ne $TEAMCOUNT_THERE ]]; then
 	echo "_team directory is not updated, run ./update.sh"
 	exit 1
 fi
-gem install html-proofer
 echo "*** Internal link check ***"
 export LANG=en_US.UTF-8
 htmlproofer \
 	--disable_external \
 	--allow-hash-href  \
-	--ignore-urls="/#english/,/www.bacnet.org/" \
+	--ignore-urls="/#english/,/www.bacnet.org/,/fish2.com/" \
 	_site
-#echo "*** External link check ***"
-#(set +e ; htmlproofer \
-#	--allow-hash-href \
-#	--url-ignore="/www.linkedin.com/","/twitter.com/","/www.infoo.nl/","/#english/","/x1sec.com/" _site || exit 0)
 (
 	html5validator _site/*.html _site/*/*.html _site/*/*/*.html _site/*/*/*/*.html _site/*/*/*/*.html 
 ) | tee $TIDY_OUT
@@ -38,7 +37,7 @@ else
 	echo "------------------------------------------------------------------------------------"
 fi
 if [[ -e jekyll-build.log ]]; then
-	ERRORS=$( grep ERROR jekyll-build.log | grep -v DIVD-3000-0000 | wc -l )
+	ERRORS=$( grep -i ERROR jekyll-build.log | grep -v DIVD-3000-0000 | wc -l )
 	WARNS=$( grep WARN jekyll-build.log | wc -l )
 	if [[ $WARNS -gt 0 ]] ; then
 		echo "There are $WARNS warnings in the Jekyll build log"
@@ -47,7 +46,7 @@ if [[ -e jekyll-build.log ]]; then
 	if [[ $ERRORS -gt 0 ]] ; then
 		echo "------------------------------------------------------------------------------------"
 		echo "There are $ERRORS errors in the Jekyll build log, not good enough!"
-		grep 'ERROR' jekyll-build.log
+		grep -i 'ERROR' jekyll-build.log
 		exit 1
 	fi
 fi
