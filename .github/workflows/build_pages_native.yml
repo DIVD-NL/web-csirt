@@ -1,6 +1,13 @@
 name: build_test_deploy
 run-name: Build, test and deploy website (if needed)
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -10,7 +17,8 @@ jobs:
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6' 
+          ruby-version: '3.0' 
+          bundler-cache: true
       - name: Install python
         uses: actions/setup-python@v4
         with:
@@ -20,32 +28,19 @@ jobs:
       - name: Clean up stubs
         run:  rm -rf _cases/3000 _cves/CVE-3000-*
       - name: Build
-        run:  MAKE="make -j4" bundle install --jobs=4 && bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
+        run:  bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
+      - name: "Fix security.txt"
+        run: mkdir _site/.well-known && (cd _site/.well-known && ln -s ../security.txt) && ls -al _site/.well-known
       - name: install prerequisites
         run:  pip3 install html5validator && gem install --no-document html-proofer
       - name: Test HTML code
         run:  ./proof_html.sh
-      - name: 'Upload Artifacts'
-        uses: actions/upload-artifact@v3
-        with:
-          name: html
-          path: _site/**
-          retention-days: 1
-  deploy:
-    needs: build_and_test
-    runs-on: ubuntu-latest
-    if: "github.ref == 'refs/heads/main'"
-    steps:
-      - name: Download html
-        uses: actions/download-artifact@v3
-        with:
-          name: html
-      - run: ls
       - name: rsync deploy
         uses: burnett01/rsync-deployments@5.2.1
+        if:   ${{ github.ref == 'refs/heads/main' }}
         with:
           switches: -avzr --delete
-          path: .
+          path: _site/
           remote_path: htdocs/csirt-divd-nl
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_user: ${{ secrets.DEPLOY_USER }}

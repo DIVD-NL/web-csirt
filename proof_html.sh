@@ -20,7 +20,7 @@ export LANG=en_US.UTF-8
 htmlproofer \
 	--disable_external \
 	--allow-hash-href  \
-	--ignore-urls="/#english/,/www.bacnet.org/" \
+	--ignore-urls="/#english/,/www.bacnet.org/,/fish2.com/" \
 	_site
 (
 	html5validator _site/*.html _site/*/*.html _site/*/*/*.html _site/*/*/*/*.html _site/*/*/*/*.html 
@@ -37,7 +37,7 @@ else
 	echo "------------------------------------------------------------------------------------"
 fi
 if [[ -e jekyll-build.log ]]; then
-	ERRORS=$( grep ERROR jekyll-build.log | grep -v DIVD-3000-0000 | wc -l )
+	ERRORS=$( grep -i ERROR jekyll-build.log | grep -v DIVD-3000-0000 | wc -l )
 	WARNS=$( grep WARN jekyll-build.log | wc -l )
 	if [[ $WARNS -gt 0 ]] ; then
 		echo "There are $WARNS warnings in the Jekyll build log"
@@ -46,7 +46,7 @@ if [[ -e jekyll-build.log ]]; then
 	if [[ $ERRORS -gt 0 ]] ; then
 		echo "------------------------------------------------------------------------------------"
 		echo "There are $ERRORS errors in the Jekyll build log, not good enough!"
-		grep 'ERROR' jekyll-build.log
+		grep -i 'ERROR' jekyll-build.log
 		exit 1
 	fi
 fi

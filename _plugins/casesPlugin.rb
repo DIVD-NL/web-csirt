@@ -96,13 +96,18 @@ module CasesPlugin
             # Timeline status etc
             status = doc.data["status"]
             case_start = doc.data["start"]
-            case_end   = doc.data["end"] 
+            case_end   = doc.data["end"]
+
+            if not case_start.kind_of?(Date) then
+              CasesPlugin.log.error "Case #{divd}, has invalid start data '#{case_start}', it should be a valid date"
+            end
 
             if not ( status and status.match?(/^(Open|Closed)$/)) then
-              CasesPlugin.log.error "Case #{divd}, has invalid status '#{status}, should be 'Open' or 'Closed'"
+              CasesPlugin.log.error "Case #{divd}, has invalid status '#{status}', should be 'Open' or 'Closed'"
             end
 
             # Timeline
+            doc.data["last_action"] = Date.parse("1/1/1970")
             if doc.data.key?("timeline") then
               doc.data["timeline"].each do | event |
                 valid = true
@@ -121,12 +126,19 @@ module CasesPlugin
                     CasesPlugin.log.error "Case #{divd}, has an event on the timeline with invalid start `#{event["start"]}`"
                   end
                   if valid then
+                    if event["start"] > doc.data["last_action"] then
+                      doc.data["last_action"] = event["start"]
+                    end
                     if event["end"] == "open" and status == "Closed" then
                       CasesPlugin.log.error "Case #{divd} is closed, but there are open items on the timeline"
                     end
                     if event["end"] and event["end"] != "open" then
                       if event["end"] < event["start"] then
                         CasesPlugin.log.error "Case #{divd}, has an event on the timeline that ends before it starts #{event["start"]} -> #{event["end"]} : #{event["event"]}"
+                      else
+                        if event["end"] > doc.data["last_action"] then
+                          doc.data["last_action"] = event["end"]
+                        end
                       end
                     end
                   end
@@ -152,50 +164,14 @@ module CasesPlugin
               if case_end then
                 CasesPlugin.log.error "Case #{divd}, is 'Open' but end date is set"
               end
+              days_back = Date.today() - doc.data["last_action"]
+              if days_back > 30 then
+                CasesPlugin.log.warn "Case #{divd}, is 'Open' but last actions was #{days_back.to_i} days ago on #{doc.data['last_action']}"
+              end
             end
-
-
-
           end
         end
       end
     end
   end
-
-###  # Subclass of `Jekyll::Page` with custom method definitions.
-###  class CveJson40Page < Jekyll::Page
-###    def initialize(site, data)
-###      # Generate a new document with layout cve-json-40-json in /cves based on the original one.
-###      CveJson.log.info "Creating a JSON file for #{ data["CVE_data_meta"]["ID"]}"
-###      @site = site             # the current site instance.
-###      @base = site.source      # path to the source directory.
-###      @dir  = "cves"           # the directory the page will reside in.
-###      
-###      # All pages have the same filename, so define attributes straight away.
-###      @basename = data["CVE_data_meta"]["ID"]      # filename without the extension.
-###      @ext      = '.json'      # the extension.
-###      @name     = "#{@basename}#{ext}" # basically @basename + @ext.
-###
-###      # Initialize data hash with the new layout and the origina json data
-###      @data = {
-###        'json' => data,
-###        'layout' => 'cve-json-40-json'
-###      }
-###
-###
-###      ## Look up front matter defaults 
-###      data.default_proc = proc do |_, key|
-###        site.frontmatter_defaults #.find(relative_path, :categories, key)
-###      end
-###    end
-###
-###    # Placeholders that are used in constructing page URL.
-###    def url_placeholders
-###      {
-###        :path       => @dir,
-###        :basename   => basename,
-###        :output_ext => output_ext,
-###      }
-###    end
-###  end
 end
