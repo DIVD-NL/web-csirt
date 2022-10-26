@@ -89,7 +89,7 @@ module CasesPlugin
 
             # Excerpt
             excerpt = doc.data["excerpt"]
-            if (not excerpt) or excerpt.start_with?("<h2") or excerpt.start_with?("Please set this to") then
+            if (not excerpt) or not excerpt.is_a?(String) or excerpt.start_with?("<h2") or excerpt.start_with?("Please set this to") then
               CasesPlugin.log.error "Case #{divd} does not have an excerpt or the default excerpt"
             end
 
@@ -99,7 +99,7 @@ module CasesPlugin
             case_end   = doc.data["end"]
 
             if not case_start.kind_of?(Date) then
-              CasesPlugin.log.error "Case #{divd}, has invalid start data '#{case_start}', it should be a valid date"
+              CasesPlugin.log.error "Case #{divd}, has invalid start date '#{case_start}', it should be a valid date"
             end
 
             if not ( status and status.match?(/^(Open|Closed)$/)) then
