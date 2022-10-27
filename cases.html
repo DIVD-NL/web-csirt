@@ -1,45 +1,134 @@
 ---
 title: Cases
 ---
-{%- assign cases = site.cases |reverse -%}
 {%- assign team = site.team | map: "name" -%}
-{%- for p in cases -%}
-<div class="caseitem">
-<h3><a href="{{ p.url }}">{{ p.title }}</a><em>
-    	{%- if p.author[0] -%}
-    		{%- assign first = true -%}
-    		{%- for case_author in p.author -%}
-    			{%- if first -%}
-    				{%- assign first = false -%}
-    			{%- else -%}
-    				,
-    			{%- endif -%}
-				{%- if team contains case_author -%}
-<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
-				{%- else -%}
-{{ case_author }}
-				{%- endif -%}
-			{%- endfor -%}
-    	{%- else -%}
-			{%- assign case_author = p.author | default: "anonymous" -%}
-			{%- if team contains case_author -%}
-<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
-			{%- else -%}
-{{ case_author }}
-			{%- endif -%}
-		{%- endif -%}
-</em>
-</h3>
-<p>
-	Status: {{ p.status | default: "open" }}<br>
-	{%- assign checkExcerpt = p.excerpt | strip_html | split: "SUMMARY" -%}
-	{%- if checkExcerpt[0] -%}
-		{{ p.excerpt | strip_html | escape }}
-	{%- endif -%}
-</p>
-<a href="{{ p.url }}">Lees meer</a>
-</div>
-<hr>
+
+{%- assign open_cases = site.cases | where : "status", "Open" |reverse -%}
+{%- assign closed_cases = site.cases | where: "status", "Closed" | reverse -%}
+{%- assign cases = site.cases | reverse -%}
+{%- assign years = '' | split: "," -%}
+{%- comment -%}Get all years{%- endcomment -%}
+{%- assign current_year = 3000 -%}
+{%- for c in cases -%}
+	{%- assign case_arr = c.divd | split: "-" -%}
+  	{%- capture year -%}{{ case_arr[1] }}{%- endcapture -%}
+  	{%- assign year = year | to_integer -%}
+  	{%- if year != current_year -%}
+  		{%- assign years = years | push: year -%}
+	    {%- assign current_year = year -%}
+	 {%- endif -%}
 {%- endfor -%}
 
+<div class="sidebar">
+	<button class="yearBtn active">Timeline</button>
+	{% for y in years -%}
+		<button class="yearBtn">{{ y }}</button>
+	{% endfor -%}
+</div>
+
+{%- for selected_year in years -%}
+	<div id="div{{ selected_year }}" class="hidden yearDiv">
+
+
+		<h2>Open cases</h2>
+		{%- for p in open_cases -%}
+			{%- assign case_arr = p.divd | split: "-" -%}
+		  	{%- capture year -%}{{ case_arr[1] }}{%- endcapture -%}
+		  	{%- assign year = year | to_integer -%}
+		  	{%- if year == selected_year -%}
+				<div class="caseitem">
+				<h3><a href="{{ p.url }}">{{ p.title }}</a><em>
+				    	{%- if p.author[0] -%}
+				    		{%- assign first = true -%}
+				    		{%- for case_author in p.author -%}
+				    			{%- if first -%}
+				    				{%- assign first = false -%}
+				    			{%- else -%}
+				    				,
+				    			{%- endif -%}
+								{%- if team contains case_author -%}
+				<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
+								{%- else -%}
+				{{ case_author }}
+								{%- endif -%}
+							{%- endfor -%}
+				    	{%- else -%}
+							{%- assign case_author = p.author | default: "anonymous" -%}
+							{%- if team contains case_author -%}
+				<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
+							{%- else -%}
+				{{ case_author }}
+							{%- endif -%}
+						{%- endif -%}
+				</em>
+				</h3>
+				<div>
+					{%- assign checkExcerpt = p.excerpt | strip_html | split: "SUMMARY" -%}
+					{%- if checkExcerpt[0] -%}
+						{{ p.excerpt | strip_html | escape }}
+					{%- endif -%}
+				</div>
+				<a href="{{ p.url }}">More</a>
+				</div>
+				<hr>
+			{%- endif -%}
+		{%- endfor -%}
+
+		<h2>Closed cases</h2>
+		{%- for p in closed_cases -%}
+			{%- assign case_arr = p.divd | split: "-" -%}
+		  	{%- capture year -%}{{ case_arr[1] }}{%- endcapture -%}
+		  	{%- assign year = year | to_integer -%}
+		  	{%- if year == selected_year -%}
+				<div class="caseitem">
+				<h3><a href="{{ p.url }}">{{ p.title }}</a><em>
+				    	{%- if p.author[0] -%}
+				    		{%- assign first = true -%}
+				    		{%- for case_author in p.author -%}
+				    			{%- if first -%}
+				    				{%- assign first = false -%}
+				    			{%- else -%}
+				    				,
+				    			{%- endif -%}
+								{%- if team contains case_author -%}
+				<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
+								{%- else -%}
+				{{ case_author }}
+								{%- endif -%}
+							{%- endfor -%}
+				    	{%- else -%}
+							{%- assign case_author = p.author | default: "anonymous" -%}
+							{%- if team contains case_author -%}
+				<a href='https://www.divd.nl/team/{{ case_author | uri_escape }}'>{{ case_author }}</a>
+							{%- else -%}
+				{{ case_author }}
+							{%- endif -%}
+						{%- endif -%}
+				</em>
+				</h3>
+				<div>
+					{%- assign checkExcerpt = p.excerpt | strip_html | split: "SUMMARY" -%}
+					{%- if checkExcerpt[0] -%}
+						{{ p.excerpt | strip_html | escape }}
+					{%- endif -%}
+				</div>
+				<a href="{{ p.url }}">More</a>
+				</div>
+				<hr>
+			{%- endif -%}
+		{%- endfor -%}
+
+
+
+
+	</div>
+{%- endfor -%}
+
+
+
+<div id="divTimeline" class="yearDiv">
 {%- include timeline_cases.html -%}
+</div>
+
+<script type="text/javascript" src="{{ "/assets/js/cases.js" | relative_url }}"></script>
+
