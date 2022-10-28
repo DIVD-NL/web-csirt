@@ -4,7 +4,6 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 (function($) {
-
 	var	$window = $(window),
 		$banner = $('#banner'),
 		$body = $('body');
@@ -41,7 +40,6 @@
 				resetForms: true,
 				side: 'right'
 			});
-
 })(jQuery);
 
 /* Toggle between adding and removing the "responsive" class to menu when the user clicks on the icon */
@@ -58,3 +56,4 @@ function menuFunction() {
   document.getElementById("menuBtn").addEventListener("click", function(){
 	menuFunction()
   });
+
