@@ -1,0 +1,13 @@
+---
+layout: page
+---
+<form action="/search/" method="get">
+  <label for="search-box">Search</label>
+  <input type="text" id="search-box" name="query">
+  <input type="submit" value="search">
+</form>
+
+<ul id="search-results"></ul>
+
+<script src="/assets/js/lunr.js"></script>
+<script src="/assets/js/search.js"></script>

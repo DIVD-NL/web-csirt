@@ -13,12 +13,8 @@
   link: /blog/
 - name: Donate
   link: https://www.divd.nl/donate/
-#- name: Over ons
-#  link: /over-ons/
-#- name: FAQ
-#  link: /faq/
-#- name: Helpen? 
-#  link: /faq/15-helpen/
+- name: Search...
+  link: /search/
 - name: RSS
   link: /feed.xml
 - name: Contact
