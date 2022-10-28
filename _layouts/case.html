@@ -111,10 +111,12 @@ layout: default
 				<td> {{ page.versions | escape }} </td>
 			</tr>
 		{%- endif -%}
-		<tr>
-			<td> Recommendation </td>
-			<td> {{ page.recommendation | escape }} </td>
-		</tr>
+		{%- if page.recommendation -%}
+			<tr>
+				<td> Recommendation </td>
+				<td> {{ page.recommendation | escape }} </td>
+			</tr>
+		{%- endif -%}
 		{%- if page.patch_status -%}
 			<tr>
 				<td> Patch status </td>
