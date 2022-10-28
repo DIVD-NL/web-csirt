@@ -2901,3 +2901,11 @@ table.affected th {
     }
 }
 
+.hidden {
+  display: none;
+} 
+
+.active {
+  background-color: #1e6bb8;  
+  background-color: rgba(102, 102, 255, 0.49);  
+}

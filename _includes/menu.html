@@ -42,13 +42,20 @@ Example:
    					<ul class="sub-menu">
    						{%- assign cases = site.cases |reverse -%}
 				    	{%- for p in cases -%}
-	    					<li class="menu-item">
-		    					<a href="{{ p.url }}" {%- if page.url == p.url %} class="black_url"{%- endif -%}>
-		    						{{ p.title | slice: 0, 75 | escape }}<br>
-		    						{{ p.excerpt | slice: 0, 75 | escape }}...
-		    					</a>
-		    				</li>
+				    		{%- if forloop.index <= 20 -%}
+		    					<li class="menu-item">
+			    					<a href="{{ p.url }}" {%- if page.url == p.url %} class="black_url"{%- endif -%}>
+			    						{{ p.title | slice: 0, 75 | escape }}<br>
+			    						{{ p.excerpt | slice: 0, 75 | escape }}...
+			    					</a>
+			    				</li>
+			    			{%- endif -%}
 			    		{%- endfor -%}
+    					<li class="menu-item">
+				    		<a href="/cases/"> 
+								All cases
+							</a>
+	    				</li>
 			    	</ul>
 		    	</li>
 			{%- elsif item.link == "/blog/" -%}
