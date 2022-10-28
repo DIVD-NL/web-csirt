@@ -24,24 +24,47 @@
 	    {%- endif %}
 	    section Events
 		{% for line in page.timeline %}
-			{%- if line.end -%}
-				{%- if line.end == "open" -%}
-					{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} (?d): {{ line.start }}, {{ caseend }}
-				{% else -%}
-					{%- comment %} convert our dates to Number of seconds since 1970-01-01 00:00:00 UTC {% endcomment -%}
-					{%- assign lineStart = line.start | date: '%s' -%}
-					{%- assign lineEnd   = line.end   | date: '%s' -%}
+			{%- if line.include -%}
+				{% assign case = site.cases | where:"divd", line.include | first %}
+				{%- if case.end -%}
+					{%- if case.status == "open" -%}
+						{{ case.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} (?d): {{ case.start }}, {{ caseend }}
+					{% else -%}
+						{%- comment %} convert our dates to Number of seconds since 1970-01-01 00:00:00 UTC {% endcomment -%}
+						{%- assign lineStart = case.start | date: '%s' -%}
+						{%- assign lineEnd   = case.end   | date: '%s' -%}
 
-					{%- comment %} difference in seconds {% endcomment -%}
-					{%- assign diffSeconds = lineEnd | minus: lineStart -%}
+						{%- comment %} difference in seconds {% endcomment -%}
+						{%- assign diffSeconds = lineEnd | minus: lineStart -%}
 
-					{%- comment %} difference in days {% endcomment -%}
-					{%- assign lineDuration = diffSeconds | divided_by: 3600 | divided_by: 24 -%}		
+						{%- comment %} difference in days {% endcomment -%}
+						{%- assign lineDuration = diffSeconds | divided_by: 3600 | divided_by: 24 -%}		
 
-					{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} ({{ lineDuration }} days) : {{ line.start }}, {{ line.end }}
+						{{ case.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} ({{ lineDuration }} days) : {{ case.start }}, {{ case.end }}
+					{% endif -%}
+				{%- else -%}
+					{{ case.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} :  milestone, {{ line.start }}, 0d
 				{% endif -%}
 			{%- else -%}
-				{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} :  milestone, {{ line.start }}, 0d
-			{% endif -%}
+				{%- if line.end -%}
+					{%- if line.end == "open" -%}
+						{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} (?d): {{ line.start }}, {{ caseend }}
+					{% else -%}
+						{%- comment %} convert our dates to Number of seconds since 1970-01-01 00:00:00 UTC {% endcomment -%}
+						{%- assign lineStart = line.start | date: '%s' -%}
+						{%- assign lineEnd   = line.end   | date: '%s' -%}
+
+						{%- comment %} difference in seconds {% endcomment -%}
+						{%- assign diffSeconds = lineEnd | minus: lineStart -%}
+
+						{%- comment %} difference in days {% endcomment -%}
+						{%- assign lineDuration = diffSeconds | divided_by: 3600 | divided_by: 24 -%}		
+
+						{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} ({{ lineDuration }} days) : {{ line.start }}, {{ line.end }}
+					{% endif -%}
+				{%- else -%}
+					{{ line.event | markdownify | remove: '<p>' | remove: '</p>' | strip_html | strip_newlines }} :  milestone, {{ line.start }}, 0d
+				{% endif -%}
+			{%- endif -%}
 		{%- endfor -%}
 </div>
