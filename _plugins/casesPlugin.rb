@@ -155,7 +155,7 @@ module CasesPlugin
               end
               
               if not ( doc.data.key?("ips") && ( doc.data["ips"] == "n/a" || doc.data["ips"] > 0 ) ) then
-                CasesPlugin.log.warn "Case #{divd}, is 'Closed' but 0 ips affected. That's not good for stats (is the ips front matter key set?)"
+                CasesPlugin.log.error "Case #{divd}, is 'Closed' but 0 ips affected. That's not good for stats (is the ips front matter key set?)"
               end
             end
 
