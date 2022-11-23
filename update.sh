@@ -14,10 +14,12 @@ fi
 
 echo "Updating team"
 (
-	cd _team
-	rm -f *.html
-	cp ../www.divd.nl/_team/*.html .
+	cd _teams
+	rm -f *.md
+	cd ../_team
+	rm -f *.md
 )
+./update_org.py --team-path _teams  --member-path _team
 
 echo "Updating reports"
 (

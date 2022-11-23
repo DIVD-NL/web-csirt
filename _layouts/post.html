@@ -15,7 +15,7 @@ layout: page
 			{% endif %}
 			{% assign page_author = a | default: "anonymous" %}
 			{% if team contains page_author %}
-				<a href='https://www.divd.nl/team/{{ page_author }}/'>{{ page_author }}</a> 
+				<a href='https://www.divd.nl/people/{{ page_author | url_encode }}/'>{{ page_author }} </a> 
 			{% else %}
 				{{ page_author }}
 			{% endif %}
@@ -23,7 +23,7 @@ layout: page
 	{% else %}
 		{% assign page_author = page.author | default: "anonymous" %}
 		{% if team contains page_author %}
-			<a href='https://www.divd.nl/team/{{ page_author }}/'>{{ page_author }}</a> 
+			<a href='https://www.divd.nl/people/{{ page_author | url_encode }}/'>{{ page_author }}</a> 
 		{% else %}
 			{{ page_author }}
 		{% endif %}

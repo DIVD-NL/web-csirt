@@ -26,7 +26,6 @@ DIVD does not operate on an opt-in or opt-out basis, but you can block the scann
 
 We currently have the following cases open, so the scan you observed is likely related to one of them:
 {% assign cases = site.cases |reverse -%}
-{% assign team = site.team | map: "name" -%}
 {% for p in cases -%}
 {%- if p.status == "Open" -%}
 * [{{ p.title }}]({{ p.url }})
