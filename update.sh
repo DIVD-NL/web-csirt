@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 if [[ ! -e serve ]]; then
 	echo "It looks like you are not in the root directory because I don;t see the serve script"
 	echo "I'm cowardly quitting"
