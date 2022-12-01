@@ -14,3 +14,4 @@ www.divd.nl/
 *.log
 _config_livereload.yml
 *:Zone.Identifier
+vendor
