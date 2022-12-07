@@ -13,7 +13,7 @@ layout: default
 		</tr><tr>
 			<td> Case lead </td><td>
 				{%- if team contains lead -%}
-					<a href='https://www.divd.nl/team/{{ lead | uri_escape }}/'>{{ lead }}</a>
+					<a href='https://www.divd.nl/people/{{ lead | uri_escape }}/'>{{ lead }}</a>
 				{%- else -%}
 					{{ lead }}
 				{%- endif -%}
@@ -28,7 +28,7 @@ layout: default
 							{%- for author in page.author -%}
 								<li>
 									{%- if team contains author -%}
-										<a href='https://www.divd.nl/team/{{ author | uri_escape }}/'>{{ author }}</a>
+										<a href='https://www.divd.nl/people/{{ author | uri_escape }}/'>{{ author }}</a>
 									{%- else -%}
 										{{ author }}
 									{%- endif -%}
@@ -37,7 +37,7 @@ layout: default
 						</ul>
 					{%- else -%}
 						{%- if team contains page.author -%}
-							<a href='https://www.divd.nl/team/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
+							<a href='https://www.divd.nl/people/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
 						{%- else -%}
 							{{ page.author }}
 						{%- endif -%}
@@ -53,7 +53,7 @@ layout: default
 						{%- for r in page.researchers -%}
 							<li>
 								{%- if team contains r -%}
-									<a href='https://www.divd.nl/team/{{ r | uri_escape }}/'>{{ r }}</a>
+									<a href='https://www.divd.nl/people/{{ r | uri_escape }}/'>{{ r }}</a>
 								{%- else -%}
 									{{ r }}
 								{%- endif -%}

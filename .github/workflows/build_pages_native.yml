@@ -23,6 +23,8 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.7'
+      - name: install prerequisites
+        run:  pip3 install html5validator requests && gem install --no-document html-proofer
       - name: Update external content
         run:  ./update.sh
       - name: Clean up stubs
@@ -31,8 +33,6 @@ jobs:
         run:  bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
       - name: "Fix security.txt"
         run: mkdir _site/.well-known && (cd _site/.well-known && ln -s ../security.txt) && ls -al _site/.well-known
-      - name: install prerequisites
-        run:  pip3 install html5validator && gem install --no-document html-proofer
       - name: Test HTML code
         run:  ./proof_html.sh
       - name: rsync deploy

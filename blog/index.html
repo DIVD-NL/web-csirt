@@ -21,7 +21,7 @@ nav_position: 1
 	    				,
 	    			{%- endif -%}
 				    {%- if team contains post_author -%}
-				    	<a href='https://www.divd.nl/team/{{ post_author | uri_escape }}/'>{{ post_author }}</a>
+				    	<a href='https://www.divd.nl/people/{{ post_author | uri_escape }}/'>{{ post_author }}</a>
 				    {%- else -%}
 						{{ post_author }}
 					{%- endif -%}
@@ -29,7 +29,7 @@ nav_position: 1
 	    	{%- else -%}
 				{%- assign post_author =  post.author | default: "anonymous" -%}
 			    {%- if team contains post_author -%}
-			    	<a href='https://www.divd.nl/team/{{ post_author | uri_escape }}/'>{{ post_author }}</a>
+			    	<a href='https://www.divd.nl/people/{{ post_author | uri_escape }}/'>{{ post_author }}</a>
 			    {%- else -%}
 					{{ post_author }}
 				{%- endif -%}

@@ -27,7 +27,7 @@ The rest of this post contains the full technical write-up of the vulnerabilitie
 
 - Case: {% divd DIVD-2021-00037 %}
 - Discoverd by: Wietse Boonstra and Hidde Smit
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/team/Hidde%20Smit/)
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/people/Hidde%20Smit/)
 - Products: ITarian SaaS platform
 - Reference: Case {% divd DIVD-2021-00037 %}
 
@@ -57,7 +57,7 @@ The cookie `token` can also be stolen, which is actually a SSO-token granting fu
 - CVE: {% cve CVE-2022-25151 %}
 - Case: {% divd DIVD-2021-00037 %}
 - Discoverd by: Wietse Boonstra and Hidde Smit
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/team/Hidde%20Smit/)
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/people/Hidde%20Smit/)
 - Products: ITarian SaaS platform and Itarian on-premise
 - CVSS: 7.5
 - Reference: Case {% divd DIVD-2021-00037 %}, {% cve CVE-2022-25151 %}
@@ -70,7 +70,7 @@ Being able to steal cookies exploiting XSS, is caused by the lack of HttpOnly. B
 - CVE: {% cve CVE-2022-25152 %}
 - Case: {% divd DIVD-2021-00037 %}
 - Discoverd by: Wietse Boonstra and Hidde Smit
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/team/Hidde%20Smit/)
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/people/Hidde%20Smit/)
 - Products: ITarian SaaS platform and Itarian on-premise
 - CVSS: 9.9
 - Reference: Case {% divd DIVD-2021-00037 %}, {% cve CVE-2022-25152 %}
@@ -92,7 +92,7 @@ The first API call is used to create a procedure, the second is used to add arbi
 - CVE: {% cve CVE-2022-25153 %}
 - Case: {% divd DIVD-2021-00037 %}
 - Discoverd by: Wietse Boonstra and Hidde Smit
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/team/Hidde%20Smit/)
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) and [Hidde Smit](https://www.divd.nl/people/Hidde%20Smit/)
 - Products: ITarian SaaS platform and Itarian on-premise
 - CVSS: 7.8
 - Reference: Case {% divd DIVD-2021-00037 %}, {% cve CVE-2022-25153 %}
