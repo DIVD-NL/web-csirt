@@ -9,7 +9,7 @@ excerpt: "Full disclosure of vulnerabilities we discovered in SmarterTrack"
 redirect_from:
  - /2022/08/09/Smartertrak-Full-Disclosure/
 ---
-On 27 October 2021 [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) found several vulnerabilities in the latest version of SmarterTrack. There were [two](/CVE-2022-24384) [XSS](/CVE-2022-24386), an [unauthenticated download](/CVE-2022-24385) and an [upload / overwrite vulnerability](/CVE-2022-24387). The researcher [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) and [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/), examined the vulnerability and made the proof of concept.
+On 27 October 2021 [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) found several vulnerabilities in the latest version of SmarterTrack. There were [two](/CVE-2022-24384) [XSS](/CVE-2022-24386), an [unauthenticated download](/CVE-2022-24385) and an [upload / overwrite vulnerability](/CVE-2022-24387). The researcher [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) and [Finn van der Knaap](https://www.divd.nl/people/Finn%20van%20der%20Knaap/), examined the vulnerability and made the proof of concept.
 
 Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosing the details of the four CVEs.
 
@@ -19,7 +19,7 @@ Today we are releasing case [DIVD-2021-00029](/DIVD-2021-00029) and are disclosi
 - CVE: {% cve CVE-2022-24384 %}
 - Case: {% divd DIVD-2021-00029 %}
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/people/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 8.8
 - Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
@@ -37,7 +37,7 @@ Impact: When this attack is performed, the attacker can do any action that the u
 - CVE: {% cve CVE-2022-24385 %}
 - Case: {% divd DIVD-2021-00029 %}
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/people/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 6.5
 - Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
@@ -59,7 +59,7 @@ Impact: When someone downloads the attachment without authorization, sensitive d
 - CVE: {% cve CVE-2022-24386 %}
 - Case: {% divd DIVD-2021-00029 %}
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/people/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 8.8
 - Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}
@@ -94,7 +94,7 @@ Impact: This vulnerability is worse than the first XSS. This is because this is 
 - CVE: {% cve CVE-2022-24387 %}
 - Case: {% divd DIVD-2021-00029 %}
 - Discoverd by: Wietse Boonstra
-- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/team/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/team/Finn%20van%20der%20Knaap/) of DIVD
+- Credits: Discovered by [Wietse Boonstra](https://www.divd.nl/people/Wietse%20Boonstra/) of DIVD, Additional research by [Finn van der Knaap](https://www.divd.nl/people/Finn%20van%20der%20Knaap/) of DIVD
 - Products: SmarterTools - SmarterTrack V100.0.8019.14010
 - CVSS: 9.1
 - Reference: Case {% divd DIVD-2021-00029 %}, {% cve CVE-2022-24384 %}

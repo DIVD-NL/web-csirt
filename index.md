@@ -31,7 +31,6 @@ Last 10 posts ...
 
 <ul>
 {%- assign cases = site.cases |reverse -%}
-{%- assign team = site.team | map: "name" -%}
 {%- for p in cases -%}
 	{%- if p.status == "Open" -%}
 		<li>

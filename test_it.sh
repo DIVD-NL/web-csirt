@@ -4,6 +4,7 @@ docker pull mrseccubus/github-pages:latest
 docker run --volume="$PWD:/root/project:delegated" --entrypoint /bin/bash -ti mrseccubus/github-pages \
 -c "
 	cd /root/project/;
+	pip install requests
 	if [[ -e Gemfile ]]; then
 		echo \"*** Installing Gems in Gemfile ***\"
 		bundle install 
