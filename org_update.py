@@ -75,7 +75,7 @@ if __name__ == '__main__':
 					mfh.write("start: {:04d}-{:02d}-{:02d}\n".format(
 						node["leafMember"]["companyStartDate"]["year"],
 						node["leafMember"]["companyStartDate"]["month"],
-						node["leafMember"]["companyStartDate"]["day"])
+						node["leafMember"]["companyStartDate"]["day"] or 1)
 					)
 				mfh.write("---\n")
 				mfh.write("{}\n".format(node["leafMember"]["description"] or ""))

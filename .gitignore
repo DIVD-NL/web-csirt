@@ -5,6 +5,7 @@
 .sass-cache/
 .DS_Store
 Gemfile.lock
+vendor/
 _site/
 .env
 _team/
