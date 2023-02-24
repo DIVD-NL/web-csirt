@@ -14,5 +14,5 @@ As soon as we learned of his arrest, we formed a crisis team, blocking the volun
 
 Volunteering for DIVD as a helpful hacker is never compatible with cybercrime. We have suspended the volunteer's membership.
 
-More than 100 volunteers are active as helpful hackers at DIVD. They have all endorsed our code of conduct. Anyone who violates this code is immediately suspended and is no longer welcome at DIVD. We have accomplished a great deal together over the past years, and we are very sorry that the actions of one volunteer have now cast a shadow over our work
+More than 100 volunteers are active as helpful hackers at DIVD. They have all endorsed our code of conduct. Anyone who violates this code is immediately suspended and is no longer welcome at DIVD. We have accomplished a great deal together over the past years, and we are very sorry that the actions of one volunteer have now cast a shadow on our work.
 
