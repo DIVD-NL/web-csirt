@@ -6,3 +6,4 @@ Header set Content-Security-Policy "default-src 'none'; font-src 'self'; img-src
 Header always set Referrer-Policy "same-origin"
 ErrorDocument 404 /404.html
 RewriteRule ^divd-(.*)$ /DIVD-$1 [R=301,L]
+RewriteRule ^/cases/divd-(.*)$ /cases/DIVD-$1 [R=301,L]
