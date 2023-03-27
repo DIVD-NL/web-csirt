@@ -9,6 +9,8 @@
   link: /cases/
 - name: CVEs
   link: /cves/
+- name: CNA
+  link: /cna/
 - name: Blog
   link: /blog/
 - name: Donate
