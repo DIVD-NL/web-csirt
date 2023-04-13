@@ -2,7 +2,7 @@
 ---
 # CVE Numbering Authority
 
-The Dutch Institute for Vulnerability Disclosure is an official [CVE Numbering Authority (CNA)](https://www.cve.org/ProgramOrganization/CNAs). Within the CVE system, CNAs are organizations "responsible for the regular assignment of CVE IDs to vulnerabilities and for creating and publishing information about the vulnerability in the associated CVE Redord." Within DIVD the CNA is operated by our CNA Admins.
+The Dutch Institute for Vulnerability Disclosure is an official [CVE Numbering Authority (CNA)](https://www.cve.org/ProgramOrganization/CNAs). Within the CVE system, CNAs are organizations "responsible for the regular assignment of CVE IDs to vulnerabilities and for creating and publishing information about the vulnerability in the associated CVE Record." Within DIVD the CNA is operated by our CNA Admins.
 
 Each CNA has a specific scope for which it operates, our scope (as visible on our [CVE partner page](https://www.cve.org/PartnerInformation/ListofPartners/partner/DIVD)) is:
 
