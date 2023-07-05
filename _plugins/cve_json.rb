@@ -43,7 +43,13 @@ module CveJson
             elsif doc.data["layout"] == "cve-json-50"
               # Get data
               cve = doc.data["json"]["cveMetadata"]["cveId"]
-              title = doc.data["json"]["containers"]["cna"]["title"]
+              if doc.data["json"]["containers"]["cna"].key?("title")
+                title = doc.data["json"]["containers"]["cna"]["title"]
+              elsif doc.data.key?("title")
+                title = doc.data["title"]
+              else
+                title = doc["title"]
+              end
               CveJson.log.info "Title: #{title}"        
               # Set additional attributes
               doc.data["cve"] = cve
