@@ -3,9 +3,6 @@ layout: post
 title: Limited disclosure of 6 vulnerabilities in OSNexus Quantastor
 author: DIVD
 excerpt: "DIVD researched Wiets Boonstra has foudn 6 vulnerabilities in OSNexus Quantastor. We are disclosing these vulnerabilities and issueing a product warning as a last resort, due to a severly limited cooperation form the vendor."
-jekyll-secinfo:
-  cve:
-    url: /cves/CVE-
 ---
 The story of DIVD case [DIVD-2021-00020](/DIVD-2021-00020) is a story that started more then 1.5 years ago, when DIVD reserach [Wietse Boondsta](https://www.divd.nl/people/Wietse%20Boonstra/) discovered the first five vulnerabilities ( {% cve 2021-42079 %}, {% cve 2021-42080 %}, {% cve 2021-42080 %}, {% cve 2021-42080 %}, and {% cve 2021-42080 %} ) in [OSNexus Quantastor](https://www.osnexus.com/products/software-defined-storage) and found an additional vulnerability in Aug 2021 {% cve 2021-4406 %}.
 
