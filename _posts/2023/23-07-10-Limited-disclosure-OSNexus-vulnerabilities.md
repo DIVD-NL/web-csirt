@@ -14,7 +14,7 @@ We again tried to address the remaining vulnerabilities with OSNexus and again w
 
 In line with our CNA policy we are now at a point where we feel that a limited disclosure of these vulnerabilities and a product warning is in order.
 
-If you are using any version of OSNexus QuantaStor we strongly recommend that you make sure i it can only be accessed from trusted networks or by trusted individuals, as it may or may not contain Server Side Request Forgery (SSRF), Remote Command Execution and Local Privilege Escalation vulnerabilities that can be combined to fully own the device.
+If you are using any version of OSNexus QuantaStor we strongly recommend that you make sure it can only be accessed from trusted networks or by trusted individuals, as it may or may not contain Server Side Request Forgery (SSRF), Remote Command Execution and Local Privilege Escalation vulnerabilities that can be combined to fully own the device.
 
 We strongly hope that OSNexus will reach out to us (via csirt@divd.nl) so we can work together to fix these vulnerabilities, but until that time we see disclosing these vulnerabilities and this product warning as our only option to make sure adminisrators can take the required measures.
 
