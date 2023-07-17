@@ -1,0 +1,18 @@
+<!-- Header -->
+<header id="header" class='no-print'>
+    {%- if page.url != "/" -%}
+        {%- if page.url != "/blog/" and page.layout == "post" -%}
+            <span class="logo no-print"><a href="/">Home</a> / <a href="/blog/">Blog</a> / {{ page.title | capitalize }}</span>
+        {%- elsif page.url contains "/cases/" and page.url != "/cases/" -%}
+            <span class="logo no-print"><a href="/">Home</a> / <a href="/cases/">Cases</a> / {{ page.title | capitalize }}</span>
+        {%- elsif page.url contains "/cves/" and page.url != "/cves/" -%}
+            <span class="logo no-print"><a href="/">Home</a> / <a href="/cves/">CVEs</a> / {{ page.cve | capitalize }}</span>
+        {%- elsif page.url == "/cves/" -%}
+            <span class="logo no-print"><a href="/">Home</a> / CVEs </span>
+        {%- elsif page.url contains "/faq/" and page.url != "/faq/" -%}
+            <span class="logo no-print"><a href="/">Home</a> / <a href="/faq/">FAQ</a> / {{ page.title | capitalize }}</span>
+        {%- else -%}
+            <span class="logo no-print"><a href="/">Home</a> / {{ page.title | capitalize }}</span>
+        {%- endif -%}
+    {%- endif -%}
+</header>

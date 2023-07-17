@@ -1,0 +1,23 @@
+- name: Home
+  link: /
+  children:
+  - name: DIVD
+    link: https://www.divd.nl
+  - name: CSIRT
+    link: /
+- name: Cases
+  link: /cases/
+- name: CVEs
+  link: /cves/
+- name: CNA
+  link: /cna/
+- name: Blog
+  link: /blog/
+- name: Donate
+  link: https://www.divd.nl/donate/
+- name: Search...
+  link: /search/
+- name: RSS
+  link: /feed.xml
+- name: Contact
+  link: /contact/
