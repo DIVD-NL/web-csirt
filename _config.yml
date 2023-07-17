@@ -1,0 +1,71 @@
+theme: jekyll-theme-cayman
+
+paginate: 10
+plugins: [jekyll-paginate]
+paginate_path: "blog/:num/"
+
+language: nl-nl
+
+title: DIVD CSIRT
+description: "Making the internet safer through Coordinated Vulnerability Disclosure"
+repository: DIVD-NL/sites
+
+timezone: Europe/Amsterdam
+future: true
+encoding: utf-8
+
+
+permalink: pretty
+markdown: kramdown
+show_downloads: false
+github:
+  is_project_page: false
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-secinfo
+  - jekyll-paginate
+  - jekyll-last-modified-at
+
+jekyll-secinfo:
+  divd:
+    url: /cases/DIVD-
+
+# Custom headers
+webrick:
+  headers:
+    Content-Security-Policy: default-src 'none'; font-src 'self'; img-src 'self' data:; script-src 'self' ; style-src 'self'; connect-src 'self';
+
+# Collections
+collections:
+  team:
+    output: false
+  reports:
+    output: false
+  cves:
+    output: true
+  cases:
+    output: true
+
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"    
+
+
+exclude:
+  - README.md
+  - serve*
+  - "*.sh"
+  - .keep
+  - Gemfile
+  - Gemfile.lock
+  - "*.conf"
+  - "*:Zone.Identifier"
+  - "_config_livereload.yml"
+  - "www.divd.nl"
+  - vendor

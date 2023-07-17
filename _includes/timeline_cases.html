@@ -1,0 +1,67 @@
+{%- assign current_year = 0 -%}
+{%- assign years = '' | split: "," -%}
+{%- assign openEnd = site.time | date: "%s" | plus: 2592000 | date: "%s" -%}
+{%- for c in site.cases -%}
+  {%- assign case_arr = c.divd | split: "-" -%}
+  {%- capture year -%}{{ case_arr[1] }}{%- endcapture -%}
+  {%- assign year = year | to_integer -%}
+  {%- if year != 3000 -%}
+	  {%- if year > current_year -%}
+	    {%- assign years = years | push: year -%}
+	    {%- assign current_year = year -%}
+	  {%- endif -%}
+	{%- endif -%}
+{%- endfor -%}
+{%- assign years = years | reverse -%}
+
+{%- for year in years -%}
+	{%- capture yearStart -%}{{ year }}-01-01{%- endcapture -%}
+	{%- capture yearEnd -%}{{ year | plus: 1 }}-01-01{%- endcapture -%}
+	{%- assign yearStart = yearStart | date: "%s" -%}
+	{%- assign yearEnd   = yearEnd   | date: "%s" -%}
+
+<div class="mermaid">
+	gantt
+	    title       Cases in {{ year }}
+	    dateFormat  YYYY-MM-DD
+	    axisFormat  %e %b %Y
+		{%- for c in site.cases -%}
+			{%- comment %} convert our dates to Number of seconds since 1970-01-01 00:00:00 UTC {% endcomment -%}
+			{%- assign caseStart = c.start | date: '%s' -%}
+			{%- assign caseEnd   = c.end   | date: '%s' -%}
+
+			{%- if c.end -%}
+				{%- comment %} difference in seconds {% endcomment -%}
+				{%- assign diffSeconds = caseEnd | minus: caseStart -%}
+
+				{%- comment %} difference in days {% endcomment -%}
+				{%- assign caseDuration = diffSeconds | divided_by: 3600 | divided_by: 24 | plus: 1 -%}
+				{%- capture caseDuration -%}{{ caseDuration }} days{%- endcapture -%}
+			{%- else -%}
+				{%- assign caseDuration = "open" -%}
+				{%- assign caseEnd = openEnd -%}
+			{%- endif -%}
+
+			{%- if caseStart < yearEnd and caseEnd >= yearStart -%}
+				{%- if caseStart < yearStart -%}
+					{%- assign barStart = yearStart -%}
+				{%- else -%}
+					{%- assign barStart = caseStart -%}
+				{%- endif -%}
+
+				{%- if caseEnd > yearEnd -%}
+					{%- assign barEnd = yearEnd -%}
+				{%- else -%}
+					{%- assign barEnd = caseEnd -%}
+				{%- endif -%}
+				{%- if c.end -%}
+				  {%- assign post = c.end|date: "- %e %b %Y" -%}
+				{%- else -%}
+					{%- assign post = "-> ?" -%}
+				{%- endif %}
+				{{ c.title | remove: ':' }}, {{ c.start|date: "%e %b %Y" }} {{ post }} ({{caseDuration}}) :{{ barStart | date: "%Y-%m-%d" }}, {{ barEnd | date: "%Y-%m-%d" }}
+	    {%- endif -%}
+		{%- endfor -%}
+</div>
+
+{%- endfor -%}
