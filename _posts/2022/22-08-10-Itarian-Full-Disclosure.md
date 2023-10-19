@@ -82,7 +82,7 @@ The Token session cookie can be retrieved by abusing the XSS vulnerability in th
 
 Creating and bypassing approval consists of multiple steps. The vulnerability is easily exploited by calling the following three API endpoints in the following order:
 1. /procedure/windows/create
-2. /procedure/windows/update/id/<id>
+2. /procedure/windows/update/id/\<id\>
 3. /procedure/run/device-all
 
 The first API call is used to create a procedure, the second is used to add arbitrary Python code and the last API call bypasses approval and pushes the procedure to all devices. These three steps have been automated in a Python POC which can be found [here](https://github.com/DIVD-NL/Itarian-2021-00037/blob/main/POC/CVE-2022-25152-POC.py)
