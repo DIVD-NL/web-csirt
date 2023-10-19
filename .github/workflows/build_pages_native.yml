@@ -27,6 +27,8 @@ jobs:
           python-version: '3.7'
 #      - name: install prerequisites
 #        run:  pip3 install html5validator requests && gem install --no-document html-proofer
+      - name: install prerequisites
+        run:  pip3 install requests 
       - name: Update external content
         run:  ./update.sh
       - name: Clean up stubs
