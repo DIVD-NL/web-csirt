@@ -25,8 +25,10 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.7'
+#      - name: install prerequisites
+#        run:  pip3 install html5validator requests && gem install --no-document html-proofer
       - name: install prerequisites
-        run:  pip3 install html5validator requests && gem install --no-document html-proofer
+        run:  pip3 install requests 
       - name: Update external content
         run:  ./update.sh
       - name: Clean up stubs
@@ -35,8 +37,18 @@ jobs:
         run:  bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
       - name: "Fix security.txt"
         run: mkdir _site/.well-known && (cd _site/.well-known && ln -s ../security.txt) && ls -al _site/.well-known
+#      - name: Test HTML code
+#        run:  ./proof_html.sh
       - name: Test HTML code
-        run:  ./proof_html.sh
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: _site/
+      - name: Upload HTML test report 
+        uses: actions/upload-artifact@v3
+        if: success() || failure() # Run even if we had an error
+        with:
+          name: html5validator_log
+          path: log.log
       - name: rsync deploy
         uses: burnett01/rsync-deployments@5.2.1
         if:   ${{ github.ref == 'refs/heads/main' }}
