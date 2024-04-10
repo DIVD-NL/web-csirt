@@ -3,8 +3,6 @@ layout: default
 ---
 <h1>{{ page.cve | escape }} - {{ page.title | escape }}</h1>
 
-{% assign team = site.team | map: "name" -%}
-
 <table>
 	<tbody>
 	    <tr>
@@ -16,11 +14,7 @@ layout: default
 				<ul>
 					{% for r in page.discovered_by -%}
 						<li>
-							{% if team contains r %}
-								<a href='https://www.divd.nl/people/{{ r | uri_escape }}/'>{{ r }}</a>
-							{% else %}
-								{{ r }}
-							{% endif %}
+							{% include person.html p=r %}
 						</li>
 					{% endfor %}
 				</ul>
@@ -33,11 +27,7 @@ layout: default
 					<ul>
 						{% for r in page.researchers -%}
 							<li>
-								{% if team contains r %}
-									<a href='https://www.divd.nl/people/{{ r | uri_escape }}/'>{{ r }}</a>
-								{% else %}
-									{{ r }}
-								{% endif %}
+								{% include person.html p=r %}
 							</li>
 						{% endfor %}
 					</ul>
@@ -82,11 +72,7 @@ layout: default
 			<tr>
 				<td> Page author </td>
 				<td>
-					{% if team contains page.author %}
-						<a href='https://www.divd.nl/people/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
-					{% else %}
-						{{ page.author }}
-					{% endif %}
+					{% include person.html p=page.author %}
 				</td>
 			</tr>
 		{% endif %}
