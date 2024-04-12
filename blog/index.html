@@ -4,7 +4,6 @@ title: Blog
 nav_position: 1
 ---
 {%- include paginator.html -%}
-{%- assign team = site.team | map: "name" -%}
 
 {%- for post in paginator.posts -%}
 	<hr>
@@ -20,19 +19,11 @@ nav_position: 1
 	    			{%- else -%}
 	    				,
 	    			{%- endif -%}
-				    {%- if team contains post_author -%}
-				    	<a href='https://www.divd.nl/people/{{ post_author | uri_escape }}/'>{{ post_author }}</a>
-				    {%- else -%}
-						{{ post_author }}
-					{%- endif -%}
+					{% include person.html p=post_author %}
 				{%- endfor -%}
 	    	{%- else -%}
 				{%- assign post_author =  post.author | default: "anonymous" -%}
-			    {%- if team contains post_author -%}
-			    	<a href='https://www.divd.nl/people/{{ post_author | uri_escape }}/'>{{ post_author }}</a>
-			    {%- else -%}
-					{{ post_author }}
-				{%- endif -%}
+				{% include person.html p=post_author %}
 			{%- endif -%}
 			</em>
 	  </h3>

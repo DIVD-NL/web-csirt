@@ -1,7 +1,6 @@
 ---
 layout: page
 ---
-{% assign team = site.team | map: "name" %}
 <h1>{{ page.title }}</h1>
 <p>
 	{{ page.date | date_to_string }} -
@@ -14,20 +13,11 @@ layout: page
 				,
 			{% endif %}
 			{% assign page_author = a | default: "anonymous" %}
-			{% if team contains page_author %}
-				<a href='https://www.divd.nl/people/{{ page_author | url_encode }}/'>{{ page_author }} </a> 
-			{% else %}
-				{{ page_author }}
-			{% endif %}
+			{% include person.html p=page_author %}
 		{% endfor %}
 	{% else %}
 		{% assign page_author = page.author | default: "anonymous" %}
-		{% if team contains page_author %}
-			<a href='https://www.divd.nl/people/{{ page_author | url_encode }}/'>{{ page_author }}</a> 
-		{% else %}
-			{{ page_author }}
-		{% endif %}
-
+		{% include person.html p=page_author %}
 	{% endif %}
 </p>
 {{ content }}

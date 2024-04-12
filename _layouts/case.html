@@ -3,7 +3,6 @@ layout: default
 ---
 <h1>{{ page.title | escape }}</h1>
 
-{%- assign team = site.team | map: "name" -%}
 {%- assign lead = page.lead | default: page.author -%}
 
 <table>
@@ -12,35 +11,23 @@ layout: default
 			<td> Our reference </td><td> {{ page.divd | divd }} </td>
 		</tr><tr>
 			<td> Case lead </td><td>
-				{%- if team contains lead -%}
-					<a href='https://www.divd.nl/people/{{ lead | uri_escape }}/'>{{ lead }}</a>
-				{%- else -%}
-					{{ lead }}
-				{%- endif -%}
+				{% include person.html p=lead %}
 			</td>
 		</tr>
 		{%- if lead != page.author -%}
 			<tr>
 				<td> Author </td>
 				<td>
-					{%- if page.product[0] -%}
+					{%- if page.author[0] -%}
 						<ul>
 							{%- for author in page.author -%}
 								<li>
-									{%- if team contains author -%}
-										<a href='https://www.divd.nl/people/{{ author | uri_escape }}/'>{{ author }}</a>
-									{%- else -%}
-										{{ author }}
-									{%- endif -%}
+									{% include person.html p=author %}
 								</li>
 							{%- endfor -%}
 						</ul>
 					{%- else -%}
-						{%- if team contains page.author -%}
-							<a href='https://www.divd.nl/people/{{ page.author | uri_escape }}/'>{{ page.author }}</a>
-						{%- else -%}
-							{{ page.author }}
-						{%- endif -%}
+						{% include person.html p=page.author %}
 					{%- endif -%}
 				</td>
 			</tr>
@@ -52,11 +39,7 @@ layout: default
 					<ul>
 						{%- for r in page.researchers -%}
 							<li>
-								{%- if team contains r -%}
-									<a href='https://www.divd.nl/people/{{ r | uri_escape }}/'>{{ r }}</a>
-								{%- else -%}
-									{{ r }}
-								{%- endif -%}
+								{% include person.html p=r %}
 							</li>
 						{%- endfor -%}
 					</ul>

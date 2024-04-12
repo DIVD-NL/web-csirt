@@ -1,0 +1,15 @@
+{%- assign version=2020 -%}
+{%- assign team = site.team | map: "name" -%}
+{%- if team contains include.p -%}
+	{%- if version == 2020 -%}
+		<a href='https://www.divd.nl/people/{{ include.p | uri_escape }}/'>{{ include.p }}</a>
+	{%- elsif version == beta -%}
+		<a href='https://beta.divd.nl/who-we-are/team/people/{{ include.p | downcase | replace: " ", "-" | uri_escape }}/'>{{ include.p }}</a> 
+	{%- elsif version == 2024 -%}
+		<a href='https://www.divd.nl/who-we-are/team/people/{{ include.p | downcase | replace: " ", "-" | uri_escape }}/'>{{ include.p }}</a> 
+	{%- else -%}
+		{{ include.p }}
+	{%- endif -%}
+{%- else -%}
+	{{ include.p }}
+{%- endif -%}

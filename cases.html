@@ -46,19 +46,11 @@ title: Cases
 				    			{%- else -%}
 				    				,
 				    			{%- endif -%}
-								{%- if team contains case_author -%}
-				<a href='https://www.divd.nl/people/{{ case_author | uri_escape }}'>{{ case_author }}</a>
-								{%- else -%}
-				{{ case_author }}
-								{%- endif -%}
+								{% include person.html p=case_author %}
 							{%- endfor -%}
 				    	{%- else -%}
 							{%- assign case_author = p.author | default: "anonymous" -%}
-							{%- if team contains case_author -%}
-				<a href='https://www.divd.nl/people/{{ case_author | uri_escape }}'>{{ case_author }}</a>
-							{%- else -%}
-				{{ case_author }}
-							{%- endif -%}
+							{% include person.html p=case_author %}
 						{%- endif -%}
 				</em>
 				</h3>
@@ -90,19 +82,11 @@ title: Cases
 				    			{%- else -%}
 				    				,
 				    			{%- endif -%}
-								{%- if team contains case_author -%}
-				<a href='https://www.divd.nl/people/{{ case_author | uri_escape }}'>{{ case_author }}</a>
-								{%- else -%}
-				{{ case_author }}
-								{%- endif -%}
+								{% include person.html p=case_author %}
 							{%- endfor -%}
 				    	{%- else -%}
 							{%- assign case_author = p.author | default: "anonymous" -%}
-							{%- if team contains case_author -%}
-				<a href='https://www.divd.nl/people/{{ case_author | uri_escape }}'>{{ case_author }}</a>
-							{%- else -%}
-				{{ case_author }}
-							{%- endif -%}
+							{% include person.html p=case_author %}
 						{%- endif -%}
 				</em>
 				</h3>
