@@ -34,7 +34,7 @@ layout: none
       ,
     {%- endif %}
     "{{ stat[0] }}" : {
-        "cases" : {{ stat[1] }}
+        "cases" : {{ stat[1] }},
         "ips"   : {{ ips }}
     }
   {%- endif -%}
