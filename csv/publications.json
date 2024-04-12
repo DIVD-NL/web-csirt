@@ -1,0 +1,102 @@
+---
+layout: none
+---
+{%- assign cases = site.cases | reverse -%}
+{%- assign cves = site.cves | reverse -%}
+{
+{% assign first = true -%}
+{%- for person in site.team -%}
+	{%- if first -%}
+		{%- assign first = false -%}
+	{%- else -%}
+		,
+	{%- endif %}
+	"{{ person.name }}" : {
+		csirt_cases : [
+			{%- assign first_case = true -%}
+			{%- for c in cases -%}
+				{%- if 
+					c.author == person.name or 
+					c.author contains person.name or
+					c.lead == person.name or
+					c.researchers contains person.name
+				-%}
+					{%- if first_case -%}
+						{%- assign first_case = false -%}
+					{%- else -%}
+						,
+					{%- endif %}
+					{
+						id     : "{{ c.divd }}",
+						title  : "{{ c.title }}",
+						start  : "{{ c.start }}",
+						end    : "{{ c.end }}",
+						status : "{{ c.status }}",
+						url    : "https://csirt.divd.nl/{{ c.divd }}"
+					}
+				{%- endif -%}
+			{%- endfor %}
+		],
+		csirt_posts : [
+			{%- assign first_post = true -%}
+			{%- for p in site.posts -%}
+				{%- if 
+					p.author == person.name or 
+					p.author contains person.name
+				-%}
+					{%- if first_post -%}
+						{%- assign first_post = false -%}
+					{%- else -%}
+						,
+					{%- endif %}
+					{
+						title : "{{ p.title }}",
+						date  : "{{ p.date }}",
+						url   : "https://csirt.divd.nl{{ p.url }}"
+					}
+				{%- endif -%}
+			{%- endfor %}
+		],
+		cve_records : [
+			{%- assign first_cve = true -%}
+			{%- for c in cves -%}
+				{%- assign in_credits = false -%}
+				{%- if c.layout == "cve-json-40" -%}
+					{%- for cred in c.json.credit -%}
+						{%- if cred.value contains person.name -%}
+							{% assign in_credits = true -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- elsif c.layout == "cve-json-50" -%}
+					{%- for cred in c.json.containers.cna.credits -%}
+						{%- if cred.value contains person.name -%}
+							{% assign in_credits = true -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- endif -%}
+				{%- if 
+					c.author == person.name or 
+					c.author contains person.name or 
+					c.discovered_by == person.name or
+					c.discovered_by contains person.name or
+					c.researchers == person.name or
+					c.reaseachers contains person.name or
+					in_credits
+				-%}
+					{%- if first_cve -%}
+						{%- assign first_cve = false -%}
+					{%- else -%}
+						,
+					{%- endif %}
+					{
+						id         : "{{ c.cve }}",
+						title      : "{{ c.title }}",
+						full_title : "{{ c.cve }} - {{ c.title }}",
+						url        : "https://csirt.divd.nl/{{ c.cve }}/"
+					}
+				{%- endif -%}
+			{%- endfor %}
+		]
+	}
+{%- endfor %}
+}
