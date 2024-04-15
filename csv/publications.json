@@ -12,7 +12,7 @@ layout: none
 		,
 	{%- endif %}
 	"{{ person.name }}" : {
-		csirt_cases : [
+		"csirt_cases" : [
 			{%- assign first_case = true -%}
 			{%- for c in cases -%}
 				{%- if 
@@ -27,17 +27,17 @@ layout: none
 						,
 					{%- endif %}
 					{
-						id     : "{{ c.divd }}",
-						title  : "{{ c.title }}",
-						start  : "{{ c.start }}",
-						end    : "{{ c.end }}",
-						status : "{{ c.status }}",
-						url    : "https://csirt.divd.nl/{{ c.divd }}"
+						"id"     : "{{ c.divd }}",
+						"title"  : "{{ c.title }}",
+						"start"  : "{{ c.start }}",
+						"end"    : "{{ c.end }}",
+						"status" : "{{ c.status }}",
+						"url"    : "https://csirt.divd.nl/{{ c.divd }}"
 					}
 				{%- endif -%}
 			{%- endfor %}
 		],
-		csirt_posts : [
+		"csirt_posts" : [
 			{%- assign first_post = true -%}
 			{%- for p in site.posts -%}
 				{%- if 
@@ -50,14 +50,14 @@ layout: none
 						,
 					{%- endif %}
 					{
-						title : "{{ p.title }}",
-						date  : "{{ p.date }}",
-						url   : "https://csirt.divd.nl{{ p.url }}"
+						"title" : "{{ p.title }}",
+						"date"  : "{{ p.date }}",
+						"url"   : "https://csirt.divd.nl{{ p.url }}"
 					}
 				{%- endif -%}
 			{%- endfor %}
 		],
-		cve_records : [
+		"cve_records" : [
 			{%- assign first_cve = true -%}
 			{%- for c in cves -%}
 				{%- assign in_credits = false -%}
@@ -89,10 +89,10 @@ layout: none
 						,
 					{%- endif %}
 					{
-						id         : "{{ c.cve }}",
-						title      : "{{ c.title }}",
-						full_title : "{{ c.cve }} - {{ c.title }}",
-						url        : "https://csirt.divd.nl/{{ c.cve }}/"
+						"id"         : "{{ c.cve }}",
+						"title"      : "{{ c.title }}",
+						"full_title" : "{{ c.cve }} - {{ c.title }}",
+						"url"        : "https://csirt.divd.nl/{{ c.cve }}/"
 					}
 				{%- endif -%}
 			{%- endfor %}
