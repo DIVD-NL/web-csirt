@@ -44,3 +44,8 @@ if [[ -e jekyll-build.log ]]; then
 		exit 1
 	fi
 fi
+for j in _site/cvs/*.json; do
+	echo -n "Checking if json file '$j' is valid..."
+	cat $j | jq > /dev/null
+	echo "done"
+done
