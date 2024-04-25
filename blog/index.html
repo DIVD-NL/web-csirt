@@ -27,7 +27,7 @@ nav_position: 1
 			{%- endif -%}
 			</em>
 	  </h3>
-	  <p>{{ post.excerpt | escape }}</p>
+	  <p>{{ post.excerpt | strip_html | escape }}</p>
 	  <a href="{{ post.url }}">Read more</a>
 	</div>
 {%- endfor -%}
