@@ -5,7 +5,7 @@ title: Recommendations for personal ADFS accounts found in operation Endgame
 excerpt: This page contains recommendation for individuals that have received a notification from about a personal ADFS credential that was found as part of Operation Endgame
 redirect_from:  /DIVD-2024-00019/personal-adfs-account/
 ---
-This page is a sub page of the case file for case [DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2029-00019/), which contains the general information about this case.
+This page is a sub page of the case file for case [DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2024-00019/), which contains the general information about this case.
 
 ## Your ADFS credentials  were found in a Botnet in Operation Endgame
 

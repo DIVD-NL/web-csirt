@@ -5,7 +5,7 @@ title: Recommendations for organisation of which ADFS credentials were found in 
 excerpt: This page contains recommendation for organisations that have received a  notification from us about ADFS credentials that were found as part of Operation Endgame
 redirect_from:  /DIVD-2024-00019/organisation-adfs-accounts/
 ---
-This page is a sub page of the [case file for case DIVD-2025-00019 - Victim Notificaiton Operation Endgame](/DIVD-2029-00019/), which contains the general information about this case.
+This page is a sub page of the [case file for case DIVD-2025-00019 - Victim Notificaiton Operation Endgame](/DIVD-2024-00019/), which contains the general information about this case.
 
 ## ADFS credentials for your organisation were found in a botnet in Operation Endgame
 

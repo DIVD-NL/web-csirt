@@ -5,7 +5,7 @@ title: Recommendations for personal email accounts found in Operation Endgame
 excerpt: This page contains recommendation for individuals that have received a notification email from DIVD-CSIRT about a personal email credential that was found as part of Operation Endgame
 redirect_from: /DIVD-2024-00019/personal-email-account/
 ---
-This page is a sub page of the [case file for case [DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2029-00019/), which contains the general information about this case.
+This page is a sub page of the [case file for case [DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2024-00019/), which contains the general information about this case.
 
 ## Your email credentials were found in a Botnet in Operation Endgame
 

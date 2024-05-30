@@ -5,7 +5,7 @@ title: Recommendations for organisation of which account credentials were  found
 excerpt: This page contains recommendation for organisations that have received a  notification from us about credentials for undetermined origin were found as part of Operation Endgame
 redirect_from:  /DIVD-2024-00019/organisation-unclassified-accounts/
 ---
-This page is a sub page of the case file for case [DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2029-00019/), which contains the general information about this case.
+This page is a sub page of the case file for case [DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2024-00019/), which contains the general information about this case.
 
 ## Credentials of undetermined origin associated with your organisation were found in a botnet in Operation Endgame
 

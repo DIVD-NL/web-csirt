@@ -4,7 +4,7 @@ title: Recommendations for organisation of which email account credentials were 
 excerpt: This page contains recommendation for organisations that have received a  notification from us about email credentials that were found as part of Operation Endgame
 redirect_from:  /DIVD-2024-00019/organisation-email-accounts/
 ---
-This page is a sub page of the [case file for case DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2029-00019/), which contains the general information about this case.
+This page is a sub page of the [case file for case DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2024-00019/), which contains the general information about this case.
 
 ## Email credentials of your organisation were found in a botnet in Operation Endgame
 
