@@ -13,7 +13,7 @@ If you received a notification from us with the subject `Stolen credentials foun
 
 ## What does this mean?
 
-What we know for sure is that combinations of username and passwords that are associated with a domain belonging to your organisation were used by criminals operating a botnet between December 2024 and May 30th 2024. 
+What we know for sure is that combinations of username and passwords that are associated with a domain belonging to your organisation were used by criminals operating a botnet between December 2023 and May 30th 2024. 
 We do not know what account/service these accounts belong to or how the criminals obtained them. It could be that these credentials were obtained in a phishing attack, or stolen from the users’ system with malware, but it can also be that these criminals bought a database with credentials from a malicious, third party.
 
 Be aware that we have also emailed these individual users, but that these emails may have been intercepted by the criminals.
