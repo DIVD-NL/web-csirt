@@ -1,8 +1,8 @@
 ---
 layout: page
 case: DIVD-2024-00019
-title: Recommendations for organisation of which systems in their network conencted to the IcedID botname taken down during operation Endgame
-excerpt: This page contains recommendation for organisations that have received a  notification from us about IcedId associated systems
+title: Recommendations for organisation of which systems in their network connected to the IcedID botname taken down during operation Endgame
+excerpt: This page contains recommendation for organisations that have received a notification from us about IcedId associated systems
 redirect_from:  /DIVD-2024-00019/organisation-icedid-bot/
 ---
 This page is a sub page of the case file for case [DIVD-2025-00019 - Victim Notification Operation Endgame](/DIVD-2024-00019/), which contains the general information about this case.
@@ -17,7 +17,7 @@ This system is likely infected with malware and needs to be forensically investi
 
 ## What should we do?
 
-* Investiagte the system/have the system investigated for malware infections.
+* Investigate the system/have the system investigated for malware infections.
 
 ## More questions?
 
