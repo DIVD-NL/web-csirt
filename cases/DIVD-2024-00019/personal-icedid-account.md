@@ -10,7 +10,7 @@ This page is a sub page of the case file for case [DIVD-2025-00019 - Victim Noti
 ## Some credentials of your were found in a Botnet in Operation Endgame
 
 If you received a notification from us with the subject `Your personal login details found in Police operation - Please take action to avoid misuse - Ref:IcedID/2024-00019` it means that one or more email address and password combinations of unknown origin were found in the IcedID Botnet by the Dutch police.
-The email contains exact details about which credentials were haarvested, and from which computer.
+The email contains exact details about which credentials were harvested, and from which computer.
 
 ## What does this mean?
 
@@ -25,7 +25,7 @@ Here are a few steps you can take:
 * If you recognize the password, **change it immediately** to prevent future abuse.
 * If you're unable to change your password because you are locked out of your account, contact your administrator and ask for a password change as soon as possible.
 * Have you used this email address and password elsewhere? **Change it immediately**.
-Criminals often try the same username/password combinations on many different services and account
+Criminals often try the same username/password combinations on many different services and accounts.
 * Never use this combination of email address and password anywhere else again.
 This email address and password is now noted in databases and traded amongst criminals, which makes them very easy to guess or crack.
 * There might still be malware on your computer. Perform a virus scan to check if there is malware and take actions if there is.
