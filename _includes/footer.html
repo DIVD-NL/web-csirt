@@ -28,5 +28,8 @@ gtag('js', new Date());
 gtag('config', '{{ site.google_analytics }}');
 </script>
 {% endif %}
+{% if site.goatcounter %}
+    <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}
 </body>
 </html>

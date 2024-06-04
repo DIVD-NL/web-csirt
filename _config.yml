@@ -35,7 +35,7 @@ jekyll-secinfo:
 # Custom headers
 webrick:
   headers:
-    Content-Security-Policy: default-src 'none'; font-src 'self'; img-src 'self' data:; script-src 'self' ; style-src 'self'; connect-src 'self';
+    Content-Security-Policy: default-src 'none'; font-src 'self'; img-src 'self' data:; script-src http://gc.zgo.at/count.js 'self'; style-src 'self'; connect-src https://divd-csirt.goatcounter.com/count 'self';
 
 # Collections
 collections:
@@ -65,6 +65,8 @@ compress_html:
   ignore:
     envs: []  
 
+# Goatcounter
+goatcounter: divd-csirt
 
 exclude:
   - README.md
