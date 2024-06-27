@@ -1,0 +1,86 @@
+---
+layout: case
+title: "Zyxel - OS command injection "
+author: Koen Schagen
+lead: Koen Schagen
+excerpt: "Two OS command injection vulnerabilities via quick.cgi file are found in QNAP QTS, QuTS hero and QuTScloud software/firmware versions"
+researchers:
+- Koen Schagen
+cves:
+- CVE-2023-47218
+- CVE-2023-50358
+product:
+- QNAP QTS
+- QNAP QuTS hero 
+- QNAP QuTScloud
+versions: 
+- QTS 5.x - versions before QTS 5.1.5.2645 build 20240116
+- QTS 4.5.x and 4.4.x - versions before QTS 4.5.4.2627 build 20231225
+- QTS 4.3.6 and 4.3.5 - versions before QTS 4.3.6.2665 build 20240131
+- QTS 4.3.4 - versions before QTS 4.3.4.2675 build 20240131
+- QTS 4.3.(0-3) - versions before QTS 4.3.3.2644 build 20240131
+- QTS 4.2.x - versions before QTS 4.2.6 build 20240131
+- QuTS hero h5.x - versions before QuTS hero h5.1.5.2647 build 20240118
+- QuTS hero h4.x - versions before QuTS hero h4.5.4.2626 build 20231225
+- QuTScloud c5.x - versions before QuTScloud c5.1.5.2651
+recommendation: "If you have a any of the vulnerable firmware/software version on your QNAP device, please update it to the latest version."
+patch_status: Released
+status : Open
+start: 2024-06-07
+end:
+timeline:
+- start: 2024-06-07
+  end:
+  event: "DIVD starts researching the vulnerabilities."
+- start: 2024-06-17
+  end:
+  event: "DIVD found a way to fingerprint vulnerable devices"
+- start: 2024-06-20
+  end:
+  event: "First version of this casefile"
+- start: 2024-06-20
+  end:
+  event: "DIVD starts scanning the internet for vulnerable devices"
+- start: 2024-06-24
+  end:
+  event: "DIVD starts notifying network owners with a vulnerable device in their network."
+
+#ips: 0
+
+---
+## Summary
+Two (OS) command injection vulnerabilities have been found in QNAP devices. When exploited it's possible for attackers with network/internet access to execute CLI commands on your NAS device as an admin user. QNAP has linked {% cwe CWE-78 %} to both CVE's. This is related to 'Improper Neutralization of Special Elements used in an OS Command ("OS Command Injection")'.
+
+## Recommendations
+
+QNAP recommends to upgrade to the latest version, to benefit from vulnerability fixes. On the versions below, the mentioned vulnerabilities have been fixed:
+
+- QTS 5.x - QTS 5.1.5.2645 build 20240116 and later
+- QTS 4.5.x and 4.4.x - QTS 4.5.4.2627 build 20231225 and later
+- QTS 4.3.6 and 4.3.5 - QTS 4.3.6.2665 build 20240131 and later
+- QTS 4.3.4 - QTS 4.3.4.2675 build 20240131 and later
+- QTS 4.3.(0-3) - QTS 4.3.3.2644 build 20240131 and later
+- QTS 4.2.x - QTS 4.2.6 build 20240131 and later
+- QuTS hero h5.x - QuTS hero h5.1.5.2647 build 20240118 and later
+- QuTS hero h4.x - QuTS hero h4.5.4.2626 build 20231225 and later
+- QuTScloud c5.x - QuTScloud c5.1.5.2651 and later
+
+DIVD recommends that you do not have this device reachable from the internet unless it is absolutely nessecary. If this is the case, a firewall rule should be placed in front of the QNAP device so that it can only be accessed from trusted IP addresses.
+
+Please check also this QNAP page about their security advice tilted [take immediate-actions to stop your nas from exposing to the internet](https://www.qnap.com/en/security-news/2022/take-immediate-actions-to-stop-your-nas-from-exposing-to-the-internet-and-update-qts-to-the-latest-available-version-fight-against-ransomware-together). 
+
+--> Specially have a look at "Step 2: Disable the UPnP function of the QNAP NAS"
+
+## What we are doing
+
+DIVD is currently working to identify vulnerable parties and notifying these. We do this by finding Zyxel NAS devices connected to the internet and verifying if the device is running the latest firmware version to be protected against the described threads.
+The notifications will be sent to the party responsible for the ip address according to the whois database.
+
+{% include timeline.html %}
+
+## More information
+
+* {% cve CVE-2024-29972 %}
+* {% cve CVE-2024-29973 %}
+* {% cve CVE-2024-29975 %}
+* [Zyxel Security Advisory 06-04-2024](https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-multiple-vulnerabilities-in-nas-products-06-04-2024)
