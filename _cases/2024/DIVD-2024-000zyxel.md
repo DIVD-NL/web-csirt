@@ -1,9 +1,9 @@
 ---
 layout: case
-title: "Zyxel - OS command injection "
+title: "Zyxel NAS firmware - vulnerable to OS command injections"
 author: Koen Schagen
 lead: Koen Schagen
-excerpt: "Two OS command injection vulnerabilities via quick.cgi file are found in QNAP QTS, QuTS hero and QuTScloud software/firmware versions"
+excerpt: "OS command injection vulnerabilities are found in the firmware of the Zyxel NAS devices NAS326 & NAS542"
 researchers:
 - Koen Schagen
 cves:
@@ -28,10 +28,10 @@ timeline:
 - start: 2024-06-27
   end:
   event: "DIVD found a way to fingerprint vulnerable devices"
-- start: 2024-06-28
+- start: 2024-06-27
   end:
   event: "First version of this casefile"
-- start: 2024-06-28
+- start: 2024-06-27
   end:
   event: "DIVD starts scanning the internet for vulnerable devices"
 
@@ -39,20 +39,20 @@ timeline:
 
 ---
 ## Summary
-Two (OS) command injection vulnerabilities have been found in QNAP devices. When exploited it's possible for attackers with network/internet access to execute CLI commands on your NAS device as an admin user. QNAP has linked {% cwe CWE-78 %} to both CVE's. This is related to 'Improper Neutralization of Special Elements used in an OS Command ("OS Command Injection")'.
+Serveral vulnerabilities have been found in Zyxel NAS devices NAS326 & NAS542. When exploited it's possible for attackers with network/internet access to get full access on the NAS device as a root user. Zyxel has linked {% cwe CWE-78 %} to two of the CVE's. This is related to 'Improper Neutralization of Special Elements used in an OS Command ("OS Command Injection")'.
 
 ## Recommendations
 
-Zyxel recommends to upgrade to the latest firmware version, to benefit from vulnerability fixes. On the versions below, the mentioned vulnerabilities have been fixed:
+Zyxel advises upgrading to the latest firmware version to benefit from the vulnerability fixes. On the versions below, the mentioned vulnerabilities have been fixed:
 
-- NAS326 -> V5.21(AAZF.17)C0 (released May 10th 2024), [NAS326 Firmware link](https://download.zyxel.com/NAS326/firmware/NAS326_V5.21(AAZF.17)C0.zip)
-- NAS542 -> V5.21(ABAG.14)C0 (released May 10th 2024), [NAS542 Firmware link](https://download.zyxel.com/NAS542/firmware/NAS542_V5.21(ABAG.14)C0.zip)
+- NAS326 -> [V5.21(AAZF.17)C0](https://download.zyxel.com/NAS326/firmware/NAS326_V5.21(AAZF.17)C0.zip) (released May 10th 2024) 
+- NAS542 -> [V5.21(ABAG.14)C0](https://download.zyxel.com/NAS542/firmware/NAS542_V5.21(ABAG.14)C0.zip) (released May 10th 2024) 
 
-DIVD recommends that you do not have this device reachable from the internet unless it is absolutely nessecary. If this is the case, a firewall rule should be placed in front of the Zyxel NAS device so that it can only be accessed from trusted IP addresses.
+DIVD recommends that you do not have this device reachable from the internet unless it is absolutely nessecary. If this is the case, a firewall rule should be placed in front of the Zyxel NAS device so that it can only be accessed from trusted IP addresses so attackers will have no access.
 
 ## What we are doing
 
-DIVD is currently working to identify vulnerable parties and notifying these. We do this by finding Zyxel NAS devices connected to the internet and verifying if the device is running the latest firmware version to be protected against the above described threats. The notifications will be sent to the party responsible for the ip address according to the whois database.
+DIVD is currently working to identify vulnerable parties and notifying them. We do this by finding Zyxel NAS devices connected to the internet and verifying if the device is running the latest firmware version to be protected against the above described threats. The notifications will be sent to the party responsible for the ip address according to the whois database.
 
 {% include timeline.html %}
 
