@@ -67,6 +67,7 @@ module CveJson
                 doc.data["redirect_from"] = [ "/#{cve}/" ]
               end
             end
+            doc.data["permalink"] = "/cves/#{cve}/"
           end
         end
 
