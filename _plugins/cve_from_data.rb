@@ -27,7 +27,7 @@ module CveFromData
               "json" => record,
               "last_modified_at" => record["cveMetadata"]["dateUpdated"],
               "cve" => id,
-              "redirect_from" => "/#{id}",
+              "redirect_from" => "/#{id}/",
               "title" => record["containers"]["cna"]["title"],
             )
             page = site.collections["cves"].docs.find { |p| p.basename == "#{id}.md"}
