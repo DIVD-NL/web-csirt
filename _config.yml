@@ -44,7 +44,7 @@ collections:
   reports:
     output: false
   cves:
-    output: true
+    output: false
   cases:
     output: true
 
@@ -80,3 +80,4 @@ exclude:
   - "_config_livereload.yml"
   - "www.divd.nl"
   - vendor
+  - _cves/README.md
