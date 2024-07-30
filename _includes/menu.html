@@ -28,11 +28,11 @@ Example:
 // </nav>
 {%- endcomment -%}
 
-<nav class="nav nav--cen">
+<nav class="nav nav--cen no-print">
 	<div id="menuBtn" class="icon">
 		<i class="fa fa-bars"></i> Menu
 	</div>
-	<ul class="menu" id="nav_menu">
+	<ul class="menu no-print" id="nav_menu">
 		{%- for item in site.data.navigation -%}
 			{%- if item.link == "/cases/" -%}
 		    	<li class="menu-item has-children">
