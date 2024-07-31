@@ -54,28 +54,18 @@ layout: none
         "url": "{{ post.url | xml_escape }}"
       },
     {% endfor %}
-    {% for post in site.cves %}
-      "{{ post.url | slugify }}": {
-        "id" : "{{ post.url | slugify }}",
-        "title": "{{ post.title | xml_escape }}",
-        {% if post.layout == "cve-json-50" %}
-          "author": "{%- for c in post.json.containers.cna.credits -%}{{ c.value | xml_escape }} {% endfor %} {{ post.author | xml_escape }}",
-        {% elsif post.layout == "cve-json-40" %}
-          "author": "{%- for c in post.json.credit -%}{{ c.value | xml_escape }} {% endfor %} {{ post.author | xml_escape }}",
-        {% else %}
-          "author": "{{ post.author | xml_escape }}",
-        {% endif %}
-        "category": "{{ post.category | xml_escape }}",
-        {% if post.layout == "cve-json-40" %}
-          "content": {{ post.json.description.description_data[0].value | strip_html | strip_newlines | jsonify }},
-        {% elsif post.layout == "cve-json-50" %}
-          "content": {{ post.json.containers.cna.descriptions[0].value | strip_html | strip_newlines | jsonify }},
-        {% else %}
-          "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-        {% endif %}
-        "url": "{{ post.url | xml_escape }}"
-      }
-      {% unless forloop.last %},{% endunless %}
+    {% for year in site.data.cves %}
+      {%- for cve in year[1] -%}
+      {% assign cveId = cve[0] -%}
+        "{{ cve[0] }}": {
+          "id" : "{{ cve[0] }}",
+          "title": "{{ cve[1]["containers"]["cna"]["title"] }}",
+          "category": "cve",
+          "content": "{{ cve[1]["containers"]["cna"]["descriptions"] | where: "lang", "en" | map: "value" }}",
+          "url": "/cves/{{ cve[0] }}"
+        }
+      {%- unless forloop.last -%},{%- endunless %}
+      {%- endfor -%}
     {% endfor %}
   };
 
