@@ -1,0 +1,17 @@
+---
+title: CVEs
+---
+{% assign yearList = "" %}
+{% for y in site.data.cves %}
+	{% assign yearList = yearList | append: "," | append: y[0] %}
+{% endfor %}
+{% assign yearList = yearList | remove_first: "," | split: "," | reverse %}
+{% for year in yearList %}
+	<h2>{{ year }}</h2>
+	<ul>
+		{% for cve in site.data.cves[year] -%}
+			<li><a href="/cves/{{ cve[0] }}/">{{ cve[0] }} - {{ cve[1]["containers"]["cna"]["title"] | escape }}</a></li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+
