@@ -35,7 +35,7 @@ More context is better in this case. Think about:
 * What are the credentials for?
 * How and when was the data obtained?
 
-This also means, that by definition we will not process combo lists, unless there is a way to provide context
+This also means, that by definition we will not process combo lists, unless there is a way to provide context.
 
 ### How we handle passwords
 
@@ -70,33 +70,33 @@ This extract will contain the apex domains of the emails involved in the breach 
 
 #### Url apex extract
 
-If we have the url that the password belongs to, we will also met this extract. It will contain the apex domains o the urls and per apex the number of unique email addresses containted in the breach.
+If we have the url that the password belongs to, we will also make this extract. It will contain the apex domains of the urls and per apex the number of unique email addresses containted in the breach.
 
 #### Distribution via (government and other) CERTS, CSIRTS and Security Teams
 
 Based on these extracts we will invite (government and other) CERTS, CSIRTS and Security Teams to provide us with the apexes that are in the extract and in their constituancy or that they otherwise have a demonstrable legitimate interest in. For those apexs we will return the data.
 
-In order to address ethical concers regarding the sharing of PII with government organisations of countries with a less then ideal situation with regards to the upholding of human rights, we will only provide data to government organisations of countries that score higher then 4 in the most recent year of the [Human rights index](https://ourworldindata.org/grapher/human-rights-index-vdem).
+In order to address ethical concers regarding the sharing of PII with government organisations of countries with a less than ideal situation with regards to the upholding of human rights, we will only provide data to government organisations of countries that score higher then 4 in the most recent year of the [Human rights index](https://ourworldindata.org/grapher/human-rights-index-vdem).
 
 ## How to report a credential breach
 
-If you want our help with breached credentials send us an email at cist@divd.nl. From there on we will arrange the details.
+If you want our help with breached credentials send us an email at csirt@divd.nl. From there on we will arrange the details.
 
 ## F.A.Q.
 
 ### Can I remain anonymous?
 
-We like to know that we are processing details from a reliable source. We are not interested in you identity persé, as long as we can  establish that you are are reputable source. This can e.g. be via a reference from somebody we know and trust
+We like to know that we are processing details from a reliable source. We are not interested in you identity persé, as long as we can establish that you are a reputable source. This can e.g. be via a reference from somebody we know and trust.
 
 ### You are sharing old data, can't you deduplicate you data?
 
-We are reaching out to various organisation that also process leaked credentials to see if we can work something out. But sofar we have not found a practical solution yet.
+We are reaching out to various organisation that also process leaked credentials to see if we can work something out. But so far we have not found a practical solution yet.
 
 ### Can I still request my data as an individual?
 
 Yes you can?
 
-### Why do you feel data country X scores Y on the Humand RIghts Index?
+### Why do you feel data country X scores Y on the Human Rights Index?
 
-We base our judgement on the [Human rights index](https://ourworldindata.org/grapher/human-rights-index-vdem) as it was the most reliable public source we could find. We do determine the score, we just follow it.
+We base our judgement on the [Human rights index](https://ourworldindata.org/grapher/human-rights-index-vdem) as it was the most reliable public source we could find. We don't determine the score, we just follow it.
 
