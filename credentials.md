@@ -94,9 +94,17 @@ We are reaching out to various organisation that also process leaked credentials
 
 ### Can I still request my data as an individual?
 
-Yes you can?
+Yes you can!
 
 ### Why do you feel data country X scores Y on the Human Rights Index?
 
 We base our judgement on the [Human rights index](https://ourworldindata.org/grapher/human-rights-index-vdem) as it was the most reliable public source we could find. We don't determine the score, we just follow it.
+
+## Cases involving stolen credentials
+{% assign cases = site.cases | reverse -%}
+{%- for case in cases -%}
+{%- if case.creds > 0 -%}
+* [{{ case.title }}]({{ case.url }})
+{% endif -%}
+{%- endfor %}
 
