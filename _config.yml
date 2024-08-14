@@ -20,6 +20,9 @@ markdown: kramdown
 show_downloads: false
 github:
   is_project_page: false
+highlighter: rouge
+kramdown:
+  input: GFM
 
 plugins:
   - jekyll-sitemap
@@ -27,6 +30,7 @@ plugins:
   - jekyll-secinfo
   - jekyll-paginate
   - jekyll-last-modified-at
+  - rouge
 
 jekyll-secinfo:
   divd:
