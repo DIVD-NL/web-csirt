@@ -2,7 +2,6 @@
 layout: none
 ---
 {%- assign cases = site.cases | reverse -%}
-{%- assign cves = site.cves | reverse -%}
 {
 {% assign first = true -%}
 {%- for person in site.team -%}
@@ -58,44 +57,31 @@ layout: none
 			{%- endfor %}
 		],
 		"cve_records" : [
-			{%- assign first_cve = true -%}
-			{%- for c in cves -%}
-				{%- assign in_credits = false -%}
-				{%- if c.layout == "cve-json-40" -%}
-					{%- for cred in c.json.credit -%}
-						{%- if cred.value contains person.name -%}
-							{% assign in_credits = true -%}
+			{%- assign my_cves = "" | split: "," -%}
+			{%- for y in site.data.cves -%}
+				{%- assign year = y[0] -%}
+				{%- for r in site.data.cves[year] -%}
+				{%- assign my_cve = false -%}
+					{%- for c in r[1]["containers"]["cna"]["credits"] -%}
+						{%- if c.value contains person.name -%}
+							{%- assign my_cve=true -%}
 						{%- endif -%}
-					{%- endfor -%}
-				{%- elsif c.layout == "cve-json-50" -%}
-					{%- for cred in c.json.containers.cna.credits -%}
-						{%- if cred.value contains person.name -%}
-							{% assign in_credits = true -%}
-						{%- endif -%}
-					{%- endfor -%}
-				{%- endif -%}
-				{%- if 
-					c.author == person.name or 
-					c.author contains person.name or 
-					c.discovered_by == person.name or
-					c.discovered_by contains person.name or
-					c.researchers == person.name or
-					c.reaseachers contains person.name or
-					in_credits
-				-%}
-					{%- if first_cve -%}
-						{%- assign first_cve = false -%}
-					{%- else -%}
-						,
-					{%- endif %}
+					{%- endfor -%}	
+					{%- if my_cve -%}
+						{%- assign my_cves = my_cves | push: r[1] -%}
+					{%- endif -%}				
+				{%- endfor -%}
+			{%- endfor -%}
+			{%- assign my_cves = my_cves | reverse -%}
+			{%- for c in my_cves %}
 					{
-						"id"         : "{{ c.cve }}",
-						"title"      : "{{ c.title }}",
-						"full_title" : "{{ c.cve }} - {{ c.title }}",
-						"url"        : "https://csirt.divd.nl/{{ c.cve }}/"
+						"id"         : "{{ c.cveMetadata.cveId }}",
+						"title"      : "{{ c.containers.cna.title }}",
+						"full_title" : "{{ c.cveMetadata.cveId }} - {{ c.containers.cna.title }}",
+						"url"        : "https://csirt.divd.nl/{{ c.cveMetadata.cveId }}/"
 					}
-				{%- endif -%}
-			{%- endfor %}
+					{%- unless forloop.last -%},{%- endunless -%}
+			{% endfor %}
 		]
 	}
 {%- endfor %}

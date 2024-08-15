@@ -20,6 +20,9 @@ markdown: kramdown
 show_downloads: false
 github:
   is_project_page: false
+highlighter: rouge
+kramdown:
+  input: GFM
 
 plugins:
   - jekyll-sitemap
@@ -27,6 +30,7 @@ plugins:
   - jekyll-secinfo
   - jekyll-paginate
   - jekyll-last-modified-at
+  - rouge
 
 jekyll-secinfo:
   divd:
@@ -35,7 +39,7 @@ jekyll-secinfo:
 # Custom headers
 webrick:
   headers:
-    Content-Security-Policy: default-src 'none'; font-src 'self'; img-src 'self' data:; script-src 'self' ; style-src 'self'; connect-src 'self';
+    Content-Security-Policy: default-src 'none'; font-src 'self'; img-src 'self' data:; script-src http://gc.zgo.at/count.js 'self'; style-src 'self'; connect-src https://divd-csirt.goatcounter.com/count 'self';
 
 # Collections
 collections:
@@ -44,7 +48,7 @@ collections:
   reports:
     output: false
   cves:
-    output: true
+    output: false
   cases:
     output: true
 
@@ -65,6 +69,8 @@ compress_html:
   ignore:
     envs: []  
 
+# Goatcounter
+goatcounter: divd-csirt
 
 exclude:
   - README.md
@@ -78,3 +84,4 @@ exclude:
   - "_config_livereload.yml"
   - "www.divd.nl"
   - vendor
+  - _cves/README.md

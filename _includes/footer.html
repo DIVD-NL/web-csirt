@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer" class='no-print'>
     <div class="inner">
         <div class="content">
             <ul class="plain">
@@ -27,6 +27,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '{{ site.google_analytics }}');
 </script>
+{% endif %}
+{% if site.goatcounter %}
+    <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 {% endif %}
 </body>
 </html>

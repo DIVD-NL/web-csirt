@@ -1,9 +1,37 @@
+# Detect HTTPS
+
+SetEnvIfNoCase X-HTTPS-Session Yes is_ssl=yes
+SetEnvIfNoCase X-HTTPS-Session Yes is_https=yes
+SetEnvIfNoCase X-HTTPS-Session Yes HTTPS=on
+
+# Security headers
+
 Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains;"
 Header always append X-Frame-Options DENY
 Header set X-Content-Type-Options nosniff
 Header set X-XSS-Protection "1; mode=block"
-Header set Content-Security-Policy "default-src 'none'; font-src 'self'; img-src 'self'; script-src 'self' ; style-src 'self'"
+Header set Content-Security-Policy "default-src 'none'; font-src 'self'; img-src 'self'; script-src http://gc.zgo.at/count.js 'self'; style-src 'self'; connect-src https://divd-csirt.goatcounter.com/count 'self'"
 Header always set Referrer-Policy "same-origin"
+
+# Error document
 ErrorDocument 404 /404.html
+
+# Redirect http -> https
+RewriteCond %{HTTP:X-HTTPS-SESSION} !^yes$
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,QSA]
+
+# Block requests not for csirt.divd.nl
+RewriteCond %{HTTP_HOST} !^csirt.divd.nl
+RewriteRule (.*) - [r=404]
+
+# Handle requests to directories without trailing slash
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule (.*[^\/])$ https://csirt.divd.nl/$1/ [L,r=301,QSA]
+
+# Redirect requests directly to https://csirt.divd.nl/csirt-divd-nl/...
+RewriteCond %{THE_REQUEST} ^\w+\s+/?csirt-divd-nl
+RewriteRule (.*) https://csirt.divd.nl/$1 [L,r=301,QSA]
+
+# Fix case typos
 RewriteRule ^divd-(.*)$ /DIVD-$1 [R=301,L]
 RewriteRule ^cases/divd-(.*)$ /cases/DIVD-$1 [R=301,L]

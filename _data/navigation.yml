@@ -11,6 +11,8 @@
   link: /cves/
 - name: CNA
   link: /cna/
+- name: Stolen credentials
+  link: /credentials/
 - name: Blog
   link: /blog/
 - name: Donate

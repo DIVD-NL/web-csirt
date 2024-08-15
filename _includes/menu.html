@@ -28,11 +28,11 @@ Example:
 // </nav>
 {%- endcomment -%}
 
-<nav class="nav nav--cen">
+<nav class="nav nav--cen no-print">
 	<div id="menuBtn" class="icon">
 		<i class="fa fa-bars"></i> Menu
 	</div>
-	<ul class="menu" id="nav_menu">
+	<ul class="menu no-print" id="nav_menu">
 		{%- for item in site.data.navigation -%}
 			{%- if item.link == "/cases/" -%}
 		    	<li class="menu-item has-children">
@@ -77,16 +77,33 @@ Example:
 			    	</ul>
 		    	</li>
 			{%- elsif item.link == "/cves/" -%}
-				{%- assign cvepages = site.cves |reverse -%}
+				{%- assign cveList = "" -%}
+				{%- for year in site.data.cves -%}
+					{%- assign y = year[0] -%}
+					{%- for cve in site.data.cves[y] -%}
+						{%- assign cveList = cveList | append: "," | append: y | append: "/" | append: cve[0] -%}
+					{%- endfor -%}
+				{%- endfor -%}
+				{%- assign cveList = cveList | remove_first: "," | split: "," | reverse -%}
 		    	<li class="menu-item has-children">
 		    		<a href="/cves/" {%- if page.url == item.link %} class="black_url"{%- endif -%}> 
 						CVEs <span class="dropdown-icon"></span>
 					</a>
    					<ul class="sub-menu">
-						{%- for page in cvepages -%}
+						{%- for id in cveList -%}
 							{%- if forloop.index <= 10 -%}
+								{%- assign ids = id | split: "/" -%}
+								{%- assign year = ids[0] -%}
+								{%- assign cveId = ids[1] -%}
+								{%- assign title = site.data.cves[year][cveId]["containers"]["cna"]["title"] -%}
+								{%- capture url -%}/cves/{{ cveId }}/{%- endcapture -%}
 							    <li class="menu-item">
-							        	<a href="{{ page.url | prepend: site.baseurl | uri_encode }}" {%- if page.url == post.url %} class="black_url"{%- endif -%}> {{ page.cve }} - {{ page.title | slice: 0, 60 | escape }}...</a>
+							        	<a href="{{ url }}" {%- if page.url == url %} class="black_url"{%- endif -%}> {{ cveId }} - {{ title | slice: 0, 60 | escape }}...</a>
+							    </li>
+							{%- endif -%}
+							{%- if forloop.index == 11 -%}
+							    <li class="menu-item">
+							        	<a href="/cves/" {%- if page.url == "/cves/" %} class="black_url"{%- endif -%}> More...</a>
 							    </li>
 							{%- endif -%}
 						{%- endfor -%}

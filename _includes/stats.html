@@ -1,22 +1,25 @@
 {%- assign current_year = 0 -%}
 {%- assign cases = 0 -%}
 {%- assign ips = 0 -%}
+{%- assign creds = 0 -%}
 {%- assign stats = '' | split: "," -%}
 {%- for c in site.cases -%}
   {%- assign case_arr = c.divd | split: "-" -%}
   {%- capture year -%}{{ case_arr[1] }}{%- endcapture -%}
   {%- assign year = year | to_integer -%}
   {%- if year > current_year -%}
-    {%- capture stat -%}{{ current_year }}|{{ cases }}|{{ ips }}{%- endcapture -%}
+    {%- capture stat -%}{{ current_year }}|{{ cases }}|{{ ips }}|{{creds}}{%- endcapture -%}
     {%- assign stats = stats | push: stat -%}
     {%- assign current_year = year -%}
     {%- assign cases = 0 -%}
     {%- assign ips = 0 -%}
+    {%- assign creds = 0 -%}
   {%- endif -%}
   {%- assign cases = cases | plus: 1 -%}
   {%- assign ips = ips | plus: c.ips -%}
+  {%- assign creds = creds | plus: c.creds -%}
 {%- endfor -%}
-{%- capture stat -%}{{ year }}|{{ cases }}|{{ ips }}{%- endcapture -%}
+{%- capture stat -%}{{ year }}|{{ cases }}|{{ ips }}|{{creds}}{%- endcapture -%}
 {%- assign stats = stats | push: stat -%}
 
 <table>
@@ -25,17 +28,24 @@
       <th>Year</th>
       <th class="right-align"># of cases</th>
       <th class="right-align"># of vulnerable IPs notified</th>
+      <th class="right-align"># of leaked credentials notified</th>
+      <th class="right-align"># of cves assigned/requested</th>
     </tr>
   </thead>
   <tbody>
 {%- for s in stats -%}
-  {%- if s != "0|0|0" -%}
+  {%- if s != "0|0|0|0" -%}
     {%- assign stat = s | split: "|" -%}
+    {%- assign year = stat[0] -%}
     {%- assign ips = stat[2] | to_integer -%}
+    {%- assign creds = stat[3] | to_integer -%}
     <tr>
-      <td>{{ stat[0] }}</td>
+      <td>{{ year }}</td>
       <td class="right-align">{{ stat[1] }}</td>
       <td class="right-align">{%- include numf.html number=ips decimals=0 ts=',' -%}</td>
+      <td class="right-align">{%- include numf.html number=creds decimals=0 ts=',' -%}</td>
+      {%- assign cves = site.data.cves[year] | size -%}
+      <td class="right-align">{%- include numf.html number=cves decimals=0 ts=',' -%} </td>
     </tr>
   {%- endif -%}
 {%- endfor -%}
