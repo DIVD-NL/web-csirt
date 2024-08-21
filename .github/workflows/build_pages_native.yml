@@ -37,6 +37,7 @@ jobs:
         run:  rm -rf _cases/3000 _data/cves/3000
       - name: Build
         run:  bundle exec jekyll build  --future 2>&1 | tee jekyll-build.log
+      - run : file  _site/downloads/DIVD-2024-00022/data.tgz        
       - name: "Fix security.txt"
         run: mkdir _site/.well-known && (cd _site/.well-known && ln -s ../security.txt) && ls -al _site/.well-known
       - name: Test HTML code
