@@ -17,6 +17,7 @@ jobs:
         with: 
           fetch-depth : 0
           lfs         : true
+      - run : file  downloads/DIVD-2024-00022/data.tgz
       - name: Install ruby
         uses: ruby/setup-ruby@v1
         with:
