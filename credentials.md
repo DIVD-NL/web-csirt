@@ -6,7 +6,7 @@ title: How we deal with leaked credentials
 The existence of leaked credentials is an ever-growing problem. Usernames and passwords are being stolen through malware, phishing or hacking. Afterwards, the leaked credentials are sold, traded and exchanged on a massive scale. We have taken it upon ourselves to inform victims of cybercrime, not only those with vulnerable systems but also those who have their credentials leaked online.
 
 The expansion of this problem is evident in the rising numbers linked to cases involving stolen credentials:
-Our first case in 2020, ([DIVD-2020-00013](/DIVD-2020-00013)) dealt with "only" 386 stolen credentials, the [second case](/DIVD-2021-00004), in 2021, also dealt with a small number of approximately 100 credentials. However, the [Warehouse bot case](/DIVD-2021-00012), cause us to quickly level, when we needed to notify ~2.5M email addresses of a breach, and the [next case](/DIVD-2021-00015) had a similar number.
+Our first case in 2020, ([DIVD-2020-00013](/DIVD-2020-00013)) dealt with "only" 386 stolen credentials, the [second case](/DIVD-2021-00004), in 2021, also dealt with a small number of approximately 100 credentials. However, the [Warehouse bot case](/DIVD-2021-00012), cause us to quickly level up, when we needed to notify ~2.5M email addresses of a breach, and the [next case](/DIVD-2021-00015) had a similar number.
 [Operation Endgame](/DIVD-2024-00019) caused us to level up again, with approximately 18M credentials involved. Shortly followed by [case DIVD-2024-00022](/DIVD-2024-00022) with a whopping 1.2 **billion** credentials from stealer logs and even more from combo lists.
 
 ## Practical problems
