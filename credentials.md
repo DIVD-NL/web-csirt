@@ -32,7 +32,7 @@ If we want to address cases of leaked credentials, we must do so in a specific m
 We will only process credentials if we can place them in a context. This means that, in addition to the username and password, we need more information to provide actionable advice with our notifications.
 
 More context is better in this case. Think about:
-* What are the credentials used for?
+* What service/url are the credentials initially for?
 * How and when where the leaked credentials obtained?
 
 This also means that, by definition, we will not process combo lists unless there is a way to provide context.
