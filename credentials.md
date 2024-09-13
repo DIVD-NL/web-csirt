@@ -3,9 +3,9 @@ title: How we deal with leaked credentials
 ---
 # How we deal with leaked credentials
 
-The existence of leaked credentials is an ever-growing issue. Usernames and passwords are being stolen through malware, phishing or hacking. Afterwards, the leaked credentials are sold, traded and exchanged on a massive scale. DIVD has taken it upon ourselves to inform victims of cybercrime, not only those with vulnerable systems but also those who have their credentials leaked online.
+The existence of leaked credentials is an ever-growing problem. Usernames and passwords are being stolen through malware, phishing or hacking. Afterwards, the leaked credentials are sold, traded and exchanged on a massive scale. We has taken it upon ourselves to inform victims of cybercrime, not only those with vulnerable systems but also those who have their credentials leaked online.
 
-The scale of this problem is evident in the rising numbers linked to cases involving stolen credentials:
+The expansion of this problem is evident in the rising numbers linked to cases involving stolen credentials:
 Our first case in 2020, ([DIVD-2020-00013](/DIVD-2020-00013)) dealt with "only" 386 stolen credentials, the [second case](/DIVD-2021-00004), in 2021, also dealt with a small number of approximately 100 credentials. However, the [Warehouse bot case](/DIVD-2021-00012), cause us to quickly level, when we needed to notify ~2.5M email addresses of a breach, and the [next case](/DIVD-2021-00015) had a similar number.
 [Operation Endgame](/DIVD-2024-00019) caused us to level up again, with approximately 18M credentials involved. Shortly followed by [case DIVD-2024-00022](/DIVD-2024-00022) with a whopping 1.2 **billion** credentials from stealer logs and even more from combo lists.
 
@@ -13,9 +13,9 @@ Our first case in 2020, ([DIVD-2020-00013](/DIVD-2020-00013)) dealt with "only" 
 
 ### Email
 
-We can't send large volumes of emails. Emailing millions or billions of addresses (of which a large portion is no longer active) will clog our email system and get us quickly on the "known spammers" list of large email providers, effectively hurting the rest of our operation.
+We don't send large volumes of emails. Emailing millions or billions of addresses (of which a large portion is no longer active) will clog our email system and get us quickly on the "known spammers" list of large email providers, effectively hurting the rest of our operation.
 
-Thankfully, there are companies that handle the distribution of large volumes of emails. Managing such a high volume of email requires a specialized skill set. We've had discussions with these providers, and sending such large volumes of email can be quite expensive, in the range of five figures. As a non-profit organization run by volunteers, we simply don't have the budget for this kind of expenditure, and even if we did, we wouldn't be willing to allocate those funds in this manner. (If you are willing to [donate](https://www.divd.nl/donate) that kind of money, we can think of better ways to utilize it). Additionally, since we lack explicit consent from the recipients of these emails, these service providers are hesitant to work with us.
+Managing a high volume of emails requires a specialized skill set, there are companies that handle this kind of distribution. We've had discussions with these providers, and sending such large volumes of email can be quite expensive, in the range of five figures. As a non-profit organization run by volunteers, we simply don't have the budget for this kind of expenditure, and even if we did, we wouldn't be willing to allocate those funds in this manner. (If you are willing to [donate](https://www.divd.nl/donate) that kind of money, we can think of better ways to utilize it). Additionally, since we lack explicit consent from the recipients of these emails, these service providers are hesitant to work with us.
 
 ### Does it help?
 
@@ -33,7 +33,7 @@ We will only process credentials if we can place them in a context. This means t
 
 More context is better in this case. Think about:
 * What are the credentials used for?
-* How and when was the leaked data obtained?
+* How and when where the leaked credentials obtained?
 
 This also means that, by definition, we will not process combo lists unless there is a way to provide context.
 
