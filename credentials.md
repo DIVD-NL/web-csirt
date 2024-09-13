@@ -33,7 +33,7 @@ We will only process credentials if we can place them in a context. This means t
 
 More context is better in this case. Think about:
 * What service/url are the credentials initially for?
-* How and when where the leaked credentials obtained?
+* How, when, and where the leaked credentials obtained?
 
 This also means that, by definition, we will not process combo lists unless there is a way to provide context.
 
