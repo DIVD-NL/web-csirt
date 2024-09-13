@@ -21,7 +21,7 @@ Managing a high volume of emails requires a specialized skill set, there are com
 
 Lots of credentials are from so called [combo lists](https://scirge.com/glossary/combo-list). Credentials from different breaches, combined, traded and often of low quality. Most of the time these lists only contain a username and password and are devoid of any context like when the the credentials were "harvested", which platform, service or system they initially belonged to and where the breach occured.
 
-"When does being notified of a breach help, and when does it hurt? Without context, it's unlikely that a user can take any positive action. Does it help to know that you are now in 15 breaches instead of 14?"
+When does being notified of a breach help, and when does it hurt? Without context, it's unlikely that a user can take any positive action. Does it help to know that you are now in 15 breaches instead of 14?
 
 ## Our solution
 
