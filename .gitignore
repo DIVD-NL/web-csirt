@@ -11,7 +11,6 @@ _site/
 _team/
 _teams/
 _reports/
-www.divd.nl/
 *.bak
 *.log
 _config_livereload.yml
