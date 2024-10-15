@@ -25,7 +25,7 @@ jobs:
       - name: Install python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.14'
+          python-version: '3.13.0'
       - name: install prerequisites
         run:  pip3 install html5validator requests && gem install --no-document html-proofer
       - name: install prerequisites
