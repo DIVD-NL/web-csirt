@@ -42,7 +42,7 @@ jobs:
         run:  ./proof_html.sh
       - name: rsync deploy
         uses: burnett01/rsync-deployments@5.2.1
-        if:   ${{ github.ref == 'refs/heads/main' }}
+        if:   github.repository == 'divd-nl/web-csirt' && github.ref == 'refs/heads/main'
         with:
           switches: -avzr --delete
           path: _site/
