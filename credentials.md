@@ -35,11 +35,11 @@ More context is better in this case. Think about:
 * What service/URL are the credentials initially for?
 * How, when, and where have the leaked credentials been obtained?
 
-This means we will not process combo lists without context.
+This also means that, by definition, we will not process combo lists unless there is a way to provide context.
 
 ### How we handle passwords
 
-We feel that the content of the password itself is often vital context in the decision on what to do about leaked credentials. However, we believe that distributing plain text passwords is even more problematic. 
+We believe that the content of the password is often crucial in determining the appropriate response to leaked credentials, but we consider the distribution of plain text passwords to be a significant security risk, as it is inherently unsafe. 
 
 We will therefore mask passwords with the following logic:
 * For passwords of 10 or more we will provide the first two and last two characters and replace all other characters with an asterisk.
