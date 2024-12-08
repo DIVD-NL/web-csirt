@@ -5,15 +5,13 @@ layout: none
   function displaySearchResults(results, store) {
     var searchResults = document.getElementById('search-results');
 
-    if (results.length) { // Are there any results?
+    if (results.length) {
       var appendString = '';
-
-      for (var i = 0; i < results.length; i++) {  // Iterate over the results
+      for (var i = 0; i < results.length; i++) {
         var item = store[results[i].ref];
         appendString += '<li><a href="' + item.url + '"><h3>' + item.title + '</h3></a>';
         appendString += '<p>' + item.content.substring(0, 150) + '...</p></li>';
       }
-
       searchResults.innerHTML = appendString;
     } else {
       searchResults.innerHTML = '<li>No results found</li>';
@@ -26,17 +24,16 @@ layout: none
 
     for (var i = 0; i < vars.length; i++) {
       var pair = vars[i].split('=');
-
       if (pair[0] === variable) {
         return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
       }
     }
   }
 
-  store = {
+  var store = {
     {% for post in site.posts %}
       "{{ post.url | slugify }}": {
-        "id" : "{{ post.url | slugify }}",
+        "id": "{{ post.url | slugify }}",
         "title": "{{ post.title | xml_escape }}",
         "author": "{{ post.author | xml_escape }}",
         "category": "{{ post.category | xml_escape }}",
@@ -46,7 +43,7 @@ layout: none
     {% endfor %}
     {% for post in site.cases %}
       "{{ post.url | slugify }}": {
-        "id" : "{{ post.url | slugify }}",
+        "id": "{{ post.url | slugify }}",
         "title": "{{ post.title | xml_escape }}",
         "author": "{{ post.author | xml_escape }}",
         "category": "{{ post.category | xml_escape }}",
@@ -57,11 +54,12 @@ layout: none
     {% for year in site.data.cves %}
       {%- for cve in year[1] -%}
       {% assign cveId = cve[0] -%}
+      {% assign descriptions = cve[1]["containers"]["cna"]["descriptions"] | where: "lang", "en" | map: "value" %}
         "{{ cve[0] }}": {
-          "id" : "{{ cve[0] }}",
-          "title": "{{ cve[1]["containers"]["cna"]["title"] }}",
+          "id": "{{ cve[0] }}",
+          "title": {{ cve[1]["containers"]["cna"]["title"] | jsonify }},
           "category": "cve",
-          "content": "{{ cve[1]["containers"]["cna"]["descriptions"] | where: "lang", "en" | map: "value" }}",
+          "content": {{ descriptions | join: " " | jsonify }},
           "url": "/cves/{{ cve[0] }}"
         }
       {%- unless forloop.last -%},{%- endunless %}
@@ -73,8 +71,6 @@ layout: none
   if (searchTerm) {
     document.getElementById('search-box').setAttribute("value", searchTerm);
 
-    // Initalize lunr with the fields it will be searching on. I've given title
-    // a boost of 10 to indicate matches on this field are more important.
     var idx = lunr(function () {
       this.field('id');
       this.field('title', { boost: 10 });
@@ -83,22 +79,11 @@ layout: none
       this.field('content');
 
       for(var id in store) {
-        this.add(store[id])
+        this.add(store[id]);
       }
     });
 
-    /*
-    for (var key in store) { // Add the data to lunr
-      idx.add({
-        'id': key,
-        'title': window.store[key].title,
-        'author': window.store[key].author,
-        'category': window.store[key].category,
-        'content': window.store[key].content
-      });
-    */
-
-    var results = idx.search(searchTerm); // Get lunr to perform a search
-    displaySearchResults(results, store); // We'll write this in the next section
+    var results = idx.search(searchTerm);
+    displaySearchResults(results, store);
   }
 })();
