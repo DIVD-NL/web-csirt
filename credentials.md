@@ -76,7 +76,7 @@ If we have the URL that the password belongs to, we will also make this extract.
 
 Based on these extracts we will invite (government and other) CERTS, CSIRTS and Security Teams to provide us with the apexes that are in the extract and in their constituency or that they otherwise have a demonstrable legitimate interest in. For those apexes, we will return the data.
 
-In order to address ethical concerns regarding the sharing of PII with government organisations of countries with a less than ideal situation with regard to the upholding of human rights, we will only provide data to government organisations of countries that score higher than 4 in the most recent year of the [Human rights index](https://ourworldindata.org/grapher/human-rights-index-vdem).
+In order to address ethical concerns regarding the sharing of PII with government organisations of countries with a less than ideal situation with regard to the upholding of human rights, we will only provide data to government organisations of countries that score higher than 0.4 in the most recent year of the [Human rights index](https://ourworldindata.org/grapher/human-rights-index-vdem).
 
 ## How to report a credential breach
 
