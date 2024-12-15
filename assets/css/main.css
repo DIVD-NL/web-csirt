@@ -2902,6 +2902,10 @@ table.affected th {
     {
         display: none !important;
     }
+
+    body {
+      padding-top: 0;
+    }
 }
 
 .hidden {
