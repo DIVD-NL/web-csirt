@@ -24,6 +24,45 @@ $menu-bg-hover: #267CB9;
 //$menu-bg-image: linear-gradient(120deg, #155799, #159957);
 $menu-bg-image: none;
 
+@media only screen and (min-width: 736px) {
+  .nav {
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+   .nav .menu {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+
+    .menu-item {
+      position: relative;
+      white-space: nowrap;
+
+      .sub-menu {
+        position: absolute;
+        z-index: 3000;
+        top: 100%;
+        left: 0;
+        max-width: min(700px, calc(100vw - 40px));
+        white-space: normal;
+       }
+     }
+
+    & > .menu-item:nth-last-child(-n+3) .sub-menu {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+  
 // 2 //
 $menu-co: #267CB9;
 $menu-co-hover: #fff;
