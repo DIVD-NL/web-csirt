@@ -10,6 +10,6 @@ Updated firmware is available that fixes 16 of the 17 vulnerabilities. Iocharger
 
 As a general principle we recommend that owners of Iocharger chargers make sure their devices are not accessible from untrusted networks (e.g. the public internet or a guest network).
 
-This discovery fits into DIVD's ongoing research into vulnerabilities that effect the smart grid, which is becoming more and more distributed in nature. In households that have electric vehicles (EVs), these vehicles are most of the time the biggest consumers of electricity in the house. The ability to control large numbers of EV chargers may ultimately lead to a situation where, by stopping and starting EV chargers in large numbers, a malicious actor may be able to effect the stability of the electricity grid.
+This discovery fits into DIVD's ongoing research into vulnerabilities that effect the smart grid, which is becoming more and more distributed in nature. In households that have electric vehicles (EVs), these vehicles are most of the time the biggest consumers of electricity in the house. The ability to control large numbers of EV chargers may ultimately lead to a situation where, by stopping and starting EV chargers in large numbers, a malicious actor may be able to affect the stability of the electricity grid.
 
 More information in [our casefile](/DIVD-2024-00035/).
