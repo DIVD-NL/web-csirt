@@ -45,8 +45,6 @@ webrick:
 collections:
   team:
     output: false
-  reports:
-    output: false
   cves:
     output: false
   cases:
