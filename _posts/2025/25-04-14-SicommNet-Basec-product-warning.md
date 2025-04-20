@@ -1,12 +1,12 @@
 ---
 layout: post
-title: SicommNet Basec product warning
+title: SicommNet BASEC product warning
 author: DIVD
-excerpt: "There are three serious vulnerabilities in the Basec tool hosted by SicommNet that allow attackers to bypass all security measures in the tool. Theses vulnerabilities have been present since at least 14 December 2021."
+excerpt: "There are three serious vulnerabilities in the BASEC tool hosted by SicommNet that allow attackers to bypass all security measures in the tool. These vulnerabilities have been present since at least 14 December 2021."
 ---
 DIVD researcher Jesse Meijer has identified three critical vulnerabilities in the SicommNet BASEC e-procurement system. These vulnerabilities were discovered on the 14th of December 2021. With these vulnerabilities an attacker can bypass all security measures in the tool and access and alter the database of the tool and all data for any customer of SicommNet BASEC.
 
-Bespite several attempts over the years, neither Jesse Meijer, DIVD CSIRT nor CISA has been able to sollicit a meaningful response of from SicommNet. In line with our [CNA policy](/cna) we are now issuing this product warning.
+Despite several attempts over the years, neither Jesse Meijer, DIVD CSIRT nor CISA has been able to solicit a meaningful response from SicommNet. In line with our [CNA policy](/cna) we are now issuing this product warning.
 
 ## Product warning
 
