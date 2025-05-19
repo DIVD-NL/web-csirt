@@ -59,8 +59,8 @@ section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline; }
 
 article, aside, details, figcaption, figure,
@@ -2902,6 +2902,10 @@ table.affected th {
     {
         display: none !important;
     }
+
+    body {
+      padding-top: 0;
+    }
 }
 
 .hidden {
@@ -2912,3 +2916,10 @@ table.affected th {
   background-color: #1e6bb8;  
   background-color: rgba(102, 102, 255, 0.49);  
 }
+
+@media print {
+  div {
+    font-style: italic;
+  }
+
+  }
