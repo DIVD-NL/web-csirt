@@ -40,6 +40,3 @@ Mind you, what we emailed you is a masked password. All characters in the passwo
 The (main case file)[/DIVD-2025-00018) contains a Frequently Asked Questions (FAQ) section. If that does not answer your questions, please reply to the email you received or email us at [DIVD-2025-00018@csirt.divd.nl](mailto:DIVD-2025-00018@csirt.divd.nl?SUBJECT:Question+about+DIVD-2025-00018-Latrodecus).
 
 For more information, see the [main case file](/DIVD-2025-00018/).
-
-
-
