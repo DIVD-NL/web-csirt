@@ -9,7 +9,7 @@ This page is a sub page of the case file for case [DIVD-2025-00018 - Victim Noti
 
 ## Some of your credentials were found in Operation Endgame 2.0 and have been stolen by the Latrodectus botnet
 
-If you received a notification from us with the subject `[URGENT] Operation Endgame - Compromised credentials found for this email address - Ref:Latrodectus1/2025-00018` it means that one or more email address and password combinations of you were found were foudn to be stolen by the Latrodectus Botnet by the Dutch police.
+If you received a notification from us with the subject `[URGENT] Operation Endgame - Compromised credentials found for this email address - Ref:Latrodectus1/2025-00018` it means that one or more email address and password combinations of you were found to be stolen by the Latrodectus Botnet by the Dutch police.
 The email contains exact details about which credentials were harvested.
 
 ## What does this mean?
