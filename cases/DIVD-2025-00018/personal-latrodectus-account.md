@@ -14,7 +14,7 @@ The email contains exact details about which credentials were harvested.
 
 ## What does this mean?
 
-The credentials in the email were stolen by criminals operating the Latrodectus Botnet and have been discovered by the Dutch Police somewhere before the 23 May 2025. The criminals either intended to sell these credentials to other criminals or to abuse these accounts to make more victims. 
+The credentials in the email were stolen from the password managers built into browsers by criminals operating the Latrodectus Botnet and have been discovered by the Dutch Police somewhere before the 23 May 2025. The criminals either intended to sell these credentials to other criminals or to abuse these accounts to make more victims. 
 
 ## What should I do?
 
