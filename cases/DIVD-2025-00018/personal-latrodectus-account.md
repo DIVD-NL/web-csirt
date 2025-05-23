@@ -3,7 +3,9 @@ layout: page
 case: DIVD-2025-00018
 title: Recommendations for personal stolen accounts found in operation Endgame 2.0
 excerpt: This page contains recommendation for individuals that have received a notification from DIVD about a compromised personal credentials found as part of Operation Endgame 2.0
-redirect_from:  /DIVD-2025-00018/personal-latrodectus-account/
+redirect_from:  
+- /DIVD-2025-00018/personal-latrodectus-account/
+- /endgame20_latrodectus
 ---
 This page is a sub page of the case file for case [DIVD-2025-00018 - Victim Notification Operation Endgame 2.0](/DIVD-2025-00018/), which contains the general information about this case.
 
