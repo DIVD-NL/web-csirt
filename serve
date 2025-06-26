@@ -32,8 +32,8 @@ docker run \
 	--publish 35729:35729 \
 	-ti mrseccubus/github-pages \
 	-c "
+		. /root/venv/bin/activate;
 		cd /root/project/;
-		pip install requests
 		if [[ -e Gemfile ]]; then
 			echo \"*** Installing Gems in Gemfile ***\"
 			bundle install 
@@ -41,7 +41,6 @@ docker run \
 		fi
 
 		while [ 1 ] ; do
-			git config --global --add safe.directory /root/project/www.divd.nl
 			./update.sh
 			rm -rf _site/*;
 			\$EXEC jekyll serve --incremental --livereload --host=0.0.0.0 --future --config=_config.yml,_config_livereload.yml $POLL 2>&1 

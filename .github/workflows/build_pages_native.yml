@@ -27,11 +27,9 @@ jobs:
         with:
           python-version: '3.13.0'
       - name: install prerequisites
-        run:  pip3 install html5validator requests && gem install --no-document html-proofer
-      - name: install prerequisites
-        run:  pip3 install requests 
+        run:  pip3 install html5validator requests cvelib && gem install --no-document html-proofer
       - name: Update external content
-        run:  ./update.sh
+        run:  ./update.sh && ./update_cves.sh
       - name: Clean up stubs
         run:  rm -rf _cases/3000 _data/cves/3000
       - name: Build
