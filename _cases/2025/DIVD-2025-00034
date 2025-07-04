@@ -1,7 +1,7 @@
 ---
 layout: case
 title: "Unauthenticated Arbitrary Remote Code Execution in IBM WebSphere version 8.5 and 9.0"
-excerpt: "A critical vulnerability in IBM WebSphere was discovered in versions 8.5 and 9.0 that allows unauthenticated user preform remote code execution"
+excerpt: "A critical vulnerability in IBM WebSphere was discovered in versions 8.5 and 9.0 that allows a remote code execution"
 author: Victor Pasman
 lead: Victor Pasman
 status : Open
@@ -21,7 +21,7 @@ start: 2025-07-01
 end:
 timeline:
 - start: 2025-07-01
-  end: 2025-06-20
+  end: 2025-07-01
   event: "IBM published the vulnerability"
 - start: 2025-07-04
   end: 2025-07-04
