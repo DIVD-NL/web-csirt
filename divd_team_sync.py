@@ -6,6 +6,7 @@ import re
 from bs4 import BeautifulSoup
 import os
 import unicodedata
+import glob
 
 def slugify(value):
     """
@@ -32,6 +33,47 @@ def extract_person_id_from_url(url):
         name_part = url.split('/people/')[-1].rstrip('/')
         return name_part
     return None
+
+def get_people_from_cases():
+    """
+    Extract all people mentioned in case files (author and lead).
+    """
+    people = set()
+    
+    # Find all case files
+    case_files = glob.glob('_cases/*/*.md')
+    
+    for case_file in case_files:
+        try:
+            with open(case_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+                
+            # Extract author and lead from frontmatter
+            lines = content.split('\n')
+            in_frontmatter = False
+            frontmatter_end_count = 0
+            
+            for line in lines:
+                if line.startswith('---'):
+                    frontmatter_end_count += 1
+                    if frontmatter_end_count == 1:
+                        in_frontmatter = True
+                    elif frontmatter_end_count == 2:
+                        # End of frontmatter
+                        break
+                elif in_frontmatter:
+                    if line.startswith('author:'):
+                        author = line.replace('author:', '').strip()
+                        if author:
+                            people.add(author)
+                    elif line.startswith('lead:'):
+                        lead = line.replace('lead:', '').strip()
+                        if lead:
+                            people.add(lead)
+        except Exception as e:
+            print(f"Warning: Could not read {case_file}: {e}")
+    
+    return sorted(people)
 
 def scrape_divd_team():
     """
@@ -107,10 +149,66 @@ def scrape_divd_team():
     
     return teams, members
 
+def debug_missing_people(members):
+    """
+    Debug function to check which people from cases are not found on the website.
+    """
+    print("\n" + "="*60)
+    print("DEBUG: Checking for missing people from cases")
+    print("="*60)
+    
+    # Get all people from cases
+    case_people = get_people_from_cases()
+    print(f"Found {len(case_people)} unique people in case files")
+    
+    # Get all people from website
+    website_people = set(member['name'] for member in members.values())
+    print(f"Found {len(website_people)} people on website")
+    
+    # Find missing people
+    missing_people = []
+    for person in case_people:
+        if person not in website_people:
+            missing_people.append(person)
+    
+    print(f"\n{len(missing_people)} people from cases NOT found on website:")
+    print("-" * 50)
+    
+    if missing_people:
+        for person in sorted(missing_people):
+            print(f"  ❌ {person}")
+    else:
+        print("  ✅ All people from cases found on website!")
+    
+    print(f"\n{len(case_people) - len(missing_people)} people from cases FOUND on website:")
+    print("-" * 50)
+    
+    found_people = [person for person in case_people if person in website_people]
+    for person in sorted(found_people):
+        print(f"  ✅ {person}")
+    
+    print("\nWebsite people NOT mentioned in any case:")
+    print("-" * 50)
+    
+    unused_people = []
+    for person in website_people:
+        if person not in case_people:
+            unused_people.append(person)
+    
+    if unused_people:
+        for person in sorted(unused_people):
+            print(f"  ℹ️  {person}")
+    else:
+        print("  All website people are mentioned in cases!")
+    
+    print("\n" + "="*60)
+    return missing_people
+
 def main():
     parser = argparse.ArgumentParser(description='Sync team members and teams from DIVD website', allow_abbrev=False)
     parser.add_argument('--member-path', type=str, metavar="<path to create team member md files>", default="", required=True, help="path of directory to create member md files")
     parser.add_argument('--team-path', type=str, metavar="<path to create team md files>", default="", required=True, help="path of directory to create team md files")
+    parser.add_argument('--debug', action='store_true', help="Show debug information about missing people")
     
     args = parser.parse_args()
     
@@ -124,6 +222,13 @@ def main():
     if teams is None or members is None:
         print("Failed to scrape team information")
         return 1
+    
+    # Debug missing people if requested
+    if args.debug:
+        missing_people = debug_missing_people(members)
+        if missing_people:
+            print(f"\n⚠️  WARNING: {len(missing_people)} people from cases not found on website!")
+            print("These people will not have clickable links in case files.")
     
     # Write team files
     print(f"Updating {len(teams)} teams", end="")
