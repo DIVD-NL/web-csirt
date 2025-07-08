@@ -231,13 +231,28 @@ def main():
         safe_name = re.sub(r'[-\s]+', ' ', safe_name).strip()
         member_file = os.path.join(args.member_path, f"{safe_name}.md")
         
-        with open(member_file, 'w', encoding='utf-8') as mfh:
+        # Clean the name and role by removing problematic Unicode characters
+        def clean_for_yaml(text):
+            # Normalize to decomposed form
+            normalized = unicodedata.normalize('NFKD', text)
+            # Remove all control characters and combining characters
+            cleaned = ''.join(char for char in normalized 
+                            if unicodedata.category(char)[0] not in ('C', 'M'))
+            # Convert to ASCII where possible, remove non-ASCII otherwise
+            ascii_cleaned = cleaned.encode('ascii', 'ignore').decode('ascii')
+            return ascii_cleaned.strip()
+        
+        clean_name = clean_for_yaml(member['name'])
+        clean_role = clean_for_yaml(member['role'])
+        clean_person_id = clean_for_yaml(member['id'])
+        
+        with open(member_file, 'w', encoding='utf-8', newline='\n') as mfh:
             mfh.write("---\n")
             mfh.write("layout: person\n")
-            mfh.write(f"person_id: {member['id']}\n")
+            mfh.write(f"person_id: {clean_person_id}\n")
             # Properly escape YAML string values by using YAML-safe quoting
-            name_escaped = member['name'].replace('"', '\\"')
-            role_escaped = member['role'].replace('"', '\\"')
+            name_escaped = clean_name.replace('"', '\\"')
+            role_escaped = clean_role.replace('"', '\\"')
             mfh.write(f"name: \"{name_escaped}\"\n")
             mfh.write(f"role: \"{role_escaped}\"\n")
             mfh.write("manager: \n")  # No manager info available from website
