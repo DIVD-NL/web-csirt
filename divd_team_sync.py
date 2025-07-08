@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import os
 import unicodedata
 import glob
+import urllib.parse
 
 def slugify(value):
     """
@@ -31,7 +32,9 @@ def extract_person_id_from_url(url):
     if url and '/people/' in url:
         # Extract the part after /people/
         name_part = url.split('/people/')[-1].rstrip('/')
-        return name_part
+        # URL decode the name part to handle special characters
+        decoded_name = urllib.parse.unquote(name_part)
+        return decoded_name
     return None
 
 def get_people_from_cases():
@@ -153,17 +156,11 @@ def debug_missing_people(members):
     """
     Debug function to check which people from cases are not found on the website.
     """
-    print("\n" + "="*60)
-    print("DEBUG: Checking for missing people from cases")
-    print("="*60)
-    
     # Get all people from cases
     case_people = get_people_from_cases()
-    print(f"Found {len(case_people)} unique people in case files")
     
     # Get all people from website
     website_people = set(member['name'] for member in members.values())
-    print(f"Found {len(website_people)} people on website")
     
     # Find missing people
     missing_people = []
@@ -171,37 +168,17 @@ def debug_missing_people(members):
         if person not in website_people:
             missing_people.append(person)
     
-    print(f"\n{len(missing_people)} people from cases NOT found on website:")
-    print("-" * 50)
+    print(f"Found {len(case_people)} unique people in case files")
+    print(f"Found {len(website_people)} people on website")
     
     if missing_people:
+        print(f"WARNING: {len(missing_people)} people from cases NOT found on website:")
         for person in sorted(missing_people):
-            print(f"  ❌ {person}")
+            print(f"  - {person}")
+        print("These people will not have clickable links in case files.")
     else:
-        print("  ✅ All people from cases found on website!")
+        print("All people from cases found on website!")
     
-    print(f"\n{len(case_people) - len(missing_people)} people from cases FOUND on website:")
-    print("-" * 50)
-    
-    found_people = [person for person in case_people if person in website_people]
-    for person in sorted(found_people):
-        print(f"  ✅ {person}")
-    
-    print("\nWebsite people NOT mentioned in any case:")
-    print("-" * 50)
-    
-    unused_people = []
-    for person in website_people:
-        if person not in case_people:
-            unused_people.append(person)
-    
-    if unused_people:
-        for person in sorted(unused_people):
-            print(f"  ℹ️  {person}")
-    else:
-        print("  All website people are mentioned in cases!")
-    
-    print("\n" + "="*60)
     return missing_people
 
 def main():
@@ -226,9 +203,6 @@ def main():
     # Debug missing people if requested
     if args.debug:
         missing_people = debug_missing_people(members)
-        if missing_people:
-            print(f"\n⚠️  WARNING: {len(missing_people)} people from cases not found on website!")
-            print("These people will not have clickable links in case files.")
     
     # Write team files
     print(f"Updating {len(teams)} teams", end="")
@@ -251,13 +225,21 @@ def main():
     # Write member files
     print(f"Updating {len(members)} people", end="")
     for member_id, member in members.items():
-        member_file = os.path.join(args.member_path, f"{member['name']}.md")
+        # Sanitize filename by normalizing Unicode and removing problematic characters
+        safe_name = unicodedata.normalize('NFKD', member['name'])
+        safe_name = re.sub(r'[^\w\s-]', '', safe_name)
+        safe_name = re.sub(r'[-\s]+', ' ', safe_name).strip()
+        member_file = os.path.join(args.member_path, f"{safe_name}.md")
+        
         with open(member_file, 'w', encoding='utf-8') as mfh:
             mfh.write("---\n")
             mfh.write("layout: person\n")
             mfh.write(f"person_id: {member['id']}\n")
-            mfh.write(f"name: \"{member['name']}\"\n")
-            mfh.write(f"role: \"{member['role']}\"\n")
+            # Properly escape YAML string values by using YAML-safe quoting
+            name_escaped = member['name'].replace('"', '\\"')
+            role_escaped = member['role'].replace('"', '\\"')
+            mfh.write(f"name: \"{name_escaped}\"\n")
+            mfh.write(f"role: \"{role_escaped}\"\n")
             mfh.write("manager: \n")  # No manager info available from website
             mfh.write("socials:\n")  # No social info available from website
             mfh.write("---\n")
