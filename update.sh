@@ -19,7 +19,7 @@ echo "Updating team"
 	cd ../_team
 	rm -f *.md
 )
-./org_update.py --team-path _teams  --member-path _team
+./divd_team_sync.py --team-path _teams  --member-path _team
 
 echo "Updating reports"
 (
