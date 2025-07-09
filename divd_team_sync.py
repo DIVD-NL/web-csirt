@@ -2,12 +2,11 @@
 
 import requests
 import argparse
-import re
-from bs4 import BeautifulSoup
 import os
 import unicodedata
 import glob
-import urllib.parse
+import json
+import re
 
 def slugify(value):
     """
@@ -25,17 +24,37 @@ def slugify(value):
     value = value.strip('-')
     return value
 
-def extract_person_id_from_url(url):
+def url_encode_slug(value):
     """
-    Extract person ID from URL like /who-we-are/team/people/name/
+    Convert a string to a URL-encoded slug that matches DIVD website URLs.
+    This preserves special characters through URL encoding.
     """
-    if url and '/people/' in url:
-        # Extract the part after /people/
-        name_part = url.split('/people/')[-1].rstrip('/')
-        # URL decode the name part to handle special characters
-        decoded_name = urllib.parse.unquote(name_part)
-        return decoded_name
-    return None
+    # Convert to lowercase and normalize unicode
+    value = unicodedata.normalize('NFKD', value.lower())
+    # Replace spaces with hyphens
+    value = re.sub(r'\s+', '-', value)
+    # Remove multiple consecutive hyphens
+    value = re.sub(r'-+', '-', value)
+    # Remove leading/trailing hyphens
+    value = value.strip('-')
+    # URL encode the result to handle special characters
+    from urllib.parse import quote
+    return quote(value, safe='-')
+
+def clean_for_yaml(text):
+    """
+    Clean text for YAML compatibility by removing problematic Unicode characters.
+    """
+    if not text:
+        return ""
+    # Normalize to decomposed form
+    normalized = unicodedata.normalize('NFKD', text)
+    # Remove all control characters and combining characters
+    cleaned = ''.join(char for char in normalized 
+                    if unicodedata.category(char)[0] not in ('C', 'M'))
+    # Convert to ASCII where possible, remove non-ASCII otherwise
+    ascii_cleaned = cleaned.encode('ascii', 'ignore').decode('ascii')
+    return ascii_cleaned.strip()
 
 def get_people_from_cases():
     """
@@ -78,111 +97,100 @@ def get_people_from_cases():
     
     return sorted(people)
 
-def scrape_divd_team():
+def fetch_divd_team_json():
     """
-    Scrape team information from DIVD website.
+    Fetch team information from DIVD JSON API.
     """
-    url = 'https://www.divd.nl/who-we-are/team/'
+    url = 'https://www.divd.nl/documents/people.json'
     
     try:
         response = requests.get(url, timeout=30)
         response.raise_for_status()
+        data = response.json()
+        return data
     except requests.RequestException as e:
-        print(f"Error fetching team page: {e}")
-        return None, None
-    
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    teams = []
+        print(f"Error fetching team JSON: {e}")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON: {e}")
+        return None
+
+def process_team_data(people_data):
+    """
+    Process the JSON data into teams and members.
+    """
+    teams = {}
     members = {}
     
-    # Find all accordion items (teams)
-    accordion_items = soup.find_all('div', class_='accordion-item')
-    
-    for item in accordion_items:
-        # Get team name from h3 tag
-        team_name_elem = item.find('h3')
-        if not team_name_elem:
+    for person in people_data:
+        # Create full name
+        first_name = person.get('firstName', '').strip()
+        last_name = person.get('lastName', '').strip()
+        full_name = f"{first_name} {last_name}".strip()
+        
+        if not full_name:
             continue
             
-        team_name = team_name_elem.get_text(strip=True)
-        team_slug = slugify(team_name)
+        # Create person ID (URL-encoded slug of full name to match DIVD website URLs)
+        person_id = url_encode_slug(full_name)
         
-        # Find all team members in this accordion item
-        team_members = []
-        person_cards = item.find_all('a', class_='card-link')
+        # Get role and clean it
+        role = clean_for_yaml(person.get('role', ''))
         
-        for card in person_cards:
-            # Extract person URL and info
-            person_url = card.get('href', '')
-            person_id = extract_person_id_from_url(person_url)
+        # Create member entry
+        members[person_id] = {
+            'id': person_id,
+            'name': full_name,
+            'role': role,
+            'teams': person.get('teams', [])
+        }
+        
+        # Process teams
+        for team_name in person.get('teams', []):
+            team_slug = slugify(team_name)
             
-            if not person_id:
-                continue
-                
-            # Extract name from h3 inside the card
-            name_elem = card.find('h3')
-            if not name_elem:
-                continue
-                
-            name = name_elem.get_text(strip=True)
-            
-            # Extract role from h6 inside the card
-            role_elem = card.find('h6')
-            role = role_elem.get_text(strip=True) if role_elem else ""
-            
-            # Store member info
-            if person_id not in members:
-                members[person_id] = {
-                    'id': person_id,
-                    'name': name,
-                    'role': role,
-                    'url': person_url
+            if team_slug not in teams:
+                teams[team_slug] = {
+                    'name': team_name,
+                    'slug': team_slug,
+                    'members': []
                 }
             
-            team_members.append(person_id)
-        
-        # Store team info
-        if team_members:  # Only add teams with members
-            teams.append({
-                'name': team_name,
-                'slug': team_slug,
-                'members': team_members
-            })
+            teams[team_slug]['members'].append(person_id)
     
-    return teams, members
+    return list(teams.values()), members
 
 def debug_missing_people(members):
     """
-    Debug function to check which people from cases are not found on the website.
+    Debug function to check which people from cases are not found in the JSON API.
     """
     # Get all people from cases
     case_people = get_people_from_cases()
     
-    # Get all people from website
-    website_people = set(member['name'] for member in members.values())
+    # Get all people from JSON API
+    api_people = set(member['name'] for member in members.values())
     
     # Find missing people
     missing_people = []
     for person in case_people:
-        if person not in website_people:
+        if person not in api_people:
             missing_people.append(person)
     
     print(f"Found {len(case_people)} unique people in case files")
-    print(f"Found {len(website_people)} people on website")
+    print(f"Found {len(api_people)} people in JSON API")
     
     if missing_people:
-        print(f"WARNING: {len(missing_people)} people from cases NOT found on website:")
+        print(f"WARNING: {len(missing_people)} people from cases NOT found in JSON API:")
         for person in sorted(missing_people):
             print(f"  - {person}")
         print("These people will not have clickable links in case files.")
     else:
-        print("All people from cases found on website!")
+        print("All people from cases found in JSON API!")
     
     return missing_people
 
 def main():
-    parser = argparse.ArgumentParser(description='Sync team members and teams from DIVD website', allow_abbrev=False)
+    parser = argparse.ArgumentParser(description='Sync team members and teams from DIVD JSON API', allow_abbrev=False)
     parser.add_argument('--member-path', type=str, metavar="<path to create team member md files>", default="", required=True, help="path of directory to create member md files")
     parser.add_argument('--team-path', type=str, metavar="<path to create team md files>", default="", required=True, help="path of directory to create team md files")
     parser.add_argument('--debug', action='store_true', help="Show debug information about missing people")
@@ -193,12 +201,15 @@ def main():
     os.makedirs(args.member_path, exist_ok=True)
     os.makedirs(args.team_path, exist_ok=True)
     
-    print("Scraping DIVD team information...")
-    teams, members = scrape_divd_team()
+    print("Fetching DIVD team information from JSON API...")
+    people_data = fetch_divd_team_json()
     
-    if teams is None or members is None:
-        print("Failed to scrape team information")
+    if people_data is None:
+        print("Failed to fetch team information")
         return 1
+    
+    print(f"Processing {len(people_data)} people from JSON API...")
+    teams, members = process_team_data(people_data)
     
     # Debug missing people if requested
     if args.debug:
@@ -208,12 +219,12 @@ def main():
     print(f"Updating {len(teams)} teams", end="")
     for team in teams:
         team_file = os.path.join(args.team_path, f"{team['slug']}.md")
-        with open(team_file, 'w', encoding='utf-8') as tfh:
+        with open(team_file, 'w', encoding='utf-8', newline='\n') as tfh:
             tfh.write("---\n")
             tfh.write("layout: team\n")
             tfh.write(f"slug: {team['slug']}\n")
-            tfh.write(f"name: {team['name']}\n")
-            tfh.write(f"title: {team['name']}\n")
+            tfh.write(f"name: {clean_for_yaml(team['name'])}\n")
+            tfh.write(f"title: {clean_for_yaml(team['name'])}\n")
             tfh.write(f"size: {len(team['members'])}\n")
             tfh.write("members:\n")
             for member_id in team['members']:
@@ -225,40 +236,36 @@ def main():
     # Write member files
     print(f"Updating {len(members)} people", end="")
     for member_id, member in members.items():
-        # Sanitize filename by normalizing Unicode and removing problematic characters
-        safe_name = unicodedata.normalize('NFKD', member['name'])
-        safe_name = re.sub(r'[^\w\s-]', '', safe_name)
-        safe_name = re.sub(r'[-\s]+', ' ', safe_name).strip()
-        member_file = os.path.join(args.member_path, f"{safe_name}.md")
-        
-        # Clean the name and role by removing problematic Unicode characters
-        def clean_for_yaml(text):
-            # Normalize to decomposed form
-            normalized = unicodedata.normalize('NFKD', text)
-            # Remove all control characters and combining characters
-            cleaned = ''.join(char for char in normalized 
-                            if unicodedata.category(char)[0] not in ('C', 'M'))
-            # Convert to ASCII where possible, remove non-ASCII otherwise
-            ascii_cleaned = cleaned.encode('ascii', 'ignore').decode('ascii')
-            return ascii_cleaned.strip()
-        
-        clean_name = clean_for_yaml(member['name'])
+        # Clean role and person_id for YAML safety, but keep name with special characters
         clean_role = clean_for_yaml(member['role'])
         clean_person_id = clean_for_yaml(member['id'])
         
-        with open(member_file, 'w', encoding='utf-8', newline='\n') as mfh:
-            mfh.write("---\n")
-            mfh.write("layout: person\n")
-            mfh.write(f"person_id: {clean_person_id}\n")
-            # Properly escape YAML string values by using YAML-safe quoting
-            name_escaped = clean_name.replace('"', '\\"')
-            role_escaped = clean_role.replace('"', '\\"')
-            mfh.write(f"name: \"{name_escaped}\"\n")
-            mfh.write(f"role: \"{role_escaped}\"\n")
-            mfh.write("manager: \n")  # No manager info available from website
-            mfh.write("socials:\n")  # No social info available from website
-            mfh.write("---\n")
-            # No description available from website
+        def write_member_file(filename):
+            """Write a member file with the given filename."""
+            with open(filename, 'w', encoding='utf-8', newline='\n') as mfh:
+                mfh.write("---\n")
+                mfh.write("layout: person\n")
+                mfh.write(f"person_id: {clean_person_id}\n")
+                # Keep original name with special characters for Jekyll matching
+                # Only escape quotes for YAML safety
+                name_escaped = member['name'].replace('"', '\\"')
+                role_escaped = clean_role.replace('"', '\\"')
+                mfh.write(f"name: \"{name_escaped}\"\n")
+                mfh.write(f"role: \"{role_escaped}\"\n")
+                mfh.write("manager: \n")  # Not available in JSON API
+                mfh.write("---\n")
+        
+        # Create primary file (with original name)
+        primary_filename = os.path.join(args.member_path, f"{member['name']}.md")
+        write_member_file(primary_filename)
+        
+        # Create ASCII alias file if name contains special characters
+        ascii_name = unicodedata.normalize('NFKD', member['name']).encode('ascii', 'ignore').decode('ascii')
+        if ascii_name != member['name']:
+            ascii_filename = os.path.join(args.member_path, f"{ascii_name}.md")
+            write_member_file(ascii_filename)
+
+        
         print(".", end="")
     print("done")
     
