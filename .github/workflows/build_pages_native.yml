@@ -27,9 +27,9 @@ jobs:
         with:
           python-version: '3.13.0'
       - name: install prerequisites
-        run:  pip3 install html5validator requests beautifulsoup4 && gem install --no-document html-proofer
+        run:  pip3 install html5validator requests && gem install --no-document html-proofer
       - name: install prerequisites
-        run:  pip3 install requests beautifulsoup4 
+        run:  pip3 install requests 
       - name: Update external content
         run:  ./update.sh
       - name: Clean up stubs
