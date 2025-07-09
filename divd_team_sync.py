@@ -24,6 +24,23 @@ def slugify(value):
     value = value.strip('-')
     return value
 
+def url_encode_slug(value):
+    """
+    Convert a string to a URL-encoded slug that matches DIVD website URLs.
+    This preserves special characters through URL encoding.
+    """
+    # Convert to lowercase and normalize unicode
+    value = unicodedata.normalize('NFKD', value.lower())
+    # Replace spaces with hyphens
+    value = re.sub(r'\s+', '-', value)
+    # Remove multiple consecutive hyphens
+    value = re.sub(r'-+', '-', value)
+    # Remove leading/trailing hyphens
+    value = value.strip('-')
+    # URL encode the result to handle special characters
+    from urllib.parse import quote
+    return quote(value, safe='-')
+
 def clean_for_yaml(text):
     """
     Clean text for YAML compatibility by removing problematic Unicode characters.
@@ -114,26 +131,17 @@ def process_team_data(people_data):
         if not full_name:
             continue
             
-        # Create person ID (slug of full name)
-        person_id = slugify(full_name)
+        # Create person ID (URL-encoded slug of full name to match DIVD website URLs)
+        person_id = url_encode_slug(full_name)
         
         # Get role and clean it
         role = clean_for_yaml(person.get('role', ''))
-        
-        # Get about/description
-        about = clean_for_yaml(person.get('about', ''))
-        
-        # Get social links
-        social_links = person.get('socialLinks', {})
         
         # Create member entry
         members[person_id] = {
             'id': person_id,
             'name': full_name,
             'role': role,
-            'about': about,
-            'social_links': social_links,
-            'profile_picture': person.get('profilePicture', ''),
             'teams': person.get('teams', [])
         }
         
@@ -228,41 +236,36 @@ def main():
     # Write member files
     print(f"Updating {len(members)} people", end="")
     for member_id, member in members.items():
-        # Sanitize filename by normalizing Unicode and removing problematic characters
-        safe_name = unicodedata.normalize('NFKD', member['name'])
-        safe_name = re.sub(r'[^\w\s-]', '', safe_name)
-        safe_name = re.sub(r'[-\s]+', ' ', safe_name).strip()
-        member_file = os.path.join(args.member_path, f"{safe_name}.md")
-        
-        # Clean all fields for YAML safety
-        clean_name = clean_for_yaml(member['name'])
+        # Clean role and person_id for YAML safety, but keep name with special characters
         clean_role = clean_for_yaml(member['role'])
         clean_person_id = clean_for_yaml(member['id'])
-        clean_about = clean_for_yaml(member['about'])
         
-        with open(member_file, 'w', encoding='utf-8', newline='\n') as mfh:
-            mfh.write("---\n")
-            mfh.write("layout: person\n")
-            mfh.write(f"person_id: {clean_person_id}\n")
-            # Properly escape YAML string values
-            name_escaped = clean_name.replace('"', '\\"')
-            role_escaped = clean_role.replace('"', '\\"')
-            mfh.write(f"name: \"{name_escaped}\"\n")
-            mfh.write(f"role: \"{role_escaped}\"\n")
-            mfh.write("manager: \n")  # Not available in JSON API
-            
-            # Write social links
-            mfh.write("socials:\n")
-            for platform, url in member['social_links'].items():
-                if url and url.strip():
-                    clean_url = clean_for_yaml(url.strip())
-                    mfh.write(f"  {platform.lower()}: {clean_url}\n")
-            
-            mfh.write("---\n")
-            
-            # Write about section if available
-            if clean_about:
-                mfh.write(f"{clean_about}\n")
+        def write_member_file(filename):
+            """Write a member file with the given filename."""
+            with open(filename, 'w', encoding='utf-8', newline='\n') as mfh:
+                mfh.write("---\n")
+                mfh.write("layout: person\n")
+                mfh.write(f"person_id: {clean_person_id}\n")
+                # Keep original name with special characters for Jekyll matching
+                # Only escape quotes for YAML safety
+                name_escaped = member['name'].replace('"', '\\"')
+                role_escaped = clean_role.replace('"', '\\"')
+                mfh.write(f"name: \"{name_escaped}\"\n")
+                mfh.write(f"role: \"{role_escaped}\"\n")
+                mfh.write("manager: \n")  # Not available in JSON API
+                mfh.write("---\n")
+        
+        # Create primary file (with original name)
+        primary_filename = os.path.join(args.member_path, f"{member['name']}.md")
+        write_member_file(primary_filename)
+        
+        # Create ASCII alias file if name contains special characters
+        ascii_name = unicodedata.normalize('NFKD', member['name']).encode('ascii', 'ignore').decode('ascii')
+        if ascii_name != member['name']:
+            ascii_filename = os.path.join(args.member_path, f"{ascii_name}.md")
+            write_member_file(ascii_filename)
+
+        
         print(".", end="")
     print("done")
     
