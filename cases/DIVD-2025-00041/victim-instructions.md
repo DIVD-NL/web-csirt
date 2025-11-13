@@ -1,7 +1,7 @@
 ---
 layout: page
 case: DIVD-2025-00041
-title: Recommendations for personal stolen accounts found in operation Endgame S03E01
+title: Recommendations for individuals whose stolen account credentials were found in Operation Endgame S03E01
 excerpt: This page contains recommendation for individuals that have received a notification from DIVD about a compromised personal credentials found as part of Operation Endgame S03E01
 redirect_from:  
 - /DIVD-2025-00041/victim-instructions/
