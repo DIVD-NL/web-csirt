@@ -1,16 +1,16 @@
 ---
 layout: page
-title: Recommendations for providers of services of which account credentials were found in operation Endgame episode 2025q4
-excerpt: This page contains recommendation for providers of services that have received a notification from us about account credentials of their users that were found as part of Operation Endgame episode 2025q4
+title: Recommendations for providers of services of which account credentials were found in operation Endgame S03E01
+excerpt: This page contains recommendation for providers of services that have received a notification from us about account credentials of their users that were found as part of Operation Endgame S03E01
 redirect_from:  /DIVD-2025-00041/service-instructions/
 ---
-This page is a sub page of the [case file for case DIVD-2025-00041 - Victim Notification Operation Endgame episode 2025q4](/DIVD-2025-00041/), which contains the general information about this case.
+This page is a sub page of the [case file for case DIVD-2025-00041 - Victim Notification Operation Endgame S03E01](/DIVD-2025-00041/), which contains the general information about this case.
 
 ## Credentials of your users were found in a botnet in Operation Endgame
 
-You have looked at our dataset for Operations Endgame episode 2025q4 and discovered that domains of  your organisation are part of one or more of the datasets, now what?
+You have looked at our dataset for Operations Endgame S03E01 and discovered that domains of  your organisation are part of one or more of the datasets, now what?
 
-If your domains are in a file with `domain_apexes` in the name, users of your service are part of the data seized as part of Operation Endgame episode 2025q4.
+If your domains are in a file with `domain_apexes` in the name, users of your service are part of the data seized as part of Operation Endgame S03E01.
 
 If you have not already done so, send an email to [divd-2025-00041@csirt.divd.nl](mailto:divd-2025-00041@csirt.divd.nl?SUBJECT:Information+request+DIVD-2025-00041) to request additional data and analyse i
 

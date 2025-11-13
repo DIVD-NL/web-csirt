@@ -1,16 +1,16 @@
 ---
 layout: page
-title: Recommendations for organisation of which email account credentials were found in operation Endgame episode 2025q4
-excerpt: This page contains recommendation for organisations that have received a notification from us about email credentials that were found as part of Operation Endgame editioon 2025q4
+title: Recommendations for organisation of which email account credentials were found in operation Endgame S03E01
+excerpt: This page contains recommendation for organisations that have received a notification from us about email credentials that were found as part of Operation Endgame S03E01
 redirect_from:  /DIVD-2025-00041/organisation-instructions/
 ---
-This page is a sub page of the [case file for case DIVD-2025-00041 - Victim Notification Operation Endgame episode 2025q4](/DIVD-2025-00041/), which contains the general information about this case.
+This page is a sub page of the [case file for case DIVD-2025-00041 - Victim Notification Operation Endgame S03E01](/DIVD-2025-00041/), which contains the general information about this case.
 
 ## Emails of your organisation were found in an Operation Endgame dataset
 
-You have looked at our dataset for Operations Endgame episode 2025q4 and discovered that email addresses of your organisation are part of one or more of the datasets, now what?
+You have looked at our dataset for Operations Endgame S03E01 and discovered that email addresses of your organisation are part of one or more of the datasets, now what?
 
-If your domains are in a file with `email_apexes` in the name, individuals with an email address assiciated with your domain are part of Operation Endgame episode 2025q4.
+If your domains are in a file with `email_apexes` in the name, individuals with an email address assiciated with your domain are part of Operation Endgame episode S03E01.
 
 If you have not already done so, send an email to [divd-2025-00041@csirt.divd.nl](mailto:divd-2025-00041@csirt.divd.nl?SUBJECT:Information+request+DIVD-2025-00041) to request additional data and analyse it.
 

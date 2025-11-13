@@ -1,14 +1,14 @@
 ---
 layout: page
 case: DIVD-2025-00041
-title: Recommendations for personal stolen accounts found in operation Endgame 2025q4
-excerpt: This page contains recommendation for individuals that have received a notification from DIVD about a compromised personal credentials found as part of Operation Endgame 2025q4
+title: Recommendations for personal stolen accounts found in operation Endgame S03E01
+excerpt: This page contains recommendation for individuals that have received a notification from DIVD about a compromised personal credentials found as part of Operation Endgame S03E01
 redirect_from:  
 - /DIVD-2025-00041/victim-instructions/
 ---
-This page is a sub page of the case file for case [DIVD-2025-00041 - Victim Notification Operation Endgame 2025q4](/DIVD-2025-00041/), which contains the general information about this case.
+This page is a sub page of the case file for case [DIVD-2025-00041 - Victim Notification Operation Endgame S03E01](/DIVD-2025-00041/), which contains the general information about this case.
 
-## Some of your credentials were found in Operation Endgame edition 2025q4 and have been stolen an infostealer
+## Some of your credentials were found in Operation Endgame edition S03E01 and have been stolen an infostealer
 
 If you are reading this it probably means that your data was found in the dataset of Operation Endgame S03E01.
 
