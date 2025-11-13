@@ -8,7 +8,7 @@ This page is a sub page of the [case file for case DIVD-2025-00041 - Victim Noti
 
 ## Credentials of your users were found in a botnet in Operation Endgame
 
-You have looked at our dataset for Operations Endgame S03E01 and discovered that domains of  your organisation are part of one or more of the datasets, now what?
+You’ve checked our datasets for Operation Endgame S03E01 and found email addresses belonging to your organisation. These are your next steps:
 
 If your domains are in a file with `domain_apexes` in the name, users of your service are part of the data seized as part of Operation Endgame S03E01.
 
