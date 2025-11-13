@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Recommendations for organisation of which email account credentials were found in operation Endgame S03E01
+title: Recommendations for organisations of which email account credentials were found in Operation Endgame S03E01
 excerpt: This page contains recommendation for organisations that have received a notification from us about email credentials that were found as part of Operation Endgame S03E01
 redirect_from:  /DIVD-2025-00041/organisation-instructions/
 ---
