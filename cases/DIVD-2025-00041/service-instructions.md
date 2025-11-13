@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Recommendations for service providers whose account credentials were found in Operation Endgame S03E01
-excerpt: This page contains recommendation for providers of services that have received a notification from us about account credentials of their users that were found as part of Operation Endgame S03E01
+excerpt: Information for service providers notified about account credentials found in Operation Endgame S03E01
 redirect_from:  /DIVD-2025-00041/service-instructions/
 ---
 This page is a sub page of the [case file for case DIVD-2025-00041 - Victim Notification Operation Endgame S03E01](/DIVD-2025-00041/), which contains the general information about this case.
