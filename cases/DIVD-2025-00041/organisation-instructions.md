@@ -8,7 +8,7 @@ This page is a sub page of the [case file for case DIVD-2025-00041 - Victim Noti
 
 ## Emails of your organisation were found in an Operation Endgame dataset
 
-You have looked at our dataset for Operations Endgame S03E01 and discovered that email addresses of your organisation are part of one or more of the datasets, now what?
+You’ve checked our datasets for Operation Endgame S03E01 and found email addresses belonging to your organisation. These are your next steps:
 
 If your domains are in a file with `email_apexes` in the name, individuals with an email address assiciated with your domain are part of Operation Endgame episode S03E01.
 
