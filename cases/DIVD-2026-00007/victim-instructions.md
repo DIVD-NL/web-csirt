@@ -2,15 +2,14 @@
 layout: page
 case: DIVD-2026-00007
 title: Recommendations for victims whos stolen account credentials were found in Operation Endgame S03E03 (SocGholish)
-excerpt: This page contains recommendation for individuals that have received a notification from DIVD about a compromised personal credentials found as part of Operation Endgame S04E01
-redirect_from:  
+excerpt: This page contains recommendation for individuals that have received a notification from DIVD about a compromised personal credentials found as part of Operation Endgame S03E03
 - /DIVD-2026-00007/instructions-for-socgholish-victims/
 ---
 This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Notification Operation Endgame S03E03](/DIVD-2026-00007/), which contains the general information about this case.
 
-## Some of your credentials were found in Operation Endgame edition S04 and have been stolen an infostealer delivered through the SocGholish malware downloader
+## Some of your credentials were found in Operation Endgame edition S03E03 and have been stolen an infostealer delivered through the SocGholish malware downloader
 
-If you are reading this it probably means that your data was found in the SocGholish victim dataset of Operation Endgame S04.
+If you are reading this it probably means that your data was found in the SocGholish victim dataset of Operation Endgame S03E03.
 
 <!--
 If you received a notification from us with the subject `[URGENT] Operation Endgame - Compromised credentials found for this email address - Ref:2025-00041/account` it means that one or more email address and password combinations of you were found to be stolen by an infostealer according to information we received from the Dutch police.

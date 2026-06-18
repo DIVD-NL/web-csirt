@@ -9,7 +9,7 @@ This page is a sub page of the [case file for case DIVD-2026-00007 - Victim Noti
 ## Is my organisation/constituency impacted?
 
 To determine if your organisation/constituency is impacted, you can download our apex lists:
-* [ApexLists for SocGholish - Operation Endgame S04e01](/downloads/DIVD-2026-00007/DIVD-2026-00007-SocGholish-apexes.tgz)
+* [ApexLists for SocGholish - Operation Endgame S03E03](/downloads/DIVD-2026-00007/DIVD-2026-00007-SocGholish-apexes.tgz)
 
 ## What is in these apex lists?
 
