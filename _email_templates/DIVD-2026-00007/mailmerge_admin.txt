@@ -1,0 +1,23 @@
+TO: {{email}}
+SUBJECT: DIVD-2026-00007 - Your website(s) have has been infected with SocGhlooish malware downloader
+FROM: divd-2026-00007@csirt.divd.nl
+REPLY-TO: DIVD-CSIRT <csirt@divd.nl>
+
+Dear reader,
+
+This message contains information about a malware infection of a website you manager. 
+
+The an international law enforcement operations called Operation Endgame police forces have taken actions against criminals running a SocGholish malware operation. During that operation data of websites infected with this malware was seized and unfortunately your websites appeared in this data set.
+
+The following information was found:
+
+{{ records }}
+
+The Dutch National Police ask us, the DIVD (Dutch Institute for Vulnerability Disclosure) to inform the adminstrators of websites that have been compromised. This email is our way of warning you. We are not trying to scam you or ask for any reward or favour (or ransom) in return. 
+
+We understand that you may have a lot of questions right now. Please visit https://csirt.divd.nl/DIVD-2026-00007/instructions-for-wordpress-admins/ for more details or http://csirt.divd.nl/DIVD-2026-00007/ for more general information about this case.
+
+
+Kind regards,
+
+CSIRT @ Dutch Insitute for Vulnerability Disclosure
