@@ -1,7 +1,7 @@
 ---
 layout: page
 case: DIVD-2026-00007
-title: Recommendations for victims whos WordPress website was found to be compromised with SocGholish in Operation Endgame S04E01 
+title: Recommendations for victims whos WordPress website was found to be compromised with SocGholish in Operation Endgame S03E03 
 excerpt: This page contains recommendation for administrators that have received a notification from DIVD that their website was compromisedas part of Operation Endgame S03E03
 redirect_from:  
 - /DIVD-2026-00007/instructions-for-wordpress-admins/
