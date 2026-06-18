@@ -1,7 +1,7 @@
 ---
 layout: page
 case: DIVD-2026-00007
-title: Recommendations for victims whos stolen account credentials were found in Operation Endgame S04E01 (SocGholish)
+title: Recommendations for victims whos stolen account credentials were found in Operation Endgame S03E03 (SocGholish)
 excerpt: This page contains recommendation for individuals that have received a notification from DIVD about a compromised personal credentials found as part of Operation Endgame S04E01
 redirect_from:  
 - /DIVD-2026-00007/instructions-for-socgholish-victims/
