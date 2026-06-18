@@ -11,7 +11,13 @@ The an international law enforcement operations called Operation Endgame police 
 
 The following information related to your email address ({{email}}) was found:
 
-{{ records }}
+Username   : {{email}}
+Password   : {{password}} (We used * characters to mask part of the password for safety reasons)
+Url        : {{url}}
+First seen : {{first_seen}}
+Last seen  : {{last_seen}}
+
+If your email address was involved in multiple leaks you may get more then one email from us.
 
 The Dutch National Police ask us, the DIVD (Dutch Institute for Vulnerability Disclosure) to inform the victims whos data was stolen. This email is our way of warning you. We are not trying to scam you or ask for any reward of favour in return. 
 
