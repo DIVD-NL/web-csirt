@@ -2,13 +2,13 @@
 layout: page
 case: DIVD-2026-00007
 title: Recommendations for victims whos WordPress website was found to be compromised with SocGholish in Operation Endgame S04E01 
-excerpt: This page contains recommendation for administrators that have received a notification from DIVD that their website was compromisedas part of Operation Endgame S04E01
+excerpt: This page contains recommendation for administrators that have received a notification from DIVD that their website was compromisedas part of Operation Endgame S03E03
 redirect_from:  
 - /DIVD-2026-00007/instructions-for-wordpress-admins/
 ---
 This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Notification Operation Endgame S04](/DIVD-2026-00007/), which contains the general information about this case.
 
-## It was determined that your website was spreading malware via the SocGholish malware downloader during Operation Endgame edition S04E01
+## It was determined that your website was spreading malware via the SocGholish malware downloader during Operation Endgame edition S03E03
 
 If you are reading this it probably means that your website ate some point is time was spreading malware via the SocGholish malware downloader and maybe still is. You website was likely compromised through stolen adminisator credentials.
 
