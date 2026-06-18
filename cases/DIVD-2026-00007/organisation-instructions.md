@@ -4,7 +4,7 @@ title: Recommendations for organisations of which account credentials were found
 excerpt: Instructions on how to use our apex lists for Operations Endgame S03E03
 redirect_from:  /DIVD-2026-00007/organisation-instructions/
 ---
-This page is a sub page of the [case file for case DIVD-2026-00007 - Victim Notification Operation Endgame S03E03](/DIVD-2025-00007/), which contains the general information about this case.
+This page is a sub page of the [case file for case DIVD-2026-00007 - Victim Notification Operation Endgame S03E03](/DIVD-2026-00007/), which contains the general information about this case.
 
 ## Is my organisation/constituency impacted?
 

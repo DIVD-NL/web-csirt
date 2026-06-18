@@ -12,11 +12,6 @@ This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Noti
 
 If you are reading this it probably means that your website ate some point is time was spreading malware via the SocGholish malware downloader and maybe still is. You website was likely compromised through stolen adminisator credentials.
 
-<!--
-If you received a notification from us with the subject `[URGENT] Operation Endgame - Compromised credentials found for this email address - Ref:2025-00041/account` it means that one or more email address and password combinations of you were found to be stolen by an infostealer according to information we received from the Dutch police.
-The email contains exact details about which credentials were compromised.
--->
-
 ## What does this mean?
 
 Your WordPress adminisator credentials have been stolen at some point. Criminals have used these credentials to compromise your WordPress site and impant the SocGholish stealer there. The malware downloader has been using your site to serve fake browsers update dialog screens to convince innocent visitors of you website to download infostealer malware.

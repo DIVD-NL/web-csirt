@@ -11,14 +11,9 @@ This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Noti
 
 If you are reading this it probably means that your data was found in the SocGholish victim dataset of Operation Endgame S03E03.
 
-<!--
-If you received a notification from us with the subject `[URGENT] Operation Endgame - Compromised credentials found for this email address - Ref:2025-00041/account` it means that one or more email address and password combinations of you were found to be stolen by an infostealer according to information we received from the Dutch police.
-The email contains exact details about which credentials were compromised.
--->
-
 ## What does this mean?
 
-Your credentials where likely stolen from from a computer by criminals operating infostealer malware delivered through the SocGholish malware downloaded. Your credentials have been discovered by the Dutch Police in the first half of 2025 as part of Operation Endgame. The criminals either intended to sell these credentials to other criminals or to abuse these accounts to make more victims. 
+Your credentials where likely stolen from from a computer by criminals operating infostealer malware delivered through the SocGholish malware downloaded. Your credentials have been discovered by the Dutch Police in the first half of 2026 as part of Operation Endgame. The criminals either intended to sell these credentials to other criminals or to abuse these accounts to make more victims. 
 
 ## What should I do?
 
