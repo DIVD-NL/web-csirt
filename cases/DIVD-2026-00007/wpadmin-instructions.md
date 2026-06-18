@@ -10,7 +10,7 @@ This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Noti
 
 ## It was determined that your website was spreading malware via the SocGholish malware downloader during Operation Endgame edition S03E03
 
-If you are reading this it probably means that your website ate some point is time was spreading malware via the SocGholish malware downloader and maybe still is. You website was likely compromised through stolen adminisator credentials.
+If you are reading this it probably means that your website was spreading malware via the SocGholish malware downloader, and maybe still is. You website was likely compromised through stolen administrator credentials.
 
 ## What does this mean?
 
