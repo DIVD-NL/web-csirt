@@ -6,7 +6,7 @@ excerpt: This page contains recommendation for individuals that have received a 
 redirect_from:  
 - /DIVD-2026-00007/instructions-for-socgholish-victims/
 ---
-This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Notification Operation Endgame S04](/DIVD-2026-00007/), which contains the general information about this case.
+This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Notification Operation Endgame S03E03](/DIVD-2026-00007/), which contains the general information about this case.
 
 ## Some of your credentials were found in Operation Endgame edition S04 and have been stolen an infostealer delivered through the SocGholish malware downloader
 
