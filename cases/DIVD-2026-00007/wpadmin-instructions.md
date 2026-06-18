@@ -6,7 +6,7 @@ excerpt: This page contains recommendation for administrators that have received
 redirect_from:  
 - /DIVD-2026-00007/instructions-for-wordpress-admins/
 ---
-This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Notification Operation Endgame S04](/DIVD-2026-00007/), which contains the general information about this case.
+This page is a sub page of the case file for case [DIVD-2026-00007 - Victim Notification Operation Endgame S03E03](/DIVD-2026-00007/), which contains the general information about this case.
 
 ## It was determined that your website was spreading malware via the SocGholish malware downloader during Operation Endgame edition S03E03
 
