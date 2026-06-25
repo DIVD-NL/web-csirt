@@ -10,6 +10,8 @@ This page is a sub page of the [case file for case DIVD-2026-00007 - Victim Noti
 
 To determine if your organisation/constituency is impacted, you can download our apex lists:
 * [ApexLists for SocGholish - Operation Endgame S03E03](/downloads/DIVD-2026-00007/DIVD-2026-00007-SocGholish-apexes.tgz)
+* [ApexLists for StealC - Operation Endgame S03E04](/downloads/DIVD-2026-00007/DIVD-2026-00007-StealC-apexes.tgz)
+
 
 ## What is in these apex lists?
 
@@ -20,6 +22,10 @@ The SocGholish archive contains four files:
 * DIVD-2026-00007-SocGholish-admin-url_apexs.csv -> Apex domains and record counts of the url of compromised WordPress servers
 * DIVD-2026-00007-SocGholish-victim-email_apexs.csv -> Apex domains and record counts of the email addresses of victims of infostealer malware dropped by SocGholish
 * DIVD-2026-00007-SocGholish-victim-url_apexs.csv -> Apex domains and record counts of the target urls of accounts stolen by infostealers dropped by SocGholish
+
+The StealC archive contains two files:
+* DIVD-2026-00007-StealC-email_apexs.csv -> Apex domains and record counts of the email addresses of victims of the StealC infostealer
+* DIVD-2026-00007-StealC_apexs.csv -> Apex domains and record counts of the target urls of accounts stolen by the StealC infostealer
 
 ## What should I do if members of my organisation/constituency are in the apex files
 
