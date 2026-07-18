@@ -3,9 +3,9 @@ layout: post
 title: Mennekes Smart - charging stations full disclosure
 author: Victor Pasman
 researchers:
-    - Wilco van Beijnum
-    - Harm van den Brink
-	- Frank Breedijk
+- Wilco van Beijnum
+- Harm van den Brink
+- Frank Breedijk
 excerpt: "Full disclosure of five vulnerabilities discovered in the firmware of Mennekes Smart charging stations"
 ---
 DIVD received a vulnerability report about the firmware of Mennekes Smart charging stations. The vulnerabilities were discovered by Wilco van Beijnum and analysed together with DIVD researchers Harm van den Brink and Frank Breedijk.
