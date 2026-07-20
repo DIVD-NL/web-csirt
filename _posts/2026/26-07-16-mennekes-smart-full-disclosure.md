@@ -3,9 +3,9 @@ layout: post
 title: Mennekes Smart - charging stations full disclosure
 author: Victor Pasman
 researchers:
-    - Wilco van Beijnum
-    - Harm van den Brink
-	- Frank Breedijk
+- Wilco van Beijnum
+- Harm van den Brink
+- Frank Breedijk
 excerpt: "Full disclosure of five vulnerabilities discovered in the firmware of Mennekes Smart charging stations"
 ---
 DIVD received a vulnerability report about the firmware of Mennekes Smart charging stations. The vulnerabilities were discovered by Wilco van Beijnum and analysed together with DIVD researchers Harm van den Brink and Frank Breedijk.
@@ -20,8 +20,6 @@ DIVD is a CVE Numbering Authority (CNA) and has used these rights to assign the 
 - {% cve CVE-2025-22370 %}
 
 All five vulnerabilities affect Mennekes Smart charging stations running firmware prior to version 2.15 and are resolved in firmware 2.15 The rest of this post contains the full technical write-up of each vulnerability.
-
----
 
 ## Command injection in firmware upgrade via URL - CVE-2025-22366
 
@@ -55,8 +53,6 @@ Impact: Critical — the attacker gains full control over the charging station a
 
 Upgrade to firmware 2.15 or later. Use input filtering and escaping to prevent command injection, avoid passing user-controlled input to a shell, and do not run the web server as root.
 
----
-
 ## Command injection in manually setting the time - CVE-2025-22367
 
 - CVE: {% cve CVE-2025-22367 %}
@@ -86,8 +82,6 @@ Impact: Critical — the attacker gains full control over the charging station a
 
 **Suggested actions**
 Upgrade to firmware 2.15 or later. Use input filtering and escaping to prevent command injection, avoid passing user-controlled input to a shell, and do not run the web server as root.
-
----
 
 ## Command injection in SCU firmware update - CVE-2025-22368
 
@@ -120,8 +114,6 @@ Impact: Critical — the attacker gains full control over the charging station a
 
 Upgrade to firmware 2.15 or later. Use input filtering and escaping to prevent command injection, avoid passing user-controlled input to a shell, and do not run the web server as root.
 
----
-
 ## Arbitrary file download using ReadFile endpoint - CVE-2025-22369
 
 - CVE: {% cve CVE-2025-22369 %}
@@ -147,8 +139,6 @@ Impact: High — the endpoint can download any file on the filesystem, including
 **Suggested actions**
 
 Upgrade to firmware 2.15 or later. It should not be possible for (low-privilege) users to download arbitrary files.
-
----
 
 ## SQL injection in web configuration interface fields - CVE-2025-22370
 
