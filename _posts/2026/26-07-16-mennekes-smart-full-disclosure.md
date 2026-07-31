@@ -149,7 +149,7 @@ Upgrade to firmware 2.15 or later. It should not be possible for (low-privilege)
 - Products: Mennekes Smart / Premium charging stations, firmware versions < 2.15
 - CVSS: 5.3 (MEDIUM) — `CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/S:N/AU:Y`
 - CWE: CWE-89 (SQL Injection)
-- Reference: Case {% divd DIVD-2025-00003 %}, {% cve CVE-2025-22370 %
+- Reference: Case {% divd DIVD-2025-00003 %}, {% cve CVE-2025-22370 %}
 - Solution: Upgrade to firmware 2.15 or later. Use prepared statements / parameterised queries and input filtering (e.g. in Python, use `?` placeholders in `cursor.execute` and pass values as the second argument).
 
 Several fields in the web configuration interface insufficiently neutralise input, allowing an authenticated attacker to execute arbitrary SQL commands against the SQLite databases used by the interface.
