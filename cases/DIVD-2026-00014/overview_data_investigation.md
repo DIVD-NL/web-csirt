@@ -4,7 +4,7 @@ title: Overview of data investigation
 excerpt: A complete and up to date overview of the status of our data investigation after breach of 21-9-2026
 redirect_from:  /DIVD-2026-00014/overview_data_investigation/
 ---
-On Monday 21 September 2026, the servers in our data center in Amsterdam got compromised. We are now in incident response mode. True to DIVD fashion this incident got its own DIVD case number: {% divd DIVD-2026-00014 %} with the title: When not if... Because let’s be honest, in security it was never a question of if.
+On Monday 21 September 2026, the servers in our data center got compromised. We are now in incident response mode. True to DIVD fashion this incident got its own DIVD case number: {% divd DIVD-2026-00014 %} with the title: When not if... Because let’s be honest, in security it was never a question of if.
 
 # TL;DR
 
