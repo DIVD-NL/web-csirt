@@ -75,7 +75,9 @@ goatcounter: divd-csirt
 exclude:
   - README.md
   - serve*
-  - "*.sh"
+  - proof.sh
+  - test_it.sh
+  - update.sh
   - .keep
   - Gemfile
   - Gemfile.lock
@@ -85,3 +87,4 @@ exclude:
   - "www.divd.nl"
   - vendor
   - _cves/README.md
+
