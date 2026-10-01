@@ -79,7 +79,6 @@ We know that the attackers had difficulties extracting information from this sys
 
 We say 'assume' because our setup and security measures meant the attacker had to work for every bit of data they got out. We're still working out how far the exfiltration went, and that takes time.
 
-So far we have found 1 case where the full ticket information of a vulnerability disclosure was exfiltrated by the attackers.
 
 
 # TCB: Taking care of business
