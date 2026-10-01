@@ -75,7 +75,7 @@ Volunteers may be our favorite humans. But the DIVD is there to help everybody. 
 ## Current picture
 
 We know for sure that the attackers got in through the ticketing system our CSIRT team uses. That system holds every email sent to the CSIRT mailbox and every reply, but not our initial notifications.
-We know that the attackers had difficulties extracting information from this system and our enviioronment. Only a part of the information was extracted. If an organisation or individual has been emailing back and forth with our CSIRT team, assume the attackers may have that information. This could be follow-up requests on scan data (including IP addresses of vulnerable systems), vulnerabilities reported to us through the CSIRT mailbox and extracts of credential dumps with masked passwords.
+We know that the attackers had difficulties extracting information from this system and our environment, that makes that only a part of the information was extracted. If an organisation or individual has been emailing back and forth with our CSIRT team, assume the attackers may have that information. This could be follow-up requests on scan data (including IP addresses of vulnerable systems), vulnerabilities reported to us through the CSIRT mailbox and extracts of credential dumps with masked passwords.
 
 We say 'assume' because our setup and security measures meant the attacker had to work for every bit of data they got out. We're still working out how far the exfiltration went, and that takes time.
 
