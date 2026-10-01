@@ -22,7 +22,7 @@ Below you'll find every type of data we hold, personal (PII) and non-personal, w
 
 # What data is listed here
 
-It was quite a puzzle to figure out what data we should and shouldn;t list here. We want this overview to honest, but not overly long or complicated. 
+It was quite a puzzle to figure out what data we should and shouldn't list here. We want this overview to honest, but not overly long or complicated. 
 The data listed below is data that we feel needs to be investigated to determine if it was compromised by our attacker. This means that this is data if valuable to them, or poses a risk to others if compromised.
 
 Beware that:
