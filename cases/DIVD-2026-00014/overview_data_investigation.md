@@ -83,7 +83,7 @@ We say 'assume' because our setup and security measures meant the attacker had t
 
 # TCB: Taking care of business
 
-Like any organisation we have to pay the rent, answer the telephone and pay an occasional bill and organize ourselves. This covers the administration, accounting and bank account we need to run DIVD. 
+Like any organisation we have to pay the rent, answer the telephone and pay an occasional bill and organise ourselves. This covers the administration, accounting and bank account we need to run DIVD. 
 
 ## Status
 
