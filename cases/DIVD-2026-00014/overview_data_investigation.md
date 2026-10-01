@@ -35,7 +35,7 @@ A dash (-) means no input yet.
 
 # Data about volunteers
 
-Our volunteers are our favorite humans, that's why we start here. Without volunteers DIVD would not be possible. We try to keep as little data about our volunteers as possible, but lots of little things add up.
+Our volunteers are our favorite humans, that's why we start here. Without volunteers, DIVD would not be possible. We try to keep as little data about them as possible, but lots of little things still add up.
 
 ## Status
 
