@@ -41,18 +41,19 @@ Our volunteers are our favorite humans, that's why we start here. Without volunt
 
 | Data | Description | Investigation status | Preliminary Analysis | Final assessment |
 |---|---|---|---|---|
-| Our office environment in GSuite | - | Ongoing | - | - |
-| Our HR environment | - | Ongoing | - | - |
-| Our IT support systems including our helpdesk | - | Ongoing | - | - |
-| Our project support environment, including Jira and Confluence | Project support, including Jira and Confluence. | Ongoing | Signs of compromise of the system | - |
-| System data on IT systems that support our operations | - | Ongoing | Signs of compromise of the system | - |
-| Source code in (hidden) repos in public GitHub and internal GitLab | Source code in GitHub and internal GitLab. | Ongoing | - | - |
-| Internal communication via Slack | - | Ongoing | - | - |
+| Our office environment in GSuite | - | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
+| Our HR environment | - | Technical investigation finished. | No signs of compromise. | - |
+| Our IT support systems including our helpdesk | - | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
+| Our project support environment, including Jira and Confluence | Project support, including Jira and Confluence. | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
+| System data on IT systems that support our operations | - | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
+| Source code in (hidden) repos in public GitHub and internal GitLab | Source code in GitHub and internal GitLab. | Technical investigation finished. | No signs of a compromise. | - |
+| Internal communication via Slack | - | Technical investigation finished. | No signs of a compromise. | - |
 
 ## Current picture
 
 We know for sure that user data (DIVD email addresses) and possibly contact details of volunteers were exfiltrated, and we're still investigating exactly which data of which volunteers is affected. For DIVD volunteers (and others) this means a higher risk of social engineering, because this makes it easier for someone to pose as a DIVD'er.
-
+With our HR data and Slack ruled out the amount of personal data leaked remained low, without the real details needed for super convincing social engineering or blackmailing.
+Also our source code is clear.
 
 # Core business data
 
@@ -62,15 +63,15 @@ Volunteers may be our favorite humans. But the DIVD is there to help everybody. 
 
 | Data | Description | Investigation status | Preliminary Analysis | Final assessment |
 |---|---|---|---|---|
-| CSIRT tickets system with all conversations with csirt@divd.nl and *@csirt.divd.nl | - | Ongoing | Signs of compromise of the system | - |
+| CSIRT tickets system with all conversations with csirt@divd.nl and *@csirt.divd.nl | - | Ongoing | Signs of (partial) data exfiltration found. | - |
 | Lists of vulnerable systems | We are investigating which part of this information is in the CSIRT ticket system. | Ongoing | - | - |
 | Fingerprints to identify vulnerable systems | - | Ongoing | - | - |
 | "De-weaponised" PoCs | - | Ongoing | - | - |
-| Zero day vulnerabilities | We are investigating which part of this information is in the CSIRT ticket system. | Ongoing | - | - |
+| Zero day vulnerabilities | We are investigating which part of this information is in the CSIRT ticket system. THe primary location in which this data was held is not impacted. | Ongoing | Data in Zammad may be compromised. Data in other places appears not to be impacted. | - |
 | Proof of concept attacks | - | Ongoing | - | - |
 | Leaked credential dumps | - | Ongoing | - | - |
 | Masked leaked credential dumps | We are investigating which part of this information is in the CSIRT ticket system. | Ongoing | - | - |
-| Private communication between DIVD researchers and third parties via e.g. mail | - | Ongoing | - | - |
+| Private communication between DIVD researchers and third parties via e.g. mail (not via Zammad) | - | Signs of (partial/limited) data exfiltration found. | - | - |
 
 ## Current picture
 
@@ -79,6 +80,7 @@ We know that the attackers had difficulties extracting information from this sys
 
 We say 'assume' because our setup and security measures meant the attacker had to work for every bit of data they got out. We're still working out how far the exfiltration went, and that takes time.
 
+CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 
 
 # TCB: Taking care of business
@@ -90,8 +92,8 @@ Like any organisation we have to pay the rent, answer the telephone and pay an o
 | Data | Description | Investigation status | Preliminary Analysis | Final assessment |
 |---|---|---|---|---|
 | Our administration in our GSuite | - | Ongoing | - | - |
-| Our accounting systems | Handled via an external party. | Not under investigation | No signs found so far | - |
-| Our bank account | Handled via an external party. | Not under investigation | No signs found so far | - |
+| Our accounting systems | Handled via an external party. | Not under investigation | No signs this is impacted. | - |
+| Our bank account | Handled via an external party. | Not under investigation | No signs this is impacted. | - |
 
 ## Current picture
 Our accounting systems and bank account are handled via an external party, and we have no indications of compromise there. Our administration in GSuite is still under investigation.
