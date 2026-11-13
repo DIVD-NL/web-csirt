@@ -4,7 +4,7 @@ title: Overview of data investigation
 excerpt: A complete and up to date overview of the status of our data investigation after breach of 21-9-2026
 redirect_from:  /DIVD-2026-00014/overview_data_investigation/
 ---
-On Monday 21 September 2026, the servers in our data center got compromised. We are now in incident response mode. True to DIVD fashion this incident got its own DIVD case number: {% divd DIVD-2026-00014 %} with the title: When not if... Because let’s be honest, in security it was never a question of if.
+On Monday 21 September 2026, the servers in our data center got compromised. We have contained the attack and are rebuilding our infrastructure. True to DIVD fashion this incident got its own DIVD case number: {% divd DIVD-2026-00014 %} with the title: When not if... Because let’s be honest, in security it was never a question of if.
 
 # TL;DR
 
@@ -41,19 +41,25 @@ Our volunteers are our favorite humans, that's why we start here. Without volunt
 
 | Data | Description | Investigation status | Preliminary Analysis | Final assessment |
 |---|---|---|---|---|
-| Our office environment in GSuite | - | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
-| Our HR environment | - | Technical investigation finished. | No signs of compromise. | - |
-| Our IT support systems including our helpdesk | - | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
-| Our project support environment, including Jira and Confluence | Project support, including Jira and Confluence. | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
-| System data on IT systems that support our operations | - | Technical investigation finished. Analysing results | Signs of (partial) data exfiltration found. | - |
+| Our office environment in GSuite | - | Technical investigation and analysis complete | n/a | The attackers got our internal directory. The email adddresses of all our volunteers leaked, the phone number of 34 volunteers leaked as well as 3 home addresses. 7 volunteers had identifiable profile pictures that leaked too.  |
+| Our HR environment | - | Technical investigation and analysis complete. | No signs of compromise. | No signs of compromise.  |
+| Our IT support systems including our helpdesk | - | Technical investigation and analysis complete. | Signs of (partial) data exfiltration found. | No signs of compromise. |
+| Our project support environment, including Jira and Confluence | Project support, including Jira and Confluence. | Technical investigation and analysis complete. | Signs of (partial) data exfiltration found. | The attacker was mainly interested in credentials. All leaked credentials have been rotated. Pages that where marked TLP:Red and TLP:Amber where also leaked but contained on data that is currently still sensitive. |
+| System data on IT systems that support our operations | - | Technical investigation and analysis complete. | Signs of (partial) data exfiltration found. | Only the system that hosted our CSIRT Zammad system was compromised on a system (root) level. |
 | Source code in (hidden) repos in public GitHub and internal GitLab | Source code in GitHub and internal GitLab. | Technical investigation finished. | No signs of a compromise. | - |
-| Internal communication via Slack | - | Technical investigation finished. | No signs of a compromise. | - |
+| Internal communication via Slack | - | Technical investigation and analysis complete. | No signs of a compromise. | No signs of a compromise. |
 
 ## Current picture
 
-We know for sure that user data (DIVD email addresses) and possibly contact details of volunteers were exfiltrated, and we're still investigating exactly which data of which volunteers is affected. For DIVD volunteers (and others) this means a higher risk of social engineering, because this makes it easier for someone to pose as a DIVD'er.
-With our HR data and Slack ruled out the amount of personal data leaked remained low, without the real details needed for super convincing social engineering or blackmailing.
-Also our source code is clear.
+Our Google directory was compromised. 
+* Email addresses: 207 email addresses (including aliases and functional addresses) of volunteers and former volunteers where leaked
+* Phone numbers: 34 phones numbers where stored and leaked.
+* Home addresses: 3 home addresses where stored and leaked.
+* Profile pictures: 7 volunteers had Google profile pictures that can be used to identify them, they where leaked.
+
+There is no evidence that other volunteer data leaked.
+
+For DIVD volunteers (and others) this means that there is only a slightly elevated risk of social engineering. 
 
 # Core business data
 
@@ -63,24 +69,39 @@ Volunteers may be our favorite humans. But the DIVD is there to help everybody. 
 
 | Data | Description | Investigation status | Preliminary Analysis | Final assessment |
 |---|---|---|---|---|
-| CSIRT tickets system with all conversations with csirt@divd.nl and *@csirt.divd.nl | - | Ongoing | Signs of (partial) data exfiltration found. | - |
-| Lists of vulnerable systems | We are investigating which part of this information is in the CSIRT ticket system. | Ongoing | - | - |
-| Fingerprints to identify vulnerable systems | - | Ongoing | - | - |
-| "De-weaponised" PoCs | - | Ongoing | - | - |
-| Zero day vulnerabilities | We are investigating which part of this information is in the CSIRT ticket system. THe primary location in which this data was held is not impacted. | Ongoing | Data in Zammad may be compromised. Data in other places appears not to be impacted. | - |
-| Proof of concept attacks | - | Ongoing | - | - |
-| Leaked credential dumps | - | Ongoing | - | - |
-| Masked leaked credential dumps | We are investigating which part of this information is in the CSIRT ticket system. | Ongoing | - | - |
-| Private communication between DIVD researchers and third parties via e.g. mail (not via Zammad) | - | Signs of (partial/limited) data exfiltration found. | - | - |
+| CSIRT tickets system with all conversations with csirt@divd.nl and *@csirt.divd.nl | - | Technical investigation and analysis complete. | Signs of (partial) data exfiltration found. | A limited set of data has leaked. Some of these conversations where about leaked credentials which where already in the hand of criminals. All of the passwords in this dataset where masked in line with our [leaked credentials policy](/credentials/). The system contained email addresses, phone numbers and street addresses. See the overview below. |
+| Lists of vulnerable systems | We are investigating which part of this information is in the CSIRT ticket system. | Technical investigation and analysis complete. | - | Correspondence with parties about small subsets of effected systems of the following case {% divd DIVD-2024-00013 %}<br>The database was searched for tickets with the keyworks `deploy` for the following cases: <br>* {% divd DIVD-202400013 %}<br>* {% divd DIVD-2024-00014 %}<br>* {% divd DIVD-2024-00022 %}<br>And for the keyword `wachtwoord` for cases:<br>* {% divd DIVD-2024-00014 %}<br>* {% divd DIVD-2024-00022 %}<br>* {% divd DIVD-2025-00031 %}<br>* {% divd DIVD-2025-00035 %}<br>* {% divd DIVD-2025-00041 %}<br>* {% divd DIVD-2026-00007 %} |
+| Fingerprints to identify vulnerable systems | - | Technical investigation and analysis complete. | - | No indications of compromise found. |
+| "De-weaponised" PoCs | - | Technical investigation and analysis complete. | - | No indications of compromise found. |
+| Zero day vulnerabilities | - | Technical investigation and analysis complete. | Data in Zammad may be compromised. Data in other places appears not to be impacted. | No indications of compromise found. |
+| Proof of concept attacks | - | Technical investigation and analysis complete. | - | No indications of compromise found. |
+| Leaked credential dumps | - | Technical investigation and analysis complete. | - | No indications of compromise found. |
+| Masked leaked credential dumps | - | Technical investigation and analysis complete. | - | Masked passwords for a small number of organisations leaked for cases:<br>* {% divd DIVD-2024-00014 %}<br>* {% divd DIVD-2024-00022 %}<br>* {% divd DIVD-2025-00031 %}<br>* {% divd DIVD-2025-00035 %}<br>* {% divd DIVD-2025-00041 %}<br>* {% divd DIVD-2026-00007 %}|
+| Private communication between DIVD researchers and third parties via e.g. mail (not via Zammad) | - | Technical investigation and analysis complete.  | Signs of (partial/limited) data exfiltration found. | No indications of compromise found. | 
 
 ## Current picture
 
-We know for sure that the attackers got in through the ticketing system our CSIRT team uses. That system holds every email sent to the CSIRT mailbox and every reply, but not our initial notifications.
-We know that the attackers had difficulties extracting information from this system and our environment, that makes that only a part of the information was extracted. If an organisation or individual has been emailing back and forth with our CSIRT team, assume the attackers may have that information. This could be follow-up requests on scan data (including IP addresses of vulnerable systems), vulnerabilities reported to us through the CSIRT mailbox and extracts of credential dumps with masked passwords.
+THe server and applicaiton of our CSIRT Zammad system was completely compromised. Due to the fact that there was no direct outgoing traffic possible we have a fairly complete picture of all data that the attacker managed to extract. Because data exfiltration was difficult the attacker had to be selective. 
+Data only ends up in tickets when a party sends an email to csirt@divd.nl or an email address ending in @csirt.divd.nl. 
 
-We say 'assume' because our setup and security measures meant the attacker had to work for every bit of data they got out. We're still working out how far the exfiltration went, and that takes time.
+As per out [leaked credential policy](/credentials), we never email unmasked password. A limited set of credentials of specific organisations leaked for the following cases:
+* {% divd DIVD-2024-00014 %}
+* {% divd DIVD-2024-00022 %}
+* {% divd DIVD-2025-00031 %}
+* {% divd DIVD-2025-00035 %}
+* {% divd DIVD-2025-00041 %}
+* {% divd DIVD-2026-00007 %}
+
+From the exfiltrated data, we gathered all email addresses, phone numbers and street addresses. Using a combination of LLMs, scripts and humand review we filtered out all spam, generect or group email addresses, phone number and non-residential street addresss. This gives us the following overview.
+
+| Type   | Unfiltered  | Personal  |
+|--------|-------------|-----------|
+| Email adresses | 48,928 | 4,121  |
+| Phone numbers  | 316  | 34 |
+| Street addresses | 39  | 3 |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
+The same is true of our scanning signatures and non-weaponized exploits and out 0-day research.
 
 
 # TCB: Taking care of business
@@ -91,10 +112,10 @@ Like any organisation we have to pay the rent, answer the telephone and pay an o
 
 | Data | Description | Investigation status | Preliminary Analysis | Final assessment |
 |---|---|---|---|---|
-| Our administration in our GSuite | - | Ongoing | - | - |
-| Our accounting systems | Handled via an external party. | Not under investigation | No signs this is impacted. | - |
-| Our bank account | Handled via an external party. | Not under investigation | No signs this is impacted. | - |
+| Our administration in our GSuite | - | Technical investigation and analysis complete. | - | No indications of compromise found. |
+| Our accounting systems | Handled via an external party. | Not under investigation | No signs this is impacted. |No signs this is impacted. |
+| Our bank account | Handled via an external party. | Not under investigation | No signs this is impacted. |No signs this is impacted. |
 
 ## Current picture
-Our accounting systems and bank account are handled via an external party, and we have no indications of compromise there. Our administration in GSuite is still under investigation.
+Our accounting systems and bank account are handled via an external party, and we have no indications of compromise there. Our administration in GSuite was not compromised.
 

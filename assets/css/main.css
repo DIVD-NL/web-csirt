@@ -665,7 +665,8 @@ table tbody tr {
   table tbody tr:nth-child(2n + 1) {
     background-color: rgba(0, 0, 0, 0.075); }
 table th {
-  color: #555555; }
+  color: #555555;
+  -webkit-text-stroke: 0.5px; }
 table thead {
   border-bottom-color: rgba(0, 0, 0, 0.25); }
 table tfoot {
@@ -2921,5 +2922,4 @@ table.affected th {
   div {
     font-style: italic;
   }
-
-  }
+}
