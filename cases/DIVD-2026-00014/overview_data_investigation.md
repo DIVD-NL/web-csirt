@@ -8,9 +8,39 @@ On Monday 21 September 2026, the servers in our data centre were compromised. We
 
 # TL;DR
 
-We’ll update this page regularly, so here’s the TL;DR to save you from reading this wall of text every time.
+This page contains the the status of our data based ont he final reports that we received from [Melron](https://merlon-security.eu/) and [NVISO](https://www.nviso.eu/) of which we will publish, redacted, versions soon. This should be out last update to this page. 
 
-We got hacked, and data was compromised and exfiltrated. The forensic investigation has been completed. We have chosen full transparency, which means we also communicate what we don’t know. Questions regarding data can be sent to [dpo@divd.nl](mailto:dpo@divd.nl?subject=Data%20status%20inquiry%20DIVD%20hack). All other questions can go to [communications@divd.nl](mailto:communications@divd.nl?subject=Question%20about%20DIVD%20breach).
+The attacker was able to get into our network by breaching our csirt (Zammad) ticket system and becoming root on this server. Because of the way the network is configured exfiltrating data took the attackers time and forced them to upload files to a place where they where served by the Zammad web server. This enabled the forensic team to get an almost complete picture of the data exfiltrated. As data exfiltration was difficult, the attacker had to be selective. 
+Data only ends up in tickets when a party sends an email to csirt@divd.nl or an email address ending in @csirt.divd.nl. 
+
+In accordance with our [leaked credential policy](/credentials), we never email unmasked passwords. A limited set of credentials belonging to specific organisations was leaked for the following cases:
+* {% divd DIVD-2024-00019 %}
+* {% divd DIVD-2024-00022 %}
+* {% divd DIVD-2025-00031 %}
+* {% divd DIVD-2025-00035 %}
+* {% divd DIVD-2025-00041 %}
+* {% divd DIVD-2026-00007 %}
+
+From the exfiltrated data, we gathered all email addresses, phone numbers and street addresses. Using a combination of LLMs, scripts and human review, we filtered out spam, generic or group email addresses, non-personal phone numbers and non-residential street addresses. This gives us the following overview.
+
+| Type             | Unfiltered  | Personal  |
+|------------------|-------------|-----------|
+| Email addresses  | 48,928      | 4,121     |
+| Phone numbers    | 316         | 34        |
+| Street addresses | 39          | 3         |
+
+CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
+The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
+
+Using authentication tokens in the configuraiton of Zammad, they where able read our Google workspace directory. They also managed to het into our Jira and Confluence environment as application administrators.
+
+* Email addresses: 207 email addresses (including aliases and functional addresses) of volunteers and former volunteers were leaked.
+* Phone numbers: Two phone numbers of volunteers were leaked.
+* Profile pictures: Identifiable profile pictures of seven volunteers were leaked.
+
+No data was leaked from our other corporate system.
+
+For more details, read on.
 
 # No salami tactics here
 
@@ -93,11 +123,11 @@ In accordance with our [leaked credential policy](/credentials), we never email 
 
 From the exfiltrated data, we gathered all email addresses, phone numbers and street addresses. Using a combination of LLMs, scripts and human review, we filtered out spam, generic or group email addresses, non-personal phone numbers and non-residential street addresses. This gives us the following overview.
 
-| Type   | Unfiltered  | Personal  |
-|--------|-------------|-----------|
-| Email addresses | 48,928 | 4,121  |
-| Phone numbers  | 316  | 34 |
-| Street addresses | 39  | 3 |
+| Type             | Unfiltered  | Personal  |
+|------------------|-------------|-----------|
+| Email addresses  | 48,928      | 4,121     |
+| Phone numbers    | 316         | 34        |
+| Street addresses | 39          | 3         |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
@@ -117,4 +147,3 @@ Like any organisation, we have to pay the rent, answer the telephone, pay the oc
 
 ## Current picture
 Our accounting systems and bank account are handled via an external party, and we have no indications of compromise there. Our administration in GSuite was not compromised.
-
