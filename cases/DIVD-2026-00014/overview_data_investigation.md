@@ -147,3 +147,17 @@ Like any organisation, we have to pay the rent, answer the telephone, pay the oc
 
 ## Current picture
 Our accounting systems and bank account are handled via an external party, and we have no indications of compromise there. Our administration in GSuite was not compromised.
+
+# Deviations from the original reports
+
+This page is based on the final report of our forensic investigations, but some of the numbers deviate from what is written in these reports after further investigation.
+
+## Number of street addresses
+
+The original report states that three street addresses that are potential private addresses have been leaked. After further investigation of these three addreses, these three also could be related to businesses or venues and not to persons. Hence we leaked 39 street addresses, none of them where personal.
+
+## Number of leaked email addresses
+
+The original report states that 48,928 email addresses where leaked of which 4,121 are personal email addresses. After further investigation it turns out that the number of 48,928 contain a lot of duplicate email addresses. After the deduplication we have a total of 15,409 unique email addresses.
+
+
