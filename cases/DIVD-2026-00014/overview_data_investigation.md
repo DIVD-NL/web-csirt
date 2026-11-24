@@ -27,7 +27,7 @@ From the exfiltrated data, we gathered all email addresses, phone numbers and st
 |------------------|-------------|-----------|
 | Email addresses  | 48,928      | 4,121     |
 | Phone numbers    | 316         | 34        |
-| Street addresses | 39          | 3         |
+| Street addresses | 39          | 0         |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
@@ -127,7 +127,7 @@ From the exfiltrated data, we gathered all email addresses, phone numbers and st
 |------------------|-------------|-----------|
 | Email addresses  | 48,928      | 4,121     |
 | Phone numbers    | 316         | 34        |
-| Street addresses | 39          | 3         |
+| Street addresses | 39          | 0         |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
