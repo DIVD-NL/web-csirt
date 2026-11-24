@@ -23,11 +23,11 @@ In accordance with our [leaked credential policy](/credentials), we never email 
 
 From the exfiltrated data, we gathered all email addresses, phone numbers and street addresses. Using a combination of LLMs, scripts and human review, we filtered out spam, generic or group email addresses, non-personal phone numbers and non-residential street addresses. This gives us the following overview.
 
-| Type             | Unfiltered  | Personal  |
-|------------------|-------------|-----------|
-| Email addresses  | 48,928      | 4,121     |
-| Phone numbers    | 316         | 34        |
-| Street addresses | 39          | 0         |
+| Type             | Unfiltered | Personal  |
+|------------------|------------|-----------|
+| Email addresses  | 15,409     | 4,121     |
+| Phone numbers    | 316        | 34        |
+| Street addresses | 39         | 0         |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
@@ -123,11 +123,11 @@ In accordance with our [leaked credential policy](/credentials), we never email 
 
 From the exfiltrated data, we gathered all email addresses, phone numbers and street addresses. Using a combination of LLMs, scripts and human review, we filtered out spam, generic or group email addresses, non-personal phone numbers and non-residential street addresses. This gives us the following overview.
 
-| Type             | Unfiltered  | Personal  |
-|------------------|-------------|-----------|
-| Email addresses  | 48,928      | 4,121     |
-| Phone numbers    | 316         | 34        |
-| Street addresses | 39          | 0         |
+| Type             | Unfiltered | Personal  |
+|------------------|------------|-----------|
+| Email addresses  | 15,409     | 4,121     |
+| Phone numbers    | 316        | 34        |
+| Street addresses | 39         | 0         |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
