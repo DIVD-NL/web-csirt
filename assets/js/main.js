@@ -46,3 +46,11 @@
 document.getElementById("menuBtn").addEventListener("click", function(){
 	document.getElementById("nav_menu").classList.toggle("responsive");
 });
+
+/* Position the case timeline bars and axis labels. The CSP forbids inline
+   style attributes, so the includes pass percentages via data attributes
+   and we apply them through the CSSOM here. */
+document.querySelectorAll(".ctl-axis span, .ctl-bar, .ctl-today").forEach(function(el) {
+	if (el.dataset.left) { el.style.left = el.dataset.left + "%"; }
+	if (el.dataset.width) { el.style.width = el.dataset.width + "%"; }
+});

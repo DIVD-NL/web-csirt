@@ -3,10 +3,13 @@
 /*
 	csirt.divd.nl stylesheet
 
-	Follows the www.divd.nl house style (black, DIVD yellow, Source Sans 3
-	headings, Open Sans text, pill buttons) but is deliberately more
-	utilitarian: full-width sticky header, monospace labels, tighter corners
-	and dense tables.
+	The www.divd.nl house style built on the DIVD palette (#FFD736 yellow,
+	#3DDCEB cyan, #3A3A3A grey, #1D1D1D near-black) with Source Sans 3
+	headings, Open Sans text and pill buttons. Yellow carries the brand,
+	cyan marks interactive elements. Light and dark themes, following the
+	system setting unless the header toggle pins one. Deliberately
+	utilitarian: full-width sticky header, monospace labels, tighter
+	corners and dense tables.
 */
 
 /* Fonts (self-hosted, CSP: font-src 'self') */
@@ -40,15 +43,20 @@
 }
 
 /* Design tokens */
+/* Theme tokens. Light is the default; dark applies when the system asks for
+   it, unless assets/js/theme.js pins a choice via the data-theme attribute. */
 :root {
+  --brand: #ffd736;          /* DIVD yellow */
+  color-scheme: light;
+
   --fg: #000;
   --bg: #fff;
-  --brand: #ffd736;          /* DIVD yellow */
-  --accent: #ff5733;         /* signal orange, the CSIRT secondary colour */
-  --ink: #1d1d1d;
+  --accent: #0b96a6;         /* DIVD cyan, darkened for contrast on white */
+  --ink: #1d1d1d;            /* dark strips: dropdowns and footer */
   --muted: #545454;
   --line: #e3e3e3;
   --surface: #f4f4f4;
+  --panel: #000;             /* buttons and other solid blocks */
 
   --font-header: "Source Sans 3", "Arial Black", "Helvetica Neue", Arial, sans-serif;
   --font-text: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -58,6 +66,33 @@
   --gutter: 1.5rem;
   --radius: 6px;
   --radius-pill: 24px;
+  --ctl-label: 24rem;        /* label column of the case timelines */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --fg: #f2f2f2;
+    --bg: #1d1d1d;
+    --accent: #3ddceb;       /* DIVD cyan */
+    --ink: #141414;
+    --muted: #a6a6a6;
+    --line: #3a3a3a;         /* DIVD grey */
+    --surface: #262626;
+    --panel: #3a3a3a;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --fg: #f2f2f2;
+  --bg: #1d1d1d;
+  --accent: #3ddceb;         /* DIVD cyan */
+  --ink: #141414;
+  --muted: #a6a6a6;
+  --line: #3a3a3a;           /* DIVD grey */
+  --surface: #262626;
+  --panel: #3a3a3a;
 }
 
 /* Base */
@@ -80,6 +115,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out;
 }
 
 ::selection {
@@ -172,6 +208,7 @@ a {
 }
 a:hover {
   background-color: var(--brand);
+  color: #000;
 }
 
 hr {
@@ -218,6 +255,16 @@ pre code {
   overflow-wrap: normal;
 }
 
+/* Rouge's syntax palette assumes a light background, so highlighted code
+   listings stay "on paper" in the dark theme too. */
+div.highlight {
+  background: none;
+}
+div.highlight pre {
+  background: #f6f6f6;
+  color: #000;
+}
+
 /* Tables */
 table {
   width: 100%;
@@ -232,7 +279,7 @@ th, td {
 }
 thead th {
   background: #000;
-  color: #fff;
+  color: var(--brand);
   font-weight: 700;
   border-bottom: 0;
   vertical-align: bottom;
@@ -301,9 +348,9 @@ input[type="reset"] {
   align-items: center;
   justify-content: center;
   padding: .45rem 1.1rem;
-  border: 2px solid #000;
+  border: 2px solid var(--panel);
   border-radius: var(--radius-pill);
-  background: #000;
+  background: var(--panel);
   color: #fff;
   font-family: var(--font-text);
   font-size: .875rem;
@@ -342,9 +389,9 @@ textarea {
   width: 100%;
   max-width: 32rem;
   padding: .5rem .85rem;
-  border: 2px solid #000;
+  border: 2px solid var(--panel);
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--surface);
   color: var(--fg);
   font: inherit;
 }
@@ -394,22 +441,45 @@ form input[type="text"] {
 }
 .brand img {
   display: block;
-  width: 84px;
+  width: 66px;
   height: auto;
 }
 .brand span {
-  padding: .15rem .45rem;
-  border: 1.5px solid var(--accent);
-  border-radius: 3px;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .12em;
+  color: #fff;
+  font-family: var(--font-header);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 .brand:hover span {
-  background: var(--accent);
-  color: #000;
+  color: var(--brand);
+}
+
+/* Theme toggle (populated and unhidden by assets/js/theme.js) */
+#theme-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, .35);
+  border-radius: 50%;
+  background: none;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+}
+#theme-toggle:hover {
+  background: none;
+  color: var(--brand);
+  border-color: var(--brand);
+}
+#theme-toggle[hidden] {
+  display: none;
 }
 
 /* Menu */
@@ -569,7 +639,7 @@ form input[type="text"] {
 #banner {
   background-color: #000;
   background-image:
-    radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 45%),
+    radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--brand) 22%, transparent), transparent 45%),
     linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px);
   background-size: auto, 40px 40px, 40px 40px;
@@ -583,10 +653,10 @@ form input[type="text"] {
   display: inline-block;
   margin: 0 0 1.25rem;
   padding: .2rem .6rem;
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid var(--brand);
   border-radius: 3px;
   background: #000;
-  color: var(--accent);
+  color: var(--brand);
   font-family: var(--font-mono);
   font-size: .75rem;
   font-weight: 700;
@@ -666,8 +736,8 @@ form input[type="text"] {
   display: inline-block;
   padding: .25rem .9rem;
   border-radius: var(--radius-pill);
-  background: #000;
-  color: #fff;
+  background: var(--brand);
+  color: #000;
   font-size: .75rem;
   font-weight: 700;
   letter-spacing: .02em;
@@ -676,7 +746,7 @@ form input[type="text"] {
 }
 .newsitem > a:hover,
 .caseitem > a:hover {
-  background: var(--brand);
+  background: var(--accent);
   color: #000;
 }
 
@@ -688,8 +758,8 @@ form input[type="text"] {
   margin-bottom: 2rem;
 }
 .yearBtn {
-  background: #fff;
-  color: #000;
+  background: var(--panel);
+  color: #fff;
 }
 .yearBtn.active,
 .yearBtn.active:hover {
@@ -703,9 +773,111 @@ form input[type="text"] {
   overflow-x: auto;
 }
 
+/* Case timelines: HTML/CSS gantt charts built by the timeline_* includes */
+.ctl {
+  margin-bottom: 3rem;
+}
+.ctl h3 {
+  margin: 0 0 1rem;
+}
+.ctl-axis {
+  position: relative;
+  height: 1.1rem;
+  margin: 0 0 .4rem calc(var(--ctl-label) + .75rem);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+}
+.ctl-axis span {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.ctl-axis span:first-child {
+  transform: none;
+}
+.ctl-axis span:last-child {
+  transform: translateX(-100%);
+}
+.ctl-row {
+  display: grid;
+  grid-template-columns: var(--ctl-label) 1fr;
+  gap: .75rem;
+  align-items: center;
+  padding: .2rem 0;
+}
+.ctl-label {
+  overflow: hidden;
+  color: var(--fg);
+  font-size: .85rem;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ctl-label:hover {
+  background: none;
+  color: var(--accent);
+}
+.ctl-track {
+  position: relative;
+  height: 1.05rem;
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+}
+.ctl-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-width: 6px;
+  background: var(--fg);
+  border-radius: var(--radius-pill);
+}
+.ctl-bar.is-open {
+  background: var(--brand);
+}
+.ctl-bar.continues {
+  border-radius: var(--radius-pill) 0 0 var(--radius-pill);
+  -webkit-mask-image: linear-gradient(90deg, #000 80%, transparent);
+  mask-image: linear-gradient(90deg, #000 80%, transparent);
+}
+.ctl-bar.pre {
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%);
+  mask-image: linear-gradient(90deg, transparent, #000 20%);
+}
+.ctl-bar.pre.continues {
+  border-radius: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+}
+.ctl-today {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 900px) {
+  .ctl-row {
+    grid-template-columns: 1fr;
+    gap: .15rem;
+    padding: .35rem 0;
+  }
+  .ctl-axis {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 736px) {
+  .ctl-axis span:nth-child(2n) {
+    display: none;
+  }
+}
+
 /* Footer */
 #footer {
-  border-top: 4px solid var(--accent);
+  border-top: 4px solid var(--brand);
   background: var(--ink);
   color: #fff;
   font-size: .95rem;
@@ -729,9 +901,6 @@ form input[type="text"] {
 #footer a:hover {
   background: none;
   color: var(--brand);
-}
-#footer .brand:hover span {
-  color: #000;
 }
 
 ul.plain {
@@ -783,6 +952,8 @@ ul.plain i {
   body {
     display: block;
     font-size: 11pt;
+    background: #fff;
+    color: #000;
   }
 
   .wrapper {
