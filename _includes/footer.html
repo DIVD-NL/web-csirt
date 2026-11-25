@@ -1,14 +1,18 @@
-<footer id="footer" class='no-print'>
+<footer id="footer" class="no-print">
     <div class="inner">
-        <div class="content">
-            <ul class="plain">
-                <li><a href="https://twitter.com/DIVDnl"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                {% comment %}
-                <li><a href="https://www.facebook.com/DIVDcsirt"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                {% endcomment %}
-                <li><a href="https://www.linkedin.com/company/divd-nl"><i class="icon fa-linkedin">&nbsp;</i>LinkedIn</a></li>
-            </ul>
-        </div>
+        <section>
+            <a class="brand" href="/" title="{{ site.title }}"><img src="/assets/images/divd-logo.svg" alt="DIVD" width="84" height="33"><span>CSIRT</span></a>
+            <p>{{ site.description }}</p>
+        </section>
+        <ul class="plain">
+            <li><a href="https://www.divd.nl"><i class="fa fa-globe" aria-hidden="true"></i>www.divd.nl</a></li>
+            <li><a href="/contact/"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a></li>
+            <li><a href="https://twitter.com/DIVDnl"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/divd-nl"><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        </ul>
+    </div>
+    <div class="colophon">
+        <div class="inner">&copy; {{ site.time | date: "%Y" }} DIVD - Dutch Institute for Vulnerability Disclosure</div>
     </div>
 </footer>
 <!-- Scripts -->
