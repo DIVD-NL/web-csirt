@@ -23,11 +23,11 @@ In accordance with our [leaked credential policy](/credentials), we never email 
 
 From the exfiltrated data, we gathered all email addresses, phone numbers and street addresses. Using a combination of LLMs, scripts and human review, we filtered out spam, generic or group email addresses, non-personal phone numbers and non-residential street addresses. This gives us the following overview.
 
-| Type             | Unfiltered  | Personal  |
-|------------------|-------------|-----------|
-| Email addresses  | 48,928      | 4,121     |
-| Phone numbers    | 316         | 34        |
-| Street addresses | 39          | 0         |
+| Type             | Unfiltered | Personal  |
+|------------------|------------|-----------|
+| Email addresses  | 15,409     | 4,121     |
+| Phone numbers    | 316        | 34        |
+| Street addresses | 39         | 0         |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
@@ -123,11 +123,11 @@ In accordance with our [leaked credential policy](/credentials), we never email 
 
 From the exfiltrated data, we gathered all email addresses, phone numbers and street addresses. Using a combination of LLMs, scripts and human review, we filtered out spam, generic or group email addresses, non-personal phone numbers and non-residential street addresses. This gives us the following overview.
 
-| Type             | Unfiltered  | Personal  |
-|------------------|-------------|-----------|
-| Email addresses  | 48,928      | 4,121     |
-| Phone numbers    | 316         | 34        |
-| Street addresses | 39          | 0         |
+| Type             | Unfiltered | Personal  |
+|------------------|------------|-----------|
+| Email addresses  | 15,409     | 4,121     |
+| Phone numbers    | 316        | 34        |
+| Street addresses | 39         | 0         |
 
 CVE records and the CNA process are kept in a separate environment from the one that was compromised, and we have found no indication that this part of the environment was accessed.
 The same is true of our scanning signatures, non-weaponised exploits and zero-day research.
@@ -147,3 +147,17 @@ Like any organisation, we have to pay the rent, answer the telephone, pay the oc
 
 ## Current picture
 Our accounting systems and bank account are handled via an external party, and we have no indications of compromise there. Our administration in GSuite was not compromised.
+
+# Deviations from the original reports
+
+This page is based on the final report of our forensic investigations, but some of the numbers deviate from what is written in these reports after further investigation.
+
+## Number of street addresses
+
+The original report states that three street addresses that are potential private addresses have been leaked. After further investigation of these three addreses, these three also could be related to businesses or venues and not to persons. Hence we leaked 39 street addresses, none of them where personal.
+
+## Number of leaked email addresses
+
+The original report states that 48,928 email addresses where leaked of which 4,121 are personal email addresses. After further investigation it turns out that the number of 48,928 contain a lot of duplicate email addresses. After the deduplication we have a total of 15,409 unique email addresses.
+
+
