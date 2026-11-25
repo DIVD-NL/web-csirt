@@ -27,18 +27,18 @@ Last 10 posts ...
 
 {%- include timeline_cases_open.html -%}
 
-## Open cases
+## Recently closed cases
 
 <ul>
-{%- assign cases = site.cases |reverse -%}
-{%- for p in cases -%}
-	{%- if p.status == "Open" -%}
-		<li>
-			<a href='{{ p.url }}'>{{ p.title }}</a>
-		</li>
-	{%- endif -%}
+{%- assign closed_cases = site.cases | where: "status", "Closed" | sort: "end" | reverse -%}
+{%- for p in closed_cases limit: 10 -%}
+	<li>
+		{{ p.end | date: "%d-%m-%Y" }} - <a href='{{ p.url }}'>{{ p.title }}</a>.
+	</li>
 {%- endfor -%}
 </ul>
+
+[All cases](/cases/)
 
 ## Some statistics
 

@@ -1,39 +1,30 @@
 {% include header.html %}
 
-{% include navigation.html %}
+<header id="header" class="no-print">
+    <div class="inner">
+        <a class="brand" href="/" title="{{ site.title }}"><img src="/assets/images/divd-logo.svg" alt="DIVD" width="66" height="33"><span>CSIRT</span></a>
+        {% include menu.html %}
+        <button id="theme-toggle" type="button" hidden></button>
+    </div>
+</header>
 
 {% if page.url == "/" %}
 <!-- Banner -->
-<section id="banner">
+<section id="banner" class="no-print">
     <div class="inner">
+        <p class="eyebrow">Computer Security Incident Response Team</p>
         <h1 class="project-name">{{ site.title }}</h1>
         <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
     </div>
 </section>
-
-{% include menu.html %}
-
-<section class="wrapper">
-    <div id="content" class="inner content">
-        {{ content }}
-    </div>
-</section>
 {% else %}
-<!-- Heading -->
-<div id="banner" class="no-print">
-  <div class="inner">
-    <h1 class="project-name">{{ site.title }}</h1>
-    <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
-  </div>
-</div>
+{% include navigation.html %}
+{% endif %}
 
-{% include menu.html %}
-
-<section id="main" class="wrapper">
+<main id="main" class="wrapper">
     <div id="content" class="inner content">
         {{ content }}
     </div>
-</section>
-{% endif %}
+</main>
 
 {% include footer.html %}
