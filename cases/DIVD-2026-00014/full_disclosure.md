@@ -14,4 +14,4 @@ We wanted to learn from this type of attack, and oh, we did. We owe it to the pe
 
 By being this open and transparent, we also hope to show the world that there is no need to be afraid or to feel ashamed. With attacks like this happening more and more often, it could happen to anyone, and it probably will. When it does, we encourage everyone to be brave and do the same.
 
-The full report is available as a [PDF](/downloads/DIVD-2026-00014/DIVD-2026-00014/DIVD-2026-00014-forensics-report.pdf).
+The full report is available as a [PDF](/downloads/DIVD-2026-00014/DIVD-2026-00014-forensics-report.pdf).
