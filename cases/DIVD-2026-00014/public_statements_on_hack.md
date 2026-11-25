@@ -24,3 +24,18 @@ We share the most painful and awkward part of being hacked, which data got out. 
 ### [Statement #6](https://www.linkedin.com/feed/update/urn:li:activity:7511784574121594880) — Saturday 3 October 2026
 We are contained. When we shut down our infrastructure on Tuesday 22 September, we hoped that would do the trick, and now we know for sure it did. That takes some of the pressure off, so we can focus fully on the investigation, working out the details and writing the reports people have asked for. We'll also give a spontaneous talk at the ONE Conference next Wednesday. It's a no-publicity talk on purpose, so we can be even more transparent there, and we'll speak to the press afterwards.
 
+### [Statement #7](https://lnkd.in/p/e-x9HHPa)
+We've already shared a lot about our incident, but now that the investigation is finished it's time for the full report.
+Together with Merlon Security and NVISO Security we reconstructed the attack from start to finish, how the attacker got in through two zero-days in Zammad, how ARTEX, an Agentic Offensive Framework, took it from there, and which data got out.
+
+The skill level of attackers has definitely gone up, while the bar to get past security is a lot lower. But unfortunately not many organisations feel comfortable publishing their full investigation and forensics report.
+That's why we're sharing everything, the timeline, our mistakes, our recommendations and lessons learned, so others can learn from what happened to us.
+
+That includes the indicators of compromise, so you can check your own systems. We recommend checking your logs for them going back to around 21 September.
+If nothing matches, that does not mean you are definitely safe. These IOCs are just a way to check whether this specific modus operandi and/or attacker has been on your systems, and because the agent writes its own scripts as it goes (990 of them in our case), it can leave very different traces somewhere else.
+
+If you want to start by raising the bar for your security, make sure you have good visibility on your network and systems, because anything that isn't monitored is a risk. Limit user rights to the absolute minimum, and shrink your attack surface by being critical about which systems really need to be exposed to the internet. And if you're further along (bonus tip for the advanced), make sure you can recognise unusual behaviour inside your network and respond to it quickly.
+
+We're also working on a public repository with anonymised research data, which we hope to share soon.
+
+Full report at [https://divd.nl/hacked](https://divd.nl/hacked)
